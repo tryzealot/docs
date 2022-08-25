@@ -15,7 +15,7 @@ sidebar_label: "Docker"
 
 ## 一键安装脚本
 
-> 对于一键安装部署脚本感兴趣的可以查看 [Docker 手把手部署文档](/docs/self-hosted/deployment/source-code)。
+> 对于一键安装部署脚本感兴趣的可以查看 [Docker 手把手部署文档](/docs/self-hosted/deployment/docker/step-by-step)。
 
 本着一键安装的原则，可是现实往往是残酷的，Zealot 配置都是依托于 ENV 环境变量，需要配置好之后再执行一键部署生成脚本。
 首先需要克隆[官方 Zealot 部署工具](https://github.com/tryzealot/zealot-docker.git)，进入 `zealot-docker`

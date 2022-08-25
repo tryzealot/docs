@@ -2,36 +2,36 @@
 sidebar_label: "Apps"
 ---
 
-# App APIs
+# 应用接口
 
-## Upload an app
+## 上传应用
 
-This allows you to upload an single iOS, Android or macOS file.
+上传应用，仅支持 iOS, Android 和 macOS 类型。
 
 ```
 POST /api/apps/upload
 ```
 
-### Parameters
+### 参数
 
 :::info
 
-[Authentication](/docs/developer-guide/api#authentication) required.
+需要[用户认证](/docs/developer-guide/api#authentication)
 
 :::
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| file | `File` | true | an App file |
-| channel_key | `String` | false | Channel key<br />Create a new App if leave it empty |
-| name | `String` | false | the name of App<br />Use app name from parsed metadata in given file if leave it empty |
-| release_type | `String` | false | Eg, debug, beta, adhoc, release, enterprise 等 |
-| source | `String` | false | the source of upload (default is `api`) |
-| changelog | `String` | false | Changelog<br />Avaiables in plain text or JSON formatted struct |
-| branch | `String` |false| a branch name from git |
-| git_commit | `String` | false | git commit |
-| ci_url | `String` | false | the build url of a C |
-| custom_fields | `String` | false | JSON formatted custom fileds<br />It could configures and display title, <br />value and icon from fontawesome in a Release page from an App |
+| file | `File` | true | 应用本地路径的内容 |
+| channel_key | `String` | false | 应用具体渠道的 Key，没有传此参数会字段创建对于的应用、类型和渠道 |
+| name | `String` | false | 应用名称，为空时取 App 的信息 |
+| release_type | `String` | false | 应用类型，比如 debug, beta, adhoc, release, enterprise 等 |
+| source | `String` | false | 上传渠道名称，默认是 api |
+| changelog | `String` | false | 变更日志，接受纯文本或 JSON 格式化的数据 |
+| branch | `String` |false|上传应用时的git branch名称|
+| git_commit | `String` | false | 上传应用时的 git commit hash |
+| ci_url | `String` | false | CI 项目构建地址 |
+| custom_fields | `String` | false | 这是一个用 JSON 字符串定义的自定义字段，<br />可配置名称，值以及 fontawesome 图标用于在页面详情展示 |
 
 For `changelog` attribute which it accepts both `plain text` and `JSON` formatted contents:
 
@@ -60,7 +60,7 @@ message 1\nmessage 2
 ]
 ```
 
-For `custom_fields` attribute which it use `JSON` formatted struct to build from each key-value. for example, Display country name like `country=China` with icon [flag](https://fontawesome.com/v5.15/icons/flag?style=solid):
+对于 `custom_fields` 的用法，它是一个使用 JSON 格式的以键值对为单位的数组，比如需要自定义国家 country=China 并配置图标为 fontawesome 的 [flag](https://fontawesome.com/v5.15/icons/flag?style=solid)
 
 ```diff
 curl -X POST \
@@ -71,7 +71,7 @@ curl -X POST \
    --form 'file=@/path/to/your/app'
 ```
 
-#### Return body
+#### 返回样例
 
 ```json
 {
@@ -120,24 +120,22 @@ curl -X POST \
 }
 ```
 
-## List apps
+## 应用列表
 
-Get a list of app.
-
-This function takes pagination parameters page and per_page to restrict the list of app.
+获取创建的应用列表，支持分页
 
 ```
 GET /api/apps
 ```
 
-### Parameters
+### 参数
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| page | `Integer` | false | Page number (default: `1`) |
-| per_page | `Integer` | false | Number of items to list per page (default: `25`, max: `100`). |
+| page | `Integer` | false | 页数|
+| per_page | `Integer` | false | 每页返回最大数目 |
 
-### Return body
+### 返回样例
 
 ```json
 [
@@ -194,21 +192,21 @@ GET /api/apps
 ]
 ```
 
-## Get an app
+## 应用详情
 
-Allows you to receive information about an app like name, scheme, channel.
+查看应用的明细：应用类型、渠道等信息
 
 ```
 GET /api/apps/:id
 ```
 
-### Parameters
+### 参数
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `String` | true | 应用 ID |
 
-### Return body
+### 返回样例
 
 ```json
 {
@@ -241,24 +239,23 @@ GET /api/apps/:id
 }
 ```
 
-## Get versions list of app
+## 应用版本列表
 
-Get a list of apps by the given channel key
-
+获取应用已上传的版本列表，按照上传时间倒序排列
 
 ```
 GET /api/apps/versions
 ```
 
-### Parameters
+### 参数
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| channel_key | `String` | true | Channel key |
-| page | `Integer` | false | Page number (default: `1`) |
-| per_page | `Integer` | false | Number of items to list per page (default: `25`, max: `100`). |
+| channel_key | `String` | true | 应用具体渠道的 Key |
+| page | `Integer` | false | 页数|
+| per_page | `Integer` | false | 每页返回最大数目 |
 
-### Return body
+### 返回样例
 
 ```json
 {
@@ -310,24 +307,23 @@ GET /api/apps/versions
 }
 ```
 
-## Get the latest version of app
+## 应用最新版本
 
-Allows you to receive the latest information about a Release version from App like app metadata, changelog, icon url, install (download) url.
-
+获取指定应用的最新版本信息
 
 ```
 GET /api/apps/latest
 ```
 
-### Parameters
+### 参数
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| channel_key | `String` | true | Channel key |
+| channel_key | `String` | true | 应用具体渠道的 Key |
 | release_version | `String` | true | 应用的发布版本 |
 | build_version | `String` | true | 应用的构建版本 |
 
-### Return body
+### 返回样例
 
 ```json
 {
@@ -361,33 +357,30 @@ GET /api/apps/latest
 }
 ```
 
-## Check version exists
+## 检查当前版本是否存在
 
-Allows you to check the Release exists by given query, query accepts two combo group:
-
-- `bundle_id`, `release_version` and `build_verion`
-- `bundle_id` and `git_commit`
+使用 bundle_id、release_version、build_verion 或 bundle_id、git_commit 组合检查当前版本是否存在
 
 ```
 GET /api/apps/version_exist
 ```
 
-### Parameters
+### 参数
 
-| Attribute | Type | Required | Description |
+| 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| channel_key | `String` | true | Channel key |
+| channel_key | `String` | true | 应用具体渠道的 Key |
 | bundle_id | `String` | true | 应用的包名，iOS 取 bundle_id，Android 取 package_name |
 | release_version | `String` | false | 应用的发布版本 |
 | build_version | `String` | false | 应用的构建版本 |
 | git_commit | `String` | false | 上传应用时的 git commit hash |
 
-### Return body
+### 返回样例
 
 - 版本存在返回 200 状态码并返回版本的信息
 - 版本不存在返回 404 状态码和错误信息
 
-Success returns:
+版本存在的返回信息
 
 ```json
 {
@@ -408,7 +401,7 @@ Success returns:
 }
 ```
 
-Not found returns:
+版本不存在的返回信息：
 
 ```json
 {

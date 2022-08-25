@@ -26,7 +26,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'tryzealot', // Usually your GitHub org/user name.
-  projectName: 'zealot-docs', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,7 +45,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/tryzealot/zealot/tree/main/',
+          editUrl: 'https://github.com/tryzealot/docs/tree/main/',
           lastVersion: isDev || isDeployPreview || isBranchDeploy ? 'current' : undefined,
           versions: {
             current: {
@@ -110,7 +110,7 @@ const config = {
                 value: '<hr class="dropdown-separator">',
               },
               {
-                href: 'https://tryzealot.github.io/zealot-docs-legacy',
+                href: 'https://tryzealot.github.io/docs-legacy',
                 label: 'Legacy docs',
               }
             ],
@@ -131,24 +131,15 @@ const config = {
       //   style: 'dark',
       //   links: [
       //     {
-      //       title: 'Docs',
-      //       items: [
-      //         {
-      //           label: 'Tutorial',
-      //           to: '/docs/intro',
-      //         },
-      //       ],
-      //     },
-      //     {
       //       title: 'Community',
       //       items: [
       //         {
-      //           label: 'Stack Overflow',
-      //           href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+      //           label: 'Github Discussions',
+      //           href: 'https://github.com/tryzealot/zealot/discussions',
       //         },
       //         {
-      //           label: 'Discord',
-      //           href: 'https://discordapp.com/invite/docusaurus',
+      //           label: 'Telegram',
+      //           href: 'https://t.me/+wnEWjKGcXllkMGQ9',
       //         },
       //       ],
       //     },
@@ -182,13 +173,13 @@ const config = {
         ],
         theme: require('prism-react-renderer/themes/dracula'),
       },
-      announcementBar: {
-        id: 'announcementBar-2',
-        backgroundColor: 'var(--ifm-color-primary)',
-        textColor: 'var(--ifm-heading-color)',
-        content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a>`,
-        isCloseable: false
-      },
+      // announcementBar: {
+      //   id: 'announcementBar-2',
+      //   backgroundColor: 'var(--ifm-color-primary)',
+      //   textColor: 'var(--ifm-heading-color)',
+      //   content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a>`,
+      //   isCloseable: false
+      // },
     }),
 };
 

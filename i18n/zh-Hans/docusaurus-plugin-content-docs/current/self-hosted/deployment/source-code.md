@@ -1,106 +1,225 @@
 ---
-sidebar_label: "Source code"
+sidebar_label: "源码"
 ---
 
-The following is a tutorial on local deployment development for different operating systems.
+# 源码部署 Zealot 指南
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+如下整理了不同操作系统的本地部署开发教程。
 
 ## macOS
 
-### homebrew
+### 提前准备
 
-First you need to install Xcode Command tools:
+#### 安装 homebrew
+
+首先需要安装 Xcode Command tools:
 
 ```bash
 $ xcode-select --install
 ```
 
-Then install Homebrew, the package management tool for macOS
+如果提示安装失败，需要从 https://developer.apple.com/downloads 下载安装。
+
+之后安装 macOS 的包管理工具 Homebrew
 
 ```bash
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### postgresql and redis
+### 安装依赖
+
+之后开始安装环境依赖
 
 ```bash
-$ brew install redis postgresql
+$ brew install redis postgresql webp imagemagick node git
 ```
 
-Run postgresql and redis services
+M1 用户需要设置依赖编译路径到 SHELL 的配置文件中：
+
+```bash
+export CPATH=/opt/homebrew/include/
+export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib/
+```
+
+#### 配置 Postgres 和 Redis
+
+运行 postgresql 和 redis 服务
 
 ```bash
 $ brew services start postgresql
 $ brew services start redis
 ```
 
-You also need to create a default username in Postgresql：
+Postgresql 还需要创建默认用户名：
 
 ```bash
 $ createuser --superuser zealot
 
-# If you are worried about the high privilege, you can only enable the create database privilege
+# 如果担心权限过高可以只开启创建数据库权限
 $ createuser --createdb zealot
 ```
 
-### node
+#### yarn
 
 ```bash
-$ brew install node
 $ npm install -g yarn
 ```
 
-### ruby
+#### ruby
 
-Can be installed by either asdf, rvm or homebrew
+可以通过 asdf、rvm 任意一种方式安装。
 
-#### asdf
+```mdx-code-block
+<Tabs groupId="install-ruby">
+<TabItem value="asdf">
+```
 
-Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
+一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby:
 
 ```bash
 asdf plugin add ruby
-asdf install ruby 2.7.0
-asdf global ruby 2.7.0
+asdf install ruby 3.0.0
+asdf global ruby 3.0.0
 ```
 
-#### rvm
+```mdx-code-block
+</TabItem>
+<TabItem value="rvm">
+```
 
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 2.7 --disable-binary
+$ rvm install 3.0 --disable-binary
 ```
 
-### homebrew
-
-```bash
-$ brew install ruby
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
 
-After that, you need to add the ruby execution path of the homebrew installation to the `PATH` environment variable of your current shell:
-
-- **zsh** shell append to `~/.zshrc`
-- **bash** shell append to `~/.bashrc` or `~/.bash_profile`
-
-```bash
-export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/opt/ruby/bin:$PATH"
-```
-
-Remember to reload the configuration file after adding
-
-```bash
-$ source ~/.zshrc
-# or
-$ source ~/.bash_profile
-```
-
-### bundler
+#### bundler
 
 ```bash
 $ [sudo] gem install bundler
 $ bundle install
 ```
 
-### initialize database
+### 初始化数据库
+
+```bash
+$ rails db:create
+$ rails db:migrate
+```
+
+初始化管理员账号和应用样例
+
+```bash
+$ rails db:seed
+```
+
+### 打开浏览器
+
+```bash
+$ bin/dev
+```
+
+Open brower `http://localhost:3000`
+
+## 疑难杂症
+
+### M1 芯片 MacOS 问题
+
+```
+aarch64-darwin/libwebp_ffi.bundle => aarch64-darwin/jpegdec.o
+```
+
+使用 `bundle install` 会遇到如上问题这个是因为 homebrew 安装 webp 依赖之后编译路径无法被找到，上面有解决办法。
+
+## Debian (Ubuntu)
+
+### System dependencies
+
+```bash
+$ apt update
+$ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev libtiff-dev libwebp-dev
+```
+
+### Install dependencies
+
+```bash
+$ apt install -y redis postgresql-client node
+```
+
+#### Setup Database and cache services
+
+Run postgresql and redis services
+
+```bash
+$ systemctl postgres start
+$ systemctl redis start
+```
+
+You also need to create a default username in Postgresql：
+
+```bash
+$ initdb -D /var/lib/postgresql/data
+$ createuser --superuser zealot
+
+# If you are worried about the high privilege, you can only enable the create database privilege
+$ createuser --createdb zealot
+```
+
+#### node
+
+```bash
+$ npm install -g yarn
+```
+
+#### ruby
+
+Can be installed by either asdf, rvm as ruby version manager.
+
+```mdx-code-block
+<Tabs groupId="install-ruby">
+<TabItem value="asdf">
+```
+
+Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
+
+```bash
+asdf plugin add ruby
+asdf install ruby 3.0.0
+asdf global ruby 3.0.0
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="rvm">
+```
+
+```bash
+$ curl -sSL https://get.rvm.io | bash -s stable
+$ rvm install 3.0 --disable-binary
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+#### bundler
+
+```bash
+$ [sudo] gem install bundler
+$ bundle install
+```
+
+### Initialize database
 
 ```bash
 $ rails db:create
@@ -113,10 +232,111 @@ Initialize administrator account and sample application
 $ rails db:seed
 ```
 
-### launch services
+### Launch services
 
 ```bash
-$ bundle exec guard
+$ bin/dev
+```
+
+Open brower `http://localhost:3000`
+
+## Alpine Linux
+
+### System dependencies
+
+```bash
+$ apk --update --no-cache add build-base libxml2 libxslt git \
+    libxml2-dev libxslt-dev yaml-dev postgresql-dev nodejs npm yarn libwebp-dev libpng-dev tiff-dev \
+    tzdata
+```
+
+### Install dependencies
+
+```bash
+$ apk --update --no-cache redis postgresql node
+```
+
+#### Setup Database and cache services
+
+Run postgresql and redis services
+
+```bash
+$ rc-service postgres start
+$ rc-service redis start
+```
+
+You also need to create a default username in Postgresql：
+
+```bash
+$ initdb -D /var/lib/postgresql/data
+$ createuser --superuser zealot
+
+# If you are worried about the high privilege, you can only enable the create database privilege
+$ createuser --createdb zealot
+```
+
+#### yarn
+
+```bash
+$ npm install -g yarn
+```
+
+#### ruby
+
+Can be installed by either asdf, rvm as ruby version manager.
+
+```mdx-code-block
+<Tabs groupId="install-ruby">
+<TabItem value="asdf">
+```
+
+Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
+
+```bash
+asdf plugin add ruby
+asdf install ruby 3.0.0
+asdf global ruby 3.0.0
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="rvm">
+```
+
+```bash
+$ curl -sSL https://get.rvm.io | bash -s stable
+$ rvm install 3.0 --disable-binary
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+#### bundler
+
+```bash
+$ [sudo] gem install bundler
+$ bundle install
+```
+
+### Initialize database
+
+```bash
+$ rails db:create
+$ rails db:migrate
+```
+
+Initialize administrator account and sample application
+
+```bash
+$ rails db:seed
+```
+
+### Launch services
+
+```bash
+$ bin/dev
 ```
 
 Open brower `http://localhost:3000`

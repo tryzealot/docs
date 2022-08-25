@@ -42,5 +42,9 @@
   "sidebar.developerGuide.doc.Getting Started": {
     "message": "Getting Started",
     "description": "The label for the doc item Getting Started in sidebar developerGuide, linking to the doc developer-guide/index"
+  },
+  "sidebar.selfHosted.category.Docker": {
+    "message": "Docker",
+    "description": "The label for category Docker in sidebar selfHosted"
   }
 }

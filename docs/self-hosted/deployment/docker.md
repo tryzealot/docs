@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Docker"
+sidebar_label: "On-premise (Docker)"
 ---
 
 # Deploy Zealot with Docker guide
@@ -49,7 +49,7 @@ The one-click deployment generation script has three built-in templates by defau
 - Using non-SSL (needs gateway or reverse proxy to manage SSL）
 
 For those interested in one-click installation deployment scripts,
-you can check out the [Deployment Documentation with Docker](/docs/self-hosted/deployment/source-code.md).
+you can check out the [Deployment Documentation with Docker](/docs/self-hosted/deployment/docker/step-by-step).
 
 ## SSL
 

@@ -14,7 +14,18 @@ module.exports = [
     items: [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
-      "self-hosted/deployment/docker",
+      {
+        collapsible: true,
+        label: "Docker",
+        type: "category",
+        link: {
+          type: "doc",
+          id: "self-hosted/deployment/docker",
+        },
+        items: [
+          "self-hosted/deployment/docker/step-by-step",
+        ],
+      },
       "self-hosted/deployment/kubernetes",
       "self-hosted/deployment/render",
       // "self-hosted/deployment/heroku",

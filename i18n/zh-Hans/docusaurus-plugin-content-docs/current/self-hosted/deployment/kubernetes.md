@@ -2,12 +2,12 @@
 sidebar_label: "Kubernetes"
 ---
 
-# Deploy Zealot with Kubernetes guide
+# Kubernetes 部署 Zealot 指南
 
-Zealot support deployments using Kubernetes, but no `.yaml` config file is currently available.
+Zealot 原生支持使用 Kubernetes 部署，不过一直还没有梳理 `.yaml` 配置文件用于安装。
 
-Check list:
+手动部署需要注意如下事项
 
-- `Configmap` to configure enviroment variables.
-- `PersistentVolumeClaim` to configure `public/uploads`, `public/bakcup`.
-- `Deployment` to control `zealot` pod.
+- 生成 `Configmap` 存储环境变量。
+- 生成 `PersistentVolumeClaim` 用于 `public/uploads`, `public/bakcup` 的持久化存储。
+- 生成 `Deployment` 来管理 `zealot` Pod。

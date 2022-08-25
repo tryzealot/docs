@@ -2,7 +2,7 @@
 
 Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息或者上传、下载 App。
 
-## 接口认证
+## 接口认证 {#authentication}
 
 接口请求目前仅支持 User Token 的 query 认证，在登录用户的详情页面最下面 `API - 密钥` 找到。
 > example : `https://YOUR_ZEALOT_URL/api?token=YOUR_TOKEN`
