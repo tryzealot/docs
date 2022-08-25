@@ -165,7 +165,7 @@ const config = {
       //   copyright: `Copyright © ${new Date().getFullYear()} Zealot, Inc. Built with Docusaurus.`,
       // },
       prism: {
-        additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby'],
+        additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby', 'nginx'],
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',

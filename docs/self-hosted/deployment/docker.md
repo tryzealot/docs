@@ -84,7 +84,7 @@ After running, get the IP address of the `zealot-zealot` instance on port 80 and
 
 > The following is the general configuration, if not effects welcome to [file a issue](https://github.com/tryzealot/zealot-docs/issues/new)。
 
-```
+```nginx title="nginx.conf"
 server {
   listen 80;
   server_name zealot.test;    # CHANGE IT ON YOUR DOMAIN
@@ -147,7 +147,7 @@ server {
 
 #### Caddy 2 config file
 
-```
+```nginx title="Caddyfile"
 :443
 
 log
@@ -171,8 +171,10 @@ and Chrome may also deny access due to the certificate.
 > If the domain name is unregistered, you need to tie the host to access it,
 > usually by modifying the system's `/etc/hosts` file.
 
-```bash
+```bash title="/etc/hosts"
 $ sudo vim /etc/hosts
 
+# highlight-start
 127.0.0.1 zealot.test
+# highlight-end
 ```

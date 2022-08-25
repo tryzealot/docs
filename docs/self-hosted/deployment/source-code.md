@@ -2,6 +2,11 @@
 sidebar_label: "Source code"
 ---
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 The following is a tutorial on local deployment development for different operating systems.
 
 ## macOS
@@ -59,15 +64,15 @@ Following the [offical install guide](http://asdf-vm.com/guide/getting-started.h
 
 ```bash
 asdf plugin add ruby
-asdf install ruby 2.7.0
-asdf global ruby 2.7.0
+asdf install ruby 3.0.0
+asdf global ruby 3.0.0
 ```
 
 #### rvm
 
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 2.7 --disable-binary
+$ rvm install 3.0 --disable-binary
 ```
 
 ### homebrew
@@ -81,16 +86,52 @@ After that, you need to add the ruby execution path of the homebrew installation
 - **zsh** shell append to `~/.zshrc`
 - **bash** shell append to `~/.bashrc` or `~/.bash_profile`
 
-```bash
-export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/opt/ruby/bin:$PATH"
+```mdx-code-block
+<Tabs groupId="shell">
+<TabItem value="zsh">
+```
+
+```bash title="~/.zshrc"
+export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:$PATH"
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="bash">
+```
+
+```bash title="~/.bash_profile"
+export PATH="/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/opt/ruby/bin:$PATH"
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
 
 Remember to reload the configuration file after adding
 
+```mdx-code-block
+<Tabs groupId="shell">
+<TabItem value="zsh">
+```
+
 ```bash
 $ source ~/.zshrc
-# or
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="bash">
+```
+
+```bash
 $ source ~/.bash_profile
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
 
 ### bundler

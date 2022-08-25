@@ -8,6 +8,9 @@ module.exports = [
     collapsible: false,
     label: "Deployment",
     type: "category",
+    link: {
+      type: 'generated-index',
+    },
     items: [
       "self-hosted/deployment/architecture",
       "self-hosted/deployment/requirements",
@@ -22,6 +25,9 @@ module.exports = [
     collapsible: false,
     label: "Configuration",
     type: "category",
+    link: {
+      type: 'generated-index',
+    },
     items: [
       "self-hosted/configuration/environments",
     ],
