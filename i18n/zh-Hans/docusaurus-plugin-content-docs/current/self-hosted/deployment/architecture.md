@@ -6,3 +6,5 @@
 - Sidekiq 提供后台的异步任务管理服务
 - PostgreSQL 数据库服务
 - Redis 缓存服务
+
+![Architecture](/img/architecture-zh.png)

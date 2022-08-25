@@ -6,3 +6,5 @@ Running Zealot requires the following set of services.
 - Sidekiq provides asynchronous background task management
 - PostgreSQL database
 - Redis cache
+
+![Architecture](/img/architecture.png)

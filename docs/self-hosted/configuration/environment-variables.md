@@ -1,4 +1,4 @@
-# Environments
+# Environment Variables
 
 ## The .env File
 

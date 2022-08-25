@@ -11,7 +11,7 @@ Deploy Zealot on Heroku through the following steps.
 1. Click [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy/?template=https://github.com/tryzealot/zealot) button to install on heroku.
 1. Log in and go to the Resources tab in the Heroku app dashboard and ensure the worker dynos is turned on.
 1. Head over to settings tabs in Heroku app dashboard and click reveal config vars.
-1. Configure the environment variables for [mailer](/docs/self-hosted/configuration/environments#configure-emails) as per the [documentation](/docs/self-hosted/configuration/environments).
+1. Configure the environment variables for [mailer](/docs/self-hosted/configuration/environment-variables#configure-emails) as per the [documentation](/docs/self-hosted/configuration/environment-variables).
 1. Visit `yourapp.herokuapp.com` and enjoy using Zealot.
 
 ## Updating the deployment on Heroku

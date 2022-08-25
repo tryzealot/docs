@@ -40,7 +40,7 @@ module.exports = [
       type: 'generated-index',
     },
     items: [
-      "self-hosted/configuration/environments",
+      "self-hosted/configuration/environment-variables",
       "self-hosted/configuration/third-party-authentication",
       "self-hosted/configuration/schedule-jobs",
     ],

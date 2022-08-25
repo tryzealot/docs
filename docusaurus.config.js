@@ -94,12 +94,12 @@ const config = {
             position: 'left',
             label: 'User Guide',
           },
-          {
-            type: 'doc',
-            docId: 'user-guide/changelog',
-            position: 'left',
-            label: 'Changelog',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'user-guide/changelog',
+          //   position: 'left',
+          //   label: 'Changelog',
+          // },
           {
             type: 'docsVersionDropdown',
             position: 'right',
