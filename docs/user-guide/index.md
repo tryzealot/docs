@@ -2,6 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/v/release/tryzealot/zealot?include_prereleases)](https://github.com/tryzealot/zealot/releases)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tryzealot/zealot.svg)](https://hub.docker.com/r/tryzealot/zealot/)
+[![Chat on Telegram](https://img.shields.io/badge/chat-on%20telegram-important.svg)](https://img.shields.io/badge/chat-on%20telegram-important.svg)
 [![Maintainability](https://codeclimate.com/github/tryzealot/zealot/badges/gpa.svg)](https://codeclimate.com/github/tryzealot/zealot)
 [![License](https://img.shields.io/github/license/tryzealot/zealot)](https://github.com/tryzealot/zealot/blob/develop/LICENSE)
 

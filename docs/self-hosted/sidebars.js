@@ -41,6 +41,8 @@ module.exports = [
     },
     items: [
       "self-hosted/configuration/environments",
+      "self-hosted/configuration/third-party-authentication",
+      "self-hosted/configuration/schedule-jobs",
     ],
   },
   {
