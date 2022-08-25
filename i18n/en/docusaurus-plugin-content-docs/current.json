@@ -1,0 +1,46 @@
+{
+  "version.label": {
+    "message": "Next 🚧",
+    "description": "The label for version current"
+  },
+  "sidebar.selfHosted.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category Deployment in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.category.Configuration": {
+    "message": "Configuration",
+    "description": "The label for category Configuration in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar selfHosted, linking to the doc self-hosted/index"
+  },
+  "sidebar.selfHosted.doc.Storage": {
+    "message": "Storage",
+    "description": "The label for the doc item Storage in sidebar selfHosted, linking to the doc self-hosted/storage"
+  },
+  "sidebar.userGuide.category.Features": {
+    "message": "Features",
+    "description": "The label for category Features in sidebar userGuide"
+  },
+  "sidebar.userGuide.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar userGuide, linking to the doc user-guide/index"
+  },
+  "sidebar.developerGuide.category.SDKs": {
+    "message": "SDKs",
+    "description": "The label for category SDKs in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.fastlane plugins": {
+    "message": "fastlane plugins",
+    "description": "The label for category fastlane plugins in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar developerGuide, linking to the doc developer-guide/index"
+  }
+}

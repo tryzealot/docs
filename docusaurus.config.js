@@ -17,7 +17,7 @@ function getNextVersionName() {
 const config = {
   title: 'Zealot',
   tagline: 'Self-hosted Beta App Distribution for Android, iOS and macOS apps.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://zealot.ews.im',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,6 +55,12 @@ const config = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
         },
       }),
     ],
