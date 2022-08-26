@@ -1,3 +1,7 @@
+---
+sidebar_label: "服务架构"
+---
+
 # Zealot 服务架构
 
 运行 Zealot 依赖如下服务才能保证正常运行：
