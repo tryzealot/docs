@@ -1,3 +1,7 @@
+---
+sidebar_label: "Permissions"
+---
+
 # User Permissions and roles
 
 Zealot offers four types of user permissions.

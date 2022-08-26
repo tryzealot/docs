@@ -52,7 +52,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 ### Redis
 
-This is a URL connection mainly for heroku compatibility
+This is a URL connection mainly for most cloud services compatibility
 
 ```bash
 REDIS_URL=redis://user:pass@127.0.0.1:6379/0
@@ -107,7 +107,7 @@ ZEALOT_REGISTER_ENABLED=false
 
 Enable the visitor mode to allow the application to view, download and install,
 it is recommended that the company internal reliance on permissions is not high condition to use,
-specific permission comparison can [see here for details](/docs/user-guide/permissions)
+specific permission comparison can [see here for details](/docs/user-guide/administrator/permissions)
 
 ```bash
 # Guest mode is ON

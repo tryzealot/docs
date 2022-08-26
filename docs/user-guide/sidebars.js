@@ -5,20 +5,87 @@ module.exports = [
     id: 'user-guide/index',
   },
   {
+    label: "Dashboard",
+    type: "doc",
+    id: 'user-guide/dashboard',
+  },
+  {
     collapsible: true,
-    label: "Features",
+    label: "Apps",
     type: "category",
     link: {
       type: 'generated-index',
     },
     items: [
-      "user-guide/features/apple_team",
-      "user-guide/features/webhooks",
+      "user-guide/apps/create",
     ],
   },
-  "user-guide/permissions",
+  {
+    collapsible: true,
+    label: "Debug Files",
+    type: "category",
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      "user-guide/debug-files/upload",
+    ],
+  },
+  {
+    collapsible: true,
+    label: "Toolkits",
+    type: "category",
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      "user-guide/toolkits/teardown",
+      "user-guide/toolkits/fetch-udid",
+    ],
+  },
+  {
+    collapsible: true,
+    label: "Webhooks",
+    type: "category",
+    link: {
+      type: "doc",
+      id: 'user-guide/webhooks',
+    },
+    items: [
+      "user-guide/webhooks/slack",
+      "user-guide/webhooks/discord",
+      "user-guide/webhooks/feishu",
+      "user-guide/webhooks/dingtalk",
+      "user-guide/webhooks/wecom",
+    ],
+  },
+  {
+    collapsible: true,
+    label: "Administrator",
+    type: "category",
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      "user-guide/administrator/permissions",
+      "user-guide/administrator/backup",
+      {
+        collapsible: true,
+        label: "Monitoring",
+        type: "category",
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          "user-guide/administrator/monitoring/system-info",
+          "user-guide/administrator/monitoring/logging",
+          "user-guide/administrator/monitoring/background-jobs",
+          "user-guide/administrator/monitoring/database-analytics",
+        ],
+      },
+    ],
+  },
   "user-guide/best_practices",
-  "user-guide/screenshot",
   "user-guide/changelog",
   "user-guide/qa",
   "user-guide/credits",

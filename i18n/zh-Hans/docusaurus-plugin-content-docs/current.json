@@ -15,10 +15,6 @@
     "message": "存储",
     "description": "The label for the doc item Storage in sidebar selfHosted, linking to the doc self-hosted/storage"
   },
-  "sidebar.userGuide.category.Features": {
-    "message": "新特性",
-    "description": "The label for category Features in sidebar userGuide"
-  },
   "sidebar.developerGuide.category.SDKs": {
     "message": "SDKs",
     "description": "The label for category SDKs in sidebar developerGuide"
@@ -42,5 +38,37 @@
   "sidebar.developerGuide.doc.Getting Started": {
     "message": "准备开始",
     "description": "The label for the doc item Getting Started in sidebar developerGuide, linking to the doc developer-guide/index"
+  },
+  "sidebar.selfHosted.category.Docker": {
+    "message": "Docker",
+    "description": "The label for category Docker in sidebar selfHosted"
+  },
+  "sidebar.userGuide.category.Apps": {
+    "message": "应用",
+    "description": "The label for category Apps in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Debug Files": {
+    "message": "调试文件",
+    "description": "The label for category Debug Files in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Toolkits": {
+    "message": "工具箱",
+    "description": "The label for category Toolkits in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Webhooks": {
+    "message": "网络钩子",
+    "description": "The label for category Webhooks in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Administrator": {
+    "message": "管理面板",
+    "description": "The label for category Administrator in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Monitoring": {
+    "message": "监控",
+    "description": "The label for category Monitoring in sidebar userGuide"
+  },
+  "sidebar.userGuide.doc.Dashboard": {
+    "message": "控制面板",
+    "description": "The label for the doc item Dashboard in sidebar userGuide, linking to the doc user-guide/dashboard"
   }
 }

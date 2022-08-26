@@ -28,7 +28,6 @@ module.exports = [
       },
       "self-hosted/deployment/kubernetes",
       "self-hosted/deployment/render",
-      // "self-hosted/deployment/heroku",
       "self-hosted/deployment/source-code",
     ],
   },

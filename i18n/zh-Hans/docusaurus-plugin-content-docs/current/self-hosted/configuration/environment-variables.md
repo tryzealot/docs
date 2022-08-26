@@ -50,7 +50,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 ### Redis
 
-主要是为了兼容 heroku 才采用的 URL 连接方式
+兼容大多数云服务部署采用的 URL 连接方式
 
 ```bash
 REDIS_URL=redis://user:pass@127.0.0.1:6379/0
@@ -102,7 +102,7 @@ ZEALOT_REGISTER_ENABLED=false
 
 ### 开启游客模式
 
-开启游客模式后允许应用的查看、下载和安装，建议公司内部对权限依赖不高的状况使用，具体权限对比可以[看这里查看详情](/docs/user-guide/permissions)
+开启游客模式后允许应用的查看、下载和安装，建议公司内部对权限依赖不高的状况使用，具体权限对比可以[看这里查看详情](/docs/user-guide/administrator/permissions)
 
 ```bash
 # 开启游客模式

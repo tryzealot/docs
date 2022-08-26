@@ -25,7 +25,7 @@ Continuous everything. Automate the lifecycle of your apps. Connect your CI to b
 
 ## Demo
 
-Simplified Chinese by default, change the language in [setting page of admin panel](/docs/user-guide/screenshot#setting-page).
+Simplified Chinese by default, change the language in [setting page of admin panel](/docs/user-guide/administrator/project-settings).
 
 - URL：https://tryzealot.herokuapp.com/
 - Admin account: `admin@zealot.com`
