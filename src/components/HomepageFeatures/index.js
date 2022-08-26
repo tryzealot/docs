@@ -5,31 +5,28 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/undraw_mountain.svg').default,
     description: (
       <>
-        Zealot was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Zealot was designed from the ground up to be easily installed and running quickly.
       </>
     ),
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/undraw_tree.svg').default,
     description: (
       <>
-        Zealot lets you focus on your app, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Zealot lets you focus on your app, and we&apos;ll do the chores. Go ahead and upload your apps.
       </>
     ),
   },
   {
-    title: 'Powered by Rails',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Open Source 100%',
+    Svg: require('@site/static/img/undraw_monitors.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing Rails. Zealot can
-        be extended while reusing the same header and footer.
+        Zealot is an open source project, Everyone could easy self hosted on own servers.
       </>
     ),
   },
