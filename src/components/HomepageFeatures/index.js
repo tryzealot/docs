@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
+        Zealot was designed from the ground up to be easily installed and
         used to get your website up and running quickly.
       </>
     ),
@@ -18,17 +18,17 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
+        Zealot lets you focus on your app, and we&apos;ll do the chores. Go
         ahead and move your docs into the <code>docs</code> directory.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by Rails',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
+        Extend or customize your website layout by reusing Rails. Zealot can
         be extended while reusing the same header and footer.
       </>
     ),
