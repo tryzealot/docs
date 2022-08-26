@@ -249,5 +249,38 @@
   "theme.docs.sidebar.expandButtonAriaLabel": {
     "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "Easy to Use": {
+    "message": "轻松使用"
+  },
+  "Focus on What Matters": {
+    "message": "专注于重要的事情"
+  },
+  "Open Source 100%": {
+    "message": "100% 开源项目"
+  },
+  "Zealot was designed from the ground up to be easily installed and running quickly.": {
+    "message": "Zealot 提供简单便捷的部署方式实现一键安装和运行。"
+  },
+  "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps.": {
+    "message": "Zealot 使得开发者可以关注于应用开发本身，我们来处理持续交付和测试的工作，立即上传应用吧。"
+  },
+  "Zealot is an open source project, Everyone could easy self hosted on own servers.": {
+    "message": "Zealot 是一个开源项目，每个人都可以私有化部署在自己的服务器。"
+  },
+  "Getting started": {
+    "message": "快速上手"
+  },
+  "homepage.header.title": {
+    "message": "Zealot",
+    "description": "The title for homepage"
+  },
+  "homepage.header.subtitle": {
+    "message": "开源自部署持续集成一切跟应用有关事情，接入任意 CI 系统一切自动化处理，企业多年实战经验，独立部署提供企业打包分发流程、上传应用全套流程方案",
+    "description": "The subtitle for homepage"
+  },
+  "Self-hosted Beta App Distribution for Android, iOS and macOS apps.": {
+    "message": "私有化部署 Android/iOS/macOS 应用托管服务",
+    "description": "The homepage title message"
   }
 }

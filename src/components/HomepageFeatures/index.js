@@ -1,33 +1,34 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Translate from '@docusaurus/Translate';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: <Translate>Easy to Use</Translate>,
     Svg: require('@site/static/img/undraw_mountain.svg').default,
     description: (
-      <>
+      <Translate>
         Zealot was designed from the ground up to be easily installed and running quickly.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: <Translate>Focus on What Matters</Translate>,
     Svg: require('@site/static/img/undraw_tree.svg').default,
     description: (
-      <>
+      <Translate>
         Zealot lets you focus on your app, and we&apos;ll do the chores. Go ahead and upload your apps.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Open Source 100%',
+    title: <Translate>Open Source 100%</Translate>,
     Svg: require('@site/static/img/undraw_monitors.svg').default,
     description: (
-      <>
+      <Translate>
         Zealot is an open source project, Everyone could easy self hosted on own servers.
-      </>
+      </Translate>
     ),
   },
 ];
