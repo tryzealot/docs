@@ -46,7 +46,7 @@ Zealot uses [esbuild](https://esbuild.github.io/) and [sass](https://sass-lang.c
 
 We recommend Node 14.x, as it's faster.
 
-You can check which version you're running with `node -v`. If you're running a version older than `v10.12.0`,
+You can check which version you're running with `node -v`. If you're running a version older than `v8.0`,
 you need to update it to a newer version. You can find instructions to install from community maintained packages or compile from source at the [Node.js website](https://nodejs.org/en/download/).
 
 ## Database
@@ -73,9 +73,6 @@ Sidekiq processes the background jobs with a multi-threaded process.
 This process starts with the entire Rails stack but it can grow over time due to memory leaks.
 On a very active server the Sidekiq process can use 1GB+ of memory.
 
-You can opt to have both the sidekiq workers and rails servers to run on the same machine.
-But we recommend keeping the worker process and rails server on seperate webservers for better scalability.
-
 ## Supported web browsers
 
 Zealot supports the following web browsers:
@@ -86,5 +83,8 @@ Zealot supports the following web browsers:
 - [x] [Apple Safari](https://www.apple.com/safari/)
 - [ ] [Microsoft Edge](https://www.microsoft.com/en-us/edge) - no test
 
-NOTE:
+:::warn
+
 We don't support running Zealot with JavaScript disabled in the browser.
+
+:::
