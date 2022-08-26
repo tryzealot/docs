@@ -82,7 +82,7 @@ After running, get the IP address of the `zealot-zealot` instance on port 80 and
 
 #### Nginx config file
 
-> The following is the general configuration, if not effects welcome to [file a issue](https://github.com/tryzealot/zealot-docs/issues/new)。
+> The following is the general configuration, if not effects welcome to [file a issue](https://github.com/tryzealot/docs/issues/new)。
 
 ```nginx title="nginx.conf"
 server {

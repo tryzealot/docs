@@ -74,7 +74,7 @@ $ docker-compose up -d
 
 #### Nginx 配置
 
-> 如下是通用配置，如果不可用欢迎[提问题](https://github.com/tryzealot/zealot-docs/issues/new)。
+> 如下是通用配置，如果不可用欢迎[提问题](https://github.com/tryzealot/docs/issues/new)。
 
 ```
 server {
