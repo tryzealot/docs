@@ -1,4 +1,4 @@
-# Architecture
+# Zealot Architecture
 
 Running Zealot requires the following set of services.
 
