@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkzealot_new_docs=self.webpackChunkzealot_new_docs||[]).push([[7595],{1638:e=>{e.exports=JSON.parse('{"title":"SDKs","slug":"/category/sdks","permalink":"/docs/category/sdks","navigation":{"previous":{"title":"Developer Guide","permalink":"/docs/developer-guide/"},"next":{"title":"iOS","permalink":"/docs/developer-guide/sdk/ios"}}}')}}]);
