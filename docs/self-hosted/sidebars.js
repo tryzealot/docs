@@ -28,6 +28,7 @@ module.exports = [
       },
       "self-hosted/deployment/kubernetes",
       "self-hosted/deployment/render",
+      "self-hosted/deployment/fly",
       "self-hosted/deployment/source-code",
     ],
   },
