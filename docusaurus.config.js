@@ -74,6 +74,7 @@ const config = {
         logo: {
           alt: 'Zealot Logo',
           src: 'img/zealot.png',
+          srcDark: 'img/zealot-dark.png',
         },
         items: [
           {

@@ -67,6 +67,7 @@ module.exports = [
       type: 'generated-index',
     },
     items: [
+      "user-guide/administrator/apple-team",
       "user-guide/administrator/permissions",
       "user-guide/administrator/backup",
       {

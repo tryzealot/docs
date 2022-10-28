@@ -2,6 +2,9 @@
 sidebar_label: "Architecture"
 ---
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Zealot Architecture
 
 Running Zealot requires the following set of services.
@@ -11,4 +14,10 @@ Running Zealot requires the following set of services.
 - PostgreSQL database
 - Redis cache
 
-![Architecture](/img/architecture.png)
+<ThemedImage
+  alt="Architecture"
+  sources={{
+    light: useBaseUrl('/img/architecture-light.png'),
+    dark: useBaseUrl('/img/architecture-dark.png'),
+  }}
+/>
