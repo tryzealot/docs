@@ -8,6 +8,24 @@
 
 :::
 
+## 4.5.2 (2022-11-01)
+
+#### 修复
+
+- `Web` 修复注册测试设备异常 [#935](https://github.com/tryzealot/zealot/issues/935) 感谢 [ycy0430](https://github.com/ycy0430)
+- `Web` 适配二维码支持黑暗模式
+- `Web` 修正 `en` 英文语言包
+
+#### 新增
+
+- `WebHook` 变量结构体新增 `username` 和 `email` 字段 [#934](https://github.com/tryzealot/zealot/issues/934) 感谢 [rkonfj](https://github.com/rkonfj)
+- `Docker` 支持 `SIDEKIQ_CONCURRENCY` 环境变量设置后台任务的并发量，默认 5
+
+#### 变更
+
+- `Docker` 减少安全隐患，Web 服务包含 puma 和 puma_control_server 监听更换成 `127.0.0.1`
+- `Web` 优化 iOS 设备 UDID 描述文件的文案
+- `Web` 更新页面底部的文案，感谢 Rails 和 AdminLTE 开源项目！
 
 ## 4.5.1 (2022-09-14)
 
@@ -391,7 +409,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.5.1...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.5.2...HEAD
+[4.5.2]: https://github.com/tryzealot/zealot/compare/4.5.1...4.5.2
 [4.5.1]: https://github.com/tryzealot/zealot/compare/4.5.0...4.5.1
 [4.5.0]: https://github.com/tryzealot/zealot/compare/4.4.1...4.5.0
 [4.4.1]: https://github.com/tryzealot/zealot/compare/4.4.0...4.4.1
