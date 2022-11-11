@@ -27,10 +27,22 @@ module.exports = [
         ],
       },
       "self-hosted/deployment/kubernetes",
+      "self-hosted/deployment/source-code",
+      "self-hosted/deployment/reverse-proxies"
+    ],
+  },
+  {
+    collapsible: false,
+    label: "Cloud Provider Guides",
+    type: "category",
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+
       "self-hosted/deployment/render",
       "self-hosted/deployment/fly",
-      "self-hosted/deployment/source-code",
-    ],
+    ]
   },
   {
     collapsible: false,

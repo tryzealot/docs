@@ -71,6 +71,12 @@ Sidekiq 是 Zealot 后台异步任务和定时任务使用的服务，它支持�
 
 ## 已支持 Web 浏览器
 
+:::tip
+
+Zealot 运行部分页面依赖于 Javascript，请不要设置浏览器禁止它。
+
+:::
+
 Zealot 支持如下 Web 浏览器：
 
 - [x] [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
@@ -78,9 +84,3 @@ Zealot 支持如下 Web 浏览器：
 - [x] [Chromium](https://www.chromium.org/getting-involved/dev-channel)
 - [x] [Apple Safari](https://www.apple.com/safari/)
 - [ ] [Microsoft Edge](https://www.microsoft.com/en-us/edge) - 没有测试
-
-:::warn
-
-Zealot 运行部分页面依赖于 Javascript，请不要设置浏览器禁止它。
-
-:::

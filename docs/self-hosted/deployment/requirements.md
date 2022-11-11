@@ -75,6 +75,12 @@ On a very active server the Sidekiq process can use 1GB+ of memory.
 
 ## Supported web browsers
 
+:::tip
+
+We don't support running Zealot with JavaScript disabled in the browser.
+
+:::
+
 Zealot supports the following web browsers:
 
 - [x] [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
@@ -82,9 +88,3 @@ Zealot supports the following web browsers:
 - [x] [Chromium](https://www.chromium.org/getting-involved/dev-channel)
 - [x] [Apple Safari](https://www.apple.com/safari/)
 - [ ] [Microsoft Edge](https://www.microsoft.com/en-us/edge) - no test
-
-:::warn
-
-We don't support running Zealot with JavaScript disabled in the browser.
-
-:::

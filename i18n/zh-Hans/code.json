@@ -282,5 +282,9 @@
   "Self-hosted Beta App Distribution for Android, iOS and macOS apps.": {
     "message": "私有化部署 Android/iOS/macOS 应用托管服务",
     "description": "The homepage title message"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
   }
 }

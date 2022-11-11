@@ -70,5 +70,9 @@
   "sidebar.userGuide.doc.Dashboard": {
     "message": "控制面板",
     "description": "The label for the doc item Dashboard in sidebar userGuide, linking to the doc user-guide/dashboard"
+  },
+  "sidebar.selfHosted.category.Cloud Provider Guides": {
+    "message": "云服务商",
+    "description": "The label for category Cloud Provider Guides in sidebar selfHosted"
   }
 }
