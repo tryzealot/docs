@@ -233,13 +233,6 @@ server {
   ssl_session_cache     shared:SSL:1m;
   ssl_prefer_server_ciphers  on;
 
-  root /app/public;
-
-  location ~* ^(/assets|/favicon.ico) {
-    access_log        off;
-    expires           max;
-  }
-
   location / {
     try_files $uri @zealot;
   }
@@ -264,11 +257,6 @@ server {
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection "upgrade";
     proxy_pass http://172.16.56.100:8901;
-  }
-
-  error_page 500 502 503 504 /500.html;
-  location = /500.html {
-    root /app/public;
   }
 }
 ```
