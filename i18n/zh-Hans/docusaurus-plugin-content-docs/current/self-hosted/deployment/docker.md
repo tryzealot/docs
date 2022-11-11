@@ -62,7 +62,7 @@ $ docker-compose up -d
 
 ### 反向代理托管 SSL 证书
 
-
+配置说明迁移值[反向代理指南](/docs/self-hosted/deployment/reverse-proxies)，里面包含了更多的服务配置。
 
 ### 自签名 SSL 证书
 
