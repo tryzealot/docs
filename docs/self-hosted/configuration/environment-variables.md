@@ -137,3 +137,11 @@ SMTP_ENABLE_STARTTLS_AUTO=true
 ACTION_MAILER_DEFAULT_FROM=you@gmail.com
 ACTION_MAILER_DEFAULT_TO=you@gmail.com
 ```
+
+## Disbale Cable request protection
+
+Experimental: I
+
+```bash
+ZEALOT_DISABLE_CABLE_REQUEST_PROTECTION=true
+```

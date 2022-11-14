@@ -213,50 +213,56 @@ reverse_proxy 172.16.56.100:8901
 > 如下是通用配置，如果不可用欢迎[提问题](https://github.com/tryzealot/docs/issues/new)。
 
 ```nginx title="nginx.conf"
+upstream zealot {
+  zone upstreams 64K;
+  server 172.16.56.100:8901;
+  keepalive 32;
+}
+
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  '' close;
+}
+
 server {
   listen 80;
+  listen [::]:80;
   server_name zealot.icyleaf.dev;
   location /.well-known/acme-challenge/ { allow all; }
   location / { return 301 https://$host$request_uri; }
 }
 
 server {
-  listen 443 ssl http2;              # http2 可能需要安装额外扩展，不需要可移除
+  listen 443 ssl http2;              # 可选：http2 可能需要安装额外扩展，不需要可移除
+  listen [::]:443 ssl http2;         # 可选：http2 可能需要安装额外扩展，不需要可移除
   server_name zealot.icyleaf.dev;
 
-  # 配置域名证书文件
   ssl_certificate       /etc/certs/zealot-cert.pem;
   ssl_certificate_key   /etc/certs/zealot.pem;
 
-  ssl_ciphers           HIGH:!MEDIUM:!LOW:!aNULL:!NULL:!SHA;
-  ssl_session_timeout   5m;
-  ssl_session_cache     shared:SSL:1m;
-  ssl_prefer_server_ciphers  on;
+  # Optional
+  # ssl_ciphers           HIGH:!MEDIUM:!LOW:!aNULL:!NULL:!SHA;
+  # ssl_session_timeout   5m;
+  # ssl_session_cache     shared:SSL:1m;
+  # ssl_prefer_server_ciphers  on;
 
   location / {
-    try_files $uri @zealot;
-  }
+    proxy_pass http://zealot;
+    proxy_redirect off;
 
-  location @zealot {
+    proxy_pass_header Authorization;
     proxy_set_header Host $host;
+    # proxy_set_header X-Forwarded-Ssl on; # 可选
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header Proxy "";
-    proxy_pass_header Server;
 
-    proxy_pass http://172.16.56.100:8901;
-    proxy_buffering on;
-    proxy_redirect off;
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
-  }
+    proxy_set_header Connection $connection_upgrade;
 
-  location /cable {
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
-    proxy_pass http://172.16.56.100:8901;
+    client_max_body_size 0;
+    proxy_read_timeout 36000s;
   }
 }
 ```
