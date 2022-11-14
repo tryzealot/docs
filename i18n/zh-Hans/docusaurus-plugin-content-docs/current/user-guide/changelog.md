@@ -8,6 +8,14 @@
 
 :::
 
+#### 修复
+
+- `Web` 修复第三方登录无法跳转 [#949](https://github.com/tryzealot/zealot/issues/949) 感谢 [softwind0214](https://github.com/softwind0214)
+
+#### 新增
+
+- `Docker` 新增环境变量来关闭 WebSocket (ActionCable) 的请求保护 (实验性质) [#950](https://github.com/tryzealot/zealot/pull/950)
+
 ## 4.5.2 (2022-11-01)
 
 #### 修复
