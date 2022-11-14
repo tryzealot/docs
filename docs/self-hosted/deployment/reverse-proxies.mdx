@@ -215,7 +215,7 @@ reverse_proxy 172.16.56.100:8901
 
 The following is the general configuration, if not effects welcome to [file a issue](https://github.com/tryzealot/docs/issues/new):
 
-```nginx title="nginx.conf"
+```nginx title="conf.d/zealot.conf"
 upstream zealot {
   zone upstreams 64K;
   server 172.16.56.100:8901;
@@ -267,5 +267,16 @@ server {
     client_max_body_size 0;
     proxy_read_timeout 36000s;
   }
+}
+```
+
+And you need update max body size in `http` block. Recommended is 200MB, if it's a game,
+50% more can be played to make a surplus according to the actual file size.
+
+```nginx title="nginx.conf"
+http {
+  [...]
+
+  client_max_body_size 200M;
 }
 ```

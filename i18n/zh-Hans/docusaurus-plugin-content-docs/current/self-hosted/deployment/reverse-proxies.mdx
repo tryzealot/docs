@@ -212,7 +212,7 @@ reverse_proxy 172.16.56.100:8901
 
 > 如下是通用配置，如果不可用欢迎[提问题](https://github.com/tryzealot/docs/issues/new)。
 
-```nginx title="nginx.conf"
+```nginx title="conf.d/zealot.conf"
 upstream zealot {
   zone upstreams 64K;
   server 172.16.56.100:8901;
@@ -264,5 +264,15 @@ server {
     client_max_body_size 0;
     proxy_read_timeout 36000s;
   }
+}
+```
+
+Nginx 还需要在 `http` 中配置最大上传文件上传大小，普通应用建议是在 200MB 左右，如果是游戏可根据实际文件大小再多出 50% 打出富余。
+
+```nginx title="nginx.conf"
+http {
+  [...]
+
+  client_max_body_size 200M;
 }
 ```
