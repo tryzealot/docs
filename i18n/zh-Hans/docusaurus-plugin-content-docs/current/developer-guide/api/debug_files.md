@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Debug Files"
+sidebar_label: "调试文件"
 ---
 
 # 调试文件接口

@@ -16,15 +16,15 @@
     "description": "The label for the doc item Storage in sidebar selfHosted, linking to the doc self-hosted/storage"
   },
   "sidebar.developerGuide.category.SDKs": {
-    "message": "SDKs",
+    "message": "移动 SDK",
     "description": "The label for category SDKs in sidebar developerGuide"
   },
   "sidebar.developerGuide.category.fastlane plugins": {
-    "message": "fastlane 插件",
+    "message": "Fastlane 插件",
     "description": "The label for category fastlane plugins in sidebar developerGuide"
   },
   "sidebar.developerGuide.category.APIs": {
-    "message": "APIs",
+    "message": "API 接口",
     "description": "The label for category APIs in sidebar developerGuide"
   },
   "sidebar.selfHosted.doc.Getting Started": {

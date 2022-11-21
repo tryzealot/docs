@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Apps"
+sidebar_label: "应用"
 ---
 
 # 应用接口
