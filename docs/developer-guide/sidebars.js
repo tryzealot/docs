@@ -27,6 +27,7 @@ module.exports = [
     items: [
       "developer-guide/fastlane/zealot",
       "developer-guide/fastlane/zealot_version_check",
+      "developer-guide/fastlane/zealot_debug_file",
       "developer-guide/fastlane/zealot_sync_devices"
     ],
   },
