@@ -17,7 +17,11 @@ POST /api/debug_files/upload
 
 ### 参数
 
-!> 需要[用户认证](/docs/developer-guide/api#authentication)。
+:::info
+
+需要[用户认证](/docs/developer-guide/api#authentication)
+
+:::
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
@@ -82,7 +86,11 @@ GET /api/debug_files/:id
 
 ### 参数
 
-!> 需要[用户认证](/docs/developer-guide/api#authentication)。
+:::info
+
+需要[用户认证](/docs/developer-guide/api#authentication)
+
+:::
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
