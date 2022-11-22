@@ -29,11 +29,25 @@ dependencies {
 }
 ```
 
+## Permission
+
+Zealot needs internet permission
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 ## Usages
 
 Add the start code to the `onCreate` method block of your `Application` file:
 
-### Kotlin
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="android-zealot-sdk">
+<TabItem value="Kotlin">
+```
 
 ```kotlin
 // Single channel
@@ -52,7 +66,10 @@ Zealot.create(getActivity())
       .launch()
 ```
 
-### Java
+```mdx-code-block
+</TabItem>
+<TabItem value="Java">
+```
 
 ```java
 // Single channel
@@ -71,10 +88,7 @@ Zealot.create(getActivity())
       .launch();
 ```
 
-## Permission
-
-Zealot needs internet permission
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```

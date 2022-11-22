@@ -29,9 +29,21 @@ pod install
 
 1. Add the code in your `AppDelegate`：
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="ios-zealot-sdk">
+<TabItem value="Swift">
+```
+
 ```swift
-// Swift
 import Zealot
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="Objective-C">
 ```
 
 ```objectivec
@@ -39,12 +51,21 @@ import Zealot
 #import <Zealot/Zealot-Swift.h>
 ```
 
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
 ### Configure
 
 2. Add the following code in  `application:didFinishLaunchingWithOptions:` method block：
 
+```mdx-code-block
+<Tabs groupId="ios-zealot-sdk">
+<TabItem value="Swift">
+```
+
 ```swift
-// Swift
 // Single channel
 let zealot = Zealot(endpoint: "http://zealot.com", channelKey: "...")
 zealot.checkVersion()
@@ -60,8 +81,12 @@ let zealot = Zealot(endpoint: "http://zealot.com",
 zealot.checkVersion()
 ```
 
+```mdx-code-block
+</TabItem>
+<TabItem value="Objective-C">
+```
+
 ```objectivec
-// Objective-C
 // Single channel
 Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
                                        channelKey:@"..."];
@@ -76,4 +101,9 @@ Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
 
 // Active it
 [zealot checkVersion];
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```

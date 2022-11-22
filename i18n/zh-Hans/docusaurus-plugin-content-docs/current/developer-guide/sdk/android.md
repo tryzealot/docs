@@ -29,11 +29,25 @@ dependencies {
 }
 ```
 
-## 使用
+## 用户权限
+
+使用 Zealot SDK 需要开启网络权限
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+## 初始化
 
 在你的 `Application` 文件的 `onCreate` 方法添加启动代码：
 
-### Kotlin
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="android-zealot-sdk">
+<TabItem value="Kotlin">
+```
 
 ```kotlin
 // 单个渠道
@@ -52,7 +66,10 @@ Zealot.create(getActivity())
       .launch()
 ```
 
-### Java
+```mdx-code-block
+</TabItem>
+<TabItem value="Java">
+```
 
 ```java
 // 单个渠道
@@ -71,10 +88,7 @@ Zealot.create(getActivity())
       .launch();
 ```
 
-## 用户权限
-
-使用 Zealot SDK 需要开启网络权限
-
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```

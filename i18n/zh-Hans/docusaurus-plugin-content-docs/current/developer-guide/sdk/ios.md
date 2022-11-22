@@ -21,24 +21,44 @@ pod 'Zealot', :git => 'https://github.com/tryzealot/zealot-ios.git', :branch => 
 pod install
 ```
 
-## 使用
+## 初始化
 
 1. 在 AppDelegate 文件引入 Zealot 框架头：
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="ios-zealot-sdk">
+<TabItem value="Swift">
+```
+
 ```swift
-// Swift
 import Zealot
 ```
 
+```mdx-code-block
+</TabItem>
+<TabItem value="Objective-C">
+```
+
 ```objectivec
-// Objective-C
 #import <Zealot/Zealot-Swift.h>
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
 
 2. 接着在上面文件的 `application:didFinishLaunchingWithOptions:` 方法追加启动代码：
 
+```mdx-code-block
+<Tabs groupId="ios-zealot-sdk">
+<TabItem value="Swift">
+```
+
 ```swift
-// Swift
 // 单个渠道
 let zealot = Zealot(endpoint: "http://zealot.com", channelKey: "...")
 zealot.checkVersion()
@@ -54,8 +74,12 @@ let zealot = Zealot(endpoint: "http://zealot.com",
 zealot.checkVersion()
 ```
 
+```mdx-code-block
+</TabItem>
+<TabItem value="Objective-C">
+```
+
 ```objectivec
-// Objective-C
 // 单个渠道
 Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
                                        channelKey:@"..."];
@@ -70,4 +94,9 @@ Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
 
 // 最后触发监测方法
 [zealot checkVersion];
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
