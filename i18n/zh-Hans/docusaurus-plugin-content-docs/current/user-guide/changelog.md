@@ -8,6 +8,8 @@
 
 :::
 
+## 4.5.3 (2022-11-22)
+
 #### 修复
 
 - `Web` 修复第三方登录无法跳转 [#949](https://github.com/tryzealot/zealot/issues/949) 感谢 [softwind0214](https://github.com/softwind0214)
@@ -417,7 +419,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.5.2...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.5.3...HEAD
+[4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3
 [4.5.2]: https://github.com/tryzealot/zealot/compare/4.5.1...4.5.2
 [4.5.1]: https://github.com/tryzealot/zealot/compare/4.5.0...4.5.1
 [4.5.0]: https://github.com/tryzealot/zealot/compare/4.4.1...4.5.0
