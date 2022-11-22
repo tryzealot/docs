@@ -1,6 +1,9 @@
 
 # 反向代理
 
+方便 SSL 证书的统一管理和分发、服务的扩容及接入现成的网关服务，文档提供几种给网关配置反向代理服务的配置。
+
+
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -13,12 +16,6 @@ import TabItem from '@theme/TabItem';
     dark: useBaseUrl('/img/zh-Hans/reverse-proxies-dark.png'),
   }}
 />
-
-方便 SSL 证书的统一管理和分发、服务的扩容及接入现成的网关服务，文档提供几种给网关配置反向代理服务的配置，当前支持：
-
-- Traefik
-- Caddy 2
-- Nginx
 
 ## 准备工作
 
@@ -35,7 +32,7 @@ Let's Encrypt 邮箱 | your-email@example.com
 
 ## Traefik
 
-[Traefik](https://doc.traefik.io/traefik/) 是一款开源的反向代理与负载均衡工具，也是我当前最主力使用的网关服务，它自身提供多种 Providers 可以实现接入反向代理并配置 SSL 的方式。
+[Traefik](https://doc.traefik.io/traefik/) 是一款开源的反向代理与负载均衡工具，它自身提供多种 Providers 可以实现接入反向代理并配置 SSL 的方式。
 
 ### 配置解释
 

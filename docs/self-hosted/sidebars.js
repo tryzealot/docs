@@ -39,9 +39,9 @@ module.exports = [
       type: 'generated-index',
     },
     items: [
-
-      "self-hosted/deployment/render",
       "self-hosted/deployment/fly",
+      "self-hosted/deployment/railway",
+      "self-hosted/deployment/render"
     ]
   },
   {

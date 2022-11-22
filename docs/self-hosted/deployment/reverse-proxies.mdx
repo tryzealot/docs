@@ -1,5 +1,8 @@
 # Reverse Proxies
 
+To facilitate the unified management and distribution of SSL certificates, service expansion and access to off-the-shelf gateway services,
+we provides several configurations for configuring reverse proxy services to the gateway.
+
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
@@ -12,13 +15,6 @@ import TabItem from '@theme/TabItem';
     dark: useBaseUrl('/img/reverse-proxies-dark.png'),
   }}
 />
-
-To facilitate the unified management and distribution of SSL certificates, service expansion and access to off-the-shelf gateway services,
-we provides several configurations for configuring reverse proxy services to the gateway, currently supported:
-
-- Traefik
-- Caddy 2
-- Nginx
 
 ## Prepare
 
@@ -35,7 +31,7 @@ Let's Encrypt Email address | your-email@example.com
 
 ## Traefik
 
-[Traefik](https://doc.traefik.io/traefik/) is an open source reverse proxy and load balancing tool, but also my current main gateway service,
+[Traefik](https://doc.traefik.io/traefik/) is an open source reverse proxy and load balancing tool,
 which provides a variety of Providers can achieve access to the reverse proxy and configure the SSL.
 
 ### Configuration

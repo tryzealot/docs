@@ -4,7 +4,7 @@ sidebar_label: "Render"
 
 # Deploy Zealot to Render guide
 
-Zealot support a render blueprint named `render.yaml` to deploy on [render.com](https://render.com/).
+Zealot support a render [blueprint](https://render.com/docs/blueprint-spec) named `render.yaml` to deploy on [render.com](https://render.com/).
 
 ## Deploying on Render
 

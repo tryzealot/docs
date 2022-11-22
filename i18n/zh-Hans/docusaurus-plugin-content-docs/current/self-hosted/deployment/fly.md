@@ -4,10 +4,9 @@ sidebar_label: "Fly"
 
 # 部署 Zealot 到 Fly 指南
 
-
 Zealot 支持 [fly.io](https://fly.io) 官方的应用配置格式（fly.toml）。
 
-## 安装步骤
+## 部署步骤
 
 - 预先安装 [flyctl](https://fly.io/docs/flyctl/) 命令行工具。
 - 复制下面[配置文件](#app-configuration) 保存为 `fly.toml` 文件放在项目根目录，根据创建的 fly app 项目修改 app 的值。
