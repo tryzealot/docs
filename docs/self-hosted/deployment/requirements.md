@@ -87,4 +87,4 @@ Zealot supports the following web browsers:
 - [x] [Google Chrome](https://www.google.com/chrome/)
 - [x] [Chromium](https://www.chromium.org/getting-involved/dev-channel)
 - [x] [Apple Safari](https://www.apple.com/safari/)
-- [ ] [Microsoft Edge](https://www.microsoft.com/en-us/edge) - no test
+- [x] [Microsoft Edge](https://www.microsoft.com/en-us/edge)

@@ -26,7 +26,7 @@ CPU 数量取决于 Zealot 使用的资源和任务量，工作量受（包括�
 
 下面是最小硬件条件推荐的内存大小规格，请不要低于这个标准否则服务运行会收到一定的影响造成服务无法正常工作：
 
-- **512MB****是**必须**的最少的内存大小。
+- **512MB**是**必须**的最少的内存大小。
 
 ### 存储
 
@@ -83,4 +83,4 @@ Zealot 支持如下 Web 浏览器：
 - [x] [Google Chrome](https://www.google.com/chrome/)
 - [x] [Chromium](https://www.chromium.org/getting-involved/dev-channel)
 - [x] [Apple Safari](https://www.apple.com/safari/)
-- [ ] [Microsoft Edge](https://www.microsoft.com/en-us/edge) - 没有测试
+- [x] [Microsoft Edge](https://www.microsoft.com/en-us/edge)
