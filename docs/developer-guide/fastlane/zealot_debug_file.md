@@ -9,7 +9,7 @@ Upload iOS dSYM or Android Proguard file(s) to Zealot
 ```ruby
   # Upload iOS dSYM file
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     platform: :ios,
@@ -19,7 +19,7 @@ Upload iOS dSYM or Android Proguard file(s) to Zealot
 
   # Upload Android Proguard files
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     platform: :android,
@@ -32,7 +32,7 @@ Upload iOS dSYM or Android Proguard file(s) to Zealot
 
   # Upload given zip file
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     zip_file: 'path/to/your/zip_file',

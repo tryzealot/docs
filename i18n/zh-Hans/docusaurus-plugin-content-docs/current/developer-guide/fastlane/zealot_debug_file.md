@@ -9,7 +9,7 @@ sidebar_label: "zealot_debug_file"
 ```ruby
   # 上传 iOS dSYM 调试文件
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     platform: :ios,
@@ -19,7 +19,7 @@ sidebar_label: "zealot_debug_file"
 
   # 上传 Android Proguard 调试文件
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     platform: :android,
@@ -32,7 +32,7 @@ sidebar_label: "zealot_debug_file"
 
   # 上传指定 zip file 调试文件
   zealot_debug_file(
-    endpoint: 'http://localhost:3000',
+    endpoint: 'https://tryzealot.ews.im',
     token: '...',
     channel_key: '...',
     zip_file: 'path/to/your/zip_file',

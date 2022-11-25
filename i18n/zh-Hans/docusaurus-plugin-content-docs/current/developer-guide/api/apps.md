@@ -282,8 +282,8 @@ GET /api/apps/versions
             "git_commit": "",
             "ci_url": "",
             "size": 79712596,
-            "icon_url": "http://localhost:3000/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-            "install_url": "itms-services://?action=download-manifest&url=http://localhost:3000/api/apps/O1qHk/1/install",
+            "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+            "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
             "changelog": [],
             "created_at": "2019-12-25T14:26:06.608+08:00"
         },
@@ -298,8 +298,8 @@ GET /api/apps/versions
             "git_commit": "",
             "ci_url": "",
             "size": 79712596,
-            "icon_url": "http://localhost:3000/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-            "install_url": "itms-services://?action=download-manifest&url=http://localhost:3000/api/apps/O1qHk/1/install",
+            "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+            "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
             "changelog": [],
             "created_at": "2019-12-25T14:26:06.608+08:00"
         },
@@ -349,8 +349,8 @@ GET /api/apps/latest
         "git_commit": "",
         "ci_url": "",
         "size": 79712596,
-        "icon_url": "http://localhost:3000/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-        "install_url": "itms-services://?action=download-manifest&url=http://localhost:3000/api/apps/O1qHk/1/install",
+        "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+        "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
         "changelog": [],
         "created_at": "2019-12-25T14:26:06.608+08:00"
     }
@@ -394,8 +394,8 @@ GET /api/apps/version_exist
     "git_commit": "",
     "ci_url": "",
     "size": 79712596,
-    "icon_url": "http://localhost:3000/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-    "install_url": "itms-services://?action=download-manifest&url=http://localhost:3000/api/apps/O1qHk/1/install",
+    "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+    "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
     "changelog": [],
     "created_at": "2019-12-25T14:26:06.608+08:00"
 }

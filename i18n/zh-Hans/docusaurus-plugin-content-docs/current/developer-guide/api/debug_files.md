@@ -32,7 +32,29 @@ POST /api/debug_files/upload
 
 ### 返回样例
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "演示应用",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## 下载调试文件
 
@@ -74,7 +96,31 @@ GET /api/debug_files
 
 ### 返回样例
 
-> TODO
+```json
+[
+  {
+    "id": 1,
+    "app_name": "演示应用",
+    "device_type": "ios",
+    "release_version": "1.14.0",
+    "build_version": "980",
+    "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+    "metadata": [
+      {
+        "id": 1,
+        "debug_file_id": 1,
+        "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+        "type": "arm64",
+        "object": "AppName",
+        "data": {},
+        "size": 4137941,
+        "created_at": "2022-11-25T15:53:15.157+08:00",
+        "updated_at": "2022-11-25T15:53:15.157+08:00"
+      }
+    ]
+  }
+]
+```
 
 ## 调试文件详情
 
@@ -99,7 +145,29 @@ GET /api/debug_files/:id
 
 ### 返回样例
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "演示应用",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## 更新调试文件
 
@@ -127,7 +195,29 @@ PUT /api/debug_files/:id
 
 ### 返回样例
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "演示应用",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## 删除调试文件
 
@@ -151,4 +241,8 @@ DELETE /api/debug_files/:id
 
 ### 返回样例
 
-> TODO
+```json
+{
+  "mesage": "OK"
+}
+```

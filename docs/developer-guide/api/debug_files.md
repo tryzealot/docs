@@ -34,7 +34,29 @@ POST /api/debug_files/upload
 
 ### Return body
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "Demo App",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## Download debug file
 
@@ -79,7 +101,31 @@ GET /api/debug_files
 
 ### Return body
 
-> TODO
+```json
+[
+  {
+    "id": 1,
+    "app_name": "Demo App",
+    "device_type": "ios",
+    "release_version": "1.14.0",
+    "build_version": "980",
+    "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+    "metadata": [
+      {
+        "id": 1,
+        "debug_file_id": 1,
+        "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+        "type": "arm64",
+        "object": "AppName",
+        "data": {},
+        "size": 4137941,
+        "created_at": "2022-11-25T15:53:15.157+08:00",
+        "updated_at": "2022-11-25T15:53:15.157+08:00"
+      }
+    ]
+  }
+]
+```
 
 ## Get a debug file
 
@@ -104,7 +150,29 @@ GET /api/debug_files/:id
 
 ### Return body
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "Demo App",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## Update a existed debug file
 
@@ -132,7 +200,29 @@ PUT /api/debug_files/:id
 
 ### Return body
 
-> TODO
+```json
+{
+  "id": 1,
+  "app_name": "Demo App",
+  "device_type": "ios",
+  "release_version": "1.14.0",
+  "build_version": "980",
+  "file_url": "https://tryzealot.ews.im/download/debug_files/1",
+  "metadata": [
+    {
+      "id": 1,
+      "debug_file_id": 1,
+      "uuid": "34656552-21ae-3722-a7fb-3582bc9b1d98",
+      "type": "arm64",
+      "object": "AppName",
+      "data": {},
+      "size": 4137941,
+      "created_at": "2022-11-25T15:53:15.157+08:00",
+      "updated_at": "2022-11-25T15:53:15.157+08:00"
+    }
+  ]
+}
+```
 
 ## Delete a debug file
 
@@ -157,4 +247,8 @@ DELETE /api/debug_files/:id
 
 ### Return body
 
-> TODO
+```json
+{
+  "mesage": "OK"
+}
+```
