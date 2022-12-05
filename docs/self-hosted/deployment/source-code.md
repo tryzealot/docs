@@ -229,6 +229,8 @@ $ apk --update --no-cache add build-base libxml2 libxslt git \
     tzdata
 ```
 
+Needs install `gcompat` if use `arm` architecture. or an exception will throws such like "[Error loading shared library](https://nokogiri.org/tutorials/installing_nokogiri.html#linux-musl-error-loading-shared-library)".
+
 ### Install dependencies
 
 ```bash

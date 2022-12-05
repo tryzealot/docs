@@ -12,6 +12,10 @@ Installation of Zealot is possible on most Linux environments, but not officiall
 
 ## Hardware requirements
 
+### Architecture
+
+Zealot can now run on either x86_64(amd86) or arm64(armv8/arrch) or armv7 based mostly Linux OS, for example: Debian, Ubuntu, CentOS, Arch Linux, Armbian etc.
+
 ### CPU
 
 CPU requirements are dependent on the usage and expected workload. Your workload is influenced by factors such as - but not limited to - how many apps and debug files are uploaded and parsed, how many apps are downloaded, how many web hooks are triggered, how often Apple developers sync test devices, and how much and how often backup schedule jobs are made.

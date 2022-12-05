@@ -122,13 +122,13 @@ $ rails db:migrate
 $ rails db:seed
 ```
 
-### 打开浏览器
+### 运行 Zealot 服务
 
 ```bash
 $ bin/dev
 ```
 
-Open brower `http://localhost:3000`
+运行起来后使用浏览器访问 `http://localhost:3000`
 
 ## 疑难杂症
 
@@ -142,29 +142,29 @@ aarch64-darwin/libwebp_ffi.bundle => aarch64-darwin/jpegdec.o
 
 ## Debian (Ubuntu)
 
-### System dependencies
+### 安装环境依赖
 
 ```bash
 $ apt update
 $ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev libtiff-dev libwebp-dev
 ```
 
-### Install dependencies
+### 安装依赖
 
 ```bash
 $ apt install -y redis postgresql-client node
 ```
 
-#### Setup Database and cache services
+#### 配置 Postgres 和 Redis
 
-Run postgresql and redis services
+运行 postgresql 和 redis 服务
 
 ```bash
 $ systemctl postgres start
 $ systemctl redis start
 ```
 
-You also need to create a default username in Postgresql：
+Postgresql 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data
@@ -182,14 +182,14 @@ $ npm install -g yarn
 
 #### ruby
 
-Can be installed by either asdf, rvm as ruby version manager.
+可以通过 asdf、rvm 任意一种方式安装。
 
 ```mdx-code-block
 <Tabs groupId="install-ruby">
 <TabItem value="asdf">
 ```
 
-Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
+一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby
 
 ```bash
 asdf plugin add ruby
@@ -219,30 +219,30 @@ $ [sudo] gem install bundler
 $ bundle install
 ```
 
-### Initialize database
+### 初始化数据库
 
 ```bash
 $ rails db:create
 $ rails db:migrate
 ```
 
-Initialize administrator account and sample application
+初始化管理员账号和应用样例
 
 ```bash
 $ rails db:seed
 ```
 
-### Launch services
+### 运行 Zealot 服务
 
 ```bash
 $ bin/dev
 ```
 
-Open brower `http://localhost:3000`
+运行起来后使用浏览器访问 `http://localhost:3000`
 
 ## Alpine Linux
 
-### System dependencies
+### 安装环境依赖
 
 ```bash
 $ apk --update --no-cache add build-base libxml2 libxslt git \
@@ -250,28 +250,30 @@ $ apk --update --no-cache add build-base libxml2 libxslt git \
     tzdata
 ```
 
-### Install dependencies
+如果是在 `arm` 架构安装还需要额外安装 `gcompat` glib 兼容层，否则会报 "[Error loading shared library](https://nokogiri.org/tutorials/installing_nokogiri.html#linux-musl-error-loading-shared-library)" 异常错误。
+
+### 安装依赖
 
 ```bash
 $ apk --update --no-cache redis postgresql node
 ```
 
-#### Setup Database and cache services
+#### 配置 Postgres 和 Redis
 
-Run postgresql and redis services
+运行 postgresql 和 redis 服务
 
 ```bash
 $ rc-service postgres start
 $ rc-service redis start
 ```
 
-You also need to create a default username in Postgresql：
+Postgresql 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data
 $ createuser --superuser zealot
 
-# If you are worried about the high privilege, you can only enable the create database privilege
+# 如果担心数据库用户权限，可仅开启创建数据库权限
 $ createuser --createdb zealot
 ```
 
@@ -283,14 +285,14 @@ $ npm install -g yarn
 
 #### ruby
 
-Can be installed by either asdf, rvm as ruby version manager.
+可以通过 asdf、rvm 任意一种方式安装。
 
 ```mdx-code-block
 <Tabs groupId="install-ruby">
 <TabItem value="asdf">
 ```
 
-Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
+一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby
 
 ```bash
 asdf plugin add ruby
@@ -320,23 +322,23 @@ $ [sudo] gem install bundler
 $ bundle install
 ```
 
-### Initialize database
+### 初始化数据库
 
 ```bash
 $ rails db:create
 $ rails db:migrate
 ```
 
-Initialize administrator account and sample application
+初始化管理员账号和应用样例
 
 ```bash
 $ rails db:seed
 ```
 
-### Launch services
+### 运行 Zealot 服务
 
 ```bash
 $ bin/dev
 ```
 
-Open brower `http://localhost:3000`
+运行起来后使用浏览器访问 `http://localhost:3000`
