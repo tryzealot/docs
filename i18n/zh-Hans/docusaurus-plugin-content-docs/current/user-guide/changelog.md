@@ -8,6 +8,18 @@
 
 :::
 
+#### 修复
+
+- `Web` 捕获创建应用渠道名称为空问题 [#968](https://github.com/tryzealot/zealot/issues/968) 感谢 [congpeijun](https://github.com/congpeijun)
+
+#### 新增
+
+- `Docker` 支持 arm64/v8 及 armv7 镜像 [#970](https://github.com/tryzealot/zealot/pull/970)
+
+#### 变更
+
+- `API` 更新调试文件返回数据结构并修改状态码从 204 改为 200
+
 ## 4.5.3 (2022-11-22)
 
 详细[代码变更记录][4.5.3]
