@@ -218,6 +218,14 @@ $ [sudo] gem install bundler
 $ bundle install
 ```
 
+### yarn
+
+安装前端第三方类库
+
+```bash
+$ yarn install
+```
+
 ### 初始化数据库
 
 确保连接数据库信息没有问题，后将会创建数据库表并创建表结构
@@ -227,7 +235,7 @@ $ rails db:create
 $ rails db:migrate
 ```
 
-配置连接数据库可通过[环境变量](/docs/self-hosted/configuration/environment-variables)或更改 `config/database.yml` 文件。
+配置数据库连接参数可通过[环境变量](/docs/self-hosted/configuration/environment-variables)或更改 `config/database.yml` 文件。
 
 ### 初始化预制数据
 

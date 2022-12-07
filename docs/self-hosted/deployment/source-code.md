@@ -194,6 +194,14 @@ $ [sudo] gem install bundler
 $ bundle install
 ```
 
+### yarn
+
+Install javascript packages:
+
+```bash
+$ yarn install
+```
+
 ### Initialize database
 
 Make sure there are no problems with the connection database information, then the database tables will be created and the table structure will be created:
