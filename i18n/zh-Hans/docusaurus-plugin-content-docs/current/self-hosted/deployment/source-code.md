@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 如下整理了不同操作系统的本地部署开发教程。
 
-## macOS
+## 准备部署环境
 
-### 提前准备
+### macOS
 
 #### 安装 homebrew
 
@@ -31,7 +31,7 @@ $ xcode-select --install
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### 安装依赖
+#### 安装依赖
 
 之后开始安装环境依赖
 
@@ -70,69 +70,11 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
-
-可以通过 asdf、rvm 任意一种方式安装。
-
-```mdx-code-block
-<Tabs groupId="install-ruby">
-<TabItem value="asdf">
-```
-
-一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby:
-
-```bash
-asdf plugin add ruby
-asdf install ruby 3.0.0
-asdf global ruby 3.0.0
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="rvm">
-```
-
-```bash
-$ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
-```
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
-
-#### bundler
-
-```bash
-$ [sudo] gem install bundler
-$ bundle install
-```
-
-### 初始化数据库
-
-```bash
-$ rails db:create
-$ rails db:migrate
-```
-
-初始化管理员账号和应用样例
-
-```bash
-$ rails db:seed
-```
-
-### 运行 Zealot 服务
-
-```bash
-$ bin/dev
-```
-
 运行起来后使用浏览器访问 `http://localhost:3000`
 
-## 疑难杂症
+#### 疑难杂症
 
-### M1 芯片 MacOS 问题
+##### M1 芯片 MacOS 问题
 
 ```
 aarch64-darwin/libwebp_ffi.bundle => aarch64-darwin/jpegdec.o
@@ -140,16 +82,16 @@ aarch64-darwin/libwebp_ffi.bundle => aarch64-darwin/jpegdec.o
 
 使用 `bundle install` 会遇到如上问题这个是因为 homebrew 安装 webp 依赖之后编译路径无法被找到，上面有解决办法。
 
-## Debian (Ubuntu)
+### Debian (Ubuntu)
 
-### 安装环境依赖
+#### 安装环境依赖
 
 ```bash
 $ apt update
 $ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev libtiff-dev libwebp-dev
 ```
 
-### 安装依赖
+#### 安装依赖
 
 ```bash
 $ apt install -y redis postgresql-client node
@@ -180,69 +122,9 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
+### Alpine Linux
 
-可以通过 asdf、rvm 任意一种方式安装。
-
-```mdx-code-block
-<Tabs groupId="install-ruby">
-<TabItem value="asdf">
-```
-
-一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby
-
-```bash
-asdf plugin add ruby
-asdf install ruby 3.0.0
-asdf global ruby 3.0.0
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="rvm">
-```
-
-```bash
-$ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
-```
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
-
-#### bundler
-
-```bash
-$ [sudo] gem install bundler
-$ bundle install
-```
-
-### 初始化数据库
-
-```bash
-$ rails db:create
-$ rails db:migrate
-```
-
-初始化管理员账号和应用样例
-
-```bash
-$ rails db:seed
-```
-
-### 运行 Zealot 服务
-
-```bash
-$ bin/dev
-```
-
-运行起来后使用浏览器访问 `http://localhost:3000`
-
-## Alpine Linux
-
-### 安装环境依赖
+#### 安装环境依赖
 
 ```bash
 $ apk --update --no-cache add build-base libxml2 libxslt git \
@@ -252,7 +134,7 @@ $ apk --update --no-cache add build-base libxml2 libxslt git \
 
 如果是在 `arm` 架构安装还需要额外安装 `gcompat` glib 兼容层，否则会报 "[Error loading shared library](https://nokogiri.org/tutorials/installing_nokogiri.html#linux-musl-error-loading-shared-library)" 异常错误。
 
-### 安装依赖
+#### 安装依赖
 
 ```bash
 $ apk --update --no-cache redis postgresql node
@@ -283,7 +165,7 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
+## 安装 Ruby
 
 可以通过 asdf、rvm 任意一种方式安装。
 
@@ -292,7 +174,7 @@ $ npm install -g yarn
 <TabItem value="asdf">
 ```
 
-一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby
+一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby：
 
 ```bash
 asdf plugin add ruby
@@ -305,6 +187,8 @@ asdf global ruby 3.0.0
 <TabItem value="rvm">
 ```
 
+如下命令是先安装 rvm 到当前系统的用户后安装 Ruby 3.0 版本：
+
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
 $ rvm install 3.0 --disable-binary
@@ -315,7 +199,19 @@ $ rvm install 3.0 --disable-binary
 </Tabs>
 ```
 
-#### bundler
+## 克隆源代码
+
+```bash
+git clone https://github.com/tryzealot/zealot.git
+```
+
+## 初始化
+
+以下步骤均需要在 zealot 根目录执行。
+
+### bundler
+
+安装 Ruby gems 第三方类库
 
 ```bash
 $ [sudo] gem install bundler
@@ -324,10 +220,16 @@ $ bundle install
 
 ### 初始化数据库
 
+确保连接数据库信息没有问题，后将会创建数据库表并创建表结构
+
 ```bash
 $ rails db:create
 $ rails db:migrate
 ```
+
+配置连接数据库可通过[环境变量](/docs/self-hosted/configuration/environment-variables)或更改 `config/database.yml` 文件。
+
+### 初始化预制数据
 
 初始化管理员账号和应用样例
 
@@ -341,4 +243,4 @@ $ rails db:seed
 $ bin/dev
 ```
 
-运行起来后使用浏览器访问 `http://localhost:3000`
+打开浏览器访问 `http://localhost:3000`

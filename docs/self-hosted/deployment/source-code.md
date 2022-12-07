@@ -11,9 +11,9 @@ import TabItem from '@theme/TabItem';
 
 The following is a tutorial on local deployment development for different operating systems.
 
-## macOS
+## Prepare dependencies
 
-### System dependencies
+### macOS
 
 #### Install homebrew
 
@@ -29,7 +29,7 @@ Then install Homebrew, the package management tool for macOS
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### Install dependencies
+#### Install dependencies
 
 ```bash
 $ brew install redis postgresql webp imagemagick node git
@@ -59,76 +59,17 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
 
-Can be installed by either asdf, rvm as ruby version manager.
+### Debian (Ubuntu)
 
-```mdx-code-block
-<Tabs groupId="install-ruby">
-<TabItem value="asdf">
-```
-
-Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
-
-```bash
-asdf plugin add ruby
-asdf install ruby 3.0.0
-asdf global ruby 3.0.0
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="rvm">
-```
-
-```bash
-$ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
-```
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
-
-#### bundler
-
-```bash
-$ [sudo] gem install bundler
-$ bundle install
-```
-
-### Initialize database
-
-```bash
-$ rails db:create
-$ rails db:migrate
-```
-
-Initialize administrator account and sample application
-
-```bash
-$ rails db:seed
-```
-
-### Launch services
-
-```bash
-$ bin/dev
-```
-
-Open brower `http://localhost:3000`
-
-## Debian (Ubuntu)
-
-### System dependencies
+#### System dependencies
 
 ```bash
 $ apt update
 $ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev libtiff-dev libwebp-dev
 ```
 
-### Install dependencies
+#### Install dependencies
 
 ```bash
 $ apt install -y redis postgresql-client node
@@ -159,69 +100,9 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
+### Alpine Linux
 
-Can be installed by either asdf, rvm as ruby version manager.
-
-```mdx-code-block
-<Tabs groupId="install-ruby">
-<TabItem value="asdf">
-```
-
-Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
-
-```bash
-asdf plugin add ruby
-asdf install ruby 3.0.0
-asdf global ruby 3.0.0
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="rvm">
-```
-
-```bash
-$ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
-```
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
-
-#### bundler
-
-```bash
-$ [sudo] gem install bundler
-$ bundle install
-```
-
-### Initialize database
-
-```bash
-$ rails db:create
-$ rails db:migrate
-```
-
-Initialize administrator account and sample application
-
-```bash
-$ rails db:seed
-```
-
-### Launch services
-
-```bash
-$ bin/dev
-```
-
-Open brower `http://localhost:3000`
-
-## Alpine Linux
-
-### System dependencies
+#### System dependencies
 
 ```bash
 $ apk --update --no-cache add build-base libxml2 libxslt git \
@@ -231,7 +112,7 @@ $ apk --update --no-cache add build-base libxml2 libxslt git \
 
 Needs install `gcompat` if use `arm` architecture. or an exception will throws such like "[Error loading shared library](https://nokogiri.org/tutorials/installing_nokogiri.html#linux-musl-error-loading-shared-library)".
 
-### Install dependencies
+#### Install dependencies
 
 ```bash
 $ apk --update --no-cache redis postgresql node
@@ -262,7 +143,7 @@ $ createuser --createdb zealot
 $ npm install -g yarn
 ```
 
-#### ruby
+## Install Ruby
 
 Can be installed by either asdf, rvm as ruby version manager.
 
@@ -294,7 +175,19 @@ $ rvm install 3.0 --disable-binary
 </Tabs>
 ```
 
-#### bundler
+## Fetch source code
+
+```bash
+git clone https://github.com/tryzealot/zealot.git
+```
+
+## Initialize Zealot
+
+All the following steps need to be performed in the zealot root directory.
+
+### bundler
+
+Install Ruby gems
 
 ```bash
 $ [sudo] gem install bundler
@@ -303,10 +196,16 @@ $ bundle install
 
 ### Initialize database
 
+Make sure there are no problems with the connection database information, then the database tables will be created and the table structure will be created:
+
 ```bash
 $ rails db:create
 $ rails db:migrate
 ```
+
+Configuring the connection database can be done via [environment variables](/docs/self-hosted/configuration/environment-variables) or by changing the `config/database.yml` file.
+
+### Initialize default account and demo data
 
 Initialize administrator account and sample application
 
