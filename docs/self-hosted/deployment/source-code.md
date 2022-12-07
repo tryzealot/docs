@@ -115,7 +115,7 @@ Needs install `gcompat` if use `arm` architecture. or an exception will throws s
 #### Install dependencies
 
 ```bash
-$ apk --update --no-cache redis postgresql node
+$ apk --update --no-cache redis postgresql
 ```
 
 #### Setup Database and cache services
@@ -135,12 +135,6 @@ $ createuser --superuser zealot
 
 # If you are worried about the high privilege, you can only enable the create database privilege
 $ createuser --createdb zealot
-```
-
-#### yarn
-
-```bash
-$ npm install -g yarn
 ```
 
 ## Install Ruby
