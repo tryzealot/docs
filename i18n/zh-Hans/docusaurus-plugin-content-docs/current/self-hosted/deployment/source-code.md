@@ -178,8 +178,8 @@ $ npm install -g yarn
 
 ```bash
 asdf plugin add ruby
-asdf install ruby 3.0.0
-asdf global ruby 3.0.0
+asdf install ruby 3.0.4
+asdf global ruby 3.0.4
 ```
 
 ```mdx-code-block
