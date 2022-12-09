@@ -22,5 +22,9 @@
   "item.label.Changelog": {
     "message": "变更日志",
     "description": "Navbar item with label Changelog"
+  },
+  "item.label.Contributing Guide": {
+    "message": "贡献者指南",
+    "description": "Navbar item with label Contributing Guide"
   }
 }

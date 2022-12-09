@@ -14,6 +14,7 @@
 const selfHosted = require("./docs/self-hosted/sidebars");
 const userGuide = require("./docs/user-guide/sidebars");
 const developerGuide = require("./docs/developer-guide/sidebars");
+const contributingGuide = require("./docs/contributing-guide/sidebars");
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -36,4 +37,5 @@ module.exports = {
   selfHosted,
   userGuide,
   developerGuide,
+  contributingGuide
 };

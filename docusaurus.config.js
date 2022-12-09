@@ -97,6 +97,12 @@ const config = {
           },
           {
             type: 'doc',
+            docId: 'contributing-guide/index',
+            position: 'left',
+            label: 'Contributing Guide',
+          },
+          {
+            type: 'doc',
             docId: 'user-guide/changelog',
             position: 'left',
             label: 'Changelog',
