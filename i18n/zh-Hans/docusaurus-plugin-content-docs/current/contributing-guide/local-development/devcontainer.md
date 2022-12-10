@@ -9,7 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-[Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) (Developing inside a Container) 是 Visual Studio Code 最佳的 Docker 容器开发方案。
+[Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) (Developing inside a Container) 是 Visual Studio Code 使用 Docker 作为开发环境能够实现在本地无需配置开发环境在容器开发有近乎本地体验的解决方案。
 
 ![VSCode devcontainer](https://code.visualstudio.com/assets/docs/devcontainers/containers/architecture-containers.png)
 
@@ -69,13 +69,23 @@ Visual Studio Code 是一个跨平台运行的免费的代码编辑器，根据�
 
 ![VSCode extension](/img/vscode-install-remote-containers.png)
 
-## 获取 Zealot codespace
+## 获取 Zealot Codespace
 
-Zealot codespace 同样存放在 Zealot 项目 `.devcontailer` 目录，你需要先克隆项目源代码。
+Zealot Codespace 同样存放在 Zealot 项目 [.devcontailer](https://github.com/tryzealot/zealot/tree/develop/.devcontainer) 目录，你需要先克隆项目源代码。
 
 ```bash
 git clone https://github.com/tryzealot/zealot.git
 ```
+
+Codespace 包含了一系列文件：
+
+文件名 | 说明
+---|---
+`devcontainer.json` | VSCode devcontainer 配置文件
+`Dockerfile.base` | 镜像核心，变更会自动推送到不同 registry 仓库
+`Dockerfile` | 间接镜像，主要是节省编译时间
+`docker-compose.yml` | 项目服务依赖
+`create-db-user.sql` | 用于初始化 Postgres 默认用户及权限
 
 ## 在容器内打开项目
 
@@ -86,6 +96,22 @@ git clone https://github.com/tryzealot/zealot.git
 首次执行会拉取 Zealot Codespace 镜像并开始构建，过程会持续一段时间期间可点击 **Starting Dev Container (show log)** 查看构建实时日志。
 
 ![VSCode Command Palette](/img/vscode-devcontainer-log.png)
+
+构建完成并启动完毕会加载项目文件和 zsh 终端，通过日志可以看到如下信息：
+
+```
+[7293 ms] Start: Run in container: cat /proc/344/environ
+[9836 ms] Port forwarding connection from 53148 > 43379 > 43379 in the container.
+[9836 ms] Start: Run in container: /home/vscode/.vscode-server/bin/5235c6bb189b60b01b1f49062f4ffa42384f8c91/node -e
+[9981 ms] Port forwarding 53148 > 43379 > 43379 stderr: Connection established
+[14988 ms] Port forwarding 53148 > 43379 > 43379 stderr: Remote close
+[14999 ms] Port forwarding 53148 > 43379 > 43379 terminated with code 0 and signal null.
+[29221 ms] Port forwarding 53148 > 43379 > 43379: Local close
+```
+
+在宿主机也能看到 Docker 启动了 docker-compose 在运行：
+
+![Docker-Compose containers](/img/vscode-devcontainer-docker-containers.png)
 
 ## 启动项目
 

@@ -5,7 +5,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-[Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) (Developing inside a Container) is the best development solution in Visual Studio Code for Docker container.
+[The Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) lets you use a Docker container as a full-featured development environment.
 
 ![VSCode devcontainer](https://code.visualstudio.com/assets/docs/devcontainers/containers/architecture-containers.png)
 
@@ -67,13 +67,23 @@ Install the [Remote Container extension](https://marketplace.visualstudio.com/it
 
 ![VSCode extension](/img/vscode-install-remote-containers.png)
 
-## Fetch Zealot codesoace
+## Fetch Zealot Codesoace
 
-Zealot codespace was in the `.devcontailer` folder of Zealot project, so you need clone the source code.
+Zealot Codespace was in the `.devcontailer` folder of Zealot project, so you need clone the source code.
 
 ```bash
 git clone https://github.com/tryzealot/zealot.git
 ```
+
+Explan these files in Codespace:
+
+File | Description
+---|---
+`devcontainer.json` | VSCode devcontainer config
+`Dockerfile.base` | Base Dockerfile, auto push multi registry servers after changes
+`Dockerfile` | Speed up build time, depends on above image.
+`docker-compose.yml` | All services of Zealot
+`create-db-user.sql` | Create user and role for Zealot
 
 ## Open the project in a container
 
@@ -84,6 +94,23 @@ Start Visual Studio Code, run the `Dev Containers: Open Folder in Container...` 
 Click the **Starting Dev Container (show log)** to review zealot codespace build real time logging messages.
 
 ![VSCode Command Palette](/img/vscode-devcontainer-log.png)
+
+
+When finish the task, project files will load in file explorer and the zsh terminal. Access log outputs messages:
+
+```
+[7293 ms] Start: Run in container: cat /proc/344/environ
+[9836 ms] Port forwarding connection from 53148 > 43379 > 43379 in the container.
+[9836 ms] Start: Run in container: /home/vscode/.vscode-server/bin/5235c6bb189b60b01b1f49062f4ffa42384f8c91/node -e
+[9981 ms] Port forwarding 53148 > 43379 > 43379 stderr: Connection established
+[14988 ms] Port forwarding 53148 > 43379 > 43379 stderr: Remote close
+[14999 ms] Port forwarding 53148 > 43379 > 43379 terminated with code 0 and signal null.
+[29221 ms] Port forwarding 53148 > 43379 > 43379: Local close
+```
+
+In host Docker containers:
+
+![Docker-Compose containers](/img/vscode-devcontainer-docker-containers.png)
 
 ## Start the project
 
