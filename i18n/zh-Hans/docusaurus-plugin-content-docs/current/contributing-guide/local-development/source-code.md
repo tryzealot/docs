@@ -177,9 +177,17 @@ $ npm install -g yarn
 一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby：
 
 ```bash
+# 开启 Ruby 3.2.0 YJIT 新特性需要安装 rust 1.58+
+# 可选安装:
+asdf plugin add rust
+asdf install rust latest
+asdf global rust latest
+export RUBY_CONFIGURE_OPTS=--enable-yjit
+
+# 必须安装
 asdf plugin add ruby
-asdf install ruby 3.0.4
-asdf global ruby 3.0.4
+asdf install ruby 3.2.0
+asdf global ruby 3.2.0
 ```
 
 ```mdx-code-block
@@ -191,7 +199,7 @@ asdf global ruby 3.0.4
 
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
+$ rvm install 3.2.0 --disable-binary
 ```
 
 ```mdx-code-block

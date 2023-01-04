@@ -149,9 +149,17 @@ Can be installed by either asdf, rvm as ruby version manager.
 Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
 
 ```bash
+# Enable Ruby 3.2.0 YJIT need install rust 1.58+
+# Optinal install:
+asdf plugin add rust
+asdf install rust latest
+asdf global rust latest
+export RUBY_CONFIGURE_OPTS=--enable-yjit
+
+# Required:
 asdf plugin add ruby
-asdf install ruby 3.0.4
-asdf global ruby 3.0.4
+asdf install ruby 3.2.0
+asdf global ruby 3.2.0
 ```
 
 ```mdx-code-block
@@ -161,7 +169,7 @@ asdf global ruby 3.0.4
 
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.0 --disable-binary
+$ rvm install 3.2.0 --disable-binary
 ```
 
 ```mdx-code-block

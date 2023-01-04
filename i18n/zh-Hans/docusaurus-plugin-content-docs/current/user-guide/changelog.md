@@ -11,6 +11,7 @@
 #### 修复
 
 - `Web` 捕获创建应用渠道名称为空问题 [#968](https://github.com/tryzealot/zealot/issues/968) 感谢 [congpeijun](https://github.com/congpeijun)
+- `Web` 备份文件在磁盘不存在的逻辑完善 [#995](https://github.com/tryzealot/zealot/issues/995)
 
 #### 新增
 
@@ -18,6 +19,7 @@
 
 #### 变更
 
+- `Web` 运行时环境升级至 Ruby 3.2，devcontainer 及容器默认开启 YJIT 特效 [#1011](https://github.com/tryzealot/zealot/pull/1011)
 - `API` 更新调试文件返回数据结构并修改状态码从 204 改为 200
 
 ## 4.5.3 (2022-11-22)
