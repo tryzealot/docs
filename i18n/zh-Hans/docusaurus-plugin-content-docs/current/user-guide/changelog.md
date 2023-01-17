@@ -8,6 +8,10 @@
 
 :::
 
+## 4.6.0 (2023-01-17)
+
+运行环境升级至 Ruby 3.2 并支持 arm64 平台。详细[代码变更记录][4.6.0]
+
 #### 修复
 
 - `Web` 捕获创建应用渠道名称为空问题 [#968](https://github.com/tryzealot/zealot/issues/968) 感谢 [congpeijun](https://github.com/congpeijun)
@@ -16,10 +20,11 @@
 #### 新增
 
 - `Docker` 支持 arm64/v8 及 armv7 镜像 [#970](https://github.com/tryzealot/zealot/pull/970)
+- `Web` 采用新 50x 错误页面
 
 #### 变更
 
-- `Web` 运行时环境升级至 Ruby 3.2，devcontainer 及容器默认开启 YJIT 特效 [#1011](https://github.com/tryzealot/zealot/pull/1011)
+- `Web` 运行时环境升级至 Ruby 3.2，devcontainer 及容器默认开启 YJIT 特性 [#1011](https://github.com/tryzealot/zealot/pull/1011)
 - `API` 更新调试文件返回数据结构并修改状态码从 204 改为 200
 
 ## 4.5.3 (2022-11-22)
