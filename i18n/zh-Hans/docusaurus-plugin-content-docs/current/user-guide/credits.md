@@ -4,7 +4,11 @@
 
 ## 贡献成员
 
-项目代码贡献名单请参见 [Github 页面](https://github.com/tryzealot/zealot/graphs/contributors)，感谢你们让 Zealot 变得更有用！
+感谢你们让 Zealot 变得更有用！
+
+<a href="https://github.com/tryzealot/zealot/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=tryzealot/zealot" />
+</a>
 
 ## 项目名
 

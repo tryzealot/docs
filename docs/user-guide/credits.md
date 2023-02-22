@@ -2,7 +2,11 @@
 
 ## Contributions
 
-See the [Github page](https://github.com/tryzealot/zealot/graphs/contributors) for a list of project code contributions, and thank you for making Zealot more useful!
+Thank you for making Zealot more useful!
+
+<a href="https://github.com/tryzealot/zealot/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=tryzealot/zealot" />
+</a>
 
 ## Project name
 
