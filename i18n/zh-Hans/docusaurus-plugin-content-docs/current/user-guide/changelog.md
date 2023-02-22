@@ -24,7 +24,7 @@
 
 #### 变更
 
-- `Web` 运行时环境升级至 Ruby 3.2，devcontainer 及容器默认开启 YJIT 特性 [#1011](https://github.com/tryzealot/zealot/pull/1011)
+- `Web` 开发环境 Ruby 升级至 3.2 版本，devcontainer 及容器默认开启 YJIT 特性 [#1011](https://github.com/tryzealot/zealot/pull/1011)
 - `API` 更新调试文件返回数据结构并修改状态码从 204 改为 200
 
 ## 4.5.3 (2022-11-22)
@@ -446,7 +446,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.5.3...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.6.0...HEAD
+[4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3
 [4.5.2]: https://github.com/tryzealot/zealot/compare/4.5.1...4.5.2
 [4.5.1]: https://github.com/tryzealot/zealot/compare/4.5.0...4.5.1
