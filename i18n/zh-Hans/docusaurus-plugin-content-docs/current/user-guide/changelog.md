@@ -8,6 +8,18 @@
 
 :::
 
+## 4.7.0 (2023-?-?)
+
+Redis 最低版本升级只 6.2+
+
+#### 变更
+
+- `Docker` Redis 最低版本升级只 6.2+，默认使用 7 版本。
+
+#### 新增
+
+- `Web` 应用类型新增 “新上传版本提示窗” 控制开关 [#1058](https://github.com/tryzealot/zealot/pull/1058) 感谢 [softwind0214](https://github.com/softwind0214)
+
 ## 4.6.0 (2023-01-17)
 
 运行环境升级至 Ruby 3.2 并支持 arm64 平台。详细[代码变更记录][4.6.0]
@@ -446,7 +458,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.5.3...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.6.0...HEAD
+[4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3
 [4.5.2]: https://github.com/tryzealot/zealot/compare/4.5.1...4.5.2
 [4.5.1]: https://github.com/tryzealot/zealot/compare/4.5.0...4.5.1

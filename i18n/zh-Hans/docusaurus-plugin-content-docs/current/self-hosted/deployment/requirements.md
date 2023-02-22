@@ -48,7 +48,7 @@ CPU 数量取决于 Zealot 使用的资源和任务量，工作量受（包括�
 
 Zealot 使用 [esbuild](https://esbuild.github.io/) 和 [sass](https://sass-lang.com/) 编译前端资源。
 
-推荐使用 Node 14.x+ 版本。
+推荐使用 Node 14.x 以上版本。
 
 可以在终端应用通过运行 `node -v` 命令查看 node 的版本。如果运行的版本低于 `v8.0` 你需要更新到推荐的版本。你可在[官方网站](https://nodejs.org/en/download/)查看更多安装或升级教程。
 
@@ -66,7 +66,7 @@ PostgreSQL 预留_至少_ 5-10 GB 空间，更多的空间意味着可以存储�
 
 Zealot 后台异步任务和定时任务依赖于 Redis 做数据的存储和统计使用，存储空间依赖很小，50MB 足矣。
 
-Redis 版本推荐 5.0+
+Redis 最低支持版本 6.2+，推荐 7.x 版本
 
 ## Sidekiq
 

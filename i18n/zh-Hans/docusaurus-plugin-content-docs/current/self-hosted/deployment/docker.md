@@ -4,14 +4,9 @@ sidebar_label: "Docker"
 
 # Docker 部署 Zealot 指南
 
-> :bell: 强烈建议安装首选使用 [Docker](https://www.docker.io/) 安装部署 Zealot，除非你对本服务的技术栈特别熟悉。
+> :bell: 强烈建议安装首选使用 [Docker](https://www.docker.io/) 容器方式安装部署 Zealot。
 > 鉴于 iOS 使用下载服务依赖开启 SSL/TLS 证书，建议使用经过授权的证书服务，比如 [Let's Encrypt](https://letsencrypt.org/)，
 > 如果使用自签名证书需要每个 iOS 设备在下载安装应用前必须安装自签名证书才行。
-
-## 为什么仅支持 Docker 部署？
-
-部署基于 Ruby on Rails 应用是异常复杂，即使你可以在部署服务器安装了 Ruby、ImageMagick、 Node、Postgres 和 Redis，
-你仍然需要操心如何运行 Zealot 服务和 Sidekiq 异步任务服务。项目提供的 Docker 镜像把这些烦人的事情都放到了镜像通过一键部署安装脚本完成初始化工作。
 
 ## 一键安装脚本
 
