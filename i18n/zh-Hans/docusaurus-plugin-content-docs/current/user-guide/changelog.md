@@ -36,7 +36,7 @@ Redis 最低版本升级只 6.2+
 
 #### 变更
 
-- `Web` 运行时环境升级至 Ruby 3.2，devcontainer 及容器默认开启 YJIT 特性 [#1011](https://github.com/tryzealot/zealot/pull/1011)
+- `Web` 开发环境 Ruby 升级至 3.2 版本，devcontainer 及容器默认开启 YJIT 特性 [#1011](https://github.com/tryzealot/zealot/pull/1011)
 - `API` 更新调试文件返回数据结构并修改状态码从 204 改为 200
 
 ## 4.5.3 (2022-11-22)
