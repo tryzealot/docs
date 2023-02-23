@@ -12,12 +12,14 @@
 
 #### 变更
 
-- `Docker` **重大变更** Redis 最低版本依赖从原来的 5.x 升级至 6.2+，建议使用 7.x 主版本，升级时请手动修改。
+- `Docker` **重大变更** Redis 最低版本依赖从原来的 5.x 升级至 6.2+，建议使用 7.x 主版本，升级时请手动修改。详细[代码变更记录][4.7.0]
 
 #### 新增
 
 - `Web` 应用类型新增 “新上传版本提示窗” 控制开关 [#1058](https://github.com/tryzealot/zealot/pull/1058) 感谢 [softwind0214](https://github.com/softwind0214)
 - `Web` 应用列表页面图标可点击跳转应用详情页
+- `Web` 环境信息新增依赖服务的版本号显示
+- `Web` 版本号增加对 nightly 构建的版本的显示
 
 #### 修复
 
@@ -465,7 +467,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.6.0...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.7.0...HEAD
+[4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3
 [4.5.2]: https://github.com/tryzealot/zealot/compare/4.5.1...4.5.2
