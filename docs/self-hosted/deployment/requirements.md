@@ -48,7 +48,7 @@ You must use the standard MRI implementation of Ruby. Zealot needs several Gems 
 
 Zealot uses [esbuild](https://esbuild.github.io/) and [sass](https://sass-lang.com/) to compile frontend assets.
 
-We recommend Node 14.x, as it's faster.
+We recommend Node 14.x or higher version, as it's faster.
 
 You can check which version you're running with `node -v`. If you're running a version older than `v8.0`,
 you need to update it to a newer version. You can find instructions to install from community maintained packages or compile from source at the [Node.js website](https://nodejs.org/en/download/).
@@ -69,7 +69,7 @@ We highly recommend using the latest stable PostgreSQL versions as these were us
 Redis stores the background task queue and various Zealot configurations cached.
 The storage requirements for Redis are minimal, You can start with 50MB and scale up as required.
 
-Redis version 5.0 or higher is recommended
+Redis version 6.2 or higher version is recommended
 
 ## Sidekiq
 
