@@ -8,6 +8,20 @@
 
 :::
 
+## 4.7.1 (2023-03-10)
+
+支持最新 Android aapt2 构建工具生成的 aab 应用解析，详细[代码变更记录][4.7.1]
+
+#### 修复
+
+- `Web` 升级最新 appt2 模型避免 aab 解析异常
+- `Web` 解析异常的重复处理
+
+#### 新增
+
+- `Web` Android 应用解包详情页增加应用类型
+- `Web` 应用渠道编辑后调整原先的页面
+
 ## 4.7.0 (2023-03-03)
 
 #### 变更
@@ -468,7 +482,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.7.0...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/4.7.1...HEAD
+[4.7.1]: https://github.com/tryzealot/zealot/compare/4.7.0...4.7.1
 [4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3
