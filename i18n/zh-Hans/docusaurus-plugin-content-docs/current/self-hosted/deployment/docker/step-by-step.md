@@ -13,8 +13,9 @@ sidebar_label: "详细步骤"
 
 ## 镜像仓库
 
-- Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot (**推荐**)
-- Docker Hub: https://hub.docker.com/r/tryzealot/zealot
+> Docker hub [取消了免费组织计划](https://web.docker.com/rs/790-SSB-375/images/privatereposfaq.pdf)，不再同步更新推送。
+
+Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot (**推荐**)
 
 ## 步骤解析
 
