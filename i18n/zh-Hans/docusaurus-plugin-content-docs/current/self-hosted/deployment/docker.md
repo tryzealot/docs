@@ -6,7 +6,7 @@ sidebar_label: "Docker"
 
 > :bell: 强烈建议安装首选使用 [Docker](https://www.docker.io/) 容器方式安装部署 Zealot。
 > 鉴于 iOS 使用下载服务依赖开启 SSL/TLS 证书，建议使用经过授权的证书服务，比如 [Let's Encrypt](https://letsencrypt.org/)，
-> 如果使用自签名证书需要每个 iOS 设备在下载安装应用前必须安装自签名证书才行。
+> 如果使用自签名证书需要每个 iOS 设备在下载安装应用前[必须安装自签名证书](https://support.apple.com/zh-cn/HT204477)才行。
 
 ## 一键安装脚本
 
