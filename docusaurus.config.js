@@ -178,7 +178,8 @@ const config = {
             line: 'This will error',
           },
         ],
-        theme: require('prism-react-renderer/themes/dracula'),
+        theme: require('prism-react-renderer/themes/github'),
+        darkTheme: require('prism-react-renderer/themes/duotoneDark'),
       },
       // announcementBar: {
       //   id: 'announcementBar-2',
