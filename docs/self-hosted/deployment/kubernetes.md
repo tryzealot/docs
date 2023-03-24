@@ -4,7 +4,7 @@ sidebar_label: "Kubernetes"
 
 # Deploy Zealot with Kubernetes guide
 
-Zealot support deployments using Kubernetes, but no `.yaml` config file is currently available.
+Zealot support deployments using Kubernetes, but only `.yaml` config files are available currently.
 
 ## Check list
 

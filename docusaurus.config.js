@@ -185,8 +185,8 @@ const config = {
       //   id: 'announcementBar-2',
       //   backgroundColor: 'var(--ifm-color-primary)',
       //   textColor: 'var(--ifm-heading-color)',
-      //   content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a>`,
-      //   isCloseable: false
+      //   content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a> and vote on <a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/zealot">ProductHunt</a>`,
+      //   isCloseable: true
       // },
     }),
 };
