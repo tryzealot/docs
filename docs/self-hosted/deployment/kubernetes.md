@@ -74,6 +74,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: zealot-uploads
+  namespace: zealot
   labels:
     app: zealot
 spec:
@@ -87,6 +88,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: zealot-backup
+  namespace: zealot
   labels:
     app: zealot
 spec:
@@ -124,10 +126,12 @@ spec:
           # imagePullPolicy: Always
           ports:
             - containerPort: 80
+              protocol: TCP
+              name: http
           envFrom:
             - configMapRef:
               name: zealot-env
-            - secretKeyRef:
+            - secretRef:
               name: zealot-secrets
           volumeMounts:
             - mountPath: /app/public/uploads
