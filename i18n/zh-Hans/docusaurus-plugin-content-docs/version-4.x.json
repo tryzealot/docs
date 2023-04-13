@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "开发版本 🚧",
+    "message": "4.x",
     "description": "The label for version current"
   },
   "sidebar.selfHosted.category.Deployment": {

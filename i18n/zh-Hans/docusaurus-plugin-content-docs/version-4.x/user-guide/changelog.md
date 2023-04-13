@@ -8,23 +8,6 @@
 
 :::
 
-#### 新增
-
-- `Web/API` 支持泛应用托管（支持解析会自动解析，不支持解析会跳过），默认新增 Windows 和 Linux 平台 [#1121](https://github.com/tryzealot/zealot/pull/1121)
-- `Web/API` 新增 Windows 应用托管（上传和元信息解析展示） [#1124](https://github.com/tryzealot/zealot/pull/1124)
-- `Web` 全新调试文件页面并新增多 dSYM 调试文件解析和托管 [#1127](https://github.com/tryzealot/zealot/pull/1127) [#1124](https://github.com/tryzealot/zealot/pull/1124) [#961](https://github.com/tryzealot/zealot/issues/961)
-- `Web` 支持 Android 应用解包 v1, v2, v3 签名信息 [#1124](https://github.com/tryzealot/zealot/pull/1124)
-- `Web` 强化 Android 和 iOS 应用解包的 X509 证书信息 [#1124](https://github.com/tryzealot/zealot/pull/1124)
-- `Web` 新增 “重新解析” 功能更新老结构的调试文件元信息
-- `Web` 上传应用版本的变更日志支持 markdown 格式
-- `Web` 设置页可配置全局 “每页返回最小” 和 “最大条目数”
-
-#### 修复
-
-- `Web` 修复解包应用无法删除问题
-- `Web` 部分页面的样式优化
-- `Web` 纠正英语语言包错误(en language i18n)
-
 ## 4.7.1 (2023-03-10)
 
 支持最新 Android aapt2 构建工具生成的 aab 应用解析，详细[代码变更记录][4.7.1]

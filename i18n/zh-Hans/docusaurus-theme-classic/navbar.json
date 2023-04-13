@@ -26,5 +26,9 @@
   "item.label.Contributing Guide": {
     "message": "贡献者指南",
     "description": "Navbar item with label Contributing Guide"
+  },
+  "logo.alt": {
+    "message": "Zealot Logo",
+    "description": "The alt text of navbar logo"
   }
 }
