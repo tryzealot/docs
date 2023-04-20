@@ -6,6 +6,8 @@
 
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
 
+:::
+
 #### Added
 
 - `Web`/`API` supports hosting of general applications (those that can be parsed automatically and those that cannot be parsed are skipped), and Windows and Linux platforms are added by default [#1121](https://github.com/tryzealot/zealot/pull/1121)
