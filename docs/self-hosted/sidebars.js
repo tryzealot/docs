@@ -28,9 +28,13 @@ module.exports = [
       },
       "self-hosted/deployment/kubernetes",
       "self-hosted/deployment/nomad",
-      "self-hosted/deployment/source-code",
-      "self-hosted/deployment/reverse-proxies"
+      "self-hosted/deployment/source-code"
     ],
+  },
+  {
+    type: 'doc',
+    label: "Reverse Proxies",
+    id: 'self-hosted/reverse-proxies',
   },
   {
     collapsible: false,

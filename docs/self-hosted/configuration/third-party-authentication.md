@@ -1,13 +1,14 @@
 # Third-party Authentication
 
-Avaiable services:
+Zealot supports authorized logins using supported third-party services, which can be currently configured via the following environment variables or in the settings page of the admin panel.
 
-Service Name | provider value
+Service | provider
 ---|---
 Feishu | `feishu`
 Gitlab | `gitlab`
 Google | `google_oauth2`
 LDAP | `ldap`
+OpenID Connect | `openid_connect`
 
 If the above services need to set the callback address please set it uniformly as follows
 
@@ -76,3 +77,33 @@ LDAP_PASSWORD=password
 LDAP_BASE="ou=People,dc=example,dc=com"
 LDAP_UID=uid
 ```
+
+## OpenID Connect
+
+Supports both auto-discovery mode and manual settings.
+
+### Auto-discovery
+
+Turning on auto-discovery mode will automatically fetch the `[OIDC_ISSUER_URL]/.well-known/openid-configuration` configuration.
+
+```bash
+OIDC_ENABLED=true
+OIDC_CLIENT_ID=
+OIDC_CLIENT_SECRET=
+OIDC_ISSUER_URL=https://oidc.example.com
+OIDC_DISCOVERY=true
+```
+
+### Manual
+
+```
+OIDC_ENABLED=true
+OIDC_CLIENT_ID=
+OIDC_CLIENT_SECRET=
+OIDC_ISSUER_URL=https://oidc.example.com
+OIDC_AUTH_URI=/authorize
+OIDC_TOKEN_URI=/token
+OIDC_USERINFO_URI=/userinfo
+```
+
+Above `OIDC_AUTH_URI`, `OIDC_TOKEN_URI`, `OIDC_USERINFO_URI` will use the default path as above if not set.

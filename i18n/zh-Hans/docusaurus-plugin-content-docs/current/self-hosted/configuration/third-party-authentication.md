@@ -1,13 +1,14 @@
 # 第三方登录
 
-目前已接入的第三方登录：
+Zealot 支持使用已经支持的第三方服务授权登录，当前可以通过如下的环境变量或者在管理员面板的设置页面配置。
 
-服务 | 标识符
+第三方服务 | 标识符
 ---|---
 飞书 | `feishu`
 Gitlab | `gitlab`
 Google | `google_oauth2`
 LDAP | `ldap`
+OpenID Connect | `openid_connect`
 
 如果以上服务需要设置回调地址的话请统一设置为：
 
@@ -15,7 +16,7 @@ LDAP | `ldap`
 http://zealot.com/users/auth/:provider/callback
 ```
 
-其中 `:provider` 是上面支持第三方服务的标识符，例如开启了飞书那就把 `:provider` 替换成 `feishu`。
+其中 `:provider` 是上面支持第三方服务的标识符，例如开启飞书那就把 `:provider` 替换成 `feishu`。
 
 ## 飞书
 
@@ -75,3 +76,33 @@ LDAP_PASSWORD=password
 LDAP_BASE="ou=People,dc=example,dc=com"
 LDAP_UID=uid
 ```
+
+## OpenID Connect
+
+支持开启自动发现模式和手动设置两种方式
+
+### 自动发现
+
+开启自动发现模式会自动获取 `[OIDC_ISSUER_URL]/.well-known/openid-configuration` 配置。
+
+```bash
+OIDC_ENABLED=true
+OIDC_CLIENT_ID=
+OIDC_CLIENT_SECRET=
+OIDC_ISSUER_URL=https://oidc.example.com
+OIDC_DISCOVERY=true
+```
+
+### 手动配置
+
+```
+OIDC_ENABLED=true
+OIDC_CLIENT_ID=
+OIDC_CLIENT_SECRET=
+OIDC_ISSUER_URL=https://oidc.example.com
+OIDC_AUTH_URI=/authorize
+OIDC_TOKEN_URI=/token
+OIDC_USERINFO_URI=/userinfo
+```
+
+以上 `OIDC_AUTH_URI`，`OIDC_TOKEN_URI`，`OIDC_USERINFO_URI` 未设置时会使用如上的默认路径。

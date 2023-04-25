@@ -1,7 +1,7 @@
 {
   "version.label": {
     "message": "4.x",
-    "description": "The label for version current"
+    "description": "The label for version 4.x"
   },
   "sidebar.selfHosted.category.Deployment": {
     "message": "部署",
@@ -82,5 +82,9 @@
   "sidebar.contributingGuide.doc.Getting Started": {
     "message": "准备开始",
     "description": "The label for the doc item Getting Started in sidebar contributingGuide, linking to the doc contributing-guide/index"
+  },
+  "sidebar.selfHosted.doc.Reverse Proxies": {
+    "message": "反向代理",
+    "description": "The label for the doc item Reverse Proxies in sidebar selfHosted, linking to the doc self-hosted/reverse-proxies"
   }
 }

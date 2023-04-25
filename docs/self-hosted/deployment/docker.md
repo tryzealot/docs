@@ -74,7 +74,7 @@ $ docker-compose up -d
 
 ### Reverse proxy controls SSL
 
-Check [Reverse Proxies Guide](/docs/self-hosted/deployment/reverse-proxies) page.
+Check [Reverse Proxies Guide](/docs/self-hosted/reverse-proxies) page.
 
 ### Self-signed untrust SSL
 
