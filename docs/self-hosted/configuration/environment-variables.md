@@ -140,7 +140,7 @@ ACTION_MAILER_DEFAULT_TO=you@gmail.com
 
 ## Disbale Cable request protection
 
-Experimental: I
+Experimental:
 
 ```bash
 ZEALOT_DISABLE_CABLE_REQUEST_PROTECTION=true
