@@ -36,6 +36,7 @@ Action | Guest[On/Off] | User | Developer | Administrator
 `Teardown`<br />Delete a teardown |  |  | ✓ | ✓
 `Admin`<br />View and manage users |  |  |  | ✓
 `Admin`<br />View and manage webhooks |  |  |  | ✓
+`Admin`<br />iew and manage apple keys |  |  |  | ✓
 `Admin`<br />View and manage settings |  |  |  | ✓
 `Admin`<br />View system informations |  |  |  | ✓
 `Admin`<br />View and manage background jobs|  |  |  | ✓
