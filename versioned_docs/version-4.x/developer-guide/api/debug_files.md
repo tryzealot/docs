@@ -28,9 +28,9 @@ POST /api/debug_files/upload
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| file | `File` | true | Zip 压缩文件后的调试文件 |
-| release_version | `String` | true | 发布版本号，iOS 类型可忽略该参数 |
-| build_version | `String` | true | 内部版本号，iOS 类型可忽略该参数 |
+| file | `File` | true | Arichved file by zip |
+| release_version | `String` | true | Release version, ignore this param if iOS app |
+| build_version | `String` | true | Build version, ignore this param if iOS app |
 
 ### Return body
 
@@ -71,14 +71,14 @@ POST /api/debug_files/download
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| release_version | `String` | true | 发布版本号，iOS 类型可忽略该参数 |
-| build_version | `String` | false | 内部版本号，iOS 类型可忽略该参数 |
-| order | `String` | false | 获取最新的方式，可选值有：<br />`version` = 最新版本 和 `upload_date` = 最新上传时间<br />**仅限接受 release_version 值为 `latest` 有效** |
+| release_version | `String` | true | Release version, ignore this param if iOS app |
+| build_version | `String` | false | Build version, ignore this param if iOS app |
+| order | `String` | false | Order by <br />`version` = latest version, `upload_date` = last uploaded date<br />**Vaild in release_version is `latest`** |
 
 ### Return body
 
-- 版本存在返回 200 状态码并返回 302 重定向到下载地址
-- 版本不存在返回 404 状态码和错误信息
+- Retun 200 status code if the version exists and redirect to the download address with a 302 status code.
+- return 404 status code if the version does not exist.
 
 ## List debug files
 
@@ -195,8 +195,8 @@ PUT /api/debug_files/:id
 | channel_key | `String` | true | Channel key |
 | id | `String` | true | ID |
 | file | `File` | true | a Zipped debug file |
-| release_version | `String` | true | 发布版本号，iOS 类型可忽略该参数 |
-| build_version | `String` | true | 内部版本号，iOS 类型可忽略该参数 |
+| release_version | `String` | true | Release version, ignore this param if iOS app |
+| build_version | `String` | true | Build version, ignore this param if iOS app |
 
 ### Return body
 

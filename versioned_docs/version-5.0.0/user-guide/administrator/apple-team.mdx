@@ -1,0 +1,44 @@
+---
+sidebar_label: "Apple Team"
+---
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Apple Team (Developer)
+
+One of the biggest challenges in distributing Ad-Hoc signed applications for iOS is the need to
+convey what a UDID is and how to obtain it to a large number of people who may not understand
+these concepts. After obtaining the UDID, it then needs to be provided to the developer,
+who must then re-sign the certificate, package it, and upload it for installation.
+
+Zealot can automatically obtain the UDID of Ad-Hoc applications.
+Although the UDIDs are usually accompanied by device names during registration,
+sometimes it is difficult to understand which device belongs to whom when presented with a
+list of UDIDs. To solve this problem, Zealot has tried several solutions. In the early days,
+the fastlane plugin zealotsyncdevice was used to synchronize the names and models of testing devices.
+With the release of the AppStoreConnect API, Zealot can now completely automate the process,
+greatly simplifying the registration process and allowing testing applications to display
+recognizable and friendly device names.
+
+<ThemedImage
+  alt="Register processing"
+  sources={{
+    light: useBaseUrl('/img/apple-team/flows-light.png'),
+    dark: useBaseUrl('/img/apple-team/flows-dark.png'),
+  }}
+/>
+
+Although providing the UDID of a device confirms which applications can be installed,
+providing a feature to register a testing device that has not been registered with any application
+would greatly improve the efficiency of the team. This is the role of the Apple Developer feature.
+
+<ThemedImage
+  alt="Apple deveoper detail preview"
+  sources={{
+    light: useBaseUrl('/img/apple-team/apple-team-detail-light.png'),
+    dark: useBaseUrl('/img/apple-team/apple-team-detail-dark.png'),
+  }}
+/>
+
+The initial feature introduction: https://github.com/tryzealot/zealot/issues/723.

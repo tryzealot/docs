@@ -54,6 +54,9 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 ```bash
 REDIS_URL=redis://user:pass@127.0.0.1:6379/0
+
+# 基于 SSL 的 Redis
+REDIS_URL=rediss://user:pass@127.0.0.1:6379/0
 ```
 
 ## 配置网站默认语言

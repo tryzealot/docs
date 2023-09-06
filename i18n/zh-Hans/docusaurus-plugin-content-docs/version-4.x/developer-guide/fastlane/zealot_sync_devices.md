@@ -8,7 +8,7 @@ sidebar_label: "zealot_sync_devices"
 
 :bell: Zealot 4.5.0 版本已经支持使用 [Apple API Key](https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)
 
-苹果开发者管理并可自动同步测试设备展示，[查看详情](/docs/user-guide/administrator/apple-team)
+苹果开发者管理并可自动同步测试设备展示，[查看详情](/docs/4.x/user-guide/administrator/apple-team)
 :::
 
 同步并关联苹果开发者中心（Apple Developer Portal)的测试设备名称到 Zealot 服务。

@@ -8,6 +8,23 @@ const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy
 // Netlify branch deploy like "docusaurus-v2"
 const isBranchDeploy = !!process.env.NETLIFY && process.env.CONTEXT === 'branch-deploy';
 
+/** @type {Array<string>} */
+const versions = require('./versions.json');
+
+/** @param {string} version */
+function isPrerelease(version) {
+  return (
+    version.includes('alpha') ||
+    version.includes('beta') ||
+    version.includes('rc')
+  );
+}
+
+function getLastVersion() {
+  const firstStableVersion = versions.find((version) => !isPrerelease(version));
+  return firstStableVersion ?? versions[0];
+}
+
 // This probably only makes sense for the alpha/beta/rc phase, temporary
 function getNextVersionName() {
   return 'Next';
@@ -16,7 +33,7 @@ function getNextVersionName() {
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Zealot',
-  tagline: 'Self-hosted Beta App Distribution for Android, iOS and macOS apps.',
+  tagline: 'Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.',
   url: 'https://zealot.ews.im',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -40,7 +57,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/tryzealot/docs/tree/main/',
-          lastVersion: isDev || isDeployPreview || isBranchDeploy ? 'current' : undefined,
+          lastVersion: isDev || isDeployPreview || isBranchDeploy ? 'current' : getLastVersion(),
           versions: {
             current: {
               label: `${getNextVersionName()} 🚧`,
@@ -119,43 +136,37 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            href: 'https://github.com/tryzealot/zealot',
-            label: 'GitHub',
-            position: 'right',
-          },
-
+          }
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Github Discussions',
-      //           href: 'https://github.com/tryzealot/zealot/discussions',
-      //         },
-      //         {
-      //           label: 'Telegram',
-      //           href: 'https://t.me/+wnEWjKGcXllkMGQ9',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/tryzealot/zealot',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} Zealot, Inc. Built with Docusaurus.`,
-      // },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Github Discussions',
+                href: 'https://github.com/tryzealot/zealot/discussions',
+              },
+              {
+                label: 'Telegram',
+                href: 'https://t.me/+csa3Y2KOx44wMGRl',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/tryzealot/zealot',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} icyleaf. Built with Docusaurus.`,
+      },
       prism: {
         additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
         magicComments: [
