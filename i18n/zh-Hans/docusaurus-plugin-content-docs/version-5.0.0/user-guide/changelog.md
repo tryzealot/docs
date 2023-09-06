@@ -10,10 +10,6 @@
 
 暂无
 
-## 5.0.0 (2023-09-06)
-
-支持泛应用托管，支持解析会自动解析比如 Windows，不支持解析会跳过。详细[代码变更记录][5.0.0]
-
 #### 新增
 
 - `Web/API` 支持泛应用托管（支持解析会自动解析，不支持解析会跳过），默认新增 Windows 和 Linux 平台 [#1121](https://github.com/tryzealot/zealot/pull/1121)
@@ -519,7 +515,6 @@
 
 [未发布]: https://github.com/tryzealot/zealot/compare/5.0.0...HEAD
 [5.0.0]: https://github.com/tryzealot/zealot/compare/4.7.1...5.0.0
-[4.7.1]: https://github.com/tryzealot/zealot/compare/4.7.0...4.7.1
 [4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3

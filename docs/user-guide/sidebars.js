@@ -18,6 +18,9 @@ module.exports = [
     },
     items: [
       "user-guide/apps/create",
+      "user-guide/apps/index",
+      "user-guide/apps/detail",
+      "user-guide/apps/upload",
     ],
   },
   {
@@ -28,6 +31,8 @@ module.exports = [
       type: 'generated-index',
     },
     items: [
+      "user-guide/debug-files/index",
+      "user-guide/debug-files/review",
       "user-guide/debug-files/upload",
     ],
   },
@@ -70,6 +75,7 @@ module.exports = [
       "user-guide/administrator/apple-team",
       "user-guide/administrator/permissions",
       "user-guide/administrator/backup",
+      "user-guide/administrator/settings",
       {
         collapsible: true,
         label: "Monitoring",

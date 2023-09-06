@@ -8,10 +8,6 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
-## 5.0.0 (2023-09-06)
-
-Any archived package of application supportted (e.g. `Windows` or `Linux`)). Full [commit changes][5.0.0]
-
 #### Added
 
 - `Web`/`API` supports hosting of general applications (those that can be parsed automatically and those that cannot be parsed are skipped), and Windows and Linux platforms are added by default [#1121](https://github.com/tryzealot/zealot/pull/1121)
@@ -519,7 +515,6 @@ application hosting and distribution services
 
 [Unreleased]: https://github.com/tryzealot/zealot/compare/4.7.1...HEAD
 [5.0.0]: https://github.com/tryzealot/zealot/compare/4.7.1...5.0.0
-[4.7.1]: https://github.com/tryzealot/zealot/compare/4.7.0...4.7.1
 [4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3

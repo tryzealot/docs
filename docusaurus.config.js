@@ -136,43 +136,37 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-          },
-          {
-            href: 'https://github.com/tryzealot/zealot',
-            label: 'GitHub',
-            position: 'right',
-          },
-
+          }
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Community',
-      //       items: [
-      //         {
-      //           label: 'Github Discussions',
-      //           href: 'https://github.com/tryzealot/zealot/discussions',
-      //         },
-      //         {
-      //           label: 'Telegram',
-      //           href: 'https://t.me/+wnEWjKGcXllkMGQ9',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'GitHub',
-      //           href: 'https://github.com/tryzealot/zealot',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} Zealot, Inc. Built with Docusaurus.`,
-      // },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Community',
+            items: [
+              {
+                label: 'Github Discussions',
+                href: 'https://github.com/tryzealot/zealot/discussions',
+              },
+              {
+                label: 'Telegram',
+                href: 'https://t.me/+csa3Y2KOx44wMGRl',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/tryzealot/zealot',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} icyleaf. Built with Docusaurus.`,
+      },
       prism: {
         additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
         magicComments: [
