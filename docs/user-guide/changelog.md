@@ -20,6 +20,8 @@ The following list of changes is the list that has not yet been released, code c
 - `Web` settings page can configure the global "minimum number of items returned per page" and "maximum number of items"
 - `Web` for iOS applications, the application version details page displays the expiration time information of the signing certificate and the logical restriction of installation failure due to expired signing certificate (can be downloaded)
 - `Web` adds or updates JSON format verification to network hooks and settings pages.
+- `Web` supports registering test devices to Apple developers with custom device names and editing/updating device names after creation.
+- `Web` supports downloading private key certificates for Apple developers.
 
 #### Fixed
 
@@ -28,6 +30,12 @@ The following list of changes is the list that has not yet been released, code c
 - `Web` corrects errors in the English language package (en language i18n)
 - `Web` fixes the error page that appears when creating an empty application type
 - `Web` fixes the 404 error page that appears when a file is not found.
+- `API` fixes the logic optimization of comparing build_version for retrieving the latest version of an application.
+- `Web` optimizes the error handling for custom field format during application upload.
+- `Web` optimizes the correct redirection for URL injection, empty application history versions, and unregistered devices.
+- `Web` optimizes the display of error information for backup tasks.
+- `Web` adds type detection for application types and debug files during application upload.
+- `Web` fixes the error message of not preselecting the creation of a Distribution Certificate for Apple developers.
 
 ## 4.7.1 (2023-03-10)
 
