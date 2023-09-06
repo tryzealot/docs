@@ -45,13 +45,13 @@ export default function Home() {
     <Layout
       title={
         translate({
-          message: "Self-hosted Beta App Distribution for Android, iOS and macOS apps.",
+          message: "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
           description: 'The homepage title message',
         })
       }
       description={
         translate({
-          message: "Self-hosted Beta App Distribution for Android, iOS and macOS apps.",
+          message: "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
           description: 'The homepage title message',
         })
       }>

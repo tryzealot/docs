@@ -1,0 +1,274 @@
+
+# 反向代理
+
+方便 SSL 证书的统一管理和分发、服务的扩容及接入现成的网关服务，文档提供几种给网关配置反向代理服务的配置。
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<ThemedImage
+  alt="Architecture"
+  sources={{
+    light: useBaseUrl('/img/zh-Hans/reverse-proxies-light.png'),
+    dark: useBaseUrl('/img/zh-Hans/reverse-proxies-dark.png'),
+  }}
+/>
+
+## 准备工作
+
+配置反向代理需要准备好如下数据：
+
+名称 | 范例值 | 备注
+---|---|---
+域名 | zealot.icyleaf.dev |
+反向代理 IP 地址 | 172.16.56.1 |
+Zealot IP 地址 | 172.16.56.100 | 反向代理服务可访问<br />同一台服务可改为 127.0.0.1
+Zealot 外部映射端口号 | 8901 | 反向代理服务可访问
+Zealot 内部端口号 | 80 | 无需修改
+Let's Encrypt 邮箱 | your-email@example.com
+
+## Traefik
+
+[Traefik](https://doc.traefik.io/traefik/) 是一款开源的反向代理与负载均衡工具，它自身提供多种 Providers 可以实现接入反向代理并配置 SSL 的方式。
+
+### 配置解释
+
+无论使用那种 Provider 核心的配置项是相同的，构成反向代理服务配置主要有三部分组成：发现端口号、路由规则（包含访问端口号、域名绑定和SSL）
+
+### Traefik 服务
+
+```mdx-code-block
+<Tabs groupId="yaml">
+<TabItem value="yaml">
+```
+
+```yaml
+entryPoints:
+  web:
+    address: ":80"
+
+  websecure:
+    address: ":443"
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: your-email@example.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="toml">
+```
+
+```toml
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+
+  [entryPoints.websecure]
+    address = ":443"
+
+[certificatesResolvers.letsencrypt.acme]
+  email = "your-email@example.com"
+  storage = "acme.json"
+  [certificatesResolvers.letsencrypt.acme.httpChallenge]
+    # used during the challenge
+    entryPoint = "web"
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="cli">
+```
+
+```bash
+--entrypoints.web.address=:80
+--entrypoints.websecure.address=:443
+
+--certificatesresolvers.letsencrypt.acme.email=your-email@example.com
+--certificatesresolvers.letsencrypt.acme.storage=acme.json
+--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web
+```
+
+```mdx-code-block
+</TabItem>
+</Tabs>
+```
+
+### Docker
+
+首先需要开启 [Docker provider](https://doc.traefik.io/traefik/providers/docker/#configuration-examples) 后在修改 zealot 的 Docker Compose 配置：
+
+```yaml title="docker-compose.yml"
+version: '3'
+services:
+  zealot:
+    <<: *defaults
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.zealot.loadbalancer.server.port=80"
+      - "traefik.http.routers.zealot.service=zealot"
+      - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)"
+      - "traefik.http.routers.zealot.tls=true"
+      - "traefik.http.routers.zealot.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev"
+      - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+    # 由 Treafik 接管无需在对外暴露端口号
+    # ports:
+    #   - "8901:80"
+    network:
+      # 根据 traefik 服务的 network 按需调整
+      - traefik-services
+
+networks:
+  # 根据 traefik 服务的 network 按需调整
+  traefik-services:
+    external: true
+```
+
+Docker 部署的局限于 Traefik 和 Zealot 服务通常在同一个机器的同一个 OS 系统中，跨机器就没法实现通讯，对于跨机器就需要参考下面两种配置方案：
+
+### Consul
+
+首先需要开启 [Consul provider](https://doc.traefik.io/traefik/providers/consul/) 或 [Consul Catalog provider](https://doc.traefik.io/traefik/providers/consul-catalog/)，我们只需要利用它的 Key-Value 存储：
+
+```shell
+consul kv put traefik/http/services/zealot/loadbalancer/server/port 5
+consul kv put traefik/http/routers/zealot/service zealot
+consul kv put traefik/http/routers/zealot/rule 'Host(`zealot.icyleaf.dev`)'
+consul kv put traefik/http/routers/zealot/tls/certresolver letsencrypt
+consul kv put traefik/http/routers/zealot/tls/domains/0/main icyleaf.dev
+consul kv put traefik/http/routers/zealot/tls/domains/0/sans zealot.icyleaf.dev
+```
+
+### Nomad
+
+首先需要开启 [Nomad provider](https://doc.traefik.io/traefik/providers/nomad/) 且 Nomad 版本要大于等于 1.3 才可以哟：
+
+```hcl title="zealot.nomad"
+job "zealot" {
+  datacenters = ["dc1"]
+  type        = "service"
+
+  group "zealot" {
+    count = 1
+
+    network {
+      port  "http"{
+        static = 80
+      }
+    }
+
+    service {
+      name = "zealot-http"
+      provider = "nomad"
+      port = "http"
+    }
+
+    task "server" {
+      driver = "docker"
+      config {
+        image = "ghcr.io/tryzealot/zealot:nightly"
+        ports = ["http"]
+        args = [
+          - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)",
+          - "traefik.http.routers.zealot.tls=true",
+          - "traefik.http.routers.zealot.tls.certresolver=letsencrypt",
+          - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev",
+          - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+        ]
+      }
+    }
+  }
+}
+```
+
+## Caddy 2 配置
+
+```nginx title="Caddyfile"
+:443
+
+log
+
+# 使用 Let's Encrypt 服务
+tls your-email@example.com
+
+reverse_proxy 172.16.56.100:8901
+```
+
+配置只需配置 `tls` 和 `proxy` 后面 IP 地址和端口部分即可。
+
+## Nginx
+
+> 如下是通用配置，如果不可用欢迎[提问题](https://github.com/tryzealot/docs/issues/new)。
+
+```nginx title="conf.d/zealot.conf"
+upstream zealot {
+  zone upstreams 64K;
+  server 172.16.56.100:8901;
+  keepalive 32;
+}
+
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  '' close;
+}
+
+server {
+  listen 80;
+  listen [::]:80;
+  server_name zealot.icyleaf.dev;
+  location /.well-known/acme-challenge/ { allow all; }
+  location / { return 301 https://$host$request_uri; }
+}
+
+server {
+  listen 443 ssl http2;              # 可选：http2 可能需要安装额外扩展，不需要可移除
+  listen [::]:443 ssl http2;         # 可选：http2 可能需要安装额外扩展，不需要可移除
+  server_name zealot.icyleaf.dev;
+
+  ssl_certificate       /etc/certs/zealot-cert.pem;
+  ssl_certificate_key   /etc/certs/zealot.pem;
+
+  # Optional
+  # ssl_ciphers           HIGH:!MEDIUM:!LOW:!aNULL:!NULL:!SHA;
+  # ssl_session_timeout   5m;
+  # ssl_session_cache     shared:SSL:1m;
+  # ssl_prefer_server_ciphers  on;
+
+  location / {
+    proxy_pass http://zealot;
+    proxy_redirect off;
+
+    proxy_pass_header Authorization;
+    proxy_set_header Host $host;
+    # proxy_set_header X-Forwarded-Ssl on; # 可选
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+
+    client_max_body_size 0;
+    proxy_read_timeout 36000s;
+  }
+}
+```
+
+Nginx 还需要在 `http` 中配置最大上传文件上传大小，普通应用建议是在 200MB 左右，如果是游戏可根据实际文件大小再多出 50% 打出富余。
+
+```nginx title="nginx.conf"
+http {
+  [...]
+
+  client_max_body_size 200M;
+}
+```

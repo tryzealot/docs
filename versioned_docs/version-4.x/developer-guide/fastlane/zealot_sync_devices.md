@@ -5,7 +5,7 @@ sidebar_label: "zealot_sync_devices"
 # Fastlane action: zealot_sync_devices
 
 > :bell: Zealot 4.5.0 built in Apple team manage which it use [Apple API Key](https://docs.fastlane.tools/app-store-connect-api/#using-fastlane-api-key-json-file)
-> to sync iOS devices, even CAN registe the device after fetch the UDID, [Check detail](/docs/user-guide/administrator/apple-team)
+> to sync iOS devices, even CAN registe the device after fetch the UDID, [Check detail](/docs/4.x/user-guide/administrator/apple-team)
 
 Use Apple Developer account to syncing UDIDs and relates the value in Zealot.
 

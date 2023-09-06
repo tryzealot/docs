@@ -27,7 +27,7 @@ name: zealot
 
 ### 20-zealot-secrets.yml
 
-Zealot enviroments secrets. This is loaded all secrets [enviroments](/docs/self-hosted/configuration/environment-variables), all values need encryt by base64.
+Zealot enviroments secrets. This is loaded all secrets [enviroments](/docs/self-hosted/configuration/environment-variables), **all values need encryt by base64**.
 
 ```yaml title="20-zealot-secrets.yml"
 apiVersion: v1

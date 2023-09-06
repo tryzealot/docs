@@ -147,7 +147,7 @@ GET /api/apps
         "schemes": [
             {
                 "id": 1,
-                "name": "测试版",
+                "name": "Adhoc",
                 "channels": [
                     {
                         "slug": "X1IXN",
@@ -217,7 +217,7 @@ GET /api/apps/:id
     "schemes": [
         {
             "id": 5,
-            "name": "测试版",
+            "name": "Test App",
             "channels": [
                 {
                     "slug": "X1IXN",
@@ -262,7 +262,7 @@ GET /api/apps/versions
 
 ```json
 {
-    "app_name": "Zealot iOS 测试版",
+    "app_name": "Zealot iOS",
     "bundle_id": "*",
     "git_url": null,
     "app": {
@@ -271,12 +271,12 @@ GET /api/apps/versions
     },
     "scheme": {
         "id": 5,
-        "name": "测试版"
+        "name": "AdHoc"
     },
     "releases": [
         {
             "version": 2,
-            "app_name": "Zealot iOS 测试版",
+            "app_name": "Zealot iOS",
             "bundle_id": "im.ews.zealot",
             "release_version": "1.0.0",
             "build_version": "10292024",
@@ -292,7 +292,7 @@ GET /api/apps/versions
         },
         {
             "version": 1,
-            "app_name": "Zealot iOS 测试版",
+            "app_name": "Zealot iOS",
             "bundle_id": "im.ews.zealot",
             "release_version": "1.0.0",
             "build_version": "10291524",
@@ -324,14 +324,14 @@ GET /api/apps/latest
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| release_version | `String` | true | 应用的发布版本 |
-| build_version | `String` | true | 应用的构建版本 |
+| release_version | `String` | true | Release version |
+| build_version | `String` | true | Build version |
 
 ### Return body
 
 ```json
 {
-    "app_name": "Zealot iOS 测试版",
+    "app_name": "Zealot iOS",
     "bundle_id": "*",
     "git_url": null,
     "app": {
@@ -340,11 +340,11 @@ GET /api/apps/latest
     },
     "scheme": {
         "id": 5,
-        "name": "测试版"
+        "name": "AdHoc"
     },
     "releases": {
         "version": 1,
-        "app_name": "Zealot iOS 测试版",
+        "app_name": "Zealot iOS",
         "bundle_id": "im.ews.zealot",
         "release_version": "1.0.0",
         "build_version": "10291524",
@@ -377,23 +377,23 @@ GET /api/apps/version_exist
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| bundle_id | `String` | true | 应用的包名，iOS 取 bundle_id，Android 取 package_name |
-| release_version | `String` | false | 应用的发布版本 |
-| build_version | `String` | false | 应用的构建版本 |
-| git_commit | `String` | false | 上传应用时的 git commit hash |
+| bundle_id | `String` | true |  bundle_id or package_name |
+| release_version | `String` | false | Release version |
+| build_version | `String` | false | Build version |
+| git_commit | `String` | false | git commit hash |
 
 ### Return body
 
-- 版本存在返回 200 状态码并返回版本的信息
-- 版本不存在返回 404 状态码和错误信息
+- Return 200 if release existed.
+- Return 404 if release not existed.
 
 Success returns:
 
 ```json
 {
     "version": 1,
-    "app_name": "好好住 iOS 测试版",
-    "bundle_id": "com.haohaozhu.hhz",
+    "app_name": "Zealot iOS",
+    "bundle_id": "im.ews.zealot",
     "release_version": "4.1.1",
     "build_version": "10291524",
     "source": "Web",
@@ -412,6 +412,6 @@ Not found returns:
 
 ```json
 {
-    "error": "应用版本不存在"
+    "error": "Not found release"
 }
 ```

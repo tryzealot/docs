@@ -514,7 +514,7 @@ It used to undertake many functions, but now it has been separated to focus on p
 application hosting and distribution services
 
 [Unreleased]: https://github.com/tryzealot/zealot/compare/4.7.1...HEAD
-[4.7.1]: https://github.com/tryzealot/zealot/compare/4.7.0...4.7.1
+[5.0.0]: https://github.com/tryzealot/zealot/compare/4.7.1...5.0.0
 [4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
 [4.5.3]: https://github.com/tryzealot/zealot/compare/4.5.2...4.5.3

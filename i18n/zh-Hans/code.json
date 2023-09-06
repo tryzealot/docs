@@ -279,8 +279,8 @@
     "message": "开源自部署持续集成一切跟应用有关事情，接入任意 CI 系统一切自动化处理，企业多年实战经验，独立部署提供企业打包分发流程、上传应用全套流程方案",
     "description": "The subtitle for homepage"
   },
-  "Self-hosted Beta App Distribution for Android, iOS and macOS apps.": {
-    "message": "私有化部署 Android/iOS/macOS 应用托管服务",
+  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
     "description": "The homepage title message"
   },
   "theme.tags.tagsPageTitle": {
@@ -302,5 +302,9 @@
   "theme.docs.sidebar.navAriaLabel": {
     "message": "文档侧边栏",
     "description": "The ARIA label for the sidebar navigation"
+  },
+  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
+    "description": "The homepage title message"
   }
 }
