@@ -8,7 +8,7 @@ This guide will help you to install and setup a production ready Zealot.
 <ThemedImage
   alt="Architecture"
   sources={{
-    light: useBaseUrl('/img/architecture-light.png'),
-    dark: useBaseUrl('/img/architecture-dark.png'),
+    light: useBaseUrl('/img/5.0.0/architecture-light.png'),
+    dark: useBaseUrl('/img/5.0.0/architecture-dark.png'),
   }}
 />
