@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@crowdin/cli": "^3.14.0",
-    "@docusaurus/module-type-aliases": "^2.4.1"
+    "@docusaurus/module-type-aliases": "^2.4.3"
   },
   "browserslist": {
     "production": [
