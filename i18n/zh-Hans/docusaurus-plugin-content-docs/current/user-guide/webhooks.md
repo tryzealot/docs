@@ -15,13 +15,17 @@ Zealot 为每个应用渠道都提供一个消息通知的网络钩子，网络�
 ```ruby
 {
   event: @event,
+  username: @username,
+  email: @email,
   title: @title,
-  app_name: @name,
+  name: @app_name,
+  app_name: @app_name,
   device_type: @device_type,
   release_version: @release_version,
   build_version: @build_version,
   size: @file_size,
   changelog: @changelog,
+  release_url: @release_url,
   install_url: @install_url,
   icon_url: @icon_url,
   qrcode_url: @qrcode_url,
@@ -34,16 +38,19 @@ Zealot 为每个应用渠道都提供一个消息通知的网络钩子，网络�
 ```json
 {
   "event": "upload_events",
+  "username": "foobar",
+  "email": "foobar@example.com",
   "title": "Zealot 样例 iOS 内测版上传了 1.0.0 版本",
   "app_name": "Zealot 样例 iOS 内测版",
   "device_type": "iOS",
   "release_version": "1.0.0",
   "build_version": "1",
   "size": "30 MB",
+  "changelog": "- 新增了 A 功能\n- 修复了 B 问题\n- 发布 1.0.0 版本",
+  "release_url": "https://zealot.test/apps/x3gd/100",
   "install_url": "https://zealot.test/api/apps/download/12354",
   "icon_url": "https://zealot.test/api/apps/icon.png",
   "qrcode_url": "https://zealot.test/api/apps/354/qrcode",
-  "uploaded_at": "2019-12-30 11:33:00",
-  "changelog": "- 新增了 A 功能\n- 修复了 B 问题\n- 发布 1.0.0 版本",
+  "uploaded_at": "2019-12-30 11:33:00"
 }
 ```

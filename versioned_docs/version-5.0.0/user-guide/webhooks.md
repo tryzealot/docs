@@ -12,6 +12,8 @@ The following variables are all provided.
 ```ruby
 {
   event: @event,
+  username: @username,
+  email: @email,
   title: @title,
   app_name: @name,
   device_type: @device_type,
@@ -31,6 +33,8 @@ Output:
 ```json
 {
   "event": "upload_events",
+  "username": "foobar",
+  "email": "foobar@example.com",
   "title": "Zealot upload 1.0.0 version",
   "app_name": "Zealot",
   "device_type": "iOS",

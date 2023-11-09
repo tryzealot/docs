@@ -16,7 +16,7 @@
 
 ## Interactive 卡片格式
 
-通过这种格式可以实现支持 markdown 的部分语法：
+通过这种格式可以实现支持 markdown 的部分语法（不支持外链图片展示）：
 
 ```ruby
 {
@@ -29,25 +29,66 @@
     "elements": [
       {
         "tag": "div",
+        "fields": [
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**平台**\n#{@device_type}"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**版本**\n#{@release_version} (#{@build_version})"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**最后提交者**\n#{@username}"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**上传时间**\n#{@uploaded_at}"
+            }
+          },
+        ]
+      },
+      {
+        "tag": "div",
         "text": {
-          "content": "## #{@title}\n平台: #{@device_type}\n上传时间: #{@uploaded_at}\n安装二维码:\n![qrcode](#{@qrcode_url})",
+          "content": "**变更历史**\n#{@changelog}",
           "tag": "lark_md"
         }
       },
       {
-        "actions": [{
-          "tag": "button",
-          "text": {
-            "content": "点击安装",
-            "tag": "lark_md"
-          },
-          "url": @install_url,
-          "type": "default",
-          "value": {}
-        }],
+        "actions": [
+          {
+            "tag": "button",
+            "text": {
+              "content": "🐞 版本详情",
+              "tag": "lark_md"
+            },
+            "url": "#{@release_url}",
+            "type": "primary",
+            "value": {}
+          }
+        ],
         "tag": "action"
       }
-    ]
+    ],
+    "header": {
+      "title": {
+        "content": "#{@title}",
+        "tag": "plain_text"
+      }
+    }
   }
 }
 ```

@@ -31,25 +31,66 @@ Use card format could use partly of markdown syntax:
     "elements": [
       {
         "tag": "div",
+        "fields": [
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**Platform**\n#{@device_type}"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**Version**\n#{@release_version} (#{@build_version})"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**Developer**\n#{@username}"
+            }
+          },
+          {
+            "is_short": true,
+            "text": {
+              "tag": "lark_md",
+              "content": "**Upload date**\n#{@uploaded_at}"
+            }
+          },
+        ]
+      },
+      {
+        "tag": "div",
         "text": {
-          "content": "## #{@title}\nPlatform: #{@device_type}\nUplaod at: #{@uploaded_at}\nInstall QRcode:\n![qrcode](#{@qrcode_url})",
+          "content": "**Changelog**\n#{@changelog}",
           "tag": "lark_md"
         }
       },
       {
-        "actions": [{
-          "tag": "button",
-          "text": {
-            "content": "Install",
-            "tag": "lark_md"
-          },
-          "url": @install_url,
-          "type": "default",
-          "value": {}
-        }],
+        "actions": [
+          {
+            "tag": "button",
+            "text": {
+              "content": "🐞 Go to app",
+              "tag": "lark_md"
+            },
+            "url": "#{@release_url}",
+            "type": "primary",
+            "value": {}
+          }
+        ],
         "tag": "action"
       }
-    ]
+    ],
+    "header": {
+      "title": {
+        "content": "#{@title}",
+        "tag": "plain_text"
+      }
+    }
   }
 }
 ```
