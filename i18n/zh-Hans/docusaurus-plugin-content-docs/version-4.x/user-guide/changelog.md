@@ -1,19 +1,5 @@
 # 变更日志
 
-## 未发布
-
-:::tip
-
-如下罗列的变更是还未发布的列表，代码变更历史：[未发布]
-
-:::
-
-暂无
-
-## 5.0
-
-请从右上角版本列表选择对应的版本。
-
 ## 4.7.1 (2023-03-10)
 
 支持最新 Android aapt2 构建工具生成的 aab 应用解析，详细[代码变更记录][4.7.1]
@@ -488,7 +474,6 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/4.7.1...HEAD
 [4.7.1]: https://github.com/tryzealot/zealot/compare/4.7.0...4.7.1
 [4.7.0]: https://github.com/tryzealot/zealot/compare/4.6.0...4.7.0
 [4.6.0]: https://github.com/tryzealot/zealot/compare/4.5.3...4.6.0
