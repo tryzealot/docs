@@ -46,8 +46,8 @@ Follow the platform-specific guides below:
 ```
 
 1. Download the [Visual Studio Code installer](https://go.microsoft.com/fwlink/?LinkID=534107) for Windows.
-1. Once it is downloaded, run the installer (VSCodeUserSetup-{version}.exe). This will only take a minute.
-1. By default, VS Code is installed under `C:\Users\{Username}\AppData\Local\Programs\Microsoft VS Code`.
+1. Once it is downloaded, run the installer (VSCodeUserSetup-\{version\}.exe). This will only take a minute.
+1. By default, VS Code is installed under `C:\Users\\{Username\}\AppData\Local\Programs\Microsoft VS Code`.
 
 ```mdx-code-block
 </TabItem>
