@@ -545,7 +545,7 @@ Full [commit changes][4.0.0.beta2].
 
 🌈 The first public beta version has been released!
 
-## Earlier Version:
+## Previous Version
 
 For many years, it was developed and operated internally within the company and was not open source.
 It used to undertake many functions, but now it has been separated to focus on providing
