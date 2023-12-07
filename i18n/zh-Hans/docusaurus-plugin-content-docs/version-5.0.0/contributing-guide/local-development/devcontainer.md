@@ -48,8 +48,8 @@ Visual Studio Code 是一个跨平台运行的免费的代码编辑器，根据�
 ```
 
 1. 下载 [Visual Studio Code installer](https://go.microsoft.com/fwlink/?LinkID=534107) Windows 版。
-1. 下载完成后执行安装程序（VSCodeUserSetup-{version}.exe）等待安装成功。
-1. 默认情况下 VS Code 会安装到 `C:\Users\{Username}\AppData\Local\Programs\Microsoft VS Code` 路径。
+1. 下载完成后执行安装程序（VSCodeUserSetup-\{version\}.exe）等待安装成功。
+1. 默认情况下 VS Code 会安装到 `C:\Users\\{Username\}\AppData\Local\Programs\Microsoft VS Code` 路径。
 
 ```mdx-code-block
 </TabItem>
