@@ -30,7 +30,7 @@
   "devDependencies": {
     "@crowdin/cli": "^3.15.0",
     "@docusaurus/module-type-aliases": "^3.0.1",
-    "@docusaurus/types": "3.0.1"
+    "@docusaurus/types": "3.1.0"
   },
   "browserslist": {
     "production": [
