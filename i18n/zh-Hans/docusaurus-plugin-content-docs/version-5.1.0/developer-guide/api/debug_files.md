@@ -61,7 +61,7 @@ POST /api/debug_files/upload
 下载 iOS 和 Android 的调试文件
 
 ```
-POST /api/debug_files/download
+GET /api/debug_files/download
 ```
 
 ### 参数

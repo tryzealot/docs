@@ -63,7 +63,7 @@ POST /api/debug_files/upload
 This allows you to download an single iOS, Android debug file.
 
 ```
-POST /api/debug_files/download
+GET /api/debug_files/download
 ```
 
 ### Parameters
