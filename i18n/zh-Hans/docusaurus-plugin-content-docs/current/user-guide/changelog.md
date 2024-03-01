@@ -8,6 +8,24 @@
 
 :::
 
+#### 变更
+
+- `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+- `Web` **重大变更** 数据备份逻辑调整 [#1318](https://github.com/tryzealot/zealot/pull/1317)。
+
+#### 新增
+
+- `Web` 应用类型新增最大保留版本数的设置 [#1407](https://github.com/tryzealot/zealot/pull/1407)
+- `Web` 开放 macOS 系统获取设备 UDID 功能
+- `Web` 允许注册 macOS 设备到苹果开发者测试设备
+
+#### 修复
+
+- `Web` Anroid 解包没有 services 存储错误的异常报错
+- `Web` 创建网络钩子格式校验错误造成创建失败 [#1314](https://github.com/tryzealot/zealot/issues/1314)
+- `Web` 应用版本详情匹配调试文件查询错误造成的异常报错 [#1406](https://github.com/tryzealot/zealot/issues/1406)
+- `API` 修复下载调试文件接口并修改变更为 GET 请求 [#1416](https://github.com/tryzealot/zealot/issues/1416)
+
 ## 5.1.0 (2023-12-07)
 
 功能修复为主，小部分新特性升级，详细[代码变更记录][5.1.0]。
