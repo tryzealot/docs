@@ -50,14 +50,16 @@ The configuration file will generate at least three services, using the first tw
 - `zealot-zealot`: Use reverse-generation gateway services to deliver core Web and API services
 - `zealot-postgres`: Database service
 - `zealot-redis`: Cache service
+- `zealot-web`: Provides a reverse proxy gateway service for (services and certificates), optional.
 
 ### Create docker volumes for persistent storage
 
 Persistent storage Data:
 
-- `zealot-data`: Uploaded apps, icons and debug files.
-- `zealot-postgres`: Core database data
-- `zealot-redis`: Hot cache and background jobs data
+- `zealot-uploads`: Uploaded app file with extracted icon, uploaded debugging files.
+- `zealot-backup`: backup files.
+- `zealot-postgres`: Core database data.
+- `zealot-redis`: Hot cache and background jobs data.
 
 ### Pull images
 
@@ -138,4 +140,108 @@ volumes:
       o: bind
       type: none
       device: /data/zealot/postgres
+```
+
+## Complete example
+
+```yaml
+version: "3.8"
+
+x-restart-policy: &restart_policy
+  restart: unless-stopped
+
+x-defaults: &defaults
+  <<: *restart_policy
+  image: ghcr.io/tryzealot/zealot:nightly
+  depends_on:
+    - redis
+    - postgres
+  env_file: .env
+  volumes:
+    - zealot-uploads:/app/public/uploads
+    - zealot-backup:/app/public/backup
+    - ./log:/app/log                        # Optional: persisting log files.
+  healthcheck:
+    test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/health || exit 1"]
+
+services:
+  redis:
+    <<: *restart_policy
+    image: redis:7-alpine
+    command: redis-server
+    volumes:
+      - zealot-redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+  postgres:
+    <<: *restart_policy
+    image: postgres:14-alpine
+    volumes:
+      - zealot-postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ze@l0t
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+  zealot:
+    <<: *defaults
+    # Port mapping can be enabled without the need for reverse proxy,
+    # mutually exclusive with the web reverse proxy service below.
+    ports:
+      - "80:80"
+  # Optional: Use a reverse proxy to host SSL certificates and services.
+  web:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/etc/caddy/certs:/etc/caddy/certs:ro
+    env_file: .env
+    environment:
+      ACME_AGREE: "true"
+
+# There are three methods of persistence:
+volumes:
+  # 1. docker compose inside volumes
+  - zealot-uploads
+  - zealot-backup
+  - zealot-redis
+  - zealot-postgres
+
+  # 2. docker compose external volumes
+  zealot-uploads:
+    external: true
+  zealot-backup:
+    external: true
+  zealot-redis:
+    external: true
+  zealot-postgres:
+    external: true
+
+  # 3. mount local path
+  zealot-uploads:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /tmp/zealot/uploads
+  zealot-backup:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /tmp/zealot/backup
+  zealot-redis:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /tmp/redis
+  zealot-postgres:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /tmp/postgres
 ```
