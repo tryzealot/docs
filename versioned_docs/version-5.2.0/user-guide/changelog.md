@@ -1,18 +1,5 @@
 # Change Log
 
-## Unreleased
-
-:::tip
-
-The following list of changes is the list that has not yet been released, code change history: [Unreleased]
-
-:::
-
-#### Changed
-
-- `Docker` **Breaking Change** Plan to deprecate Redis service [#1318](https://github.com/tryzealot/zealot/pull/1318).
-- `Web` **Breaking Change** Adjusted the data backup logic [#1318](https://github.com/tryzealot/zealot/pull/1318).
-
 ## 5.2.0 (2024-03-14)
 
 Minor functional fixes, with minor upgrades to new features. Full [commit changes][5.2.0].
@@ -39,6 +26,7 @@ Mainly functional fixes, with minor upgrades to new features. Full [commit chang
 - `Docker` **Major Change** The minimum version of Redis dependencies has been updated from 5.x to 6.2+. It is recommended to use version 7.x. When upgrading, please manually modify the settings.
 
 #### Added
+
 - `Docker` added Redis and PostgreSQL version checks; running below minimum versions may cause malfunction.
 - `Docker` service initializes by creating databases during startup.
 - `Web` enhanced validation conditions for JSON format settings on the settings page.

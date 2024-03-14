@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "Zealot",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Zealot Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Self Hosted": {
+    "message": "Self Hosted",
+    "description": "Navbar item with label Self Hosted"
+  },
+  "item.label.Developer Guide": {
+    "message": "Developer Guide",
+    "description": "Navbar item with label Developer Guide"
+  },
+  "item.label.User Guide": {
+    "message": "User Guide",
+    "description": "Navbar item with label User Guide"
+  },
+  "item.label.Contributing Guide": {
+    "message": "Contributing Guide",
+    "description": "Navbar item with label Contributing Guide"
+  },
+  "item.label.Changelog": {
+    "message": "Changelog",
+    "description": "Navbar item with label Changelog"
+  }
+}
