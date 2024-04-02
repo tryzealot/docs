@@ -13,9 +13,8 @@ This is a handy guide to deploying with Docker, as well as a breakdown of the [o
 
 ## Registry
 
-> Docker hub [retrieve free team organizations](https://web.docker.com/rs/790-SSB-375/images/privatereposfaq.pdf), zealot image stopped to push new version.
-
-Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot
+- Docker Container Registry: https://hub.docker.com/r/tryzealot/zealot/
+- Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot (**Recommended**)
 
 ## Step by Step
 

@@ -63,7 +63,7 @@ Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/ze
 
 ### 拉取（更新）镜像
 
-第一次使用会自动从 Docker hub 下载镜像，后续是更新操作，通常只会更新 zealot 镜像。其他几个依赖服务镜像都是固定版本号
+第一次使用会自动从容器镜像服务网站下载镜像，后续是更新操作，通常只会更新 zealot 镜像。其他几个依赖服务镜像都是固定版本号
 
 ```bash
 docker-compose pull

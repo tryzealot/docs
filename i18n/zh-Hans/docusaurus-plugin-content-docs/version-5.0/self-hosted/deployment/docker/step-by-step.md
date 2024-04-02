@@ -13,9 +13,8 @@ sidebar_label: "详细步骤"
 
 ## 镜像仓库
 
-> Docker hub [取消了免费组织计划](https://web.docker.com/rs/790-SSB-375/images/privatereposfaq.pdf)，不再同步更新推送。
-
-Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot (**推荐**)
+- Docker Container Registry: https://hub.docker.com/r/tryzealot/zealot/
+- Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/zealot (**推荐**)
 
 ## 步骤解析
 
@@ -63,7 +62,7 @@ Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/ze
 
 ### 拉取（更新）镜像
 
-第一次使用会自动从 Docker hub 下载镜像，后续是更新操作，通常只会更新 zealot 镜像。其他几个依赖服务镜像都是固定版本号
+第一次使用会自动从容器镜像服务网站下载镜像，后续是更新操作，通常只会更新 zealot 镜像。其他几个依赖服务镜像都是固定版本号
 
 ```bash
 docker-compose pull
