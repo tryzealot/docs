@@ -146,12 +146,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Github Discussions',
-                href: 'https://github.com/tryzealot/zealot/discussions',
-              },
-              {
                 label: 'Telegram',
                 href: 'https://t.me/+csa3Y2KOx44wMGRl',
+              },
+              {
+                label: 'Github Discussions',
+                href: 'https://github.com/tryzealot/zealot/discussions',
               },
             ],
           },
