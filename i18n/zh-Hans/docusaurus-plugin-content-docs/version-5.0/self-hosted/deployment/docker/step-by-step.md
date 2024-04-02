@@ -45,9 +45,10 @@ Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/ze
 
 ### 生成 docker-compose.yml
 
-配置文件会生成至少三个服务（service），使用上面前两个证书方式会额外增加一个服务：
+配置文件会生成至少四个服务（service），使用上面前两个证书方式会额外增加一个服务：
 
 - `zealot-zealot`: 核心 Web 和 API 服务
+- `zealot-worker`: 核心异步任务服务
 - `zealot-postgres`: 数据库服务
 - `zealot-redis`: 缓存服务
 - `zealot-web`: 提供（服务和证书）反代的网关服务，非必需
@@ -56,8 +57,7 @@ Github Container Registry: https://github.com/tryzealot/zealot/pkgs/container/ze
 
 存储持久化数据
 
-- `zealot-uploads`: 上传应用和解析后的应用图标、上传的调试文件
-- `zealot-backup`: 备份计划生成备份文件
+- `zealot-data`: 静态资源，JS、CSS、图片以及上传的应用、应用图标和调试文件
 - `zealot-postgres`: 数据库数据
 - `zealot-redis`: 缓存数据
 
@@ -135,109 +135,4 @@ volumes:
       o: bind
       type: none
       device: /data/zealot/postgres
-```
-
-## 完整范例
-
-```yaml
-version: "3.8"
-
-x-restart-policy: &restart_policy
-  restart: unless-stopped
-
-x-defaults: &defaults
-  <<: *restart_policy
-  image: ghcr.io/tryzealot/zealot:nightly
-  depends_on:
-    - redis
-    - postgres
-  env_file: .env
-  volumes:
-    - zealot-uploads:/app/public/uploads
-    - zealot-backup:/app/public/backup
-    - ./log:/app/log                        # 持久化日志文件，可选
-  healthcheck:
-    test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/health || exit 1"]
-
-services:
-  redis:
-    <<: *restart_policy
-    image: redis:7-alpine
-    command: redis-server
-    volumes:
-      - zealot-redis:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-  postgres:
-    <<: *restart_policy
-    image: postgres:14-alpine
-    volumes:
-      - zealot-postgres:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: ze@l0t
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres"]
-  zealot:
-    <<: *defaults
-    # 无需反代可开启端口映射，与下面 web 反代服务互斥
-    ports:
-      - "80:80"
-  # 可选：使用反代托管 SSL 证书和服务
-  web:
-    image: caddy:2-alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./caddy/etc/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./caddy/etc/caddy/certs:/etc/caddy/certs:ro
-    env_file: .env
-    environment:
-      ACME_AGREE: "true"
-
-
-# 持久化有三种方式：
-volumes:
-  # 1. docker compose 内部自动生成 volumes
-  - zealot-uploads
-  - zealot-backup
-  - zealot-redis
-  - zealot-postgres
-
-  # 2. docker compose 外部创建的 volumes
-  zealot-uploads:
-    external: true
-  zealot-backup:
-    external: true
-  zealot-redis:
-    external: true
-  zealot-postgres:
-    external: true
-
-
-  # 3. 挂载自定义本地路径
-  zealot-uploads:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/zealot/uploads
-  zealot-backup:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/zealot/backup
-  zealot-redis:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/redis
-  zealot-postgres:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/postgres
 ```
