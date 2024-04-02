@@ -28,7 +28,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@crowdin/cli": "^3.19.1",
+    "@crowdin/cli": "^3.19.2",
     "@docusaurus/module-type-aliases": "^3.2.0",
     "@docusaurus/types": "^3.2.0"
   },
