@@ -159,6 +159,10 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'Demo',
+                href: 'https://tryzealot.ews.im',
+              },
+              {
                 label: 'GitHub',
                 href: 'https://github.com/tryzealot/zealot',
               },
