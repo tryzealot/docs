@@ -13,6 +13,14 @@
 - `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
 - `Web` **重大变更** 数据备份逻辑调整 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
 
+## 5.2.2 (2024-04-03)
+
+详细[代码变更记录][5.2.2]。
+
+#### 修复
+
+- `Web` 修复 OIDC 跳转链接 [#1455](https://github.com/tryzealot/zealot/pull/1455) 感谢 [yiukamsum](https://github.com/yiukamsum)
+
 ## 5.2.1 (2024-04-02)
 
 解决 iOS 14.5 以下系统版本无法展示安装按钮的小臭虫。详细[代码变更记录][5.2.1]。
@@ -584,7 +592,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.2.1...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.2.2...HEAD
+[5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1
 [5.2.0]: https://github.com/tryzealot/zealot/compare/5.1.0...5.2.0
 [5.1.0]: https://github.com/tryzealot/zealot/compare/5.0.0...5.1.0

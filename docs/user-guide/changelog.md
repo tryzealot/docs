@@ -13,9 +13,17 @@ The following list of changes is the list that has not yet been released, code c
 - `Docker` **Breaking Change** Plan to deprecate Redis service [#1318](https://github.com/tryzealot/zealot/pull/1318).
 - `Web` **Breaking Change** Adjusted the data backup logic [#1318](https://github.com/tryzealot/zealot/pull/1318).
 
+## 5.2.2 (2024-04-03)
+
+Full [commit changes][5.2.2].
+
+#### Fixed
+
+- `Web` Fix OIDC redirect_uri. [#1455](https://github.com/tryzealot/zealot/pull/1455) thanks to [yiukamsum](https://github.com/yiukamsum)
+
 ## 5.2.1 (2024-04-02)
 
-Fixed the pesky bug where the install button would not show on iOS 14.5 and below systems. For detailed [changelog][5.2.1].
+Fixed the pesky bug where the install button would not show on iOS 14.5 and below systems. Full [commit changes][5.2.1].
 
 #### Fixed
 
@@ -583,7 +591,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.2.1...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.2.2...HEAD
+[5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1
 [5.2.0]: https://github.com/tryzealot/zealot/compare/5.1.0...5.2.0
 [5.1.0]: https://github.com/tryzealot/zealot/compare/5.0.0...5.1.0
