@@ -88,8 +88,12 @@ Turning on auto-discovery mode will automatically fetch the `[OIDC_ISSUER_URL]/.
 
 ```bash
 OIDC_ENABLED=true
+OIDC_NAME=OIDC Provider
 OIDC_CLIENT_ID=
 OIDC_CLIENT_SECRET=
+OIDC_SCOPE=openid,email,profile,address
+OIDC_RESPONSE_TYPE=code
+OIDC_UID_FIELD=preferred_username
 OIDC_ISSUER_URL=https://oidc.example.com
 OIDC_DISCOVERY=true
 ```
@@ -98,8 +102,12 @@ OIDC_DISCOVERY=true
 
 ```
 OIDC_ENABLED=true
+OIDC_NAME=OIDC Provider
 OIDC_CLIENT_ID=
 OIDC_CLIENT_SECRET=
+OIDC_SCOPE=openid,email,profile,address
+OIDC_RESPONSE_TYPE=code
+OIDC_UID_FIELD=preferred_username
 OIDC_ISSUER_URL=https://oidc.example.com
 OIDC_AUTH_URI=/authorize
 OIDC_TOKEN_URI=/token
