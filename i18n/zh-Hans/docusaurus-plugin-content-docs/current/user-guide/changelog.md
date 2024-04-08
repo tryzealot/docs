@@ -12,6 +12,13 @@
 
 - `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
 - `Web` **重大变更** 数据备份逻辑调整 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+- `开发环境` Ruby 升级至 3.3 和 NodeJS 升级至 20.11.1
+
+#### 修复
+
+- `Web` 三方登录无法获取 email 造成生成 token 异常 [#1461](https://github.com/tryzealot/zealot/issues/1461) 感谢 [yiukamsum]
+- `Web` OIDC scope 变量名错误
+- `Web` 优化英文部分翻译
 
 ## 5.2.2 (2024-04-03)
 

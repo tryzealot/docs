@@ -53,7 +53,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 ### Redis
 
 Version 5.3.0 is not dependent on redis. If you have configured it before,
-please consider deleting the REDIS_URL environment variable, but not deleting it will not affect the use.
+please consider deleting the `REDIS_URL` environment variable, but not deleting it will not affect the use.
 
 ## Configure default language
 
