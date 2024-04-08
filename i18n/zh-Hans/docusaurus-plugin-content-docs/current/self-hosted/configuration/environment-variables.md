@@ -36,9 +36,9 @@ ZEALOT_DOMAIN=zealot.com
 
 ## 配置数据库和缓存
 
-假如你有可以复用的 postgresql 服务也可以自定义配置使用，而无需使用 docker-compose 默认配置的服务。
+假如你有可以复用的 postgres 服务也可以自定义配置使用，而无需使用 docker-compose 默认配置的服务。
 
-### Postgresql
+### Postgres
 
 ```bash
 ZEALOT_POSTGRES_HOST=127.0.0.1

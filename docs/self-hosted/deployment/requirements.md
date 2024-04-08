@@ -4,6 +4,13 @@ sidebar_label: "Requirements"
 
 # Zealot Self Hosted Requirements
 
+:::warning
+
+Zealot is no longer in need of redis service after the official release of 5.3.0, for more details,
+check [#1318](https://github.com/tryzealot/zealot/pull/1318) please.
+
+:::
+
 This page incldues useful information on the requirements that are needed to install and run Zealot on your servers.
 
 ## Operating Systems
@@ -48,9 +55,9 @@ You must use the standard MRI implementation of Ruby. Zealot needs several Gems 
 
 Zealot uses [esbuild](https://esbuild.github.io/) and [sass](https://sass-lang.com/) to compile frontend assets.
 
-We recommend Node 14.x or higher version, as it's faster.
+We recommend Node 18.x or higher version, as it's faster.
 
-You can check which version you're running with `node -v`. If you're running a version older than `v8.0`,
+You can check which version you're running with `node -v`. If you're running a version older than `18.x`,
 you need to update it to a newer version. You can find instructions to install from community maintained packages or compile from source at the [Node.js website](https://nodejs.org/en/download/).
 
 ## Database
@@ -64,18 +71,11 @@ available, though the exact requirements depends on the usage on your Zealot Ins
 
 We highly recommend using the latest stable PostgreSQL versions as these were used for development and testing.
 
-### Redis
+## Background processing
 
-Redis stores the background task queue and various Zealot configurations cached.
-The storage requirements for Redis are minimal, You can start with 50MB and scale up as required.
-
-Redis version 6.2 or higher version is recommended
-
-## Sidekiq
-
-Sidekiq processes the background jobs with a multi-threaded process.
+Goodjob processes the background jobs with a multi-threaded process.
 This process starts with the entire Rails stack but it can grow over time due to memory leaks.
-On a very active server the Sidekiq process can use 1GB+ of memory.
+On a very active server the Goodjob process can use 1GB+ of memory.
 
 ## Supported web browsers
 

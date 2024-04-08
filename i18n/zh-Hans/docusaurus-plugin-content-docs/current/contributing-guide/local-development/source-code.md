@@ -48,13 +48,13 @@ export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib/
 
 #### 配置 Postgres
 
-运行 postgresql 服务
+运行 postgres 服务
 
 ```bash
 $ brew services start postgresql
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ createuser --superuser zealot
@@ -98,13 +98,13 @@ $ apt install -y postgresql-client node
 
 #### 配置 Postgres
 
-运行 postgresql 服务
+运行 postgres 服务
 
 ```bash
 $ systemctl postgres start
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data
@@ -140,13 +140,13 @@ $ apk --update --no-cache postgresql node
 
 #### 配置 Postgres
 
-运行 postgresql 服务
+运行 postgres 服务
 
 ```bash
 $ rc-service postgres start
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data

@@ -12,8 +12,7 @@ Zealot support deployments using [Nomad](https://www.nomadproject.io/), it use [
 
 First, follow the official tutorial to install [nomad](https://developer.hashicorp.com/nomad/docs/install), this binary file contains the client and server. It is recommended to follow the [tutorials](https://developer.hashicorp.com/nomad/tutorials/get-started) to walk through it if you don't know it.
 
-The following file will create the postgres, redis and zealot services.
-For the existing external database and cache services,
+The following file will create the postgres and zealot services. For the existing external database and cache services,
 you can delete the corresponding `port`, `service` and `task` and edit the template variables in the `zealot` task.
 
 ```hcl title="zealot.nomad"
@@ -35,10 +34,6 @@ job "zealot" {
 
       port "postgres" {
         to = 5678
-      }
-
-      port "redis" {
-        to = 6379
       }
     }
 
@@ -65,19 +60,6 @@ job "zealot" {
       //   "traefik.enable=true",
       //   "traefik.tcp.routers.postgres.rule=HostSNI(`*`)",
       //   "traefik.tcp.routers.postgres.entrypoints=postgres",
-      // ]
-    }
-
-    service {
-      name = "redis"
-      port = "redis"
-      provider = "nomad"
-
-      // Register to traefik
-      // tags = [
-      //   "traefik.enable=true",
-      //   "traefik.tcp.routers.redis.rule=HostSNI(`*`)",
-      //   "traefik.tcp.routers.redis.entrypoints=redis",
       // ]
     }
 
@@ -135,9 +117,6 @@ job "zealot" {
         ZEALOT_POSTGRES_PASSWORD = "zealot"
         ZEALOT_POSTGRES_DB_NAME = "zealot"
 
-        # cache
-        REDIS_URL = redis://{{ env "NOMAD_ARRR_redis" }}/0
-
         # secret token
         SECRET_TOKEN = $${ sha256(uuidv5("url", "zealot.ews.im")) }
         EOF
@@ -178,25 +157,6 @@ job "zealot" {
         cpu         = 512
         memory      = 200
         memory_max  = 512
-      }
-    }
-
-    task "redis" {
-      driver = "docker"
-
-      lifecycle {
-        hook = "prestart"
-        sidecar = true
-      }
-
-      config {
-        image = "redis:7-alpine"
-        ports = ["redis"]
-      }
-
-      resources {
-        cpu    = 200
-        memory = 200
       }
     }
   }

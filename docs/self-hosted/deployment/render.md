@@ -10,7 +10,7 @@ Zealot support a render [blueprint](https://render.com/docs/blueprint-spec) name
 
 * It uses the [Zealot Docker image](https://ghcr.io/tryzealot/zealot).
 * It uses [Render Disks](https://render.com/docs/disks) for permanent SSD storage for uploaded files and content.
-* It uses [PostgreSQL](https://render.com/docs/databases) as the backing database and [Redis](https://render.com/docs/redis) as cache service.
+* It uses [PostgreSQL](https://render.com/docs/databases) as the backing database.
 
 ### Install button
 
