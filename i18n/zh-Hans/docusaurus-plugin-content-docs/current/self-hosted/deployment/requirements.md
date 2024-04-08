@@ -4,6 +4,12 @@ sidebar_label: "依赖"
 
 # Zealot 自部署依赖
 
+:::warning
+
+Zealot 将在 5.3.0 正式版本后不再需要 redis 服务，详情参见 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+
+:::
+
 如果想要顺利并发挥 Zealot 最佳状态运行，本页面提供了安装所需的各自软硬环境的依赖安装信息。
 
 ## 操作系统
@@ -14,7 +20,7 @@ Zealot 可以安装在绝大多数 Linux 操作系统，但目前并没有测试
 
 ### 系统架构
 
-支持使用 amd86/arm64/armv7 运行的主流 Linux 系统，比如 Debian，Ubuntu、CentOS、Arch Linux、Armbian 等。
+支持使用 `amd86`、`arm64`、`arm64`、`armv7` 运行的主流 Linux 系统，比如 Debian，Ubuntu、CentOS、Arch Linux、Armbian 等。
 
 ### CPU
 
@@ -48,9 +54,9 @@ CPU 数量取决于 Zealot 使用的资源和任务量，工作量受（包括�
 
 Zealot 使用 [esbuild](https://esbuild.github.io/) 和 [sass](https://sass-lang.com/) 编译前端资源。
 
-推荐使用 Node 14.x 以上版本。
+推荐使用 Node 18.x 以上版本。
 
-可以在终端应用通过运行 `node -v` 命令查看 node 的版本。如果运行的版本低于 `v8.0` 你需要更新到推荐的版本。你可在[官方网站](https://nodejs.org/en/download/)查看更多安装或升级教程。
+可以在终端应用通过运行 `node -v` 命令查看 node 的版本。如果运行的版本低于 `18.x` 你需要更新到推荐的版本。你可在[官方网站](https://nodejs.org/en/download/)查看更多安装或升级教程。
 
 ## 数据库
 
@@ -58,19 +64,13 @@ Zealot 使用 [esbuild](https://esbuild.github.io/) 和 [sass](https://sass-lang
 
 ### PostgreSQL 依赖
 
-PostgreSQL 预留_至少_ 5-10 GB 空间，更多的空间意味着可以存储更多的数据。
+PostgreSQL 预留**最低 5-10 GB 空间**，更多的空间意味着可以存储更多的数据。
 
 我们强烈推荐使用且保持 PostgreSQL 永远是最新的稳定版本作为开发和测试使用。
 
-### Redis
+## 后台任务
 
-Zealot 后台异步任务和定时任务依赖于 Redis 做数据的存储和统计使用，存储空间依赖很小，50MB 足矣。
-
-Redis 最低支持版本 6.2+，推荐 7.x 版本
-
-## Sidekiq
-
-Sidekiq 是 Zealot 后台异步任务和定时任务使用的服务，它支持多线程操作且运行时依托于 Rails （也就是 Zealot 使用的框架）。
+GoodJob 是 Zealot 后台异步任务和定时任务使用的服务，它支持多线程操作且运行时依托于 Rails （也就是 Zealot 使用的框架）。
 它可能会随着时间的推移而增长内存的占用，如果 Zealot 运行的时间很长造成的服务不稳定请适当调整内存的大小，建议是 1GB+。
 
 ## 已支持 Web 浏览器

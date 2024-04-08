@@ -7,13 +7,9 @@ for those who are able to manually backup and restore data before better backup 
 
 This is used to store and manage all data related to Zealot, so it goes without saying.
 
-## Redis
-
-Currently only the sidekiq asynchronous task service is using it to store some task status and statistics.
-
 ## File storage
 
-The Zealot service relies on postgresql, redis and some other disk storage for uploaded application and debug files.
+The Zealot service relies on postgres and some other disk storage for uploaded application and debug files.
 It is currently stored in the filesystem in the `public/uploads` directory.
 
 - apps The directory for uploading applications

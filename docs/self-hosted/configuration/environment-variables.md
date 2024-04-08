@@ -36,11 +36,11 @@ ZEALOT_DOMAIN=zealot.com
 
 ## Database configuration
 
-If you have reusable postgresql and redis services,
+If you have reusable postgres services,
 you can also customize the configuration to use them instead of
 using the services configured by default with docker-compose.
 
-### Postgresql
+### Postgres
 
 ```bash
 ZEALOT_POSTGRES_HOST=127.0.0.1
@@ -52,14 +52,8 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 ### Redis
 
-This is a URL connection mainly for most cloud services compatibility
-
-```bash
-REDIS_URL=redis://user:pass@127.0.0.1:6379/0
-
-# Redis over SSL
-REDIS_URL=rediss://user:pass@127.0.0.1:6379/0
-```
+Version 5.3.0 is not dependent on redis. If you have configured it before,
+please consider deleting the `REDIS_URL` environment variable, but not deleting it will not affect the use.
 
 ## Configure default language
 

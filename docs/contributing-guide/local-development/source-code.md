@@ -32,16 +32,15 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 #### Install dependencies
 
 ```bash
-$ brew install redis postgresql webp imagemagick node git
+$ brew install postgresql webp imagemagick node git
 ```
 
 #### Setup Database and cache services
 
-Run postgresql and redis services
+Run postgresql  services
 
 ```bash
 $ brew services start postgresql
-$ brew services start redis
 ```
 
 You also need to create a default username in Postgresql：
@@ -72,16 +71,15 @@ $ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev li
 #### Install dependencies
 
 ```bash
-$ apt install -y redis postgresql-client node
+$ apt install -y postgresql-client node
 ```
 
 #### Setup Database and cache services
 
-Run postgresql and redis services
+Run postgres services
 
 ```bash
 $ systemctl postgres start
-$ systemctl redis start
 ```
 
 You also need to create a default username in Postgresql：
@@ -115,19 +113,18 @@ Needs install `gcompat` if use `arm` architecture. or an exception will throws s
 #### Install dependencies
 
 ```bash
-$ apk --update --no-cache redis postgresql
+$ apk --update --no-cache postgresql
 ```
 
 #### Setup Database and cache services
 
-Run postgresql and redis services
+Run postgres services
 
 ```bash
 $ rc-service postgres start
-$ rc-service redis start
 ```
 
-You also need to create a default username in Postgresql：
+You also need to create a default username in Postgres：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data

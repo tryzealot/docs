@@ -4,7 +4,18 @@ sidebar_label: "服务架构"
 
 # Zealot 服务架构
 
+:::warning
+
+Zealot 将在 5.3.0 正式版本后不再需要 redis 服务，详情参见 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+
+:::
+
 运行 Zealot 依赖如下服务才能保证正常运行
+
+- 支持 `amd86`、`arm64`、`arm64`、`armv7` 架构的主流 Linux 系统
+- Zealot 提供 Web 服务、API 服务和后台任务服务
+- 本地/云端存储用于持久化存储上传应用和图标
+- PostgreSQL 数据库和缓存服务
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,14 +23,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <ThemedImage
   alt="Architecture"
   sources={{
-    light: useBaseUrl('/img/5.0.0/zh-Hans/architecture-light.png'),
-    dark: useBaseUrl('/img/5.0.0/zh-Hans/architecture-dark.png'),
+    light: useBaseUrl('/img/5.3.0/zh-Hans/architecture-light.png'),
+    dark: useBaseUrl('/img/5.3.0/zh-Hans/architecture-dark.png'),
   }}
 />
-
-
-- 使用 amd86/arm64/armv7 运行的主流 Linux 系统
-- Ruby on Rails 提供核心网页和 API 服务
-- Sidekiq 提供后台的异步任务管理服务
-- PostgreSQL 数据库服务
-- Redis 缓存服务

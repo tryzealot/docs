@@ -2,17 +2,19 @@
 
 这里罗列了 Zealot 服务所需的所有数据存储，在还没有提供更好的备份管理工具之前，方便有能力的用户能够手动备份和恢复数据使用。
 
+:::warning
+
+Zealot 将在 5.3.0 正式版本后不再需要 redis 服务，详情参见 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+
+:::
+
 ## Postgres
 
 用于存储和管理一切和 Zealot 有关数据，这个就不用多说了。
 
-## Redis
-
-目前只有 sidekiq 异步任务服务在使用它做一些任务状态、统计数据的存储。
-
 ## 文件存储
 
-Zealot 服务除了依赖 postgresql、redis 之外还有一部分的磁盘存储是上传的应用、调试文件且仅提供存储在文件系统之中，目录位于 `public/uploads`。
+Zealot 服务除了依赖 postgres 之外还有一部分的磁盘存储是上传的应用、调试文件且仅提供存储在文件系统之中，目录位于 `public/uploads`。
 
 - apps 上传应用的目录
 - debugs_files 上传调试文件的目录

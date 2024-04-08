@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <ThemedImage
   alt="Architecture"
   sources={{
-    light: useBaseUrl('/img/5.0.0/zh-Hans/architecture-light.png'),
-    dark: useBaseUrl('/img/5.0.0/zh-Hans/architecture-dark.png'),
+    light: useBaseUrl('/img/5.3.0/zh-Hans/architecture-light.png'),
+    dark: useBaseUrl('/img/5.3.0/zh-Hans/architecture-dark.png'),
   }}
 />

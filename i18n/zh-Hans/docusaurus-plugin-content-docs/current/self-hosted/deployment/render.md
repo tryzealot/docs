@@ -10,7 +10,7 @@ Zealot 提供 [render.com](https://render.com/) 官方 blueprint 模板 `render.
 
 * 使用 [Zealot Docker 镜像](https://ghcr.io/tryzealot/zealot)。
 * 使用 [Render Disks](https://render.com/docs/disks) 作为上传应用和调试文件的持久化存储。
-* 使用 [PostgreSQL](https://render.com/docs/databases) 作为数据库以及 [Redis](https://render.com/docs/redis) 作为数据缓存。
+* 使用 [PostgreSQL](https://render.com/docs/databases) 作为数据库及数据缓存。
 
 ## 一键部署
 

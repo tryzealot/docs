@@ -48,7 +48,6 @@ The configuration file will generate at least three services, using the first tw
 
 - `zealot-zealot`: Use reverse-generation gateway services to deliver core Web and API services
 - `zealot-postgres`: Database service
-- `zealot-redis`: Cache service
 - `zealot-web`: Provides a reverse proxy gateway service for (services and certificates), optional.
 
 ### Create docker volumes for persistent storage
@@ -58,7 +57,6 @@ Persistent storage Data:
 - `zealot-uploads`: Uploaded app file with extracted icon, uploaded debugging files.
 - `zealot-backup`: backup files.
 - `zealot-postgres`: Core database data.
-- `zealot-redis`: Hot cache and background jobs data.
 
 ### Pull images
 
@@ -98,15 +96,15 @@ There are two ways to customize the path: (Assuming that the custom path is `/da
 #### 1. Create custom docker volume
 
 ```sh
-docker volume create --name zealot-data \
+docker volume create --name zealot-uploads \
   --opt type=none \
   --opt o=bind \
-  --opt device=/data/zealot/zealot-data
+  --opt device=/data/zealot/zealot-uploads
 
-docker volume create --name zealot-redis \
+docker volume create --name zealot-backup \
   --opt type=none \
   --opt o=bind \
-  --opt device=/data/zealot/redis
+  --opt device=/data/zealot/zealot-backup
 
 docker volume create --name zealot-postgres \
   --opt type=none \
@@ -120,19 +118,18 @@ Open `docker-compose.yml` file and find `volumes:`:
 
 ```yaml
 volumes:
-  zealot-data:
+  zealot-uploads:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /data/zealot/data
-  zealot-redis:
+      device: /data/zealot/uploads
+  zealot-backup:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /data/zealot/redis
-
+      device: /data/zealot/backup
   zealot-postgres:
     driver: local
     driver_opts:
@@ -153,7 +150,6 @@ x-defaults: &defaults
   <<: *restart_policy
   image: ghcr.io/tryzealot/zealot:nightly
   depends_on:
-    - redis
     - postgres
   env_file: .env
   volumes:
@@ -164,14 +160,6 @@ x-defaults: &defaults
     test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/health || exit 1"]
 
 services:
-  redis:
-    <<: *restart_policy
-    image: redis:7-alpine
-    command: redis-server
-    volumes:
-      - zealot-redis:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
   postgres:
     <<: *restart_policy
     image: postgres:14-alpine
@@ -205,15 +193,12 @@ volumes:
   # 1. docker compose inside volumes
   - zealot-uploads
   - zealot-backup
-  - zealot-redis
   - zealot-postgres
 
   # 2. docker compose external volumes
   zealot-uploads:
     external: true
   zealot-backup:
-    external: true
-  zealot-redis:
     external: true
   zealot-postgres:
     external: true
@@ -231,12 +216,6 @@ volumes:
       o: bind
       type: none
       device: /tmp/zealot/backup
-  zealot-redis:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/redis
   zealot-postgres:
     driver: local
     driver_opts:

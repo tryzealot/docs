@@ -36,7 +36,7 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 之后开始安装环境依赖
 
 ```bash
-$ brew install redis postgresql webp imagemagick node git
+$ brew install postgresql webp imagemagick node git
 ```
 
 M1 用户需要设置依赖编译路径到 SHELL 的配置文件中：
@@ -46,16 +46,15 @@ export CPATH=/opt/homebrew/include/
 export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib/
 ```
 
-#### 配置 Postgres 和 Redis
+#### 配置 Postgres
 
-运行 postgresql 和 redis 服务
+运行 postgres 服务
 
 ```bash
 $ brew services start postgresql
-$ brew services start redis
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ createuser --superuser zealot
@@ -94,19 +93,18 @@ $ apt install -y libssl-dev tar tzdata git imagemagick libjpeg-dev libpng-dev li
 #### 安装依赖
 
 ```bash
-$ apt install -y redis postgresql-client node
+$ apt install -y postgresql-client node
 ```
 
-#### 配置 Postgres 和 Redis
+#### 配置 Postgres
 
-运行 postgresql 和 redis 服务
+运行 postgres 服务
 
 ```bash
 $ systemctl postgres start
-$ systemctl redis start
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data
@@ -137,19 +135,18 @@ $ apk --update --no-cache add build-base libxml2 libxslt git \
 #### 安装依赖
 
 ```bash
-$ apk --update --no-cache redis postgresql node
+$ apk --update --no-cache postgresql node
 ```
 
-#### 配置 Postgres 和 Redis
+#### 配置 Postgres
 
-运行 postgresql 和 redis 服务
+运行 postgres 服务
 
 ```bash
 $ rc-service postgres start
-$ rc-service redis start
 ```
 
-Postgresql 还需要创建默认用户名：
+Postgres 还需要创建默认用户名：
 
 ```bash
 $ initdb -D /var/lib/postgresql/data
@@ -177,7 +174,7 @@ $ npm install -g yarn
 一个支持主流开发语言版本切换的工具，请按照[官方安装教程](http://asdf-vm.com/guide/getting-started.html)好之后安装 ruby：
 
 ```bash
-# 开启 Ruby 3.2.0 YJIT 新特性需要安装 rust 1.58+
+# 开启 Ruby 3.3.0 YJIT 新特性需要安装 rust 1.58+
 # 可选安装:
 asdf plugin add rust
 asdf install rust latest
@@ -186,8 +183,8 @@ export RUBY_CONFIGURE_OPTS=--enable-yjit
 
 # 必须安装
 asdf plugin add ruby
-asdf install ruby 3.2.0
-asdf global ruby 3.2.0
+asdf install ruby 3.3.0
+asdf global ruby 3.3.0
 ```
 
 ```mdx-code-block
@@ -199,7 +196,7 @@ asdf global ruby 3.2.0
 
 ```bash
 $ curl -sSL https://get.rvm.io | bash -s stable
-$ rvm install 3.2.0 --disable-binary
+$ rvm install 3.3.0 --disable-binary
 ```
 
 ```mdx-code-block

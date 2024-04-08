@@ -36,9 +36,9 @@ ZEALOT_DOMAIN=zealot.com
 
 ## 配置数据库和缓存
 
-假如你有可以复用的 postgresql 和 redis 服务也可以自定义配置使用，而无需使用 docker-compose 默认配置的服务。
+假如你有可以复用的 postgres 服务也可以自定义配置使用，而无需使用 docker-compose 默认配置的服务。
 
-### Postgresql
+### Postgres
 
 ```bash
 ZEALOT_POSTGRES_HOST=127.0.0.1
@@ -50,14 +50,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 ### Redis
 
-兼容大多数云服务部署采用的 URL 连接方式
-
-```bash
-REDIS_URL=redis://user:pass@127.0.0.1:6379/0
-
-# 基于 SSL 的 Redis
-REDIS_URL=rediss://user:pass@127.0.0.1:6379/0
-```
+5.3.0 版本不再依赖 redis，如果之前已经配置请考虑删除 `REDIS_URL` 环境变量，但不删除也不影响使用。
 
 ## 配置网站默认语言
 

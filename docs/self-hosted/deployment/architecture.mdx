@@ -4,7 +4,19 @@ sidebar_label: "Architecture"
 
 # Zealot Architecture
 
+:::warning
+
+Zealot is no longer in need of redis service after the official release of 5.3.0, for more details,
+check [#1318](https://github.com/tryzealot/zealot/pull/1318) please.
+
+:::
+
 Running Zealot requires the following set of services.
+
+- Mostly Linux based on amd86, arm64, arm64 and armv7.
+- Zealot powered Web, API and background services.
+- Local/Cloud storage powered uploaded app files.
+- PostgreSQL database powered data and cache service.
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,14 +24,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <ThemedImage
   alt="Architecture"
   sources={{
-    light: useBaseUrl('/img/5.0.0/architecture-light.png'),
-    dark: useBaseUrl('/img/5.0.0/architecture-dark.png'),
+    light: useBaseUrl('/img/5.3.0/architecture-light.png'),
+    dark: useBaseUrl('/img/5.3.0/architecture-dark.png'),
   }}
 />
-
-
-- Mostly Linux based on amd86/arm64/armv7.
-- Ruby on Rails powered Web and API services
-- Sidekiq provides asynchronous background task management
-- PostgreSQL database
-- Redis cache
