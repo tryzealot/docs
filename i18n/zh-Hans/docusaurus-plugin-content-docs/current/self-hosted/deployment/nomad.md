@@ -14,7 +14,7 @@ Zealot 原生支持使用 [Nomad](https://www.nomadproject.io/) 部署。这得�
 先按照官方教程依次安装好 [nomad](https://developer.hashicorp.com/nomad/docs/install)，这个二进制文件是包含了客户端和服务端。
 不了解的建议跟着[官方教程](https://developer.hashicorp.com/nomad/tutorials/get-started)演练一遍。
 
-下面文件将会创建 postgres、redis 和 zealot 三个服务，对于已有的外部数据库和缓存服务，可以删除掉对应的 `port`, `service` 和 `task` 后编辑 `zealot` task 里面的模板变量。
+下面文件将会创建 postgres 和 zealot 两个服务，对于已有的外部数据库和缓存服务，可以删除掉对应的 `port`, `service` 和 `task` 后编辑 `zealot` task 里面的模板变量。
 
 ```hcl title="zealot.nomad"
 job "zealot" {
@@ -35,10 +35,6 @@ job "zealot" {
 
       port "postgres" {
         to = 5678
-      }
-
-      port "redis" {
-        to = 6379
       }
     }
 
@@ -65,19 +61,6 @@ job "zealot" {
       //   "traefik.enable=true",
       //   "traefik.tcp.routers.postgres.rule=HostSNI(`*`)",
       //   "traefik.tcp.routers.postgres.entrypoints=postgres",
-      // ]
-    }
-
-    service {
-      name = "redis"
-      port = "redis"
-      provider = "nomad"
-
-      // 注册服务到 traefik
-      // tags = [
-      //   "traefik.enable=true",
-      //   "traefik.tcp.routers.redis.rule=HostSNI(`*`)",
-      //   "traefik.tcp.routers.redis.entrypoints=redis",
       // ]
     }
 
@@ -135,9 +118,6 @@ job "zealot" {
         ZEALOT_POSTGRES_PASSWORD = "zealot"
         ZEALOT_POSTGRES_DB_NAME = "zealot"
 
-        # cache
-        REDIS_URL = redis://{{ env "NOMAD_ARRR_redis" }}/0
-
         # secret token
         SECRET_TOKEN = $${ sha256(uuidv5("url", "zealot.ews.im")) }
         EOF
@@ -178,25 +158,6 @@ job "zealot" {
         cpu         = 512
         memory      = 200
         memory_max  = 512
-      }
-    }
-
-    task "redis" {
-      driver = "docker"
-
-      lifecycle {
-        hook = "prestart"
-        sidecar = true
-      }
-
-      config {
-        image = "redis:7-alpine"
-        ports = ["redis"]
-      }
-
-      resources {
-        cpu    = 200
-        memory = 200
       }
     }
   }

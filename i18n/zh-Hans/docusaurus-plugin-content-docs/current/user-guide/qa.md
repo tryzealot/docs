@@ -15,14 +15,11 @@
 
 负载均衡在提供服务的时候会在最前端部署 https 服务，内部的分发实际上还是走的 http，解决办法在负载均衡上把转发的协议头从 http 改成 https，这样服务再转发的时候就会继承最前端的协议头（`X-Forwarded-Proto`）。
 
-## 是否支持外部 redis、postgresql 链接
+## 是否支持外部 postgres 链接
 
-支持的，如果有公用的 redis、postgresql 服务器那就可以单独部署 zealot 服务，在 `.env` 配置或 Docker、K8s 的环境变量手动指定如下配置：
+支持的，如果有公用的 postgres 服务器那就可以单独部署 zealot 服务，在 `.env` 配置或 Docker、K8s 的环境变量手动指定如下配置：
 
 ```bash
-# Redis
-REDIS_URL=redis://127.0.0.1:6379/0
-
 # Postgresl
 ZEALOT_POSTGRES_HOST=127.0.0.1
 ZEALOT_POSTGRES_PORT=5432

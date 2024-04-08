@@ -49,8 +49,7 @@ sidebar_label: "详细步骤"
 配置文件会生成至少三个服务（service），使用上面前两个证书方式会额外增加一个服务：
 
 - `zealot-zealot`: 核心 Web 和 API 服务
-- `zealot-postgres`: 数据库服务
-- `zealot-redis`: 缓存服务
+- `zealot-postgres`: 数据库和缓存服务
 - `zealot-web`: 提供（服务和证书）反代的网关服务，非必需
 
 ### 创建持久化存储的 docker volumes
@@ -60,7 +59,6 @@ sidebar_label: "详细步骤"
 - `zealot-uploads`: 上传应用和解析后的应用图标、上传的调试文件
 - `zealot-backup`: 备份计划生成备份文件
 - `zealot-postgres`: 数据库数据
-- `zealot-redis`: 缓存数据
 
 ### 拉取（更新）镜像
 
@@ -95,15 +93,15 @@ docker-compose up -d
 #### 1. 创建 volume 自定义路径
 
 ```sh
-docker volume create --name zealot-data \
+docker volume create --name zealot-uploads \
   --opt type=none \
   --opt o=bind \
-  --opt device=/data/zealot/zealot-data
+  --opt device=/data/zealot/zealot-uploads
 
-docker volume create --name zealot-redis \
+docker volume create --name zealot-backup \
   --opt type=none \
   --opt o=bind \
-  --opt device=/data/zealot/redis
+  --opt device=/data/zealot/zealot-backup
 
 docker volume create --name zealot-postgres \
   --opt type=none \
@@ -117,18 +115,19 @@ docker volume create --name zealot-postgres \
 
 ```yaml
 volumes:
-  zealot-data:
+  zealot-uploads:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /data/zealot/data
-  zealot-redis:
+      device: /data/zealot/uploads
+
+  zealot-backup:
     driver: local
     driver_opts:
       o: bind
       type: none
-      device: /data/zealot/redis
+      device: /data/zealot/backup
 
   zealot-postgres:
     driver: local
@@ -150,7 +149,6 @@ x-defaults: &defaults
   <<: *restart_policy
   image: ghcr.io/tryzealot/zealot:nightly
   depends_on:
-    - redis
     - postgres
   env_file: .env
   volumes:
@@ -161,14 +159,6 @@ x-defaults: &defaults
     test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/health || exit 1"]
 
 services:
-  redis:
-    <<: *restart_policy
-    image: redis:7-alpine
-    command: redis-server
-    volumes:
-      - zealot-redis:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
   postgres:
     <<: *restart_policy
     image: postgres:14-alpine
@@ -202,7 +192,6 @@ volumes:
   # 1. docker compose 内部自动生成 volumes
   - zealot-uploads
   - zealot-backup
-  - zealot-redis
   - zealot-postgres
 
   # 2. docker compose 外部创建的 volumes
@@ -210,11 +199,8 @@ volumes:
     external: true
   zealot-backup:
     external: true
-  zealot-redis:
-    external: true
   zealot-postgres:
     external: true
-
 
   # 3. 挂载自定义本地路径
   zealot-uploads:
@@ -229,12 +215,6 @@ volumes:
       o: bind
       type: none
       device: /tmp/zealot/backup
-  zealot-redis:
-    driver: local
-    driver_opts:
-      o: bind
-      type: none
-      device: /tmp/redis
   zealot-postgres:
     driver: local
     driver_opts:
