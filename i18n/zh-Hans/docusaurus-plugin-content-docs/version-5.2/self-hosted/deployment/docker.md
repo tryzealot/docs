@@ -4,9 +4,14 @@ sidebar_label: "Docker"
 
 # Docker 部署 Zealot 指南
 
-> :bell: 强烈建议安装首选使用 [Docker](https://www.docker.io/) 容器方式安装部署 Zealot。
-> 鉴于 iOS 使用下载服务依赖开启 SSL/TLS 证书，建议使用经过授权的证书服务，比如 [Let's Encrypt](https://letsencrypt.org/)，
-> 如果使用自签名证书需要每个 iOS 设备在下载安装应用前[必须安装自签名证书](https://support.apple.com/zh-cn/HT204477)才行。
+:::tip
+
+强烈建议安装首选使用 [Docker](https://www.docker.io/) 容器方式安装部署 Zealot。
+
+鉴于 iOS 使用下载服务依赖开启 SSL/TLS 证书，建议使用经过授权的证书服务，比如 [Let's Encrypt](https://letsencrypt.org/)，
+如果使用自签名证书需要每个 iOS 设备在下载安装应用前[必须安装自签名证书](https://support.apple.com/zh-cn/HT204477)才行。
+
+:::
 
 ## 一键安装脚本
 
@@ -16,7 +21,7 @@ sidebar_label: "Docker"
 首先需要克隆[官方 Zealot 部署工具](https://github.com/tryzealot/zealot-docker.git)，进入 `zealot-docker`
 目录后需要打开 `example.env` 文件配置必要的参数后可直接执行 `./deploy.sh` 脚本：
 
-:::tip
+:::info
 
 默认会生成管理员账号：`admin@zealot.com` 和密码 `ze@l0t` 和一些演示应用。
 
@@ -74,3 +79,15 @@ $ sudo vim /etc/hosts
 
 127.0.0.1 zealot.test
 ```
+
+另外，在请求 API 接口时你需要关闭或忽略 SSL 证书认证，否则会报错。
+
+## 配置访问方式
+
+### 公网域名
+
+如果想要 Zealot 服务启用公网域名访问，可以在配置 `ZEALOT_DOMAIN=zealot.test`，那么你可以直接通过 `https://zealot.test` 访问。
+
+### IP + 端口
+
+如果想要 Zealot 服务启用内网 IP 地址+端口号访问，可以在配置 `ZEALOT_DOMAIN=172.168.1.100:3000`，那么你可以直接通过 `https://172.168.1.100:3000`
