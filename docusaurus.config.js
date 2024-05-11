@@ -75,6 +75,26 @@ const config = {
         },
       }),
     ],
+
+    [
+      'redocusaurus',
+      /** @type {import('redocusaurus').PresetOptions} */
+      {
+        specs: [
+          {
+            spec: 'openapi_v1.json',
+            route: '/api/v1',
+          },
+          {
+            spec: 'https://redocly.github.io/redoc/openapi.yaml',
+            route: '/openapi/',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
+      },
+    ],
   ],
 
   themeConfig:
@@ -172,7 +192,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} icyleaf. Built with Docusaurus.`,
       },
       prism: {
-        additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
+        additionalLanguages: ['kotlin', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',
