@@ -24,8 +24,6 @@ List verions from an App | `/api/apps/versions`
 Get the latest Release from an App | `/api/apps/latest`
 Check an Release from App exists | `/api/apps/version_exist`
 
-> Full APIs to check [api/apps](/docs/developer-guide/api/apps) page.
-
 ## Debug files
 
 Resource | Available endpoints
@@ -37,5 +35,3 @@ Get an debug file by id | `/api/debug_files/:id`
 Check a debug file exists by id | `/api/debug_files/version_exist`
 Update a debug file by id | `/api/debug_files/:id`
 Delete a debug file by id  | `/api/debug_files/:id`
-
-> Full APIs to check [api/debug_files](/docs/developer-guide/api/debug_files) page.
