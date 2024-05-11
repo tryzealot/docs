@@ -1,5 +1,13 @@
 # Change Log
 
+## 5.2.3 (2024-04-29)
+
+Full [commit changes][5.2.3].
+
+#### Fixed
+
+- `Web` Fixed an issue where the user registration prompt username was empty. [#1479](https://github.com/tryzealot/zealot/pull/1479) thanks to [mlch911](https://github.com/mlch911)
+
 ## 5.2.2 (2024-04-03)
 
 Full [commit changes][5.2.2].
@@ -579,7 +587,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.2.2...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.2.3...HEAD
+[5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1
 [5.2.0]: https://github.com/tryzealot/zealot/compare/5.1.0...5.2.0

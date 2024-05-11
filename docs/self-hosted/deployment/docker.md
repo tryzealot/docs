@@ -78,14 +78,17 @@ Check [Reverse Proxies Guide](/docs/self-hosted/reverse-proxies) page.
 
 ### Self-signed untrust SSL
 
-> **Not recommended**
+:::caution
 
-Please do not use this for non-essential cases, for iOS using self-signed certificates
-**may require the device to also have an SSL certificate installed before accessing and installing the application**,
-and Chrome may also deny access due to the certificate.
+This solution is not recommended under any circumstance if you can avoid it.
 
-> If the domain name is unregistered, you need to tie the host to access it,
-> usually by modifying the system's `/etc/hosts` file.
+**iOS devices have to manually install the self-signed certificate on their devices** before the app can
+be installed properly and that must be done for any and all web services which the app uses a self-signed certificate.
+
+:::
+
+If the domain name is unregistered, you need to tie the host to access it,
+usually by modifying the system's `/etc/hosts` file.
 
 ```bash title="/etc/hosts"
 $ sudo vim /etc/hosts
@@ -94,3 +97,5 @@ $ sudo vim /etc/hosts
 127.0.0.1 zealot.test
 # highlight-end
 ```
+
+And you need skip ssl verify to request the API.

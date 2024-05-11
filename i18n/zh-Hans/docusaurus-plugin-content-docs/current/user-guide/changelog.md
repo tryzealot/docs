@@ -20,6 +20,14 @@
 - `Web` OIDC scope 变量名错误
 - `Web` 优化英文部分翻译
 
+## 5.2.3 (2024-04-29)
+
+详细[代码变更记录][5.2.3]。
+
+#### 修复
+
+- `Web` 修复用户注册提示用户名为空 [#1479](https://github.com/tryzealot/zealot/pull/1479) 感谢 [mlch911](https://github.com/mlch911)
+
 ## 5.2.2 (2024-04-03)
 
 详细[代码变更记录][5.2.2]。
@@ -599,7 +607,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.2.2...HEAD
+[未发布]: : https://github.com/tryzealot/zealot/compare/5.2.3...HEAD
+[5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1
 [5.2.0]: https://github.com/tryzealot/zealot/compare/5.1.0...5.2.0
