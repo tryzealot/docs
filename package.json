@@ -19,8 +19,8 @@
     "crowdin": "crowdin"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.2.0",
-    "@docusaurus/preset-classic": "^3.2.0",
+    "@docusaurus/core": "^3.3.2",
+    "@docusaurus/preset-classic": "^3.3.2",
     "@mdx-js/react": "^3.0.1",
     "clsx": "^2.1.0",
     "prism-react-renderer": "^2.3.1",
@@ -29,8 +29,8 @@
   },
   "devDependencies": {
     "@crowdin/cli": "^3.19.2",
-    "@docusaurus/module-type-aliases": "^3.2.0",
-    "@docusaurus/types": "^3.2.0"
+    "@docusaurus/module-type-aliases": "^3.3.2",
+    "@docusaurus/types": "^3.3.2"
   },
   "browserslist": {
     "production": [
