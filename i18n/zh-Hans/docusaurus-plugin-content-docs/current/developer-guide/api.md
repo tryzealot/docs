@@ -15,8 +15,10 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 
 目前可用的 API 接口基本满足打包和下载流程的范围：
 
-- [应用](#应用)
-- [调试文件](#调试文件)
+- [应用](#应用接口)
+- [应用类型](#应用类型接口)
+- [应用渠道](#应用渠道接口)
+- [调试文件](#调试文件接口)
 
 ### 应用接口
 
@@ -28,8 +30,27 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 应用版本列表 | `/api/apps/versions`
 应用最新版本 | `/api/apps/latest`
 检查当前版本 | `/api/apps/version_exist`
+创建应用 | `/api/apps`
+更新应用 | `/api/apps/:id`
+删除应用 | `/api/apps/:id`
 
-> 全部接口 [api/apps](/docs/developer-guide/api/apps)
+## 应用类型接口
+
+定义 | 地址
+---|---
+应用类型列表 | `/api/apps/:id/schemes`
+创建应用类型 | `/api/apps/:id/schemes`
+更新应用类型 | `/api/schemes/:id`
+删除应用类型 | `/api/schemes/:id`
+
+## 应用渠道接口
+
+定义 | 地址
+---|---
+应用渠道列表 | `/api/schemes/:id/channels`
+创建应用渠道 | `/api/schemes/:id/channels`
+更新应用渠道 | `/api/channels/:id`
+删除应用渠道 | `/api/channels/:id`
 
 ### 调试文件接口
 
@@ -42,5 +63,3 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 检查调试文件是否存在 | `/api/debug_files/version_exist`
 更新调试文件 | `/api/debug_files/:id`
 删除调试文件 | `/api/debug_files/:id`
-
-> 全部接口[api/debug_files](/docs/developer-guide/api/debug_files)

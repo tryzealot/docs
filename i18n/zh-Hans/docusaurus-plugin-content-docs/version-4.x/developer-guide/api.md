@@ -15,8 +15,8 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 
 目前可用的 API 接口基本满足打包和下载流程的范围：
 
-- [应用](#应用)
-- [调试文件](#调试文件)
+- [应用](#应用接口)
+- [调试文件](#调试文件接口)
 
 ### 应用接口
 
@@ -29,8 +29,6 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 应用最新版本 | `/api/apps/latest`
 检查当前版本 | `/api/apps/version_exist`
 
-> 全部接口 [api/apps](/docs/developer-guide/api/apps)
-
 ### 调试文件接口
 
 定义 | 地址
@@ -42,5 +40,3 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 检查调试文件是否存在 | `/api/debug_files/version_exist`
 更新调试文件 | `/api/debug_files/:id`
 删除调试文件 | `/api/debug_files/:id`
-
-> 全部接口[api/debug_files](/docs/developer-guide/api/debug_files)
