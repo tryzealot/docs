@@ -43,7 +43,7 @@ message 1\nmessage 2
 
 **JSON**:
 
-```
+```json
 [
   {
     "message": "message 1",
@@ -71,52 +71,52 @@ curl -X POST \
    --form 'file=@/path/to/your/app'
 ```
 
-#### Return body
+### Return body
 
 ```json
 {
-	"id": 50,
-	"version": 7,
-	"app_name": "Test Android",
-	"bundle_id": "com.test.app",
-	"release_version": "1.0",
-	"build_version": "1",
-	"source": "SOURCE",
-	"branch": "master",
-	"git_commit": "e9de48513dbb6abfbxxxxxxxxxxxxxxxxxxxxxxxx",
-	"ci_url": "",
-	"size": 1565486,
-	"icon_url": "/uploads/apps/a1/r1/icons/app_icon.png",
-	"release_url": "https://YOUR_ZEALOT_URL/channels/1XmpC/releases/1",
-	"install_url": "https://YOUR_ZEALOT_URL/download/releases/1",
-	"qrcode_url": "https://YOUR_ZEALOT_URL/channels/1XmpC/releases/1/qrcode?size=thumb",
-	"changelog": [
-		{
-			"message": "Changelog message 1"
-		},
+  "id": 50,
+  "version": 7,
+  "app_name": "Test Android",
+  "bundle_id": "com.test.app",
+  "release_version": "1.0",
+  "build_version": "1",
+  "source": "SOURCE",
+  "branch": "master",
+  "git_commit": "e9de48513dbb6abfbxxxxxxxxxxxxxxxxxxxxxxxx",
+  "ci_url": "",
+  "size": 1565486,
+  "icon_url": "/uploads/apps/a1/r1/icons/app_icon.png",
+  "release_url": "https://YOUR_ZEALOT_URL/channels/1XmpC/releases/1",
+  "install_url": "https://YOUR_ZEALOT_URL/download/releases/1",
+  "qrcode_url": "https://YOUR_ZEALOT_URL/channels/1XmpC/releases/1/qrcode?size=thumb",
+  "changelog": [
     {
-			"message": "Changelog message 2"
-		}
-	],
+      "message": "Changelog message 1"
+    },
+    {
+      "message": "Changelog message 2"
+    }
+  ],
   "text_changelog": "- Changelog message 1\n- Changelog message 2",
-	"custom_fields": [],
-	"created_at": "2021-09-01T11:43:33.977+08:00",
-	"app": {
-		"id": 1,
-		"name": "App name"
-	},
-	"scheme": {
-		"id": 8,
-		"name": "Test"
-	},
-	"channel": {
-		"slug": "1XmpC",
-		"name": "Android",
-		"device_type": "android",
-		"bundle_id": "*",
-		"git_url": null,
-		"has_password": false
-	}
+  "custom_fields": [],
+  "created_at": "2021-09-01T11:43:33.977+08:00",
+  "app": {
+    "id": 1,
+    "name": "App name"
+  },
+  "scheme": {
+    "id": 8,
+    "name": "Test"
+  },
+  "channel": {
+    "slug": "1XmpC",
+    "name": "Android",
+    "device_type": "android",
+    "bundle_id": "*",
+    "git_url": null,
+    "has_password": false
+  }
 }
 ```
 
@@ -141,56 +141,56 @@ GET /api/apps
 
 ```json
 [
-    {
+  {
+    "id": 1,
+    "name": "Zealot",
+    "schemes": [
+      {
         "id": 1,
-        "name": "Zealot",
-        "schemes": [
-            {
-                "id": 1,
-                "name": "Adhoc",
-                "channels": [
-                    {
-                        "slug": "X1IXN",
-                        "name": "Android",
-                        "device_type": "android",
-                        "bundle_id": "*",
-                        "git_url": null,
-                        "has_password": false
-                    },
-                    {
-                        "slug": "O1qHk",
-                        "name": "iOS",
-                        "device_type": "ios",
-                        "bundle_id": "*",
-                        "git_url": null,
-                        "has_password": false
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "name": "内测版",
-                "channels": [
-                    {
-                        "slug": "l19Tl",
-                        "name": "Android",
-                        "device_type": "android",
-                        "bundle_id": "*",
-                        "git_url": null,
-                        "has_password": false
-                    },
-                    {
-                        "slug": "8selv",
-                        "name": "iOS",
-                        "device_type": "ios",
-                        "bundle_id": "*",
-                        "git_url": null,
-                        "has_password": false
-                    }
-                ]
-            }
+        "name": "Adhoc",
+        "channels": [
+          {
+            "slug": "X1IXN",
+            "name": "Android",
+            "device_type": "android",
+            "bundle_id": "*",
+            "git_url": null,
+            "has_password": false
+          },
+          {
+            "slug": "O1qHk",
+            "name": "iOS",
+            "device_type": "ios",
+            "bundle_id": "*",
+            "git_url": null,
+            "has_password": false
+          }
         ]
-    }
+      },
+      {
+        "id": 2,
+        "name": "Production",
+        "channels": [
+          {
+            "slug": "l19Tl",
+            "name": "Android",
+            "device_type": "android",
+            "bundle_id": "*",
+            "git_url": null,
+            "has_password": false
+          },
+          {
+            "slug": "8selv",
+            "name": "iOS",
+            "device_type": "ios",
+            "bundle_id": "*",
+            "git_url": null,
+            "has_password": false
+          }
+        ]
+      }
+    ]
+  }
 ]
 ```
 
@@ -212,32 +212,32 @@ GET /api/apps/:id
 
 ```json
 {
-    "id": 1,
-    "name": "Zealot",
-    "schemes": [
+  "id": 1,
+  "name": "Zealot",
+  "schemes": [
+    {
+      "id": 5,
+      "name": "Test App",
+      "channels": [
         {
-            "id": 5,
-            "name": "Test App",
-            "channels": [
-                {
-                    "slug": "X1IXN",
-                    "name": "Android",
-                    "device_type": "android",
-                    "bundle_id": "*",
-                    "git_url": null,
-                    "has_password": false
-                },
-                {
-                    "slug": "O1qHk",
-                    "name": "iOS",
-                    "device_type": "ios",
-                    "bundle_id": "*",
-                    "git_url": null,
-                    "has_password": false
-                }
-            ]
+          "slug": "X1IXN",
+          "name": "Android",
+          "device_type": "android",
+          "bundle_id": "*",
+          "git_url": null,
+          "has_password": false
+        },
+        {
+          "slug": "O1qHk",
+          "name": "iOS",
+          "device_type": "ios",
+          "bundle_id": "*",
+          "git_url": null,
+          "has_password": false
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 
@@ -262,58 +262,57 @@ GET /api/apps/versions
 
 ```json
 {
-    "app_name": "Zealot iOS",
-    "bundle_id": "*",
-    "git_url": null,
-    "app": {
-        "id": 3,
-        "name": "Zealot"
+  "app_name": "Zealot iOS",
+  "bundle_id": "*",
+  "git_url": null,
+  "app": {
+    "id": 3,
+    "name": "Zealot"
+  },
+  "scheme": {
+    "id": 5,
+    "name": "AdHoc"
+  },
+  "releases": [
+    {
+      "version": 2,
+      "app_name": "Zealot iOS",
+      "bundle_id": "im.ews.zealot",
+      "release_version": "1.0.0",
+      "build_version": "10292024",
+      "source": "Web",
+      "branch": "",
+      "git_commit": "",
+      "ci_url": "",
+      "size": 79712596,
+      "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+      "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
+      "changelog": [],
+      "created_at": "2019-12-25T14:26:06.608+08:00"
     },
-    "scheme": {
-        "id": 5,
-        "name": "AdHoc"
+    {
+      "version": 1,
+      "app_name": "Zealot iOS",
+      "bundle_id": "im.ews.zealot",
+      "release_version": "1.0.0",
+      "build_version": "10291524",
+      "source": "Web",
+      "branch": "",
+      "git_commit": "",
+      "ci_url": "",
+      "size": 79712596,
+      "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+      "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
+      "changelog": [],
+      "created_at": "2019-12-25T14:26:06.608+08:00"
     },
-    "releases": [
-        {
-            "version": 2,
-            "app_name": "Zealot iOS",
-            "bundle_id": "im.ews.zealot",
-            "release_version": "1.0.0",
-            "build_version": "10292024",
-            "source": "Web",
-            "branch": "",
-            "git_commit": "",
-            "ci_url": "",
-            "size": 79712596,
-            "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-            "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
-            "changelog": [],
-            "created_at": "2019-12-25T14:26:06.608+08:00"
-        },
-        {
-            "version": 1,
-            "app_name": "Zealot iOS",
-            "bundle_id": "im.ews.zealot",
-            "release_version": "1.0.0",
-            "build_version": "10291524",
-            "source": "Web",
-            "branch": "",
-            "git_commit": "",
-            "ci_url": "",
-            "size": 79712596,
-            "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-            "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
-            "changelog": [],
-            "created_at": "2019-12-25T14:26:06.608+08:00"
-        },
-    ]
+  ]
 }
 ```
 
 ## Get the latest version of app
 
 Allows you to receive the latest information about a Release version from App like app metadata, changelog, icon url, install (download) url.
-
 
 ```
 GET /api/apps/latest
@@ -331,33 +330,33 @@ GET /api/apps/latest
 
 ```json
 {
+  "app_name": "Zealot iOS",
+  "bundle_id": "*",
+  "git_url": null,
+  "app": {
+    "id": 3,
+    "name": "Zealot"
+  },
+  "scheme": {
+    "id": 5,
+    "name": "AdHoc"
+  },
+  "releases": {
+    "version": 1,
     "app_name": "Zealot iOS",
-    "bundle_id": "*",
-    "git_url": null,
-    "app": {
-        "id": 3,
-        "name": "Zealot"
-    },
-    "scheme": {
-        "id": 5,
-        "name": "AdHoc"
-    },
-    "releases": {
-        "version": 1,
-        "app_name": "Zealot iOS",
-        "bundle_id": "im.ews.zealot",
-        "release_version": "1.0.0",
-        "build_version": "10291524",
-        "source": "Web",
-        "branch": "",
-        "git_commit": "",
-        "ci_url": "",
-        "size": 79712596,
-        "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-        "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
-        "changelog": [],
-        "created_at": "2019-12-25T14:26:06.608+08:00"
-    }
+    "bundle_id": "im.ews.zealot",
+    "release_version": "1.0.0",
+    "build_version": "10291524",
+    "source": "Web",
+    "branch": "",
+    "git_commit": "",
+    "ci_url": "",
+    "size": 79712596,
+    "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+    "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
+    "changelog": [],
+    "created_at": "2019-12-25T14:26:06.608+08:00"
+  }
 }
 ```
 
@@ -391,20 +390,20 @@ Success returns:
 
 ```json
 {
-    "version": 1,
-    "app_name": "Zealot iOS",
-    "bundle_id": "im.ews.zealot",
-    "release_version": "4.1.1",
-    "build_version": "10291524",
-    "source": "Web",
-    "branch": "",
-    "git_commit": "",
-    "ci_url": "",
-    "size": 79712596,
-    "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
-    "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
-    "changelog": [],
-    "created_at": "2019-12-25T14:26:06.608+08:00"
+  "version": 1,
+  "app_name": "Zealot iOS",
+  "bundle_id": "im.ews.zealot",
+  "release_version": "4.1.1",
+  "build_version": "10291524",
+  "source": "Web",
+  "branch": "",
+  "git_commit": "",
+  "ci_url": "",
+  "size": 79712596,
+  "icon_url": "https://tryzealot.ews.im/uploads/apps/a3/r21/icons/8ab13dc08321f9f3412a9fa98689d9c3.png",
+  "install_url": "itms-services://?action=download-manifest&url=https://tryzealot.ews.im/api/apps/O1qHk/1/install",
+  "changelog": [],
+  "created_at": "2019-12-25T14:26:06.608+08:00"
 }
 ```
 
@@ -415,3 +414,101 @@ Not found returns:
     "error": "Not found release"
 }
 ```
+
+## Create an app
+
+Create an app by given name.
+
+```
+POST /api/apps
+```
+
+### Parameters
+
+:::info
+
+[Authentication](/docs/developer-guide/api#authentication) required.
+
+:::
+
+| Attribute | Type | Required | Description |
+|---|---|---|---|
+| name | `String` | true | The name of App
+
+### Return body
+
+- Return 422 if name is missing or empty.
+
+Success returns:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Zealot",
+    "schemes": []
+  }
+]
+```
+
+## Update an app
+
+Update app metadata by given ID.
+
+```
+PUT /api/apps/:id
+```
+
+### Parameters
+
+:::info
+
+[Authentication](/docs/developer-guide/api#authentication) required.
+
+:::
+
+| Attribute | Type | Required | Description |
+|---|---|---|---|
+| id | `Integer` | true | ID
+| name | `String` | true | The name of App
+
+### Return body
+
+- Return 404 if app not existed.
+
+Success returns:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "New Zealot",
+    "schemes": []
+  }
+]
+```
+
+## Destroy an app
+
+Destroy an app by given ID, this will also destroy all related schemes, channels and releases.
+
+```
+DELETE /api/apps/:id
+```
+
+### Parameters
+
+:::info
+
+[Authentication](/docs/developer-guide/api#authentication) required.
+
+:::
+
+| Attribute | Type | Required | Description |
+|---|---|---|---|
+| id | `Integer` | true | ID
+
+### Return body
+
+- Return 404 if app not existed.
+- Return 200 if success.

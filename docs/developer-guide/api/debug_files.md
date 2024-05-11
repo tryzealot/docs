@@ -86,7 +86,6 @@ Get a list of debug files.
 
 This function takes pagination parameters page and per_page to restrict the list of debug files.
 
-
 ```
 GET /api/debug_files
 ```
