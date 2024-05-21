@@ -4,8 +4,8 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 
 ## 接口认证 {#authentication}
 
-接口请求目前仅支持 User Token 的 query 认证，在登录用户的详情页面最下面 `API - 密钥` 找到。
-> example : `https://YOUR_ZEALOT_URL/api?token=YOUR_TOKEN`
+接口请求目前仅支持`用户密钥`认证，在登录用户的详情页面最下面 `API - 密钥` 找到。
+比如 : `https://YOUR_ZEALOT_URL/api?token=YOUR_TOKEN`
 
 ## 接口版本
 
@@ -16,6 +16,7 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 目前可用的 API 接口基本满足打包和下载流程的范围：
 
 - [应用](#应用接口)
+- [应用成员](#应用成员接口)
 - [应用类型](#应用类型接口)
 - [应用渠道](#应用渠道接口)
 - [调试文件](#调试文件接口)
@@ -34,7 +35,16 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 更新应用 | `/api/apps/:id`
 删除应用 | `/api/apps/:id`
 
-## 应用类型接口
+### 应用成员接口
+
+定义 | 地址
+---|---
+成员详情 | `/api/apps/:id/collaborators/:user_id`
+添加成员 | `/api/apps/:id/collaborators/:user_id`
+变更成员权限 | `/api/apps/:id/collaborators/:user_id`
+删除成员 | `/api/apps/:id/collaborators/:user_id`
+
+### 应用类型接口
 
 定义 | 地址
 ---|---
@@ -43,7 +53,7 @@ Zealot 提供提供 REST APIs 接口服务可用于自定义的查看 App 信息
 更新应用类型 | `/api/schemes/:id`
 删除应用类型 | `/api/schemes/:id`
 
-## 应用渠道接口
+### 应用渠道接口
 
 定义 | 地址
 ---|---

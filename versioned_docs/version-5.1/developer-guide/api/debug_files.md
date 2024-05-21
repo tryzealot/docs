@@ -146,7 +146,7 @@ GET /api/debug_files/:id
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 
@@ -193,7 +193,7 @@ PUT /api/debug_files/:id
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 | file | `File` | true | a Zipped debug file |
 | release_version | `String` | true | Release version, ignore this param if iOS app |
 | build_version | `String` | true | Build version, ignore this param if iOS app |
@@ -243,7 +243,7 @@ DELETE /api/debug_files/:id
 | Attribute | Type | Required | Description |
 |---|---|---|---|
 | channel_key | `String` | true | Channel key |
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 

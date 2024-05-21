@@ -204,7 +204,7 @@ GET /api/apps/:id
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | 应用 ID |
+| id | `Integer` | true | 应用 ID |
 
 ### 返回样例
 

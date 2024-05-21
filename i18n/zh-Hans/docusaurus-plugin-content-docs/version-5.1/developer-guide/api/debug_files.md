@@ -141,7 +141,7 @@ GET /api/debug_files/:id
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
 | channel_key | `String` | true | 应用具体渠道的 Key |
-| id | `String` | true | 调试文件 ID |
+| id | `Integer` | true | 调试文件 ID |
 
 ### 返回样例
 
@@ -188,7 +188,7 @@ PUT /api/debug_files/:id
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
 | channel_key | `String` | true | 应用具体渠道的 Key |
-| id | `String` | true | 调试文件 ID |
+| id | `Integer` | true | 调试文件 ID |
 | file | `File` | true | Zip 压缩文件后的调试文件 |
 | release_version | `String` | true | 发布版本号，iOS 类型可忽略该参数 |
 | build_version | `String` | true | 内部版本号，iOS 类型可忽略该参数 |
@@ -237,7 +237,7 @@ DELETE /api/debug_files/:id
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
 | channel_key | `String` | true | 应用具体渠道的 Key |
-| id | `String` | true | 调试文件 ID |
+| id | `Integer` | true | 调试文件 ID |
 
 ### 返回样例
 

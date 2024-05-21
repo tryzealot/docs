@@ -41,9 +41,11 @@ module.exports = [
     },
     items: [
       "developer-guide/api/apps",
+      "developer-guide/api/collaborators",
       "developer-guide/api/schemes",
       "developer-guide/api/channels",
       "developer-guide/api/debug_files",
+      "developer-guide/api/users",
     ],
   }
 ];

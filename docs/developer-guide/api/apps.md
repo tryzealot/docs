@@ -206,7 +206,7 @@ GET /api/apps/:id
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 
@@ -438,8 +438,7 @@ POST /api/apps
 ### Return body
 
 - Return 422 if name is missing or empty.
-
-Success returns:
+- Return 201 and response body if successful
 
 ```json
 [
@@ -475,8 +474,7 @@ PUT /api/apps/:id
 ### Return body
 
 - Return 404 if app not existed.
-
-Success returns:
+- Return 200 and response body if successful
 
 ```json
 [
