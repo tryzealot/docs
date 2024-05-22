@@ -10,13 +10,20 @@
 
 #### 变更
 
-- `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
-- `Web` **重大变更** 数据备份逻辑调整 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
+- `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)
+- `Web` **重大变更** 数据备份逻辑调整 [#1318](https://github.com/tryzealot/zealot/pull/1318)
+- `Web` **重大变更** 不再支持 arm/v7 平台镜像
 - `开发环境` Ruby 升级至 3.3 和 NodeJS 升级至 20.11.1
+
+#### 新增
+
+- `Web` 新增应用成员权限功能 [#1494](https://github.com/tryzealot/zealot/issues/1494)
+- `API` 新增应用、应用类型以及应用渠道的 CRUD 接口 [#1485](https://github.com/tryzealot/zealot/issues/1485)
 
 #### 修复
 
 - `Web` 三方登录无法获取 email 造成生成 token 异常 [#1461](https://github.com/tryzealot/zealot/issues/1461) 感谢 [yiukamsum]
+- `Web` 修复系统设置从环境变量设置的值在页面展示有误
 - `Web` OIDC scope 变量名错误
 - `Web` 优化英文部分翻译
 

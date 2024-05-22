@@ -94,7 +94,7 @@ POST /api/apps/:id/schemes
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | App ID
+| id | `Integer` | true | App ID
 | name | `String` | true | The name of Scheme
 | new_build_callout | `Boolean` | false | Whether to send a notification when a new build is available
 | retained_builds | `Integer` | false | The number of builds to retain for this scheme, set `0` to disable it
@@ -102,8 +102,7 @@ POST /api/apps/:id/schemes
 ### Return body
 
 - Return 422 if name is missing or empty.
-
-Success returns:
+- Return 201 and response body if successful
 
 ```json
 {
@@ -131,7 +130,7 @@ GET /api/schemes/:id
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 

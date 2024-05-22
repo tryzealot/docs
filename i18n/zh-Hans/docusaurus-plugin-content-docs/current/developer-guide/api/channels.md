@@ -61,7 +61,7 @@ POST /api/schemes/:id/channels
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | 应用类型 ID
+| id | `Integer` | true | 应用类型 ID
 | name | `String` | true | 渠道名称
 | slug | `String` | false | URL 唯一标示，没有填随机生成
 | device_type | `String` | false | 应用类型，有效值: `ios`, `android`, `macos`, `linux` and `windows`
@@ -99,7 +99,7 @@ GET /api/channels/:id
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### 返回样例
 

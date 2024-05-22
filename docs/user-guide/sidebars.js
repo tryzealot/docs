@@ -38,18 +38,6 @@ module.exports = [
   },
   {
     collapsible: true,
-    label: "Toolkits",
-    type: "category",
-    link: {
-      type: 'generated-index',
-    },
-    items: [
-      "user-guide/toolkits/teardown",
-      "user-guide/toolkits/fetch-udid",
-    ],
-  },
-  {
-    collapsible: true,
     label: "Webhooks",
     type: "category",
     link: {
@@ -65,7 +53,19 @@ module.exports = [
     ],
   },
   {
-    collapsible: true,
+    collapsible: false,
+    label: "Toolkits",
+    type: "category",
+    link: {
+      type: 'generated-index',
+    },
+    items: [
+      "user-guide/toolkits/teardown",
+      "user-guide/toolkits/fetch-udid",
+    ],
+  },
+  {
+    collapsible: false,
     label: "Administrator",
     type: "category",
     link: {
@@ -91,6 +91,10 @@ module.exports = [
         ],
       },
     ],
+  },
+  {
+    value: "<hr />",
+    type: "html",
   },
   "user-guide/best_practices",
   "user-guide/changelog",

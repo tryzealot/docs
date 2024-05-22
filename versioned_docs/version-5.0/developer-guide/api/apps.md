@@ -206,7 +206,7 @@ GET /api/apps/:id
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 

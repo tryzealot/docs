@@ -20,7 +20,7 @@ Zealot 可以安装在绝大多数 Linux 操作系统，但目前并没有测试
 
 ### 系统架构
 
-支持使用 `amd86`、`arm64`、`arm64`、`armv7` 运行的主流 Linux 系统，比如 Debian，Ubuntu、CentOS、Arch Linux、Armbian 等。
+支持使用 `amd86`、`arm64` 运行的主流 Linux 系统，比如 Debian，Ubuntu、CentOS、Arch Linux、Armbian 等。
 
 ### CPU
 

@@ -61,7 +61,7 @@ POST /api/schemes/:id/channels
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | Scheme ID
+| id | `Integer` | true | Scheme ID
 | name | `String` | true | The name of Channel
 | slug | `String` | false | The slug of Channel, random it if not given
 | device_type | `String` | false | avaiable values: `ios`, `android`, `macos`, `linux` and `windows`
@@ -71,9 +71,8 @@ POST /api/schemes/:id/channels
 
 ### Return body
 
-- Return 422 if name is missing or empty.
-
-Success returns:
+- Return 422 if name is missing or empty
+- Return 201 and response body if successful
 
 ```json
 {
@@ -99,7 +98,7 @@ GET /api/channels/:id
 
 | Attribute | Type | Required | Description |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### Return body
 
@@ -144,8 +143,7 @@ PUT /api/channels/:id
 ### Return body
 
 - Return 404 if channel not existed.
-
-Success returns:
+- Return 200 and response body if successful
 
 ```json
 {

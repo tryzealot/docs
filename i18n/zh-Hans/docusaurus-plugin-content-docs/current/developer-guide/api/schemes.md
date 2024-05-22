@@ -94,7 +94,7 @@ POST /api/apps/:id/schemes
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | 应用 ID
+| id | `Integer` | true | 应用 ID
 | name | `String` | true | 应用类型名称
 | new_build_callout | `Boolean` | false | 关闭后不会在版本详情提示新版本窗口
 | retained_builds | `Integer` | false | 最大保留版本数，设置 0 关闭版本保留功能
@@ -131,7 +131,7 @@ GET /api/schemes/:id
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | ID |
+| id | `Integer` | true | ID |
 
 ### 返回样例
 
@@ -186,7 +186,7 @@ PUT /api/schemes/:id
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | ID
+| id | `Integer` | true | ID
 | name | `String` | true | 应用类型名称
 | new_build_callout | `Boolean` | false | 关闭后不会在版本详情提示新版本窗口
 | retained_builds | `Integer` | false | 最大保留版本数，设置 0 关闭版本保留功能

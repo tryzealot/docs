@@ -33,9 +33,9 @@ POST /api/apps/upload
 | ci_url | `String` | false | CI 项目构建地址 |
 | custom_fields | `String` | false | 这是一个用 JSON 字符串定义的自定义字段，<br />可配置名称，值以及 fontawesome 图标用于在页面详情展示 |
 
-For `changelog` attribute which it accepts both `plain text` and `JSON` formatted contents:
+字段 `changelog` 可接受`纯文本`和 `JSON` 格式：
 
-**plain text**:
+**纯文本**:
 
 ```
 message 1\nmessage 2
@@ -204,7 +204,7 @@ GET /api/apps/:id
 
 | 名称 | 类型 | 是否必须 | 描述 |
 |---|---|---|---|
-| id | `String` | true | 应用 ID |
+| id | `Integer` | true | 应用 ID |
 
 ### 返回样例
 
@@ -432,8 +432,7 @@ POST /api/apps
 ### 返回样例
 
 - 请求参数无效返回 422 状态码和错误信息
-
-创建成功返回：
+- 创建成功返回 201 状态码和内容
 
 ```json
 {

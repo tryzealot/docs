@@ -21,7 +21,7 @@ Installation of Zealot is possible on most Linux environments, but not officiall
 
 ### Architecture
 
-Zealot can now run on either x86_64(amd86) or arm64(armv8/arrch) or armv7 based mostly Linux OS, for example: Debian, Ubuntu, CentOS, Arch Linux, Armbian etc.
+Zealot can now run on either x86_64(amd86) or arm64(armv8/arrch64) based mostly Linux OS, for example: Debian, Ubuntu, CentOS, Arch Linux, Armbian etc.
 
 ### CPU
 
