@@ -15,10 +15,6 @@
     "message": "用户手册",
     "description": "Navbar item with label User Guide"
   },
-  "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
-  },
   "item.label.Changelog": {
     "message": "变更日志",
     "description": "Navbar item with label Changelog"
