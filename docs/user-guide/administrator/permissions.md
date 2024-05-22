@@ -124,7 +124,7 @@ These are the all roles in Zealot and the actions each can take:
       <td>Edit/destory app collaborators</td>
       <td></td>
       <td></td>
-      <td>✓</td>
+      <td></td>
       <td>✓</td>
     </tr>
     <tr>
