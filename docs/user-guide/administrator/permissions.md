@@ -246,5 +246,5 @@ Roles | Create App | See all Apps | Manage App | Add Collaborator | Upload App
 ------|------------|--------------|------------|------------------|-----------
 Guest | ✕ | ✕ | ✕ | ✕ | ✕
 User | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
-Developer | ✓ | ✓ Only if you belong | ✓ | ✓ | ✓
+Developer | ✓ | ✓ Only if you belong | ✓ | ✕ | ✓
 Administrator | ✓ | ✓ | ✓ | ✓ | ✓
