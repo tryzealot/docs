@@ -52,6 +52,7 @@ module.exports = [
       "user-guide/webhooks/wecom",
     ],
   },
+  "user-guide/user_settings",
   {
     collapsible: false,
     label: "Toolkits",
