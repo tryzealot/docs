@@ -198,6 +198,15 @@ const config = {
       //   isCloseable: true
       // },
     }),
+
+  plugins: [
+    [
+      "@gracefullight/docusaurus-plugin-microsoft-clarity",
+      {
+        projectId: "mgce1iwvr4"
+      }
+    ]
+  ]
 };
 
 module.exports = config;
