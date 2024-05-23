@@ -47,7 +47,7 @@ The necessary hard drive space largely depends on the size and number of apps an
 
 ### Ruby versions
 
-- Ruby 3.0 and later is required.
+- Ruby 3.1 and later is required.
 
 You must use the standard MRI implementation of Ruby. Zealot needs several Gems that have native extensions.
 

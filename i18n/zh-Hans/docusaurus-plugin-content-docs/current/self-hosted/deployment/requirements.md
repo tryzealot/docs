@@ -46,7 +46,7 @@ CPU 数量取决于 Zealot 使用的资源和任务量，工作量受（包括�
 
 ### Ruby 版本
 
-- Ruby 3.0+
+- Ruby 3.1+
 
 必须使用标准的 MRI 实现的 Ruby 版本。Zealot 内部依赖的 Gems 需要原生扩展。
 
