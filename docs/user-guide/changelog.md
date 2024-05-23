@@ -12,20 +12,29 @@ The following list of changes is the list that has not yet been released, code c
 
 - `Docker` **Breaking Change** Plan to deprecate Redis service. [#1318](https://github.com/tryzealot/zealot/pull/1318).
 - `Web` **Breaking Change** Adjusted the data backup logic. [#1318](https://github.com/tryzealot/zealot/pull/1318).
+- `Web` **Major Change** Added App's permissions and global permissions adjustment [#1494](https://github.com/tryzealot/zealot/issues/1494) [#1507](https://github.com/tryzealot/zealot/pull/1507)
 - `Web` **Breaking Change** Drop supports arm/v7 platform image.
 - `Development` Ruby upgraded to 3.3 and NodeJS upgraded to 20.11.1.
 
 #### Added
 
-- `Web` added app collaborators permission feature. [#1494](https://github.com/tryzealot/zealot/issues/1494)
+- `Web` Added App's collaborators permissions and App transfer functionality. [#1494](https://github.com/tryzealot/zealot/issues/1494) [#1507](https://github.com/tryzealot/zealot/pull/1507)
+- `Web` Added user personalization settings, including language, appearance, and time zone. [#1506](https://github.com/tryzealot/zealot/pull/1506)
+- `Web` Added user lock and enable functionality.
+- `API` Added App's collaborators CRUD APIs, app details API now include collaborators list [#1494](https://github.com/tryzealot/zealot/issues/1494)
+- `API` Added user CRUD and lock / enable interface.
+- `Web` added app's collaborators permission feature. [#1494](https://github.com/tryzealot/zealot/issues/1494)
 - `API` added CRUD interfaces for apps, app's schemes and app's channels. [#1485](https://github.com/tryzealot/zealot/issues/1485)
 
 #### Fixed
 
 - `Web` Third-party login fails to obtain email causing token generation issue. [#1461](https://github.com/tryzealot/zealot/issues/1461) thanks to [yiukamsum](https://github.com/yiukamsum)
 - `Web` Fixed an issue where the value set from environment variables in the system settings was displayed incorrectly on the page.
-- `Web` OIDC scope variable name error.
-- `Web` Improved translation of some English parts.
+- `Web` Fixed the incorrect variable name for OIDC scope.
+- `Web` Fixed the system settings not displaying environmental variable values correctly.
+- `Web` Fixed the display issue with new user email confirmation.
+- `Web` Optimized the friendly display of certain pages on mobile devices.
+- `Web` Improved English translations.
 
 ## 5.2.3 (2024-04-29)
 
