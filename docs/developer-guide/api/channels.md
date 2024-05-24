@@ -63,8 +63,8 @@ POST /api/schemes/:id/channels
 |---|---|---|---|
 | id | `Integer` | true | Scheme ID
 | name | `String` | true | The name of Channel
+| device_type | `String` | true | avaiable values: `ios`, `android`, `macos`, `linux` and `windows`
 | slug | `String` | false | The slug of Channel, random it if not given
-| device_type | `String` | false | avaiable values: `ios`, `android`, `macos`, `linux` and `windows`
 | bundle_id | `String` | false | `bundle_id` for iOS, `package name` for Android, `*` is wildcard
 | git_url | `String` | false | The Git repository URL
 | password | `String` | false | visit password
@@ -134,8 +134,8 @@ PUT /api/channels/:id
 |---|---|---|---|
 | id | `Integer` | true | ID
 | name | `String` | true | The name of Channel
+| device_type | `String` | true | avaiable values: `ios`, `android`, `macos`, `linux` and `windows`
 | slug | `String` | false | The slug of Channel, random it if not given
-| device_type | `String` | false | avaiable values: `ios`, `android`, `macos`, `linux` and `windows`
 | bundle_id | `String` | false | `bundle_id` for iOS, `package name` for Android, `*` is wildcard
 | git_url | `String` | false | The Git repository URL
 | password | `String` | false | visit password
