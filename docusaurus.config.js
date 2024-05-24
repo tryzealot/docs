@@ -82,12 +82,12 @@ const config = {
       {
         specs: [
           {
-            spec: 'openapi_v1.json',
-            route: '/api/v1',
+            spec: 'openapi_v1_en.json',
+            route: '/api/v1/en',
           },
           {
-            spec: 'https://redocly.github.io/redoc/openapi.yaml',
-            route: '/openapi/',
+            spec: 'openapi_v1_zh-Hans.json',
+            route: 'api/v1/zh-Hans',
           },
         ],
         theme: {

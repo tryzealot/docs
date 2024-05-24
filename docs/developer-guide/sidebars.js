@@ -5,6 +5,11 @@ module.exports = [
     id: 'developer-guide/index',
   },
   {
+    label: "API",
+    type: "doc",
+    id: "developer-guide/api",
+  },
+  {
     collapsible: false,
     label: "SDKs",
     type: "category",
@@ -29,23 +34,6 @@ module.exports = [
       "developer-guide/fastlane/zealot_version_check",
       "developer-guide/fastlane/zealot_debug_file",
       "developer-guide/fastlane/zealot_sync_devices"
-    ],
-  },
-  {
-    collapsible: false,
-    label: "APIs",
-    type: "category",
-    link: {
-      type: 'doc',
-      id: 'developer-guide/api',
-    },
-    items: [
-      "developer-guide/api/apps",
-      "developer-guide/api/collaborators",
-      "developer-guide/api/schemes",
-      "developer-guide/api/channels",
-      "developer-guide/api/debug_files",
-      "developer-guide/api/users",
     ],
   }
 ];
