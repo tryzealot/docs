@@ -1900,18 +1900,18 @@
     },
     "/version": {
       "get": {
-        "summary": "Get version information",
+        "summary": "获取版本信息",
         "security": [
 
         ],
         "tags": [
-          "Version"
+          "版本"
         ],
         "description": "",
         "operationId": "getVersion",
         "responses": {
           "200": {
-            "description": "Get version information",
+            "description": "版本信息",
             "content": {
               "application/json": {
                 "schema": {
