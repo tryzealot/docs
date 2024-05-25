@@ -75,6 +75,26 @@ const config = {
         },
       }),
     ],
+
+    [
+      'redocusaurus',
+      /** @type {import('redocusaurus').PresetOptions} */
+      {
+        specs: [
+          {
+            spec: 'openapi_v1_en.json',
+            route: '/api/v1/en',
+          },
+          {
+            spec: 'openapi_v1_zh-Hans.json',
+            route: 'api/v1/zh-Hans',
+          },
+        ],
+        theme: {
+          primaryColor: '#1890ff',
+        },
+      },
+    ],
   ],
 
   themeConfig:
@@ -110,13 +130,13 @@ const config = {
             type: 'doc',
             docId: 'contributing-guide/index',
             position: 'left',
-            label: 'Contributing Guide',
+            label: 'Contributing',
           },
           {
-            type: 'doc',
-            docId: 'user-guide/changelog',
+            type: "doc",
+            docId: "developer-guide/api",
             position: 'left',
-            label: 'Changelog',
+            label: "API",
           },
           {
             type: 'docsVersionDropdown',
@@ -172,7 +192,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} icyleaf. Built with Docusaurus.`,
       },
       prism: {
-        additionalLanguages: ['kotlin', 'java', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
+        additionalLanguages: ['kotlin', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
         magicComments: [
           {
             className: 'theme-code-block-highlighted-line',

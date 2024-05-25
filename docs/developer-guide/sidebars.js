@@ -32,20 +32,12 @@ module.exports = [
     ],
   },
   {
-    collapsible: false,
-    label: "APIs",
-    type: "category",
-    link: {
-      type: 'doc',
-      id: 'developer-guide/api',
-    },
-    items: [
-      "developer-guide/api/apps",
-      "developer-guide/api/collaborators",
-      "developer-guide/api/schemes",
-      "developer-guide/api/channels",
-      "developer-guide/api/debug_files",
-      "developer-guide/api/users",
-    ],
+    value: "<hr />",
+    type: "html",
+  },
+  {
+    label: "API",
+    type: "doc",
+    id: "developer-guide/api",
   }
 ];

@@ -71,7 +71,7 @@ Zealot.create(getActivity())
 <TabItem value="Java">
 ```
 
-```java
+```kotlin
 // 单个渠道
 Zealot.create(getActivity())
       .setEndpoint("https://zealot.com")

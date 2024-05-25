@@ -71,7 +71,7 @@ Zealot.create(getActivity())
 <TabItem value="Java">
 ```
 
-```java
+```kotlin
 // Single channel
 Zealot.create(getActivity())
       .setEndpoint("https://zealot.com")

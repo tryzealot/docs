@@ -1,4 +1,4 @@
-# Contributing Guide
+# Contributing
 
 This guide will help you get started with Zealot! Thank you for taking an interest in contributing to Zealot. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 

@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 ## 5.2.3 (2024-04-29)
 

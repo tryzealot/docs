@@ -1,4 +1,4 @@
-# Change Log
+# Changelog
 
 ## 4.7.1 (2023-03-10)
 
