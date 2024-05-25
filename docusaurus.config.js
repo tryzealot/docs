@@ -130,13 +130,13 @@ const config = {
             type: 'doc',
             docId: 'contributing-guide/index',
             position: 'left',
-            label: 'Contributing Guide',
+            label: 'Contributing',
           },
           {
-            type: 'doc',
-            docId: 'user-guide/changelog',
+            type: "doc",
+            docId: "developer-guide/api",
             position: 'left',
-            label: 'Changelog',
+            label: "API",
           },
           {
             type: 'docsVersionDropdown',
