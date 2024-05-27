@@ -21,9 +21,10 @@ The following list of changes is the list that has not yet been released, code c
 - `Web` Added App's collaborators permissions and App transfer functionality. [#1494](https://github.com/tryzealot/zealot/issues/1494) [#1507](https://github.com/tryzealot/zealot/pull/1507)
 - `Web` Added user personalization settings, including language, appearance, and time zone. [#1506](https://github.com/tryzealot/zealot/pull/1506)
 - `Web` Added user lock and enable functionality.
+- `Web` Add multi-select delete and one-click delete
+- `Web` added app's collaborators permission feature. [#1494](https://github.com/tryzealot/zealot/issues/1494) for application channel version list
 - `API` Added App's collaborators CRUD APIs, app details API now include collaborators list [#1494](https://github.com/tryzealot/zealot/issues/1494)
 - `API` Added user CRUD and lock / enable interface.
-- `Web` added app's collaborators permission feature. [#1494](https://github.com/tryzealot/zealot/issues/1494)
 - `API` added CRUD interfaces for apps, app's schemes and app's channels. [#1485](https://github.com/tryzealot/zealot/issues/1485)
 
 #### Fixed

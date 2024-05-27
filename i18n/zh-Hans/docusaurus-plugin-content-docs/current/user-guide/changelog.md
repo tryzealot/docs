@@ -21,6 +21,7 @@
 - `Web` 新增应用成员权限及应用转移功能 [#1494](https://github.com/tryzealot/zealot/issues/1494) [#1507](https://github.com/tryzealot/zealot/pull/1507)
 - `Web` 新增用户个性化设定，包含语言、外观和时区 [#1506](https://github.com/tryzealot/zealot/pull/1506)
 - `Web` 新增用户锁定、启用功能
+- `Web` 新增应用渠道版本列表多选删除和一键删除 [#1512](https://github.com/tryzealot/zealot/issues/1512)
 - `API` 新增应用成员 CRUD 接口，应用详情额外返回成员列表 [#1494](https://github.com/tryzealot/zealot/issues/1494)
 - `API` 新增用户 CRUD 及锁定、启用接口
 - `API` 新增应用、应用类型以及应用渠道的 CRUD 接口 [#1485](https://github.com/tryzealot/zealot/issues/1485)
