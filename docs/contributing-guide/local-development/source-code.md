@@ -146,7 +146,7 @@ Can be installed by either asdf, rvm as ruby version manager.
 Following the [offical install guide](http://asdf-vm.com/guide/getting-started.html) then:
 
 ```bash
-# Enable Ruby 3.3.0 YJIT need install rust 1.58+
+# Enable Ruby 3.3.0 YJIT need install Rust 1.58+
 # Optinal install:
 asdf plugin add rust
 asdf install rust latest

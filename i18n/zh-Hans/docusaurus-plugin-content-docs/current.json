@@ -23,10 +23,6 @@
     "message": "Fastlane 插件",
     "description": "The label for category fastlane plugins in sidebar developerGuide"
   },
-  "sidebar.developerGuide.category.API": {
-    "message": "API 接口",
-    "description": "The label for category API in sidebar developerGuide"
-  },
   "sidebar.selfHosted.doc.Getting Started": {
     "message": "准备开始",
     "description": "The label for the doc item Getting Started in sidebar selfHosted, linking to the doc self-hosted/index"
@@ -87,8 +83,8 @@
     "message": "反向代理",
     "description": "The label for the doc item Reverse Proxies in sidebar selfHosted, linking to the doc self-hosted/reverse-proxies"
   },
-  "sidebar.developerGuide.link.V1": {
-    "message": "V1",
-    "description": "The label for link V1 in sidebar developerGuide, linking to /api/v1/zh-Hans"
+  "sidebar.developerGuide.doc.API": {
+    "message": "API",
+    "description": "The label for the doc item API in sidebar developerGuide, linking to the doc developer-guide/api"
   }
 }

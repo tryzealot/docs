@@ -19,12 +19,12 @@
     "message": "User Guide",
     "description": "Navbar item with label User Guide"
   },
-  "item.label.Contributing Guide": {
-    "message": "Contributing Guide",
-    "description": "Navbar item with label Contributing Guide"
+  "item.label.Contributing": {
+    "message": "Contributing",
+    "description": "Navbar item with label Contributing"
   },
-  "item.label.Changelog": {
-    "message": "Changelog",
-    "description": "Navbar item with label Changelog"
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
   }
 }
