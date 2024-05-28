@@ -8,6 +8,8 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 5.3.0 (2024-05-?)
+
 #### Changed
 
 - `Docker` **Breaking Change** Plan to deprecate Redis service. [#1318](https://github.com/tryzealot/zealot/pull/1318).
@@ -623,7 +625,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.2.3...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.0...HEAD
+[5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1

@@ -8,6 +8,8 @@
 
 :::
 
+## 5.3.0 (2024-05-?)
+
 #### 变更
 
 - `Docker` **重大变更** 计划弃用 Redis 服务 [#1318](https://github.com/tryzealot/zealot/pull/1318)
@@ -623,7 +625,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: : https://github.com/tryzealot/zealot/compare/5.2.3...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.3.0...HEAD
+[5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
 [5.2.1]: https://github.com/tryzealot/zealot/compare/5.2.0...5.2.1
