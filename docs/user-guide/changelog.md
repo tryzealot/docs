@@ -8,7 +8,7 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
-## 5.3.0 (2024-05-?)
+## 5.3.0 (2024-05-28)
 
 #### Changed
 

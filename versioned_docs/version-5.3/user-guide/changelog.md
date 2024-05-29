@@ -1,14 +1,6 @@
 # Changelog
 
-## Unreleased
-
-:::tip
-
-The following list of changes is the list that has not yet been released, code change history: [Unreleased]
-
-:::
-
-## 5.3.0 (2024-05-?)
+## 5.3.0 (2024-05-28)
 
 #### Changed
 
