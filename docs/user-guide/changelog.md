@@ -8,6 +8,12 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+- `Web` Redirect to the original page after batch deletion of versions in the channel list.
+- `Web` Fixed the inability to click to navigate to the version details page in the channel list. [#1540](https://github.com/tryzealot/zealot/issues/1540) thanks to [mlch911](https://github.com/mlch911)
+- `Web` Fixed new users being unable to register. [#1539](https://github.com/tryzealot/zealot/issues/1539) thanks to [mlch911](https://github.com/mlch911)
+- `Web` Fixed Apple developer test devices failing to register after being added, deleted, and re-added. [#1542](https://github.com/tryzealot/zealot/issues/1542) thanks to [mlch911](https://github.com/mlch911)
+- `Web` Fixed backup errors and the display of backup phase status.
+
 ## 5.3.0 (2024-05-28)
 
 #### Changed
