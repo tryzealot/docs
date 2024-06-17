@@ -52,7 +52,7 @@ These are the all roles in Zealot and the actions each can take:
     </tr>
     <tr>
       <td>View the build(release) of app</td>
-      <td>✓/✓ <br />Password Auth</td>
+      <td>✓/✓ <br /><small>(Password Auth Enabled)</small></td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
