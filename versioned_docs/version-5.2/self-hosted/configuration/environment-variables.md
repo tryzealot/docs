@@ -128,18 +128,27 @@ changing password service, but it does not affect the use if it is not turned on
 
 ```bash
 # SMTP settings
+SMTP_DOMAIN=zealot.example.com
 SMTP_ADDRESS=smtp.gmail.com
 SMTP_PORT=587
-SMTP_DOMAIN=gmail.com
 SMTP_USERNAME=you@gmail.com
-SMTP_PASSWORD=yourpassword
+SMTP_PASSWORD=your_app_password
 SMTP_AUTH_METHOD=plain
-SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_ENABLE_STARTTLS=true
 
 # Sender and email address by default
-ACTION_MAILER_DEFAULT_FROM=you@gmail.com
-ACTION_MAILER_DEFAULT_TO=you@gmail.com
+ACTION_MAILER_DEFAULT_FROM=notification@zealot.com
+ACTION_MAILER_DEFAULT_TO=noreply-to@zealot.com
 ```
+
+:::caution
+
+Google [blocks sign-ins](https://support.google.com/accounts/answer/6010255) from apps it deems less secure.
+You can change your Gmail settings [here](https://www.google.com/settings/security/lesssecureapps) to allow the attempts.
+If your Gmail account has 2-factor authentication enabled, then you will need to set an
+[app password](https://myaccount.google.com/apppasswords) and use that instead of your regular password.
+
+:::
 
 ## Disbale Cable request protection
 

@@ -121,15 +121,23 @@ ZEALOT_GUEST_MODE=false
 
 ```bash
 # 发送邮件配置
+SMTP_DOMAIN=zealot.example.com
 SMTP_ADDRESS=smtp.gmail.com
 SMTP_PORT=587
-SMTP_DOMAIN=gmail.com
 SMTP_USERNAME=you@gmail.com
-SMTP_PASSWORD=yourpassword
+SMTP_PASSWORD=your_app_password
 SMTP_AUTH_METHOD=plain
-SMTP_ENABLE_STARTTLS_AUTO=true
+SMTP_ENABLE_STARTTLS=true
 
 # 邮件默认收发人配置
-ACTION_MAILER_DEFAULT_FROM=you@gmail.com
-ACTION_MAILER_DEFAULT_TO=you@gmail.com
+ACTION_MAILER_DEFAULT_FROM=notification@zealot.com
+ACTION_MAILER_DEFAULT_TO=noreply-to@zealot.com
 ```
+
+:::caution
+
+谷歌已[阻止](https://support.google.com/accounts/answer/6010255)其认为安全性较低的应用的登录操作。
+您可以更改 Gmail [设置](https://www.google.com/settings/security/lesssecureapps)以允许这些尝试。
+如果您的 Gmail 帐户启用了双重身份验证，则需要设置[应用密码](https://myaccount.google.com/apppasswords)并使用它来替换常规密码。
+
+:::
