@@ -8,10 +8,18 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+#### Added
+
+- `Web` Added SMTP email configuration verification [#1548](https://github.com/tryzealot/zealot/pull/1548)
+- `Web` Added feature for resending confirmation email to inactive users
+
+#### Fixed
+
 - `Web` Redirect to the original page after batch deletion of versions in the channel list.
 - `Web` Fixed the inability to click to navigate to the version details page in the channel list. [#1540](https://github.com/tryzealot/zealot/issues/1540) thanks to [mlch911](https://github.com/mlch911)
 - `Web` Fixed new users being unable to register. [#1539](https://github.com/tryzealot/zealot/issues/1539) thanks to [mlch911](https://github.com/mlch911)
 - `Web` Fixed Apple developer test devices failing to register after being added, deleted, and re-added. [#1542](https://github.com/tryzealot/zealot/issues/1542) thanks to [mlch911](https://github.com/mlch911)
+- `Web` Fixed the issue where emails could not be sent after configuring the SMTP mailbox. [#1547](https://github.com/tryzealot/zealot/issues/1547) thanks to [jason-xie-123](https://github.com/jason-xie-123)
 - `Web` Fixed backup errors and the display of backup phase status.
 
 ## 5.3.0 (2024-05-28)

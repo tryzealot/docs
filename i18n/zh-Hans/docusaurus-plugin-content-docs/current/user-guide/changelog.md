@@ -8,12 +8,18 @@
 
 :::
 
+#### 新增
+
+- `Web` 新增 SMTP 邮箱配置验证 [#1548](https://github.com/tryzealot/zealot/pull/1548)
+- `Web` 新增未激活的用户重新发送确认邮件功能
+
 #### 修复
 
 - `Web` 渠道列表批量删除版本后跳转原先页面
 - `Web` 修复渠道列表无法点击跳转版本详情页面 [#1540](https://github.com/tryzealot/zealot/issues/1540) 感谢 [mlch911](https://github.com/mlch911)
 - `Web` 修复新用户无法注册 [#1539](https://github.com/tryzealot/zealot/issues/1539) 感谢 [mlch911](https://github.com/mlch911)
 - `Web` 修复苹果开发者添加、删除再添加的测试设备无法注册 [#1542](https://github.com/tryzealot/zealot/issues/1542) 感谢 [mlch911](https://github.com/mlch911)
+- `Web` 修复 SMTP 邮箱配置后无法发送邮件 [#1547](https://github.com/tryzealot/zealot/issues/1547) 感谢 [jason-xie-123](https://github.com/jason-xie-123)
 - `Web` 修复备份报错及备份阶段状态展示
 
 ## 5.3.0 (2024-05-28)
