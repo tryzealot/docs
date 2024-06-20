@@ -67,11 +67,11 @@ import Zealot
 
 ```swift
 // Single channel
-let zealot = Zealot(endpoint: "http://zealot.com", channelKey: "...")
+let zealot = Zealot(endpoint: "https://zealot.example.com", channelKey: "...")
 zealot.checkVersion()
 
 // Multi-channel, such as beta, adhoc versions
-let zealot = Zealot(endpoint: "http://zealot.com",
+let zealot = Zealot(endpoint: "https://zealot.example.com",
                  channelKeys: [
                    "beta": "xxxxxxx",
                    "test": "yyyyyyy"],
@@ -88,11 +88,11 @@ zealot.checkVersion()
 
 ```objectivec
 // Single channel
-Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
+Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"https://zealot.example.com"
                                        channelKey:@"..."];
 
 // Multi-channel, such as beta, adhoc versions
-Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
+Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"https://zealot.example.com"
                                       channelKeys:@{
                                               @"beta": @"xxxxxxx",
                                               @"gray": @"yyyyyyy"

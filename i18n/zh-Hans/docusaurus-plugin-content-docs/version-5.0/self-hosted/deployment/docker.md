@@ -72,5 +72,5 @@ $ docker-compose up -d
 ```bash
 $ sudo vim /etc/hosts
 
-127.0.0.1 zealot.test
+127.0.0.1 zealot.example.com
 ```

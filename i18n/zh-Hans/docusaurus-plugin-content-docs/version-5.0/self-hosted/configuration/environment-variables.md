@@ -19,8 +19,8 @@ ZEALOT_CERT_EMAIL=zealot@example.com
 如果部署的机器只能使用自签名证书，则需要配置，但需要注意的是 iOS 的下载需要在 iOS 设备授权自签名的证书后才允许下载安装。（不推荐）
 
 ```bash
-ZEALOT_CERT=zealot.test.pem
-ZEALOT_CERT_KEY=zealot.test-key.pem
+ZEALOT_CERT=zealot.example.com.pem
+ZEALOT_CERT_KEY=zealot.example.com-key.pem
 ```
 
 > 和 Let's Encrypt 注册电子邮箱名二选一，不能同时设置
@@ -31,7 +31,7 @@ ZEALOT_CERT_KEY=zealot.test-key.pem
 
 ```bash
 # 域名配置，无需配置 http:// 或 https://
-ZEALOT_DOMAIN=zealot.com
+ZEALOT_DOMAIN=zealot.example.com
 ```
 
 ## 配置数据库和缓存

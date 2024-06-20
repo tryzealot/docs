@@ -12,7 +12,7 @@ Use Apple Developer account to syncing UDIDs and relates the value in Zealot.
 ```ruby
 # With Apple API Key
 zealot_sync_devices(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   api_key_path: '/path/to/your/api_key_json_file',
   team_id: '...'
@@ -20,7 +20,7 @@ zealot_sync_devices(
 
 # With password (Two-factor Authentication required)
 zealot_sync_devices(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   username: 'user@example.com',
   team_id: '...'

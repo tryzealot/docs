@@ -5,8 +5,9 @@
 :::tip
 
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
-
 :::
+
+## 5.3.1 (2024-06-20)
 
 #### Added
 
@@ -15,12 +16,14 @@ The following list of changes is the list that has not yet been released, code c
 
 #### Fixed
 
+- `Web` Fixed guest access to application version details and password authentication anomalies. [#1544](https://github.com/tryzealot/zealot/issues/1544) thanks to [savage7](https://github.com/savage7)
 - `Web` Redirect to the original page after batch deletion of versions in the channel list.
 - `Web` Fixed the inability to click to navigate to the version details page in the channel list. [#1540](https://github.com/tryzealot/zealot/issues/1540) thanks to [mlch911](https://github.com/mlch911)
 - `Web` Fixed new users being unable to register. [#1539](https://github.com/tryzealot/zealot/issues/1539) thanks to [mlch911](https://github.com/mlch911)
 - `Web` Fixed Apple developer test devices failing to register after being added, deleted, and re-added. [#1542](https://github.com/tryzealot/zealot/issues/1542) thanks to [mlch911](https://github.com/mlch911)
 - `Web` Fixed the issue where emails could not be sent after configuring the SMTP mailbox. [#1547](https://github.com/tryzealot/zealot/issues/1547) thanks to [jason-xie-123](https://github.com/jason-xie-123)
 - `Web` Fixed backup errors and the display of backup phase status.
+- `Web` Fixed the issue where viewing macOS and mobilprovision unpacking could not find devices.
 
 ## 5.3.0 (2024-05-28)
 
@@ -639,7 +642,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.0...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.1...HEAD
+[5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2

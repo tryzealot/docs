@@ -60,11 +60,11 @@ import Zealot
 
 ```swift
 // 单个渠道
-let zealot = Zealot(endpoint: "http://zealot.com", channelKey: "...")
+let zealot = Zealot(endpoint: "https://zealot.example.com", channelKey: "...")
 zealot.checkVersion()
 
 // 多个渠道，比如测试版本，内测版本
-let zealot = Zealot(endpoint: "http://zealot.com",
+let zealot = Zealot(endpoint: "https://zealot.example.com",
                  channelKeys: [
                    "beta": "xxxxxxx",
                    "test": "yyyyyyy"],
@@ -81,11 +81,11 @@ zealot.checkVersion()
 
 ```objectivec
 // 单个渠道
-Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
+Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"https://zealot.example.com"
                                        channelKey:@"..."];
 
 // 多个渠道，比如测试版本，内测版本
-Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"http://zealot.com"
+Zealot *zealot = [[Zealot alloc] initWithEndpoint:@"https://zealot.example.com"
                                       channelKeys:@{
                                               @"beta": @"xxxxxxx",
                                               @"gray": @"yyyyyyy"

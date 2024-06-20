@@ -16,7 +16,7 @@ sidebar_label: "zealot_sync_devices"
 ```ruby
 # 使用 Apple API Key 授权
 zealot_sync_devices(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   api_key_path: '/path/to/your/api_key_json_file',
   team_id: '...'
@@ -24,7 +24,7 @@ zealot_sync_devices(
 
 # 使用密码授权（需要二步认证）
 zealot_sync_devices(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   username: 'user@example.com',
   team_id: '...'

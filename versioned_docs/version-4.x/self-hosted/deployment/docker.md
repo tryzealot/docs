@@ -91,6 +91,6 @@ and Chrome may also deny access due to the certificate.
 $ sudo vim /etc/hosts
 
 # highlight-start
-127.0.0.1 zealot.test
+127.0.0.1 zealot.example.com
 # highlight-end
 ```

@@ -52,14 +52,14 @@ import TabItem from '@theme/TabItem';
 ```kotlin
 // 单个渠道
 Zealot.create(getActivity())
-      .setEndpoint("https://zealot.com")
+      .setEndpoint("https://zealot.example.com")
       .setChannelKey("...")
       .setBuildType(BuildConfig.BUILD_TYPE)
       .launch()
 
 // 多个渠道，比如测试版本，内测版本
 Zealot.create(getActivity())
-      .setEndpoint("https://zealot.com")
+      .setEndpoint("https://zealot.example.com")
       .setChannelKey("xxxxxxx", "beta")
       .setCHannelKey("yyyyyyy", "test")
       .setBuildType(BuildConfig.BUILD_TYPE)
@@ -74,14 +74,14 @@ Zealot.create(getActivity())
 ```kotlin
 // 单个渠道
 Zealot.create(getActivity())
-      .setEndpoint("https://zealot.com")
+      .setEndpoint("https://zealot.example.com")
       .setChannelKey("...")
       .setBuildType(BuildConfig.BUILD_TYPE)
       .launch();
 
 // 多个渠道，比如测试版本，内测版本
 Zealot.create(getActivity())
-      .setEndpoint("https://zealot.com")
+      .setEndpoint("https://zealot.example.com")
       .setChannelKey("xxxxxxx", "beta")
       .setCHannelKey("yyyyyyy", "test")
       .setBuildType(BuildConfig.BUILD_TYPE)

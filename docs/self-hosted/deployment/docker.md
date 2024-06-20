@@ -94,7 +94,7 @@ usually by modifying the system's `/etc/hosts` file.
 $ sudo vim /etc/hosts
 
 # highlight-start
-127.0.0.1 zealot.test
+127.0.0.1 zealot.example.com
 # highlight-end
 ```
 
