@@ -21,8 +21,8 @@ If the deployed machine can only use self-signed certificates, they need to be c
 but note that iOS downloads require the iOS device to authorize the self-signed certificate before the download and installation is allowed. (Not recommended)
 
 ```bash
-ZEALOT_CERT=zealot.test.pem
-ZEALOT_CERT_KEY=zealot.test-key.pem
+ZEALOT_CERT=zealot.example.com.pem
+ZEALOT_CERT_KEY=zealot.example.com-key.pem
 ```
 
 ## Configure URL (Domain)
@@ -31,7 +31,7 @@ Must be configured otherwise downloaded applications and some static resources w
 
 ```bash
 # No need http:// or https://
-ZEALOT_DOMAIN=zealot.com
+ZEALOT_DOMAIN=zealot.example.com
 ```
 
 ## Database configuration

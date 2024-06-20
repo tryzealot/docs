@@ -72,7 +72,7 @@ $ docker-compose up -d
 ```bash
 $ sudo vim /etc/hosts
 
-127.0.0.1 zealot.test
+127.0.0.1 zealot.example.com
 ```
 
 另外，在请求 API 接口时你需要关闭或忽略 SSL 证书认证，否则会报错。
@@ -81,7 +81,7 @@ $ sudo vim /etc/hosts
 
 ### 公网域名
 
-如果想要 Zealot 服务启用公网域名访问，可以在配置 `ZEALOT_DOMAIN=zealot.test`，那么你可以直接通过 `https://zealot.test` 访问。
+如果想要 Zealot 服务启用公网域名访问，可以在配置 `ZEALOT_DOMAIN=zealot.example.com`，那么你可以直接通过 `https://zealot.example.com` 访问。
 
 ### IP + 端口
 

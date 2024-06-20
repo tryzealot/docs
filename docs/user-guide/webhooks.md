@@ -41,9 +41,9 @@ Output:
   "release_version": "1.0.0",
   "build_version": "1",
   "size": "30 MB",
-  "install_url": "https://zealot.test/api/apps/download/12354",
-  "icon_url": "https://zealot.test/api/apps/icon.png",
-  "qrcode_url": "https://zealot.test/api/apps/354/qrcode",
+  "install_url": "https://zealot.example.com/api/apps/download/12354",
+  "icon_url": "https://zealot.example.com/api/apps/icon.png",
+  "qrcode_url": "https://zealot.example.com/api/apps/354/qrcode",
   "uploaded_at": "2019-12-30 11:33:00",
   "changelog": "- Add feture A\n- Fix issue B\n- Release v1.0.0",
 }

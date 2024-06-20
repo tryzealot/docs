@@ -8,7 +8,7 @@ sidebar_label: "zealot"
 
 ```ruby
 zealot(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   channel_key: '...',
 )

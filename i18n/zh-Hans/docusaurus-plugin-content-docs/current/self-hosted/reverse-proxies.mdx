@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 名称 | 范例值 | 备注
 ---|---|---
-域名 | zealot.icyleaf.dev |
+域名 | zealot.example.com |
 反向代理 IP 地址 | 172.16.56.1 |
 Zealot IP 地址 | 172.16.56.100 | 反向代理服务可访问<br />同一台服务可改为 127.0.0.1
 Zealot 外部映射端口号 | 8901 | 反向代理服务可访问
@@ -114,11 +114,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.services.zealot.loadbalancer.server.port=80"
       - "traefik.http.routers.zealot.service=zealot"
-      - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)"
+      - "traefik.http.routers.zealot.rule=Host(`zealot.example.com`)"
       - "traefik.http.routers.zealot.tls=true"
       - "traefik.http.routers.zealot.tls.certresolver=letsencrypt"
       - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev"
-      - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+      - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.example.com"
     # 由 Treafik 接管无需在对外暴露端口号
     # ports:
     #   - "8901:80"
@@ -141,10 +141,10 @@ Docker 部署的局限于 Traefik 和 Zealot 服务通常在同一个机器的�
 ```shell
 consul kv put traefik/http/services/zealot/loadbalancer/server/port 5
 consul kv put traefik/http/routers/zealot/service zealot
-consul kv put traefik/http/routers/zealot/rule 'Host(`zealot.icyleaf.dev`)'
+consul kv put traefik/http/routers/zealot/rule 'Host(`zealot.example.com`)'
 consul kv put traefik/http/routers/zealot/tls/certresolver letsencrypt
 consul kv put traefik/http/routers/zealot/tls/domains/0/main icyleaf.dev
-consul kv put traefik/http/routers/zealot/tls/domains/0/sans zealot.icyleaf.dev
+consul kv put traefik/http/routers/zealot/tls/domains/0/sans zealot.example.com
 ```
 
 ### Nomad
@@ -177,11 +177,11 @@ job "zealot" {
         image = "ghcr.io/tryzealot/zealot:nightly"
         ports = ["http"]
         args = [
-          - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)",
+          - "traefik.http.routers.zealot.rule=Host(`zealot.example.com`)",
           - "traefik.http.routers.zealot.tls=true",
           - "traefik.http.routers.zealot.tls.certresolver=letsencrypt",
           - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev",
-          - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+          - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.example.com"
         ]
       }
     }
@@ -223,7 +223,7 @@ map $http_upgrade $connection_upgrade {
 server {
   listen 80;
   listen [::]:80;
-  server_name zealot.icyleaf.dev;
+  server_name zealot.example.com;
   location /.well-known/acme-challenge/ { allow all; }
   location / { return 301 https://$host$request_uri; }
 }
@@ -231,7 +231,7 @@ server {
 server {
   listen 443 ssl http2;              # 可选：http2 可能需要安装额外扩展，不需要可移除
   listen [::]:443 ssl http2;         # 可选：http2 可能需要安装额外扩展，不需要可移除
-  server_name zealot.icyleaf.dev;
+  server_name zealot.example.com;
 
   ssl_certificate       /etc/certs/zealot-cert.pem;
   ssl_certificate_key   /etc/certs/zealot.pem;

@@ -22,7 +22,7 @@ The following data needs to be prepared to configure the reverse proxy:
 
 Name | Sample value | Description
 ---|---|---
-Domain | zealot.icyleaf.dev |
+Domain | zealot.example.com |
 Reverse proxy service IP address | 172.16.56.1 |
 Zealot IP address | 172.16.56.100 | Reverse Proxy can be accessed<br />Change to 127.0.0.1 Reverse Proxy and zealot with one host.
 Zealot public port | 8901 | Reverse Proxy can be accessed
@@ -116,11 +116,11 @@ services:
       - "traefik.enable=true"
       - "traefik.http.services.zealot.loadbalancer.server.port=80"
       - "traefik.http.routers.zealot.service=zealot"
-      - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)"
+      - "traefik.http.routers.zealot.rule=Host(`zealot.example.com`)"
       - "traefik.http.routers.zealot.tls=true"
       - "traefik.http.routers.zealot.tls.certresolver=letsencrypt"
       - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev"
-      - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+      - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.example.com"
     # Comment port, no need to public
     # ports:
     #   - "8901:80"
@@ -144,10 +144,10 @@ Enable [Consul provider](https://doc.traefik.io/traefik/providers/consul/) or [C
 ```shell
 consul kv put traefik/http/services/zealot/loadbalancer/server/port 5
 consul kv put traefik/http/routers/zealot/service zealot
-consul kv put traefik/http/routers/zealot/rule 'Host(`zealot.icyleaf.dev`)'
+consul kv put traefik/http/routers/zealot/rule 'Host(`zealot.example.com`)'
 consul kv put traefik/http/routers/zealot/tls/certresolver letsencrypt
 consul kv put traefik/http/routers/zealot/tls/domains/0/main icyleaf.dev
-consul kv put traefik/http/routers/zealot/tls/domains/0/sans zealot.icyleaf.dev
+consul kv put traefik/http/routers/zealot/tls/domains/0/sans zealot.example.com
 ```
 
 ### Nomad
@@ -180,11 +180,11 @@ job "zealot" {
         image = "ghcr.io/tryzealot/zealot:nightly"
         ports = ["http"]
         args = [
-          - "traefik.http.routers.zealot.rule=Host(`zealot.icyleaf.dev`)",
+          - "traefik.http.routers.zealot.rule=Host(`zealot.example.com`)",
           - "traefik.http.routers.zealot.tls=true",
           - "traefik.http.routers.zealot.tls.certresolver=letsencrypt",
           - "traefik.http.routers.zealot.tls.domains[0].main=icyleaf.dev",
-          - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.icyleaf.dev"
+          - "traefik.http.routers.zealot.tls.domains[0].sans=zealot.example.com"
         ]
       }
     }
@@ -226,7 +226,7 @@ map $http_upgrade $connection_upgrade {
 server {
   listen 80;
   listen [::]:80;
-  server_name zealot.icyleaf.dev;
+  server_name zealot.example.com;
   location /.well-known/acme-challenge/ { allow all; }
   location / { return 301 https://$host$request_uri; }
 }
@@ -234,7 +234,7 @@ server {
 server {
   listen 443 ssl http2;              # Optional: http2 may needs install extension
   listen [::]:443 ssl http2;
-  server_name zealot.icyleaf.dev;
+  server_name zealot.example.com;
 
   ssl_certificate       /etc/certs/zealot-cert.pem;
   ssl_certificate_key   /etc/certs/zealot.pem;

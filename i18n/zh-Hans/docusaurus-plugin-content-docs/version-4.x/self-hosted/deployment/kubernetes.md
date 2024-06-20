@@ -61,7 +61,7 @@ metadata:
   namespace: zealot
   name: zealot-config
 data:
-  ZEALOT_DOMAIN: zealot.icyleaf.dev
+  ZEALOT_DOMAIN: zealot.example.com
   DEFAULT_LOCALE: en
   ZEALOT_REGISTER_ENABLED: "true"
 ```
@@ -185,7 +185,7 @@ metadata:
     #kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: zealot.icyleaf.dev
+  - host: zealot.example.com
     http:
       paths:
       - web:

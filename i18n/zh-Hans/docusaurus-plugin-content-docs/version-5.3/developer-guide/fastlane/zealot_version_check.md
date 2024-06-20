@@ -8,7 +8,7 @@ sidebar_label: "zealot_version_check"
 
 ```ruby
 zealot_version_check(
-  endpoint: 'https://zealot.com',
+  endpoint: 'https://zealot.example.com',
   token: '...',
   bundle_id: 'com.example.app.name',
   release_version: '1.0.0',
