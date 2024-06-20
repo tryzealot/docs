@@ -8,6 +8,8 @@
 
 :::
 
+## 5.3.1 (2024-06-20)
+
 #### 新增
 
 - `Web` 新增 SMTP 邮箱配置验证 [#1548](https://github.com/tryzealot/zealot/pull/1548)
@@ -15,12 +17,14 @@
 
 #### 修复
 
+- `Web` 修复游客禁止访问应用版本详情及密码认证异常 [#1544](https://github.com/tryzealot/zealot/issues/1544) 感谢 [savage7](https://github.com/savage7)
 - `Web` 渠道列表批量删除版本后跳转原先页面
 - `Web` 修复渠道列表无法点击跳转版本详情页面 [#1540](https://github.com/tryzealot/zealot/issues/1540) 感谢 [mlch911](https://github.com/mlch911)
 - `Web` 修复新用户无法注册 [#1539](https://github.com/tryzealot/zealot/issues/1539) 感谢 [mlch911](https://github.com/mlch911)
 - `Web` 修复苹果开发者添加、删除再添加的测试设备无法注册 [#1542](https://github.com/tryzealot/zealot/issues/1542) 感谢 [mlch911](https://github.com/mlch911)
 - `Web` 修复 SMTP 邮箱配置后无法发送邮件 [#1547](https://github.com/tryzealot/zealot/issues/1547) 感谢 [jason-xie-123](https://github.com/jason-xie-123)
 - `Web` 修复备份报错及备份阶段状态展示
+- `Web` 修复查看 macOS、mobilprovision 解包找不到 devices 异常
 
 ## 5.3.0 (2024-05-28)
 
@@ -639,7 +643,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.0...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.3.1...HEAD
+[5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
 [5.2.2]: https://github.com/tryzealot/zealot/compare/5.2.1...5.2.2
