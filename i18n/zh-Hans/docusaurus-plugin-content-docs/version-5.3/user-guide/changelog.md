@@ -1,6 +1,17 @@
 # 变更日志
 
+## 5.3.2 (2024-06-24)
+
+详细[代码变更记录][5.3.2]。
+
+#### 修复
+
+- `Web/API` 修复上传应用是设置的应用名不会使用。感谢 G0_0Oopoa。
+- `Web` 修复设置 Umami script url 变量名错误。感谢 Ethan。
+
 ## 5.3.1 (2024-06-20)
+
+小功能的问题修复，详细[代码变更记录][5.3.1]。
 
 #### 新增
 
@@ -19,6 +30,8 @@
 - `Web` 修复查看 macOS、mobilprovision 解包找不到 devices 异常
 
 ## 5.3.0 (2024-05-28)
+
+服务架构精简（移除对 redis 服务的依赖），新增应用内权限控制。详细[代码变更记录][5.3.0]。
 
 #### 变更
 
@@ -635,6 +648,7 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
+[5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3

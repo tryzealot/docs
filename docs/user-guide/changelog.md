@@ -7,7 +7,18 @@
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
 :::
 
+## 5.3.2 (2024-06-24)
+
+Full [commit changes][5.3.2].
+
+#### Fixed
+
+- `Web/API` Fixed issue where the specified app name was not used when uploading applications. thanks to G0_0Oopoa.
+- `Web` Fixed incorrect variable name for setting Umami script URL. thanks to Ethan.
+
 ## 5.3.1 (2024-06-20)
+
+Full [commit changes][5.3.1].
 
 #### Added
 
@@ -26,6 +37,8 @@ The following list of changes is the list that has not yet been released, code c
 - `Web` Fixed the issue where viewing macOS and mobilprovision unpacking could not find devices.
 
 ## 5.3.0 (2024-05-28)
+
+Full [commit changes][5.3.0].
 
 #### Changed
 
@@ -642,7 +655,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.1...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.2...HEAD
+[5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
 [5.2.3]: https://github.com/tryzealot/zealot/compare/5.2.2...5.2.3
