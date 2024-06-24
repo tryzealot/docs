@@ -8,7 +8,7 @@ sidebar_label: "详细步骤"
 
 ## 版本列表
 
-- 稳定版本 - 5.3.0/latest - `ghcr.io/tryzealot/zealot:latest`
+- 稳定版本 - 5.3.2/latest - `ghcr.io/tryzealot/zealot:latest`
 - 测试版本 - develop - `ghcr.io/tryzealot/zealot:nightly` - 基于 develop 分支每次提交构建的版本
 
 ## 镜像仓库
