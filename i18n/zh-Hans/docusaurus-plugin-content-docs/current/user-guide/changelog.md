@@ -8,6 +8,20 @@
 
 :::
 
+## 5.3.3 (2024-06-25)
+
+详细[代码变更记录][5.3.3]。
+
+#### 变更
+
+- `Web` 修改之前权限设计：游客可以通过 URL 查看版本详情页面和安装 [#1558](https://github.com/tryzealot/zealot/pull/1558)
+- `API` 修改全局权限和应用权限 `user` 为 `member` [#1560](https://github.com/tryzealot/zealot/pull/1560)
+- `API` 仅展示通过环境变量设置统计类且设置只读
+
+#### 修复
+
+- `API` 修复上传应用设置 password 异常报错 [#1557](https://github.com/tryzealot/zealot/issues/1557) 感谢 [rie-jos](https://github.com/rie-jos)
+
 ## 5.3.2 (2024-06-24)
 
 详细[代码变更记录][5.3.2]。
@@ -656,7 +670,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.2...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.3.3...HEAD
+[5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0

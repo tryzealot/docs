@@ -7,6 +7,20 @@
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
 :::
 
+## 5.3.3 (2024-06-25)
+
+Full [commit changes][5.3.3].
+
+#### Changed
+
+- `Web` Changed back in old logic which it will public for everyone in build release page by default.
+- `API` Renamed role `user` to `member`.
+- `API` Analytics only display if configured and change to read only.
+
+#### Fixed
+
+- `API` Fixed can not upload app by given password
+
 ## 5.3.2 (2024-06-24)
 
 Full [commit changes][5.3.2].
@@ -655,7 +669,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.2...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.3...HEAD
+[5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0
