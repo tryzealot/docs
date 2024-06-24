@@ -1,5 +1,19 @@
 # Changelog
 
+## 5.3.3 (2024-06-25)
+
+Full [commit changes][5.3.3].
+
+#### Changed
+
+- `Web` Changed back in old logic which it will public for everyone in build release page by default. [#1558](https://github.com/tryzealot/zealot/pull/1558)
+- `API` Renamed role `user` to `member`. [#1560](https://github.com/tryzealot/zealot/pull/1560)
+- `API` Analytics only display if configured and change to read only.
+
+#### Fixed
+
+- `API` Fixed can not upload app by given password. [#1557](https://github.com/tryzealot/zealot/issues/1557) thanks to [rie-jos](https://github.com/rie-jos)
+
 ## 5.3.2 (2024-06-24)
 
 Full [commit changes][5.3.2].
@@ -648,6 +662,7 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
+[5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
 [5.3.0]: https://github.com/tryzealot/zealot/compare/5.2.3...5.3.0

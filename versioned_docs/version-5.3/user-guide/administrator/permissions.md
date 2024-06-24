@@ -7,7 +7,7 @@ sidebar_label: "Permissions"
 Zealot offers four types of user permissions.
 
 - **Guest** can view and download mostly data but can't make changes if enable guest mode.
-- **User** can view and download all data, but can't make changes.
+- **Member** can view and download all data, but can't make changes.
 - **Developer** can manage app services (e.g. create app/scheme/channel, upload app/debug file).
 - **Administrator** can manage system settings, apple teams, app settings, collaborators etc.
 
@@ -20,7 +20,7 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <th>Action</th>
       <th>Guest (On/Off)</th>
-      <th>User</th>
+      <th>Member</th>
       <th>Developer</th>
       <th>Administrator</th>
     </tr>
@@ -52,7 +52,7 @@ These are the all roles in Zealot and the actions each can take:
     </tr>
     <tr>
       <td>View the build(release) of app</td>
-      <td>✓/✓ <br />Password Auth</td>
+      <td>✓</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -245,6 +245,6 @@ These are the all roles within an App and the actions each can take:
 Roles | Create App | See all Apps | Add Collaborator | Manage App | Upload App
 ------|------------|--------------|------------|------------------|-----------
 Guest | ✕ | ✕ | ✕ | ✕ | ✕
-User | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
+Member | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
 Developer | ✓ | ✓ Only if you belong | ✕ | ✓ | ✓
 Administrator | ✓ | ✓ | ✓ | ✓ | ✓
