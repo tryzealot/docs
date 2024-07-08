@@ -7,6 +7,23 @@
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
 :::
 
+## 5.3.4 (2024-07-08)
+
+Full [commit changes][5.3.4].
+
+#### Added
+
+- Add Apple TV device for teardown. [#1565](https://github.com/tryzealot/zealot/pull/1565)
+- Add re-generate expired user confirmation token.
+- Add user defined umami host setting (environment variable `UMAMI_SCRIPT_URL`).
+
+#### Fixed
+
+- Fix universal APK parsing error (app name and icons).
+- Fix crash after logged out when disabled guest mode.
+- Fix verify webhook body vaildator.
+- Catch test webhook and show error notification.
+
 ## 5.3.3 (2024-06-25)
 
 Full [commit changes][5.3.3].
@@ -669,7 +686,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.3...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.4...HEAD
+[5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
 [5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
