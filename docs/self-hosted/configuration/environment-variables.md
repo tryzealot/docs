@@ -88,32 +88,6 @@ ZEALOT_ADMIN_EMAIL=admin@zealot.com
 ZEALOT_ADMIN_PASSWORD=ze@l0t
 ```
 
-## Enable new user registration
-
-After closing the registration, the administrator can add users manually through the user management in the administration panel.
-
-```bash
-# Open registration
-ZEALOT_REGISTER_ENABLED=true
-
-# Close registration
-ZEALOT_REGISTER_ENABLED=false
-```
-
-## Enable guest mode
-
-Enable the visitor mode to allow the application to view, download and install,
-it is recommended that the company internal reliance on permissions is not high condition to use,
-specific permission comparison can [see here for details](/docs/user-guide/administrator/permissions)
-
-```bash
-# Guest mode is ON
-ZEALOT_GUEST_MODE=true
-
-# Guest mode is OFF
-ZEALOT_GUEST_MODE=false
-```
-
 ## Configure emails
 
 Currently, only `smtp` is supported to configure email notification service.
@@ -144,10 +118,57 @@ If your Gmail account has 2-factor authentication enabled, then you will need to
 
 :::
 
-## Disbale Cable request protection
+## Switch services
 
-Experimental:
+### Enable new user registration
+
+After closing the registration, the administrator can add users manually through the user management in the administration panel.
 
 ```bash
-ZEALOT_DISABLE_CABLE_REQUEST_PROTECTION=true
+# Open registration
+ZEALOT_REGISTER_ENABLED=true
+
+# Close registration
+ZEALOT_REGISTER_ENABLED=false
+```
+
+### Enable guest mode
+
+Enable the visitor mode to allow the application to view, download and install,
+it is recommended that the company internal reliance on permissions is not high condition to use,
+specific permission comparison can [see here for details](/docs/user-guide/administrator/permissions)
+
+```bash
+# Guest mode is ON
+ZEALOT_GUEST_MODE=true
+
+# Guest mode is OFF
+ZEALOT_GUEST_MODE=false
+```
+
+## Configure analytics
+
+### Google Analytics
+
+Google Analytics is a website analysis service provided by Google. It only supports Universal Analytics, not GA4.
+
+```bash
+GOOGLE_ANALYTICS_ID=UA-12345678-9
+```
+
+### Umami
+
+Umami is an open-source website analytics tool that can be self-hosted or used with the official service, which is enabled by default when `UMAMI_SCRIPT_URL` is not set.
+
+```bash
+UMAMI_SCRIPT_URL=https://analytics.us.umami.is/script.js
+UMAMI_WEBSITE_ID=12345678-9
+```
+
+### Clarity
+
+Google Analytics is a website analysis service provided by Microsoft.
+
+```bash
+CLARITY_ANALYTICS_ID=12345678-9
 ```
