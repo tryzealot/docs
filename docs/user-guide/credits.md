@@ -10,7 +10,7 @@ Thank you for making Zealot more useful !
 
 ## Project name
 
-Zealot from the Starcraft species Gods base soldier.
+Zealot are a type of protoss warrior from Starcraft.
 
 ## Project Logo
 
