@@ -25,7 +25,7 @@ ZEALOT_CERT_KEY=zealot.example.com-key.pem
 
 > 和 Let's Encrypt 注册电子邮箱名二选一，不能同时设置
 
-## 配置域名 (URL)
+## 域名 (URL)
 
 必须配置否则下载应用和一些静态资源会无法正确访问到
 
@@ -34,7 +34,7 @@ ZEALOT_CERT_KEY=zealot.example.com-key.pem
 ZEALOT_DOMAIN=zealot.example.com
 ```
 
-## 配置数据库和缓存
+## 数据库和缓存
 
 假如你有可以复用的 postgres 服务也可以自定义配置使用，而无需使用 docker-compose 默认配置的服务。
 
@@ -52,7 +52,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 
 5.3.0 版本不再依赖 redis，如果之前已经配置请考虑删除 `REDIS_URL` 环境变量，但不删除也不影响使用。
 
-## 配置网站默认语言
+## 网站默认语言
 
 语言包 | 值
 ---|---
@@ -63,7 +63,7 @@ en | 英文
 DEFAULT_LOCALE=en
 ```
 
-## 配置网站默认外观
+## 网站默认外观
 
 外观 | 值
 ---|---
@@ -75,37 +75,13 @@ auto | 随系统自动
 ZEALOT_APPEARANCE=dark
 ```
 
-## 配置管理员账户和密码
+## 管理员账户和密码
 
 默认不配置如下也会生成下面的账户和密码作为管理员权限的账户，建议配置后重新修改密码。
 
 ```bash
 ZEALOT_ADMIN_EMAIL=admin@zealot.com
 ZEALOT_ADMIN_PASSWORD=ze@l0t
-```
-
-### 开启用户注册
-
-关闭注册之后，管理员可以通过管理面板的用户管理手动添加用户。
-
-```bash
-# 开启注册
-ZEALOT_REGISTER_ENABLED=true
-
-# 关闭注册
-ZEALOT_REGISTER_ENABLED=false
-```
-
-### 开启游客模式
-
-开启游客模式后允许应用的查看、下载和安装，建议公司内部对权限依赖不高的状况使用，具体权限对比可以[看这里查看详情](/docs/user-guide/administrator/permissions)
-
-```bash
-# 开启游客模式
-ZEALOT_GUEST_MODE=true
-
-# 关闭游客模式
-ZEALOT_GUEST_MODE=false
 ```
 
 ## 邮件服务
@@ -134,3 +110,56 @@ ACTION_MAILER_DEFAULT_TO=noreply-to@zealot.com
 如果您的 Gmail 帐户启用了双重身份验证，则需要设置[应用密码](https://myaccount.google.com/apppasswords)并使用它来替换常规密码。
 
 :::
+
+## 服务开关
+
+### 开启用户注册
+
+关闭注册之后，管理员可以通过管理面板的用户管理手动添加用户。
+
+```bash
+# 开启注册
+ZEALOT_REGISTER_ENABLED=true
+
+# 关闭注册
+ZEALOT_REGISTER_ENABLED=false
+```
+
+### 开启游客模式
+
+开启游客模式后允许应用的查看、下载和安装，建议公司内部对权限依赖不高的状况使用，具体权限对比可以[看这里查看详情](/docs/user-guide/administrator/permissions)
+
+```bash
+# 开启游客模式
+ZEALOT_GUEST_MODE=true
+
+# 关闭游客模式
+ZEALOT_GUEST_MODE=false
+```
+
+## 统计服务
+
+### Google Analytics
+
+Google Analytics 是一个网站分析服务，由 Google 提供。仅支持 Universal Analytics，不支持 GA4。
+
+```bash
+GOOGLE_ANALYTICS_ID=UA-12345678-9
+```
+
+### Umami
+
+Umami 是一个开源的网站分析工具，可以自己部署，也可以使用官方提供的服务，不设置 `UMAMI_SCRIPT_URL` 时启用官方服务。
+
+```bash
+UMAMI_SCRIPT_URL=https://analytics.us.umami.is/script.js
+UMAMI_WEBSITE_ID=12345678-9
+```
+
+### Clarity
+
+Clarity 是一个网站分析服务，由 Microsoft 提供。
+
+```bash
+CLARITY_ANALYTICS_ID=12345678-9
+```

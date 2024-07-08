@@ -8,6 +8,23 @@
 
 :::
 
+## 5.3.4 (2024-07-08)
+
+详细[代码变更记录][5.3.4]。
+
+#### 新增
+
+- `Web` 支持 AppleTV 设备的解包 [#1565](https://github.com/tryzealot/zealot/pull/1565)
+- `Web` 重新生成失效的用户激活邮件的 token
+- `Web` 添加自定义 umami 脚本地址的变量 (环境变量名 `UMAMI_SCRIPT_URL`)
+
+#### 修复
+
+- `Web/API` 修复多架构 Universal APK 无法解析应用名和图标
+- `Web` 修复关闭游客模式时用户登出会出现错误页面
+- `Web` 网络钩子验证采用更合理的验证方式
+- `Web` 在没有上传应用版本触发网络钩子时展示错误提示
+
 ## 5.3.3 (2024-06-25)
 
 详细[代码变更记录][5.3.3]。
@@ -670,7 +687,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.3...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.3.4...HEAD
+[5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
 [5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
 [5.3.1]: https://github.com/tryzealot/zealot/compare/5.3.0...5.3.1
