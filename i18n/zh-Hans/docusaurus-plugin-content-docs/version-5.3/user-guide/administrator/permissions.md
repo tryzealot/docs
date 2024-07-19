@@ -35,35 +35,35 @@ Zealot 提供四种用户权限：
     <tr>
       <td>浏览应用列表</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ 仅针对所属应用</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>浏览应用类型和渠道详情</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ 仅针对所属应用</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>浏览应用类型和渠道详情</td>
       <td>✓</td>
-      <td>✓</td>
+      <td>✓ 仅针对所属应用</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>浏览应用内的网络钩子</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ 仅针对所属应用</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>上传/安装/下载应用</td>
       <td>✓</td>
-      <td>✓</td>
+      <td>✓ 上传应用除外</td>
       <td>✓</td>
       <td>✓</td>
     </tr>

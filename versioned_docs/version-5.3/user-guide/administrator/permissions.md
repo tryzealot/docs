@@ -7,7 +7,7 @@ sidebar_label: "Permissions"
 Zealot offers four types of user permissions.
 
 - **Guest** can view and download mostly data but can't make changes if enable guest mode.
-- **Member** can view and download all data, but can't make changes.
+- **User** can view and download all data, but can't make changes.
 - **Developer** can manage app services (e.g. create app/scheme/channel, upload app/debug file).
 - **Administrator** can manage system settings, apple teams, app settings, collaborators etc.
 
@@ -20,7 +20,7 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <th>Action</th>
       <th>Guest (On/Off)</th>
-      <th>Member</th>
+      <th>User</th>
       <th>Developer</th>
       <th>Administrator</th>
     </tr>
@@ -39,20 +39,20 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <td>View app list</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>View app scheme(s) and channel(s) detail</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>View the build(release) of app</td>
-      <td>✓</td>
+      <td>✓/✓ <br />Password Auth</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -60,14 +60,14 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <td>View webhook list</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>Upload/Install/Download app</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td></td>
+      <td>✓ Except upload app</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
@@ -245,6 +245,6 @@ These are the all roles within an App and the actions each can take:
 Roles | Create App | See all Apps | Add Collaborator | Manage App | Upload App
 ------|------------|--------------|------------|------------------|-----------
 Guest | ✕ | ✕ | ✕ | ✕ | ✕
-Member | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
+User | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
 Developer | ✓ | ✓ Only if you belong | ✕ | ✓ | ✓
 Administrator | ✓ | ✓ | ✓ | ✓ | ✓

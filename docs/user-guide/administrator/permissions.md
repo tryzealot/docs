@@ -39,14 +39,14 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <td>View app list</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>View app scheme(s) and channel(s) detail</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
@@ -60,14 +60,14 @@ These are the all roles in Zealot and the actions each can take:
     <tr>
       <td>View webhook list</td>
       <td>✓/✕</td>
-      <td>✓</td>
+      <td>✓ Only if you belong</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
     <tr>
       <td>Upload/Install/Download app</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td></td>
+      <td>✓ Except upload app</td>
       <td>✓</td>
       <td>✓</td>
     </tr>
