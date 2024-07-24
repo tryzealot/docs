@@ -1,5 +1,16 @@
 # 变更日志
 
+## 5.3.5 (2024-07-24)
+
+详细[代码变更记录][5.3.5].
+
+#### 修复
+
+- `API` 上传应用接口关闭验证应用类型。感谢电报群友 @Jason1
+- `Web` 处理 Android 设备受限应用提示用浏览器打开的错误提示 [#1593](https://github.com/tryzealot/zealot/issues/1593) 感谢 [GanHuaLin](https://github.com/GanHuaLin)
+- `Web` 关闭用户注册模式后同时禁用所有第三方登录授权登录。感谢电报群友 @Jason1
+- `Web` 修复无法解析应用时新版本提示没有展示自动版本号
+
 ## 5.3.4 (2024-07-08)
 
 详细[代码变更记录][5.3.4]。
@@ -679,6 +690,7 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
+[5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
 [5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
 [5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
 [5.3.2]: https://github.com/tryzealot/zealot/compare/5.3.1...5.3.2
