@@ -1,5 +1,14 @@
 # 变更日志
 
+## 5.3.6 (2024-08-10)
+
+详细[代码变更记录][5.3.6].
+
+#### 修复
+
+- `Web` 修复使用 OAuth 及 LDAP 第三方登录异常问题 [#1613](https://github.com/tryzealot/zealot/issues/1613) 感谢 [InjoyDeng](https://github.com/InjoyDeng)
+- `Docker` 修复第一次初始化合并数据库异常，感谢 [InjoyDeng](https://github.com/InjoyDeng) 在 Telegram 反馈。
+
 ## 5.3.5 (2024-07-24)
 
 详细[代码变更记录][5.3.5].
@@ -690,6 +699,7 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
+[5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
 [5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
 [5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
