@@ -4,9 +4,11 @@ Zealot 提供提供开发接口服务可用于控制应用、调试文件、用�
 
 目前接口划分为两个版本：`REST API` 和 `GraphQL`
 
-## [REST API](/api/v1/zh-Hans)
+## REST API
 
 这是 Zealot 当前的核心接口版本是 `1.x`，需要注意的是接口无需显性传递版本参数。
+
+[查看接口文档](/api/v1/zh-Hans)。
 
 ### 接口认证 {#authentication}
 
