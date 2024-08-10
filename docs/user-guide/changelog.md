@@ -7,6 +7,15 @@
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
 :::
 
+## 5.3.6 (2024-08-10)
+
+Full [commit changes][5.3.6].
+
+#### Fixed
+
+- `Web` Fixed issues with OAuth and LDAP third-party login. [#1613](https://github.com/tryzealot/zealot/issues/1613) Thanks to [InjoyDeng](https://github.com/InjoyDeng)
+- `Docker` Fixed database merge issues during the first initialization. Thanks to [InjoyDeng](https://github.com/InjoyDeng) for reporting on Telegram.
+
 ## 5.3.5 (2024-07-24)
 
 Full [commit changes][5.3.5].
@@ -697,7 +706,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.5...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.6...HEAD
+[5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
 [5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
 [5.3.3]: https://github.com/tryzealot/zealot/compare/5.3.2...5.3.3
