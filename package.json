@@ -33,7 +33,7 @@
     "@babel/helper-explode-assignable-expression": "^7.18.6",
     "@crowdin/cli": "^4.1.0",
     "@docusaurus/module-type-aliases": "^3.5.1",
-    "@docusaurus/types": "^3.4.0"
+    "@docusaurus/types": "^3.5.2"
   },
   "browserslist": {
     "production": [
