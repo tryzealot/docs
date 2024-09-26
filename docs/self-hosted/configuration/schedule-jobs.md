@@ -2,6 +2,12 @@
 
 ## Clean old version builds
 
+:::info
+
+`ZEALOT_KEEP_UPLOADS` is `true` by default.
+
+:::
+
 A reliable logic for cleaning up old versions is to keep an eye on all uploaded
 versions of the current master version, as observed by project maintainers over time.
 
@@ -43,12 +49,7 @@ leaving the final version file as follows:
 ```
 
 If disk space is limited, you can enable cleanup of timed tasks by setting the environment variable `ZEALOT_KEEP_UPLOADS=false`.
-
-:::info
-
-`ZEALOT_KEEP_UPLOADS` set `true` by default.
-
-:::
+this jobs will schedule to execute in 6am per day.
 
 ## Backup
 

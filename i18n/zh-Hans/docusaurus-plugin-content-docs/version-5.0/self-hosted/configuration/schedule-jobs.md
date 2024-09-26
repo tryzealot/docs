@@ -41,7 +41,7 @@
 
 :::info
 
-`ZEALOT_KEEP_UPLOADS` 模式是 `true` 开启状态 。
+默认情况下 `ZEALOT_KEEP_UPLOADS` 是开启状态（`ture` ） 。
 
 :::
 

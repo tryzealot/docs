@@ -1287,7 +1287,7 @@
         "tags": [
           "应用版本"
         ],
-        "description": "更新应用版本的版本、自定义字段、变更日志等信息 (API v1.4 新增)",
+        "description": "更新应用版本的版本、自定义字段、变更日志等信息",
         "operationId": "updateRelease",
         "parameters": [
           {
@@ -1352,7 +1352,7 @@
         "tags": [
           "应用版本"
         ],
-        "description": "删除应用版本 (API v1.4 新增)",
+        "description": "删除应用版本",
         "operationId": "destroyRelease",
         "parameters": [
           {

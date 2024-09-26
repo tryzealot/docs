@@ -1287,7 +1287,7 @@
         "tags": [
           "Release"
         ],
-        "description": "Update a build of app verison, custom_fileds, changelog etc (Since v1.4)",
+        "description": "Update a build of app verison, custom_fileds, changelog etc",
         "operationId": "updateRelease",
         "parameters": [
           {
@@ -1352,7 +1352,7 @@
         "tags": [
           "Release"
         ],
-        "description": "Destroy a app's build (Since v1.4)",
+        "description": "Destroy a app's build",
         "operationId": "destroyRelease",
         "parameters": [
           {
