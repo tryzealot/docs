@@ -1,0 +1,90 @@
+{
+  "version.label": {
+    "message": "4.7.1",
+    "description": "The label for version 4.7.1"
+  },
+  "sidebar.selfHosted.category.Deployment": {
+    "message": "Deployment",
+    "description": "The label for category Deployment in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.category.Docker": {
+    "message": "Docker",
+    "description": "The label for category Docker in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.category.Cloud Provider Guides": {
+    "message": "Cloud Provider Guides",
+    "description": "The label for category Cloud Provider Guides in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.category.Configuration": {
+    "message": "Configuration",
+    "description": "The label for category Configuration in sidebar selfHosted"
+  },
+  "sidebar.selfHosted.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar selfHosted, linking to the doc self-hosted/index"
+  },
+  "sidebar.selfHosted.doc.Reverse Proxies": {
+    "message": "Reverse Proxies",
+    "description": "The label for the doc item Reverse Proxies in sidebar selfHosted, linking to the doc self-hosted/reverse-proxies"
+  },
+  "sidebar.selfHosted.doc.Storage": {
+    "message": "Storage",
+    "description": "The label for the doc item Storage in sidebar selfHosted, linking to the doc self-hosted/storage"
+  },
+  "sidebar.userGuide.category.Apps": {
+    "message": "Apps",
+    "description": "The label for category Apps in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Debug Files": {
+    "message": "Debug Files",
+    "description": "The label for category Debug Files in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Toolkits": {
+    "message": "Toolkits",
+    "description": "The label for category Toolkits in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Webhooks": {
+    "message": "Webhooks",
+    "description": "The label for category Webhooks in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Administrator": {
+    "message": "Administrator",
+    "description": "The label for category Administrator in sidebar userGuide"
+  },
+  "sidebar.userGuide.category.Monitoring": {
+    "message": "Monitoring",
+    "description": "The label for category Monitoring in sidebar userGuide"
+  },
+  "sidebar.userGuide.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar userGuide, linking to the doc user-guide/index"
+  },
+  "sidebar.userGuide.doc.Dashboard": {
+    "message": "Dashboard",
+    "description": "The label for the doc item Dashboard in sidebar userGuide, linking to the doc user-guide/dashboard"
+  },
+  "sidebar.developerGuide.category.SDKs": {
+    "message": "SDKs",
+    "description": "The label for category SDKs in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.fastlane plugins": {
+    "message": "fastlane plugins",
+    "description": "The label for category fastlane plugins in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.APIs": {
+    "message": "APIs",
+    "description": "The label for category APIs in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar developerGuide, linking to the doc developer-guide/index"
+  },
+  "sidebar.contributingGuide.category.Local development": {
+    "message": "Local development",
+    "description": "The label for category Local development in sidebar contributingGuide"
+  },
+  "sidebar.contributingGuide.doc.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for the doc item Getting Started in sidebar contributingGuide, linking to the doc contributing-guide/index"
+  }
+}
