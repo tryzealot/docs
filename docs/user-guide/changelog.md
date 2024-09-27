@@ -5,7 +5,21 @@
 :::tip
 
 The following list of changes is the list that has not yet been released, code change history: [Unreleased]
+
 :::
+
+## 5.3.7 (2024-09-27)
+
+Full [commit changes][5.3.7].
+
+#### Added
+
+- `API` Added two interfaces: edit application version metadata, delete application version. [#1669](https://github.com/tryzealot/zealot/pull/1669)
+
+#### Fixed
+
+- `Web` Reverted the logic of disabling all third-party login authorization simultaneously after closing the user registration mode in version 5.3.5. [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) Thanks to [officebluesource](https://github.com/officebluesource)
+- `Docker` Fixed exception error when initializing data.
 
 ## 5.3.6 (2024-08-10)
 
@@ -706,7 +720,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.6...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
 [5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
