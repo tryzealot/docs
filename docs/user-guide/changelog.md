@@ -8,6 +8,31 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+#### Added
+
+- `Web` Fully optimized interface design, new color schemes, new user experience.
+- `Web` Optimized user experience for common interfaces, improving page loading speed.
+- `Web` Optimized user experience for common interfaces, improving page loading speed.
+- `Web/API` Added basic information upload and unpacking for HarmonyOS system. Thanks to [InjoyDeng](https://github.com/InjoyDeng)
+- `Web` Friendly prompt provided when attempting to retrieve iOS device UDID on mobile app based on installation restrictions.
+- `Docker` Added `ZEALOT_POSTGRES_URL` environment variable to configure the database via URL. (old separate field environment variables also retained)
+- `Docker` Added SMTP verification test before service startup.
+
+#### Fixed
+
+- `API` Optimized logic for registering iOS devices to Apple Developer Account.
+- `Web` Optimized English language pack.
+
+#### Changed
+
+- `API` Application upload interface now supports not parsing metadata.
+- `Development Environment` Ruby upgraded to 3.3.5 and NodeJS upgraded to 20.17.0.
+
+#### Fixed
+
+- `Web` Reverted logic in version 5.3.5 regarding disabling all third-party login authorization when disabling user registration mode. [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) Thanks to [officebluesource](https://github.com/officebluesource)
+- `Docker` Fixed exception error triggered during initialization data.
+
 ## 5.3.7 (2024-09-27)
 
 Full [commit changes][5.3.7].

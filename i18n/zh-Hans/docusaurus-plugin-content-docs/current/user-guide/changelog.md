@@ -8,6 +8,31 @@
 
 :::
 
+#### 新增
+
+- `Web` 全面优化界面设计，新的配色、新的用户体验
+- `Web` 优化常用界面的用户体验，提升页面打开速度
+- `Web` 优化常用界面的用户体验，提升页面打开速度
+- `Web/API` 新增对鸿蒙系统的基础信息上传和解包解析。 感谢 [InjoyDeng](https://github.com/InjoyDeng)
+- `Web` 手机应用获取 iOS 设备 UDID 会根据限制安装设置给出友好提示
+- `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
+- `Docker` 服务启动前增加配置的 SMTP 验证测试
+
+#### 修复
+
+- `API` 优化注册测试 iOS 设备到苹果开发者账户的逻辑
+- `Web` 优化英文语言包
+
+#### 变更
+
+- `API` 上传应用接口支持不解析元信息
+- `开发环境` Ruby 升级至 3.3.5 和 NodeJS 升级至 20.17.0
+
+#### 修复
+
+- `Web` 撤回 5.3.5 版本关于关闭用户注册模式后同时禁用所有第三方登录授权登录的逻辑。 [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) 感谢 [officebluesource](https://github.com/officebluesource)
+- `Docker` 修复初始化数据时会引发异常报错。
+
 ## 5.3.7 (2024-09-27)
 
 详细[代码变更记录][5.3.7].
