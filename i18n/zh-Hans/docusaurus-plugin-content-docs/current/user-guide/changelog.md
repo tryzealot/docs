@@ -8,6 +8,19 @@
 
 :::
 
+## 5.3.7 (2024-09-27)
+
+详细[代码变更记录][5.3.7].
+
+#### 新增
+
+- `API` 新增两个接口：编辑应用版本元信息、删除应用版本 [#1669](https://github.com/tryzealot/zealot/pull/1669)
+
+#### 修复
+
+- `Web` 撤回 5.3.5 版本关于关闭用户注册模式后同时禁用所有第三方登录授权登录的逻辑。 [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) 感谢 [officebluesource](https://github.com/officebluesource)
+- `Docker` 修复初始化数据时会引发异常报错。
+
 ## 5.3.6 (2024-08-10)
 
 详细[代码变更记录][5.3.6].
@@ -707,7 +720,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.6...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
 [5.3.4]: https://github.com/tryzealot/zealot/compare/5.3.3...5.3.4
