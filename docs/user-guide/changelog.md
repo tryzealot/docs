@@ -8,10 +8,13 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 6.0.0 (2024-11-?)
+
+Fully optimized Web UI design， Added HarmonyOS App support.
+
 #### Added
 
 - `Web` Fully optimized interface design, new color schemes, new user experience.
-- `Web` Optimized user experience for common interfaces, improving page loading speed.
 - `Web` Optimized user experience for common interfaces, improving page loading speed.
 - `Web/API` Added basic information upload and unpacking for HarmonyOS system. Thanks to [InjoyDeng](https://github.com/InjoyDeng)
 - `Web` Friendly prompt provided when attempting to retrieve iOS device UDID on mobile app based on installation restrictions.
@@ -745,7 +748,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5

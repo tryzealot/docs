@@ -8,10 +8,13 @@
 
 :::
 
+## 6.0.0 (2024-11-?)
+
+全新优化 UI 设计，新增鸿蒙应用解析。
+
 #### 新增
 
 - `Web` 全面优化界面设计，新的配色、新的用户体验
-- `Web` 优化常用界面的用户体验，提升页面打开速度
 - `Web` 优化常用界面的用户体验，提升页面打开速度
 - `Web/API` 新增对鸿蒙系统的基础信息上传和解包解析。 感谢 [InjoyDeng](https://github.com/InjoyDeng)
 - `Web` 手机应用获取 iOS 设备 UDID 会根据限制安装设置给出友好提示
@@ -745,7 +748,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
