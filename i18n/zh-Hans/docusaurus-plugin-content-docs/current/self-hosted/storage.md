@@ -2,12 +2,6 @@
 
 这里罗列了 Zealot 服务所需的所有数据存储，在还没有提供更好的备份管理工具之前，方便有能力的用户能够手动备份和恢复数据使用。
 
-:::warning
-
-Zealot 将在 5.3.0 正式版本后不再需要 redis 服务，详情参见 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
-
-:::
-
 ## Postgres
 
 用于存储和管理一切和 Zealot 有关数据，这个就不用多说了。

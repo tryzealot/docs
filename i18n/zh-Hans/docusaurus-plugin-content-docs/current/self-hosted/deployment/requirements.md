@@ -4,12 +4,6 @@ sidebar_label: "依赖"
 
 # Zealot 自部署依赖
 
-:::warning
-
-Zealot 将在 5.3.0 正式版本后不再需要 redis 服务，详情参见 [#1318](https://github.com/tryzealot/zealot/pull/1318)。
-
-:::
-
 如果想要顺利并发挥 Zealot 最佳状态运行，本页面提供了安装所需的各自软硬环境的依赖安装信息。
 
 ## 操作系统
