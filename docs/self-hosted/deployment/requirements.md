@@ -4,13 +4,6 @@ sidebar_label: "Requirements"
 
 # Zealot Self Hosted Requirements
 
-:::warning
-
-Zealot is no longer in need of redis service after the official release of 5.3.0, for more details,
-check [#1318](https://github.com/tryzealot/zealot/pull/1318) please.
-
-:::
-
 This page incldues useful information on the requirements that are needed to install and run Zealot on your servers.
 
 ## Operating Systems
