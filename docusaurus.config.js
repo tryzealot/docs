@@ -189,7 +189,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} icyleaf. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Zealot.`,
       },
       prism: {
         additionalLanguages: ['kotlin', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
