@@ -79,6 +79,13 @@ These are the all roles in Zealot and the actions each can take:
       <td>✓</td>
     </tr>
     <tr>
+      <td>Archive/Unarchive app</td>
+      <td></td>
+      <td></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
       <td>Create/Edit/Delete a scheme/channel of app</td>
       <td></td>
       <td></td>
