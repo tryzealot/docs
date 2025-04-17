@@ -27,11 +27,11 @@
     "prism-react-renderer": "^2.4.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "redocusaurus": "^2.2.2"
+    "redocusaurus": "^2.2.3"
   },
   "devDependencies": {
     "@babel/helper-explode-assignable-expression": "^7.18.6",
-    "@crowdin/cli": "^4.6.1",
+    "@crowdin/cli": "^4.7.0",
     "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/types": "^3.7.0"
   },

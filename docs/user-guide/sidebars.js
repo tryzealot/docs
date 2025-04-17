@@ -21,6 +21,7 @@ module.exports = [
       "user-guide/apps/index",
       "user-guide/apps/detail",
       "user-guide/apps/upload",
+      "user-guide/apps/archive",
     ],
   },
   {

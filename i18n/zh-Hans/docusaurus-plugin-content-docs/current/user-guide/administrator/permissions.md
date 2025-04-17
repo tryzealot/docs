@@ -75,6 +75,13 @@ Zealot 提供四种用户权限：
       <td>✓</td>
     </tr>
     <tr>
+      <td>归档/取消归档应用</td>
+      <td></td>
+      <td></td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
       <td>创建/编辑/删除应用的类型或渠道</td>
       <td></td>
       <td></td>
