@@ -43,17 +43,19 @@ using the services configured by default with docker-compose.
 ### Postgres
 
 ```bash
+# Use url format variable
+ZEALOT_DATABASE_URL="postgresql://postgres:ze@l0t@127.0.0.1:5432/zealot?sslmode=disable"
+
+# Or use individual variables
 ZEALOT_POSTGRES_HOST=127.0.0.1
 ZEALOT_POSTGRES_PORT=5432
 ZEALOT_POSTGRES_USERNAME=postgres
 ZEALOT_POSTGRES_PASSWORD=ze@l0t
 ZEALOT_POSTGRES_DB_NAME=zealot
+ZEALOT_POSTGRES_SSLMODE=disable/allow/prefer/verify-ca/verify-full
 ```
 
-### Redis
-
-Version 5.3.0 is not dependent on redis. If you have configured it before,
-please consider deleting the `REDIS_URL` environment variable, but not deleting it will not affect the use.
+ssl mode can review https://www.postgresql.org/docs/current/libpq-ssl.html
 
 ## Configure default language
 

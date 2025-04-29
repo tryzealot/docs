@@ -41,16 +41,19 @@ ZEALOT_DOMAIN=zealot.example.com
 ### Postgres
 
 ```bash
+# url 变量
+ZEALOT_DATABASE_URL="postgresql://postgres:ze@l0t@127.0.0.1:5432/zealot?sslmode=disable"
+
+# 或使用独立变量
 ZEALOT_POSTGRES_HOST=127.0.0.1
 ZEALOT_POSTGRES_PORT=5432
 ZEALOT_POSTGRES_USERNAME=postgres
 ZEALOT_POSTGRES_PASSWORD=ze@l0t
 ZEALOT_POSTGRES_DB_NAME=zealot
+ZEALOT_POSTGRES_SSLMODE=disable/allow/prefer/verify-ca/verify-full
 ```
 
-### Redis
-
-5.3.0 版本不再依赖 redis，如果之前已经配置请考虑删除 `REDIS_URL` 环境变量，但不删除也不影响使用。
+针对 ssl mode 的值的详细说明请看 https://www.postgresql.org/docs/current/libpq-ssl.html
 
 ## 网站默认语言
 
