@@ -10,23 +10,31 @@
 
 #### 新增
 
-- `Web` 全面优化界面设计，新的配色、新的用户体验
-- `Web` 优化常用界面的用户体验，提升页面打开速度
-- `Web` 优化常用界面的用户体验，提升页面打开速度
-- `Web/API` 新增对鸿蒙系统的基础信息上传和解包解析。 感谢 [InjoyDeng](https://github.com/InjoyDeng)
+- `Web` 全面优化界面设计，新的配色、新的用户体验，提升页面打开速度
+- `Web/API` 新增对鸿蒙系统的基础信息上传和解包解析 感谢 [InjoyDeng](https://github.com/InjoyDeng)
 - `Web` 手机应用获取 iOS 设备 UDID 会根据限制安装设置给出友好提示
+- `Web` 新增下载应用的文件名可配项，支持保留源文件名或默认格式 [#1744](https://github.com/tryzealot/zealot/pull/1744) 感谢 [rakuyoMo](https://github.com/rakuyoMo)
+- `Web` Android 元信息解析新增 `native codes` 字段 [#1745](https://github.com/tryzealot/zealot/pull/1745)
+- `Web` 网络钩子新增 `ci_url, branch, source, release_type` 字段 [#1750](https://github.com/tryzealot/zealot/pull/1750) 感谢 [rakuyoMo](https://github.com/rakuyoMo)
+- `Web` 新增页码底部的显示配置项 [#1888](https://github.com/tryzealot/zealot/pull/1888)
+- `Web` 应用列表支持按照应用名排序 [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
+- `Web` 应用列表支持按照应用名搜索、排序及归档功能 [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
+- `Web` Github 授权登录支持限定组织 [#1878](https://github.com/tryzealot/zealot/pull/1878) 感谢 [BraZucco](https://github.com/BraZucco)
+- `Docker` 新增日志输出格式 `rails (默认), json, graylog2, lines, ltvs` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
 - `Docker` 服务启动前增加配置的 SMTP 验证测试
 
 #### 修复
 
-- `API` 优化注册测试 iOS 设备到苹果开发者账户的逻辑
+- `Web/API` 修复受保护的应用下载时也需要认证 [#1798](https://github.com/tryzealot/zealot/pull/1798)
 - `Web` 优化英文语言包
+- `API` 修复上传应用没有写入上传来源 [#1746](https://github.com/tryzealot/zealot/pull/1746) 感谢 [rakuyoMo](https://github.com/rakuyoMo)
+- `API` 优化注册测试 iOS 设备到苹果开发者账户的逻辑
 
 #### 变更
 
 - `API` 上传应用接口支持不解析元信息
-- `开发环境` Ruby 升级至 3.3.5 和 NodeJS 升级至 20.17.0
+- `开发环境` Ruby 升级至 3.3.8 和 NodeJS 升级至 22.13.1，Rails 升级至 8.0
 
 #### 修复
 

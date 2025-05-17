@@ -11,27 +11,25 @@ The following list of changes is the list that has not yet been released, code c
 #### Added
 
 - `Web` Fully optimized interface design, new color schemes, new user experience.
-- `Web` Optimized user experience for common interfaces, improving page loading speed.
-- `Web` Optimized user experience for common interfaces, improving page loading speed.
-- `Web/API` Added basic information upload and unpacking for HarmonyOS system. Thanks to [InjoyDeng](https://github.com/InjoyDeng)
+- `Web/API` Added basic information upload and unpacking for HarmonyOS app. Thanks to [InjoyDeng](https://github.com/InjoyDeng)
 - `Web` Friendly prompt provided when attempting to retrieve iOS device UDID on mobile app based on installation restrictions.
+- `Web` Added configurable file naming for app downloads, supporting either original filename or default format. [#1744](https://github.com/tryzealot/zealot/pull/1744) Thanks to [rakuyoMo](https://github.com/rakuyoMo)
+- `Web` Added `native codes` field to Android metadata parsing. [#1745](https://github.com/tryzealot/zealot/pull/1745)
+- `Web` Added `ci_url, branch, source, release_type` fields to webhooks. [#1750](https://github.com/tryzealot/zealot/pull/1750) Thanks to [rakuyoMo](https://github.com/rakuyoMo)
+- `Web` Added configuration option for pagination display at bottom. [#1888](https://github.com/tryzealot/zealot/pull/1888)
+- `Web` Application list now supports sorting by app name. [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
+- `Web` Application list supports search by app name, sorting and archiving functions. [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
+- `Web` Github authorization login now supports organization restrictions. [#1878](https://github.com/tryzealot/zealot/pull/1878) Thanks to [BraZucco](https://github.com/BraZucco)
+- `Docker` Added log output formats support: `rails (default), json, graylog2, lines, ltvs`. [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` Added `ZEALOT_POSTGRES_URL` environment variable to configure the database via URL. (old separate field environment variables also retained)
 - `Docker` Added SMTP verification test before service startup.
 
 #### Fixed
 
+- `Web/API` Fixed protected app downloads requiring authentication. [#1798](https://github.com/tryzealot/zealot/pull/1798)
+- `Web` Optimized English language locale pack.
+- `API` Fixed upload source not being recorded when uploading apps. [#1746](https://github.com/tryzealot/zealot/pull/1746) Thanks to [rakuyoMo](https://github.com/rakuyoMo)
 - `API` Optimized logic for registering iOS devices to Apple Developer Account.
-- `Web` Optimized English language pack.
-
-#### Changed
-
-- `API` Application upload interface now supports not parsing metadata.
-- `Development Environment` Ruby upgraded to 3.3.5 and NodeJS upgraded to 20.17.0.
-
-#### Fixed
-
-- `Web` Reverted logic in version 5.3.5 regarding disabling all third-party login authorization when disabling user registration mode. [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) Thanks to [officebluesource](https://github.com/officebluesource)
-- `Docker` Fixed exception error triggered during initialization data.
 
 ## 5.3.7 (2024-09-27)
 
