@@ -18,7 +18,7 @@
 - `Web` 网络钩子新增 `ci_url, branch, source, release_type` 字段 [#1750](https://github.com/tryzealot/zealot/pull/1750) 感谢 [rakuyoMo](https://github.com/rakuyoMo)
 - `Web` 新增页码底部的显示配置项 [#1888](https://github.com/tryzealot/zealot/pull/1888)
 - `Web` 应用列表支持按照应用名排序 [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
-- `Web` 应用列表支持按照应用名搜索、排序及归档功能 [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
+- `Web/API` 应用列表支持按照应用名搜索、排序及归档功能 [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Web` Github 授权登录支持限定组织 [#1878](https://github.com/tryzealot/zealot/pull/1878) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Docker` 新增日志输出格式 `rails (默认), json, graylog2, lines, ltvs` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
