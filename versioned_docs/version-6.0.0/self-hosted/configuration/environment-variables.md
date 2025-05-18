@@ -174,3 +174,19 @@ Google Analytics is a website analysis service provided by Microsoft.
 ```bash
 CLARITY_ANALYTICS_ID=12345678-9
 ```
+
+## Logging format
+
+The log format uses [lograge](https://github.com/roidrage/lograge) implementation, and the output format can use the following formats:
+
+name | description | memo
+-----|-------------|-----
+`rails` | Rails built-in format | [Documentation](https://guides.rubyonrails.org/debugging_rails_applications.html#sending-messages)
+`json` | JSON | Transforms key-value content into JSON data
+`graylog2` | Graylog2 format | Another combination in JSON format
+`ltsv` | LTSV format | key-value combined with colons and separated by `\t`
+`keyvalue` | Key-value format | key-value combined with equal signs and separated by spaces. **Default format**
+
+```bash
+ZEALOT_LOG_FORMAT=json
+```

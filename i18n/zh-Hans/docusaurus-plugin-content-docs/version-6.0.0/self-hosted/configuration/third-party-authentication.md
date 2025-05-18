@@ -32,10 +32,26 @@ FEISHU_APP_ID=
 FEISHU_APP_SECRET=
 ```
 
+## Github
+
+1. 注册 Github [官方](http://github.com)账户或自部署 Gitlab 服务
+1. 在用户设置找到开发者设置（Developer Settings）-> OAuth 应用（OAuth Apps）创建一个新应用
+1. 回调地址（Redirect URI） 配置为  `https://zealot.example.com/users/auth/github/callback` (域名根据实际情况修改）
+1. 添加用户字段信息授权（scope）：`user`，默认 zealot 仅用此授权，如果你的授权还需要限定组织（Organization），还需要额外新增 `read:org` 并设置 `GITHUB_REQUIRED_ORG`。
+
+```bash
+GITHUB_ENABLED=true
+GITHUB_SITE=https://github.com/login/oauth/authorize
+GITHUB_SCOPE=user,read:org
+GITHUB_APP_ID=
+GITHUB_SECRET=
+GITHUB_REQUIRED_ORG=
+```
+
 ## Gitlab
 
 1. 注册 Gitlab [官方](http://gitlab.com)账户或自部署 Gitlab 服务
-1. 在用户设置（Preferences） -> 应用（Applications） 创建一个新应用
+1. 在用户设置（Preferences）-> 应用（Applications）创建一个新应用
 1. 回调地址（Redirect URI） 配置为  `https://zealot.example.com/users/auth/gitlab/callback` (域名根据实际情况修改）
 1. 添加用户字段信息授权（scope）：`read_user`，默认 zealot 仅用此授权，如果你的授权范围是 `api` 也没问题
 

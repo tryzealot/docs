@@ -24,7 +24,7 @@ Full [commit changes][6.0.0].
 - `Web` Application list now supports sorting by app name. [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
 - `Web/API` Application list supports search by app name, sorting and archiving functions. [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
 - `Web` Add Github third-pary authorization login and supports organization restrictions. [#1878](https://github.com/tryzealot/zealot/pull/1878) Thanks to [BraZucco](https://github.com/BraZucco)
-- `Docker` Added log output formats support: `rails (default), json, graylog2, lines, ltvs`. [#1747](https://github.com/tryzealot/zealot/pull/1747)
+- `Docker` Added log output formats support: `rails, json, graylog2, lines, ltvs and keyvalue (default)`. [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` Added `ZEALOT_POSTGRES_URL` environment variable to configure the database via URL. (old separate field environment variables also retained)
 - `Docker` Added SMTP verification test before service startup.
 - `Docker` Added a loading page before service running. [#1921](https://github.com/tryzealot/zealot/pull/1921)

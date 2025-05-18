@@ -24,7 +24,7 @@
 - `Web` 应用列表支持按照应用名排序 [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Web/API` 应用列表支持按照应用名搜索、排序及归档功能 [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Web` 新增 Github 授权登录且支持限定组织 [#1878](https://github.com/tryzealot/zealot/pull/1878) 感谢 [BraZucco](https://github.com/BraZucco)
-- `Docker` 新增日志输出格式 `rails (默认), json, graylog2, lines, ltvs` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
+- `Docker` 新增日志输出格式 `rails, json, graylog2, lines, ltvs, keyvalue (默认格式)` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
 - `Docker` 服务启动前增加配置的 SMTP 验证测试
 - `Docker` 服务启动期增加启动页面 [#1921](https://github.com/tryzealot/zealot/pull/1921)

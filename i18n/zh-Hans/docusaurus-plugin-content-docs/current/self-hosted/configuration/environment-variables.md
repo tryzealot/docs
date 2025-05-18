@@ -166,3 +166,19 @@ Clarity 是一个网站分析服务，由 Microsoft 提供。
 ```bash
 CLARITY_ANALYTICS_ID=12345678-9
 ```
+
+## 日志格式
+
+日志的格式使用 [lograge](https://github.com/roidrage/lograge) 实现，输出的格式可以使用如下格式：
+
+name | description | memo
+-----|-------------|-----
+`rails` | Rails 自带的格式 | [相关文档](https://guides.rubyonrails.org/debugging_rails_applications.html#sending-messages)
+`json` | JSON | 把 keyvalue 的内容 JSON 数据化
+`graylog2` | Graylog2 格式 | 也是 JSON 格式的另外组合
+`ltsv` | LTSV 格式 | key-value 按照冒号组合，并按 `\t` 分隔
+`keyvalue` | 键值格式 | key-value 按照等号组合，并按空格分隔 **默认格式**
+
+```bash
+ZEALOT_LOG_FORMAT=json
+```

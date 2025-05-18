@@ -23,12 +23,28 @@ where `:provider` is the identifier of the above supported third-party service, 
 https://zealot.example.com/users/auth/google_oauth2/callback
 ```
 
+## Github
+
+1. Register a [Github](http://github.com) account or use self-host service
+1. Create an application in Developer Settings -> OAuth Apps page.
+1. Configure `Redirect URI` such like `https://zealot.example.com/users/auth/github/callback` (replace the domain in your case)
+1. Check scope: `user`，By default zealot only uses this scope, if organization validation that needs append  scope is `read:org` and set `GITHUB_REQUIRED_ORG`.
+
+```bash
+GITHUB_ENABLED=true
+GITHUB_SITE=https://github.com/login/oauth/authorize
+GITHUB_SCOPE=user,read:org
+GITHUB_APP_ID=
+GITHUB_SECRET=
+GITHUB_REQUIRED_ORG=
+```
+
 ## Gitlab
 
-1. Register a Gitlab [On line](http://gitlab.com) account or use self-host service
+1. Register a  [Gitlab](http://gitlab.com) account or use self-host service
 1. Create an application in Preferences -> Applications page.
 1. Configure `Redirect URI` such like `https://zealot.example.com/users/auth/gitlab/callback` (replace the domain in your case)
-1. Check scope: `read_user`，By default zealot only uses this license, if your enable scope is `api` that's fine too
+1. Check scope: `read_user`，By default zealot only uses this scope, if your enable scope is `api` that's fine too
 
 ```bash
 GITLAB_ENABLED=true
