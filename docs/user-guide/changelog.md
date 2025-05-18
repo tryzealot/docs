@@ -23,6 +23,7 @@ The following list of changes is the list that has not yet been released, code c
 - `Docker` Added log output formats support: `rails (default), json, graylog2, lines, ltvs`. [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` Added `ZEALOT_POSTGRES_URL` environment variable to configure the database via URL. (old separate field environment variables also retained)
 - `Docker` Added SMTP verification test before service startup.
+- `Docker` Added a loading page before service running. [#1921](https://github.com/tryzealot/zealot/pull/1921)
 
 #### Fixed
 

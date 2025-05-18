@@ -23,6 +23,7 @@
 - `Docker` 新增日志输出格式 `rails (默认), json, graylog2, lines, ltvs` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
 - `Docker` 服务启动前增加配置的 SMTP 验证测试
+- `Docker` 服务启动期增加启动页面 [#1921](https://github.com/tryzealot/zealot/pull/1921)
 
 #### 修复
 
