@@ -5,6 +5,7 @@ Zealot supports authorized logins using supported third-party services, which ca
 Service | provider
 ---|---
 Feishu | `feishu`
+Github | `github`
 Gitlab | `gitlab`
 Google | `google_oauth2`
 LDAP | `ldap`

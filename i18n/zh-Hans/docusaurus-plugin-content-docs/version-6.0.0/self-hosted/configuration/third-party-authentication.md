@@ -5,6 +5,7 @@ Zealot 支持使用已经支持的第三方服务授权登录，当前可以通�
 第三方服务 | 标识符
 ---|---
 飞书 | `feishu`
+Github | `github`
 Gitlab | `gitlab`
 Google | `google_oauth2`
 LDAP | `ldap`
