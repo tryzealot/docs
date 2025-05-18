@@ -17,20 +17,11 @@
 
 ## 是否支持外部 postgres 链接
 
-支持的，如果有公用的 postgres 服务器那就可以单独部署 zealot 服务，在 `.env` 配置或 Docker、K8s 的环境变量手动指定如下配置：
-
-```bash
-# Postgresl
-ZEALOT_POSTGRES_HOST=127.0.0.1
-ZEALOT_POSTGRES_PORT=5432
-ZEALOT_POSTGRES_USERNAME=postgres
-ZEALOT_POSTGRES_PASSWORD=ze@l0t
-ZEALOT_POSTGRES_DB_NAME=zealot
-```
+支持的，移步[环境变量](/docs/self-hosted/configuration/environment-variables#postgres)配置查看详细参数。
 
 ## 是否支持 Kubernetes（k8s）部署
 
-服务是支持 K8S 的单机部署但不支持伸缩特性，具体原因是因为应用上传使用的是容器内的本地存储没有支持亚马逊 S3 或阿里云第三方云存储的支持。
+服务是[支持 K8S 部署](/docs/self-hosted/deployment/kubernetes)但不支持伸缩特性，具体原因是因为应用上传使用的是容器内的本地存储没有支持亚马逊 S3 或阿里云第三方云存储的支持。
 
 ## 是否提供类似 FIR、蒲公英服务的应用的分享页面
 
@@ -54,7 +45,7 @@ ZEALOT_POSTGRES_DB_NAME=zealot
 ## 服务运行一段时间 CPU 或内存资源暴涨不下，如何解决？
 
 根据用户 [Cleam](https://github.com/Cleam) 的[反馈](https://github.com/tryzealot/zealot/issues/768#issuecomment-1161097162)部署服务之后，托管的应用很少，上传频率不高，服务器硬件规格也完全达标的情况下还是会引发 CPU 或内存资源暴涨造成服务器卡死，
-当前的情况属于还属于个人情况，目前情况未知，但可以通过限制 CPU 和内存来规避这个问题，编辑 `docker-compose.yml` 文件：
+当前的情况属于还属于个人情况，目前情况未知，但可以通过限制 CPU 和内存来规避这个问题，针对 Docker 部署可以编辑 `docker-compose.yml` 文件：
 
 ```diff
 zealot:
