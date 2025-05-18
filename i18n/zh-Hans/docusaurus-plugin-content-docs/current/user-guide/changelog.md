@@ -8,6 +8,10 @@
 
 :::
 
+## 6.0.0 (2025-05-?)
+
+一年的期待！全面优化界面设计，新的配色、新的用户体验，提升页面打开速度，详细[代码变更记录][6.0.0]。
+
 #### 新增
 
 - `Web` 全面优化界面设计，新的配色、新的用户体验，提升页面打开速度
@@ -19,7 +23,7 @@
 - `Web` 新增页码底部的显示配置项 [#1888](https://github.com/tryzealot/zealot/pull/1888)
 - `Web` 应用列表支持按照应用名排序 [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Web/API` 应用列表支持按照应用名搜索、排序及归档功能 [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) 感谢 [BraZucco](https://github.com/BraZucco)
-- `Web` Github 授权登录支持限定组织 [#1878](https://github.com/tryzealot/zealot/pull/1878) 感谢 [BraZucco](https://github.com/BraZucco)
+- `Web` 新增 Github 授权登录且支持限定组织 [#1878](https://github.com/tryzealot/zealot/pull/1878) 感谢 [BraZucco](https://github.com/BraZucco)
 - `Docker` 新增日志输出格式 `rails (默认), json, graylog2, lines, ltvs` 支持 [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` 新增 `ZEALOT_POSTGRES_URL` 环境变量通过 URL 配置数据库（老的单独字段环境变量也保留）
 - `Docker` 服务启动前增加配置的 SMTP 验证测试
@@ -754,7 +758,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5

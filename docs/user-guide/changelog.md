@@ -8,6 +8,10 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 6.0.0 (2025-05-?)
+
+Full [commit changes][6.0.0].
+
 #### Added
 
 - `Web` Fully optimized interface design, new color schemes, new user experience.
@@ -19,7 +23,7 @@ The following list of changes is the list that has not yet been released, code c
 - `Web` Added configuration option for pagination display at bottom. [#1888](https://github.com/tryzealot/zealot/pull/1888)
 - `Web` Application list now supports sorting by app name. [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
 - `Web/API` Application list supports search by app name, sorting and archiving functions. [#1864](https://github.com/tryzealot/zealot/pull/1864) [#1886](https://github.com/tryzealot/zealot/pull/1886) [#1879](https://github.com/tryzealot/zealot/pull/1879) Thanks to [BraZucco](https://github.com/BraZucco)
-- `Web` Github authorization login now supports organization restrictions. [#1878](https://github.com/tryzealot/zealot/pull/1878) Thanks to [BraZucco](https://github.com/BraZucco)
+- `Web` Add Github third-pary authorization login and supports organization restrictions. [#1878](https://github.com/tryzealot/zealot/pull/1878) Thanks to [BraZucco](https://github.com/BraZucco)
 - `Docker` Added log output formats support: `rails (default), json, graylog2, lines, ltvs`. [#1747](https://github.com/tryzealot/zealot/pull/1747)
 - `Docker` Added `ZEALOT_POSTGRES_URL` environment variable to configure the database via URL. (old separate field environment variables also retained)
 - `Docker` Added SMTP verification test before service startup.
@@ -551,54 +555,7 @@ Full [commit changes][4.2.0].
 - `Web` fixes the issue where uploading applications causes variable release errors in the parsing process.
 - `Web` fixes the issue where an error occurs when verifying password protection for an application. [#564](https://github.com/tryzealot/zealot/issues/564) Thanks to [EasierLu](https://github.com/EasierLu)
 - `Web` fixes the issue where editing user information in the administrator panel causes an error. [#564](https://github.com/tryzealot/zealot/issues/564) Thanks to [EasierLu](https://github.com/EasierLu)
-- `Web` fixes the issue where the "Install" button on the application details page is displayed abnormally on incorrect systems and devices (normally only iOS applications are displayed on iOS and macOS devices).
-- `Web` optimizes the unpacking of applications for developer certificates that fail to parse due to special character sets (currently known to be Chinese encoding) and UI layout adjustments.
-- `Web` fixes the issue where the current user cannot be edited.
-- `Web` corrects the duplicate title of debug files.
-- `Docker` fixes the logrotate error during image initialization.
-- `Docker` fixes the issue where Caddy deployment needs to be confirmed. [#551](https://github.com/tryzealot/zealot/issues/551) Thanks to [ReverseScale](https://github.com/ReverseScale)
-
-## 4.1.0 (2021-07-17)
-
-Full [commit changes][4.1.0].
-
-#### Changed
-
-- `Web` changes the display logic for obtaining device UDID due to the similarity of iPad's User-Agent and Desktop.
-- `Docker` sets Gihub Container Registry (gcr.io) as the default Docker image source.
-
-#### Added
-
-- `Web` supports one-click login authentication for third-party platforms such as Feishu and Gitlab.
-- `Web` optimizes the logic for accessing the version details page of an application that cannot be found and allows manual redirection to the latest version.
-- `Web` adds the ability to view some system configuration items and modify some parameters without requiring a restart.
-- `Web` adds a page statistics report to the management panel.
-
-#### Fixed
-
-- `Web` fixes the issue where the network hook cannot obtain the value of the title variable.
-- `Web` fixes the abnormal error during application parsing process.
-- `Web` fixes the abnormal error that occurs during application creation.
-- `Web` fixes the issue where system configuration cannot be edited due to being saved as empty.
-- `Job` fixes the issue where the logic for removing old versions causes the deletion logic and document logic to be reversed.
-
-## 4.0.0 (2020-12-31)
-
-Full [commit changes][4.0.0].
-
-#### Fixed
-
-- `Web` corrects the display error caused by abnormal judgment of the expiration time of the iOS certificate during file parsing.
-- `Web` ignores the default development version number check for new versions.
-
-## 4.0.0.rc2 (2020-12-25)
-
-Full [commit changes][4.0.0.rc2].
-
-#### Added
-
-- `Web` newly parsed files will be saved to the list, and a file parsing for uploaded applications will also be synchronized. (asynchronous task) [#346](https://github.com/tryzealot/zealot/pull/346)
-- `Web` adds file parsing data statistics to the control panel.
+- `Web` fixes the issue where the "Install" button on the application details page is displayed abnormally on incorrecthttps://github.com/tryzealot/zealot/compare/5.3.7...HEADng data statistics to the control panel.
 - `Web` adds data statistics for network hooks, background tasks, and disk usage for administrators in the control panel.
 - `Web` adds a quick delete function for authorized personnel to the prompt for missing files in the version details.
 
@@ -744,7 +701,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/5.3.7...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
 [5.3.5]: https://github.com/tryzealot/zealot/compare/5.3.4...5.3.5
