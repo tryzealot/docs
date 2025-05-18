@@ -171,7 +171,7 @@ CLARITY_ANALYTICS_ID=12345678-9
 
 日志的格式使用 [lograge](https://github.com/roidrage/lograge) 实现，输出的格式可以使用如下格式：
 
-name | description | memo
+值   | 说明         | 备注
 -----|-------------|-----
 `rails` | Rails 自带的格式 | [相关文档](https://guides.rubyonrails.org/debugging_rails_applications.html#sending-messages)
 `json` | JSON | 把 keyvalue 的内容 JSON 数据化

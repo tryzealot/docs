@@ -50,10 +50,11 @@ Output:
   "size": "30 MB",
   "branch": "develop",
   "source": "API",
+  "changelog": "- Add feture A\n- Fix issue B\n- Release v1.0.0",
   "install_url": "https://zealot.example.com/api/apps/download/12354",
   "icon_url": "https://zealot.example.com/api/apps/icon.png",
   "qrcode_url": "https://zealot.example.com/api/apps/354/qrcode",
+  "ci_url": "https://github.com/tryzealot/zealot/actions/runs/some-id",
   "uploaded_at": "2019-12-30 11:33:00",
-  "changelog": "- Add feture A\n- Fix issue B\n- Release v1.0.0",
 }
 ```
