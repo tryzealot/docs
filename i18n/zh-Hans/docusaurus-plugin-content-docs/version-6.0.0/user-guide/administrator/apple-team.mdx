@@ -1,0 +1,30 @@
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# 苹果开发者
+
+iOS Ad-Hoc 签发的应用分发最大的困难是需要给大量不懂这些概念的人传递什么是 UDID、学习如何获取、获取后再提供给开发者，再通过重新签发证书、打包、上传才能安装。
+
+Zealot 可以自动获取 Ad-Hoc 应用的 UDID，面对一串串的 UDID 没人能够看懂这都是谁的设备，明明这些设备在注册的时候都已经备注或自动获取了设备名，但它有不能够自动同步过来。
+
+为了解决以上两个重大难题，Zealot 分别尝试了几种方案来解决这个困难，早期使用 fastlane 插件 [zealot_sync_device](/docs/developer-guide/fastlane/zealot_sync_devices) 调用时会同步测试设备的名称和机型，直到苹果开发者推出 [AppStoreConnect API](https://developer.apple.com/documentation/appstoreconnectapi) 后完全可以托管到 Zealot 来自动化处理，通过常规流程大大简化注册流程的同时，也能过让测试应用能够显示可识别且友好的测试设备名称。
+
+<ThemedImage
+  alt="注册流程"
+  sources={{
+    light: useBaseUrl('/img/5.0.0/zh-Hans/apple-team/flows-light.png'),
+    dark: useBaseUrl('/img/5.0.0/zh-Hans/apple-team/flows-dark.png'),
+  }}
+/>
+
+虽然提供的设备 UDID 功能确认哪些应用可以安装，假如设备没有注册到任何一个应用这个时候提供一个测试设备注册的功能岂不是大大提升团队的效率？这也就是苹果开发者的作用。
+
+<ThemedImage
+  alt="苹果开发者详情预览"
+  sources={{
+    light: useBaseUrl('/img/zh-Hans/apple-team/apple-team-detail-light.png'),
+    dark: useBaseUrl('/img/zh-Hans/apple-team/apple-team-detail-dark.png'),
+  }}
+/>
+
+最初功能介绍：https://github.com/tryzealot/zealot/issues/723 后续在做更全面的不全

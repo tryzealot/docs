@@ -16,8 +16,8 @@ Currently only the sidekiq asynchronous task service is using it to store some t
 The Zealot service relies on postgresql, redis and some other disk storage for uploaded application and debug files.
 It is currently stored in the filesystem in the `public/uploads` directory.
 
-- apps The directory for uploading applications
-- debugs_files directory for uploading debug files
+- `apps` The directory for uploading applications
+- `debugs_files` directory for uploading debug files
 
 ## Backup storage
 
