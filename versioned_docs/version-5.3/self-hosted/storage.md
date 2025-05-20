@@ -12,8 +12,8 @@ This is used to store and manage all data related to Zealot, so it goes without 
 The Zealot service relies on postgres and some other disk storage for uploaded application and debug files.
 It is currently stored in the filesystem in the `public/uploads` directory.
 
-- apps The directory for uploading applications
-- debugs_files directory for uploading debug files
+- `apps` The directory for uploading applications
+- `debugs_files` directory for uploading debug files
 
 ## Backup storage
 
