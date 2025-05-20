@@ -32,19 +32,16 @@
 #### 修复
 
 - `Web/API` 修复受保护的应用下载时也需要认证 [#1798](https://github.com/tryzealot/zealot/pull/1798)
+- `Web` 撤回 5.3.5 版本关于关闭用户注册模式后同时禁用所有第三方登录授权登录的逻辑。 [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) 感谢 [officebluesource](https://github.com/officebluesource)
 - `Web` 优化英文语言包
 - `API` 修复上传应用没有写入上传来源 [#1746](https://github.com/tryzealot/zealot/pull/1746) 感谢 [rakuyoMo](https://github.com/rakuyoMo)
 - `API` 优化注册测试 iOS 设备到苹果开发者账户的逻辑
+- `Docker` 修复初始化数据时会引发异常报错。
 
 #### 变更
 
 - `API` 上传应用接口支持不解析元信息
 - `开发环境` Ruby 升级至 3.3.8 和 NodeJS 升级至 22.13.1，Rails 升级至 8.0
-
-#### 修复
-
-- `Web` 撤回 5.3.5 版本关于关闭用户注册模式后同时禁用所有第三方登录授权登录的逻辑。 [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) 感谢 [officebluesource](https://github.com/officebluesource)
-- `Docker` 修复初始化数据时会引发异常报错。
 
 ## 5.3.7 (2024-09-27)
 
