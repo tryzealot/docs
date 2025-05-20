@@ -8,7 +8,7 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
-## 6.0.0 (2025-05-?)
+## 6.0.0 (2025-05-20)
 
 Full [commit changes][6.0.0].
 

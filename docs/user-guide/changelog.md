@@ -8,7 +8,7 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
-## 6.0.0 (2025-05-?)
+## 6.0.0 (2025-05-20)
 
 Full [commit changes][6.0.0].
 
@@ -32,9 +32,16 @@ Full [commit changes][6.0.0].
 #### Fixed
 
 - `Web/API` Fixed protected app downloads requiring authentication. [#1798](https://github.com/tryzealot/zealot/pull/1798)
+- `Web` Reverted the logic of disabling all third-party login authorization simultaneously after closing the user registration mode in version 5.3.5. [#1671](https://github.com/tryzealot/zealot/issues/1671) [#1645](https://github.com/tryzealot/zealot/issues/1645) Thanks to [officebluesource](https://github.com/officebluesource)
 - `Web` Optimized English language locale pack.
 - `API` Fixed upload source not being recorded when uploading apps. [#1746](https://github.com/tryzealot/zealot/pull/1746) Thanks to [rakuyoMo](https://github.com/rakuyoMo)
 - `API` Optimized logic for registering iOS devices to Apple Developer Account.
+- `Docker` Fixed exception error when initializing data.
+
+#### Changed
+
+- `API` Upload app API now supports skipping metadata parsing
+- `Development` Ruby upgraded to 3.3.8 and NodeJS upgraded to 22.13.1, Rails upgraded to 8.0
 
 ## 5.3.7 (2024-09-27)
 
