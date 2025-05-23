@@ -8,6 +8,16 @@
 
 :::
 
+## 6.0.1 (2025-05-23)
+
+详细[代码变更记录][6.0.1].
+
+#### 修复
+
+- `Web` 修复应用渠道无法获取下载文件名格式
+- `Web/API` 修复无效 mobile provision 文件的判断逻辑
+- `API` 修复创建应用类型异常报错 [#1927](https://github.com/tryzealot/zealot/pull/1927)
+
 ## 6.0.0 (2025-05-20)
 
 一年的期待！全面优化界面设计，新的配色、新的用户体验，提升页面打开速度，详细[代码变更记录][6.0.0]。
@@ -755,7 +765,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.1...HEAD
+[6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6

@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "6.0.0",
+    "message": "6.0.1",
     "description": "The label for version 6.x"
   },
   "sidebar.selfHosted.category.Deployment": {
