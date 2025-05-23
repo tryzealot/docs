@@ -8,6 +8,16 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 6.0.1 (2025-05-23)
+
+Full [commit changes][6.0.1].
+
+#### Fixed
+
+- `Web` Fixed issue with application channel unable to get download filename format
+- `Web/API` Fixed invalid mobile provision file validation logic
+- `API` Fixed exception error when creating application type [#1927](https://github.com/tryzealot/zealot/pull/1927)
+
 ## 6.0.0 (2025-05-20)
 
 Full [commit changes][6.0.0].
@@ -708,7 +718,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.0...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.1...HEAD
+[6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
 [5.3.6]: https://github.com/tryzealot/zealot/compare/5.3.5...5.3.6
