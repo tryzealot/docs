@@ -27,7 +27,7 @@
     "prism-react-renderer": "^2.4.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "redocusaurus": "^2.2.3"
+    "redocusaurus": "^2.3.0"
   },
   "devDependencies": {
     "@babel/helper-explode-assignable-expression": "^7.18.6",
