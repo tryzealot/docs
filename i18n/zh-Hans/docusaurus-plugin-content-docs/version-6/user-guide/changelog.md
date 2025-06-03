@@ -1,8 +1,17 @@
 # 变更日志
 
+## 6.0.2 (2025-06-03)
+
+详细[代码变更记录][6.0.2]。
+
+#### 修复
+
+- `Web/API` 修复偶发性上传应用保存图片引发的错误 [#1933](https://github.com/tryzealot/zealot/issues/1933) 感谢 [mlch911](https://github.com/mlch911)
+- `Web` 修复 channels 表缺少 `download_file_type` 字段 [#1933](https://github.com/tryzealot/zealot/issues/1933) 感谢 [mlch911](https://github.com/mlch911)
+
 ## 6.0.1 (2025-05-23)
 
-详细[代码变更记录][6.0.1].
+详细[代码变更记录][6.0.1]。
 
 #### 修复
 
@@ -47,7 +56,7 @@
 
 ## 5.3.7 (2024-09-27)
 
-详细[代码变更记录][5.3.7].
+详细[代码变更记录][5.3.7]。
 
 #### 新增
 
@@ -60,7 +69,7 @@
 
 ## 5.3.6 (2024-08-10)
 
-详细[代码变更记录][5.3.6].
+详细[代码变更记录][5.3.6]。
 
 #### 修复
 
@@ -69,7 +78,7 @@
 
 ## 5.3.5 (2024-07-24)
 
-详细[代码变更记录][5.3.5].
+详细[代码变更记录][5.3.5]。
 
 #### 修复
 
@@ -757,7 +766,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.1...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.2...HEAD
+[6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7

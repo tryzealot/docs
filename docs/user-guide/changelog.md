@@ -8,6 +8,15 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 6.0.2 (2025-06-03)
+
+Full [commit changes][6.0.2].
+
+#### Fixed
+
+- `Web/API` Fixed fail to upload app's icon file sometimes. [#1933](https://github.com/tryzealot/zealot/issues/1933) Thanks to [mlch911](https://github.com/mlch911)
+- `Web` Fixed missing `download_file_type` field database migration in channels table. [#1933](https://github.com/tryzealot/zealot/issues/1933) Thanks to [mlch911](https://github.com/mlch911)
+
 ## 6.0.1 (2025-05-23)
 
 Full [commit changes][6.0.1].
@@ -718,7 +727,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.1...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.2...HEAD
+[6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
