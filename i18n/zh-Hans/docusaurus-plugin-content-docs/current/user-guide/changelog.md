@@ -8,6 +8,15 @@
 
 :::
 
+## 6.0.2 (2025-06-03)
+
+详细[代码变更记录][6.0.2]。
+
+#### 修复
+
+- `Web/API` 修复偶发性上传应用保存图片引发的错误 [#1933](https://github.com/tryzealot/zealot/issues/1933) 感谢 [mlch911](https://github.com/mlch911)
+- `Web` 修复 channels 表缺少 `download_file_type` 字段 [#1933](https://github.com/tryzealot/zealot/issues/1933) 感谢 [mlch911](https://github.com/mlch911)
+
 ## 6.0.1 (2025-05-23)
 
 详细[代码变更记录][6.0.1].
@@ -488,7 +497,14 @@
 
 #### 新增
 
-- `Web` 支持 Android App Bundle (aab) 文件格式和 webp 图标的解析
+## 6.0.2 (2025-06-03)
+
+详细[代码变更记录][6.0.2]。
+
+#### 修复
+
+- `Web/API` 修复偶发性上传应用保存图片引发的错误 [#1933](https://github.com/tryzealot/zealot/issues/1933) 感谢 [mlch911](https://github.com/mlch911)
+- `Web` 修复 channels 表缺少 `download_file_type` 字段 [#1933](https://github.com/tryzealot/zealot/issues/1933) Thanks to [mlch911](https://github.com/mlch911)App Bundle (aab) 文件格式和 webp 图标的解析
 - `Web` 支持语言国际化，可选语言包：简体中文，英文 (支持页面配置)
 - `Web` 支持配置更多的系统设置项 [#643](https://github.com/tryzealot/zealot/pull/643)
 - `Web` 管理面板支持网络钩子的编辑功能
@@ -765,7 +781,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.1...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.2...HEAD
+[6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
 [5.3.7]: https://github.com/tryzealot/zealot/compare/5.3.6...5.3.7
