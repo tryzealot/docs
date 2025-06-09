@@ -93,7 +93,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "切换浅色/暗黑模式（当前为{mode}）",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "暗黑模式",
@@ -102,6 +102,10 @@
   "theme.colorToggle.ariaLabel.mode.light": {
     "message": "浅色模式",
     "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "系统模式",
+    "description": "The name for the system color mode"
   },
   "theme.docs.breadcrumbs.home": {
     "message": "主页面",
@@ -242,49 +246,12 @@
     "message": "展开侧边栏",
     "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
-  "Easy to Use": {
-    "message": "轻松使用"
-  },
-  "Focus on What Matters": {
-    "message": "专注于重要的事情"
-  },
-  "Open Source 100%": {
-    "message": "100% 开源项目"
-  },
-  "Zealot was designed from the ground up to be easily installed and running quickly.": {
-    "message": "Zealot 提供简单便捷的部署方式实现一键安装和运行。"
-  },
-  "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps.": {
-    "message": "Zealot 使得开发者可以关注于应用开发本身，我们来处理持续交付和测试的工作，立即上传应用吧。"
-  },
-  "Zealot is an open source project, Everyone could easy self hosted on own servers.": {
-    "message": "Zealot 是一个开源项目，每个人都可以私有化部署在自己的服务器。"
-  },
-  "Getting started": {
-    "message": "快速上手"
-  },
-  "homepage.header.title": {
-    "message": "Zealot",
-    "description": "The title for homepage"
-  },
-  "homepage.header.subtitle": {
-    "message": "开源自部署持续集成一切跟应用有关事情，接入任意 CI 系统一切自动化处理，企业多年实战经验，独立部署提供企业打包分发流程、上传应用全套流程方案",
-    "description": "The subtitle for homepage"
-  },
-  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
-    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
-    "description": "The homepage title message"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "标签",
-    "description": "The title of the tag list page"
-  },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
+    "message": "关闭导航栏",
     "description": "The ARIA label for close button of mobile sidebar"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
+    "message": "切换导航栏",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
   "theme.NavBar.navAriaLabel": {
@@ -324,15 +291,15 @@
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
+    "message": "作者列表",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "View All Authors",
+    "message": "查看所有作者",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
+    "message": "该作者尚未发布任何文章。",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
@@ -344,11 +311,136 @@
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
+    "message": "草稿页面",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "message": "这是一个草稿页面。它只在开发环境中可见，生产构建时将被排除。",
     "description": "The draft content banner message"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "展开下拉菜单",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "折叠下拉菜单",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "Easy to Use": {
+    "message": "轻松使用"
+  },
+  "Focus on What Matters": {
+    "message": "专注于重要的事情"
+  },
+  "Open Source 100%": {
+    "message": "100% 开源项目"
+  },
+  "Zealot was designed from the ground up to be easily installed and running quickly.": {
+    "message": "Zealot 提供简单便捷的部署方式实现一键安装和运行。"
+  },
+  "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps.": {
+    "message": "Zealot 使得开发者可以关注于应用开发本身，我们来处理持续交付和测试的工作，立即上传应用吧。"
+  },
+  "Zealot is an open source project, Everyone could easy self hosted on own servers.": {
+    "message": "Zealot 是一个开源项目，每个人都可以私有化部署在自己的服务器。"
+  },
+  "Getting started": {
+    "message": "快速上手"
+  },
+  "homepage.header.title": {
+    "message": "Zealot",
+    "description": "The main title for homepage"
+  },
+  "homepage.header.subtitle": {
+    "message": "开源自部署持续集成一切跟应用有关事情，接入任意 CI 系统一切自动化处理，企业多年实战经验，独立部署提供企业打包分发流程、上传应用全套流程方案",
+    "description": "The subtitle description for homepage"
+  },
+  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
+    "description": "The homepage title message"
+  },
+  "homepage.button.getStarted": {
+    "message": "快速开始",
+    "description": "Get started button text"
+  },
+  "homepage.button.viewOnGitHub": {
+    "message": "查看 GitHub 源码",
+    "description": "View on GitHub button text"
+  },
+  "homepage.showcase.dashboardAlt": {
+    "message": "Zealot 控制台预览",
+    "description": "Alt text for dashboard preview image"
+  },
+  "homepage.showcase.platforms": {
+    "message": "平台",
+    "description": "Supported platforms count"
+  },
+  "homepage.showcase.apps": {
+    "message": "应用",
+    "description": "Unlimited apps"
+  },
+  "homepage.showcase.openSource": {
+    "message": "开源",
+    "description": "Open source"
+  },
+  "homepage.feature.deployment.title": {
+    "message": "快捷部署",
+    "description": "Easy deployment feature title"
+  },
+  "homepage.feature.deployment.description": {
+    "message": "支持 Docker、Kubernetes、Nomad 及云平台服务快速部署属于您的私有化应用分发平台。",
+    "description": "Easy deployment feature description"
+  },
+  "homepage.feature.multiPlatform.title": {
+    "message": "多平台应用托管",
+    "description": "Multi-platform feature title"
+  },
+  "homepage.feature.multiPlatform.description": {
+    "message": "支持 Android、iOS、macOS、Windows 和 Linux 应用，一个平台满足所有需求。",
+    "description": "Multi-platform feature description"
+  },
+  "homepage.feature.cicd.title": {
+    "message": "CI/CD 持续集成",
+    "description": "CI/CD integration feature title"
+  },
+  "homepage.feature.cicd.description": {
+    "message": "无缝集成您现有的 CI/CD 流水线，实现应用自动化分发。",
+    "description": "CI/CD integration feature description"
+  },
+  "homepage.feature.teamManagement.title": {
+    "message": "团队管理",
+    "description": "Team management feature title"
+  },
+  "homepage.feature.teamManagement.description": {
+    "message": "管理团队成员并控制访问权限。通过频道组织应用，有效管理用户角色。",
+    "description": "Team management feature description"
+  },
+  "homepage.feature.developerFriendly.title": {
+    "message": "开发者友好",
+    "description": "Developer friendly feature title"
+  },
+  "homepage.feature.developerFriendly.description": {
+    "message": "提供丰富的 SDK 和 RESTful API，支持多种编程语言和平台的无缝集成。",
+    "description": "Developer friendly feature description"
+  },
+  "homepage.feature.security.title": {
+    "message": "安全私有",
+    "description": "Security feature title"
+  },
+  "homepage.feature.security.description": {
+    "message": "企业级安全和隐私控制，确保您的应用和数据安全。",
+    "description": "Security feature description"
+  },
+  "homepage.seo.title": {
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
+    "description": "The homepage SEO title"
+  },
+  "homepage.seo.description": {
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
+    "description": "The homepage SEO description"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "标签",
+    "description": "The title of the tag list page"
   }
 }

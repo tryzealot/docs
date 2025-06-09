@@ -16,7 +16,7 @@
     "description": "The label of footer link with label=Github Discussions linking to https://github.com/tryzealot/zealot/discussions"
   },
   "link.item.label.Demo": {
-    "message": "演示服务",
+    "message": "在线演示",
     "description": "The label of footer link with label=Demo linking to https://tryzealot.ews.im"
   },
   "link.item.label.GitHub": {

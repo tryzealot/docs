@@ -1,11 +1,11 @@
 {
   "homepage.header.title": {
     "message": "Zealot",
-    "description": "The title for homepage"
+    "description": "The main title for homepage"
   },
   "homepage.header.subtitle": {
     "message": "Continuous everything. Automate the lifecycle of your apps. Connect your CI to build in the cloud, test on thousands of real devices, distribute to beta testers and app stores. All in one place.",
-    "description": "The subtitle for homepage"
+    "description": "The subtitle description for homepage"
   },
   "Getting started": {
     "message": "Getting started"
@@ -86,7 +86,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "dark mode",
@@ -354,5 +354,97 @@
   "theme.contentVisibility.draftBanner.message": {
     "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
     "description": "The draft content banner message"
+  },
+  "homepage.button.getStarted": {
+    "message": "Get Started",
+    "description": "Get started button text"
+  },
+  "homepage.button.viewOnGitHub": {
+    "message": "View on GitHub",
+    "description": "View on GitHub button text"
+  },
+  "homepage.showcase.dashboardAlt": {
+    "message": "Zealot Dashboard Preview",
+    "description": "Alt text for dashboard preview image"
+  },
+  "homepage.showcase.platforms": {
+    "message": "Platforms",
+    "description": "Supported platforms count"
+  },
+  "homepage.showcase.apps": {
+    "message": "Apps",
+    "description": "Unlimited apps"
+  },
+  "homepage.showcase.openSource": {
+    "message": "Open Source",
+    "description": "Open source"
+  },
+  "homepage.feature.deployment.title": {
+    "message": "Easy Deployment",
+    "description": "Easy deployment feature title"
+  },
+  "homepage.feature.deployment.description": {
+    "message": "Deploy with Docker in minutes. Self-hosted solution with complete control over your data.",
+    "description": "Easy deployment feature description"
+  },
+  "homepage.feature.multiPlatform.title": {
+    "message": "Multi-Platform",
+    "description": "Multi-platform feature title"
+  },
+  "homepage.feature.multiPlatform.description": {
+    "message": "Support for Android, iOS, macOS, Windows, and Linux apps. One solution for all platforms.",
+    "description": "Multi-platform feature description"
+  },
+  "homepage.feature.cicd.title": {
+    "message": "CI/CD Integration",
+    "description": "CI/CD integration feature title"
+  },
+  "homepage.feature.cicd.description": {
+    "message": "Seamlessly integrate with your existing CI/CD pipeline for automated app distribution.",
+    "description": "CI/CD integration feature description"
+  },
+  "homepage.feature.teamManagement.title": {
+    "message": "Team Management",
+    "description": "Team management feature title"
+  },
+  "homepage.feature.teamManagement.description": {
+    "message": "Manage team members and control access permissions. Organize apps by channels and manage user roles effectively.",
+    "description": "Team management feature description"
+  },
+  "homepage.feature.developerFriendly.title": {
+    "message": "Developer Friendly",
+    "description": "Developer friendly feature title"
+  },
+  "homepage.feature.developerFriendly.description": {
+    "message": "Rich SDKs and RESTful APIs for seamless integration. Support for multiple programming languages and platforms.",
+    "description": "Developer friendly feature description"
+  },
+  "homepage.feature.security.title": {
+    "message": "Secure & Private",
+    "description": "Security feature title"
+  },
+  "homepage.feature.security.description": {
+    "message": "Keep your apps and data secure with enterprise-grade security and privacy controls.",
+    "description": "Security feature description"
+  },
+  "homepage.seo.title": {
+    "message": "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
+    "description": "The homepage SEO title"
+  },
+  "homepage.seo.description": {
+    "message": "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
+    "description": "The homepage SEO description"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   }
 }

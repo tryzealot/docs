@@ -189,7 +189,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Zealot.`,
+        copyright: `Copyright © 2018 - ${new Date().getFullYear()} Zealot.`,
       },
       prism: {
         additionalLanguages: ['kotlin', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
@@ -226,7 +226,15 @@ const config = {
         projectId: "mgce1iwvr4"
       }
     ]
-  ]
+  ],
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    experimental_faster: {
+      ssgWorkerThreads: true,
+    },
+  },
 };
 
 module.exports = config;
