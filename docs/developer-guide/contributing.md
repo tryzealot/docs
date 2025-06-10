@@ -13,10 +13,3 @@ If the solution is complex, propose the solution on the issue and wait for one o
 This helps in shorter turn around times in merging PRs
 For new feature requests, Provide a convincing reason to add this feature. Real-life business use-cases will be super helpful.
 Feel free to join our discord community, if you need further discussions with the core team.
-
-## Setup for local development
-
-These guides will help you to setup the environment required for Zealot. Follow the guide based on the operating system you use.
-
-- [VSCode development with devcontainer](/docs/contributing-guide/local-development/devcontainer)
-- [Soure code](/docs/contributing-guide/local-development/source-code)

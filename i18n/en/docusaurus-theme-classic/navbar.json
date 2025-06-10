@@ -26,5 +26,9 @@
   "item.label.API": {
     "message": "API",
     "description": "Navbar item with label API"
+  },
+  "item.label.Changelog": {
+    "message": "Changelog",
+    "description": "Navbar item with label Changelog"
   }
 }

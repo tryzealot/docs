@@ -28,7 +28,6 @@ module.exports = [
       },
       "self-hosted/deployment/kubernetes",
       "self-hosted/deployment/nomad",
-      "self-hosted/deployment/source-code"
     ],
   },
   {

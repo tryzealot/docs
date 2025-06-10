@@ -32,12 +32,31 @@ module.exports = [
     ],
   },
   {
-    value: "<hr />",
-    type: "html",
-  },
-  {
     label: "API",
     type: "doc",
     id: "developer-guide/api",
+  },
+  {
+    collapsible: true,
+    label: "Contributing",
+    type: "category",
+    link: {
+      type: "doc",
+      id: "developer-guide/contributing",
+    },
+    items: [
+      {
+        collapsible: false,
+        label: "Local Development",
+        type: "category",
+        link: {
+          type: 'generated-index',
+        },
+        items: [
+          "developer-guide/local-development/devcontainer",
+          "developer-guide/local-development/source-code",
+        ],
+      },
+    ],
   }
 ];
