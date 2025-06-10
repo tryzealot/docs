@@ -128,9 +128,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'contributing-guide/index',
+            docId: 'user-guide/changelog',
             position: 'left',
-            label: 'Contributing',
+            label: 'Changelog',
           },
           {
             type: "doc",

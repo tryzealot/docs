@@ -71,14 +71,6 @@
     "message": "云服务商",
     "description": "The label for category Cloud Provider Guides in sidebar selfHosted"
   },
-  "sidebar.contributingGuide.category.Local development": {
-    "message": "本地开发",
-    "description": "The label for category Local development in sidebar contributingGuide"
-  },
-  "sidebar.contributingGuide.doc.Getting Started": {
-    "message": "准备开始",
-    "description": "The label for the doc item Getting Started in sidebar contributingGuide, linking to the doc contributing-guide/index"
-  },
   "sidebar.selfHosted.doc.Reverse Proxies": {
     "message": "反向代理",
     "description": "The label for the doc item Reverse Proxies in sidebar selfHosted, linking to the doc self-hosted/reverse-proxies"
@@ -86,5 +78,13 @@
   "sidebar.developerGuide.doc.API": {
     "message": "API",
     "description": "The label for the doc item API in sidebar developerGuide, linking to the doc developer-guide/api"
+  },
+  "sidebar.developerGuide.category.Contributing": {
+    "message": "项目贡献",
+    "description": "The label for category Contributing in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.Local Development": {
+    "message": "本地开发",
+    "description": "The label for category Local Development in sidebar developerGuide"
   }
 }

@@ -22,9 +22,5 @@
   "link.item.label.Demo": {
     "message": "Demo",
     "description": "The label of footer link with label=Demo linking to https://tryzealot.ews.im"
-  },
-  "copyright": {
-    "message": "Copyright © 2018 - 2025 Zealot.",
-    "description": "The footer copyright"
   }
 }

@@ -6,10 +6,3 @@
 
 贡献代码前请在 Issues 确认是否存在，没有发现的话欢迎动动小手创建新 Issue，创建之后你会收到一个自动回复请勿担心我会在看到后尽快整理并回应。
 如果解决方案非常的复杂，建议极可能完整描述背景、解决目的和方案以方便核心开发者审核。
-
-## 本地开发环境
-
-我们将会从如下指南帮助准备和部署本地 Zealot 开发环境：
-
-- [VSCode devcontainer 开发部署](/docs/contributing-guide/local-development/devcontainer) （**简单便捷，强烈推荐**）
-- [源代码部署](/docs/contributing-guide/local-development/source-code)

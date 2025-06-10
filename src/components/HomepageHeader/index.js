@@ -11,7 +11,6 @@ export default function HomepageHeader() {
   const { i18n } = useDocusaurusContext();
   const currentLocale = i18n.currentLocale;
   const imgPath = currentLocale === 'en' ? '/img' : `/img/${currentLocale}`;
-  console.log('Current locale:', imgPath);
 
   return (
     <header className={clsx('hero', styles.heroBanner)}>

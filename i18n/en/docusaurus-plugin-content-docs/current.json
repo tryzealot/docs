@@ -75,16 +75,16 @@
     "message": "Getting Started",
     "description": "The label for the doc item Getting Started in sidebar developerGuide, linking to the doc developer-guide/index"
   },
-  "sidebar.contributingGuide.category.Local development": {
-    "message": "Local development",
-    "description": "The label for category Local development in sidebar contributingGuide"
-  },
-  "sidebar.contributingGuide.doc.Getting Started": {
-    "message": "Getting Started",
-    "description": "The label for the doc item Getting Started in sidebar contributingGuide, linking to the doc contributing-guide/index"
-  },
   "sidebar.developerGuide.doc.API": {
     "message": "API",
     "description": "The label for the doc item API in sidebar developerGuide, linking to the doc developer-guide/api"
+  },
+  "sidebar.developerGuide.category.Contributing": {
+    "message": "Contributing",
+    "description": "The label for category Contributing in sidebar developerGuide"
+  },
+  "sidebar.developerGuide.category.Local Development": {
+    "message": "Local Development",
+    "description": "The label for category Local Development in sidebar developerGuide"
   }
 }

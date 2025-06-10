@@ -14,11 +14,9 @@
 const selfHosted = require("./docs/self-hosted/sidebars");
 const userGuide = require("./docs/user-guide/sidebars");
 const developerGuide = require("./docs/developer-guide/sidebars");
-const contributingGuide = require("./docs/contributing-guide/sidebars");
 
 module.exports = {
   selfHosted,
   userGuide,
-  developerGuide,
-  contributingGuide
+  developerGuide
 };
