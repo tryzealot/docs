@@ -8,6 +8,17 @@
 
 :::
 
+#### 修复
+
+- `Web` 修复 [**安全漏洞**]: 应用构建 ID 和解包 ID 作用域安全问题 [#1951](https://github.com/tryzealot/zealot/pull/1951) [#1951](https://github.com/tryzealot/zealot/pull/1951)
+- `Web` 修复抛出必需协议缺失或过期错误 [#1946](https://github.com/tryzealot/zealot/pull/1946)
+- `Web` 修复用户的活跃和归档应用 [#1955](https://github.com/tryzealot/zealot/pull/1955)
+- `Web` 修复应用和调试文件权限 [#1956](https://github.com/tryzealot/zealot/pull/1956)
+
+#### 变更
+
+- `Web` 隐藏文件校验和字段 [#1947](https://github.com/tryzealot/zealot/pull/1947)
+
 ## 6.0.2 (2025-06-03)
 
 详细[代码变更记录][6.0.2]。

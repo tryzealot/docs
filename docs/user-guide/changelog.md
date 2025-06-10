@@ -8,6 +8,17 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+#### Fixed
+
+- `Web` Fixed **security issue**: app's build id and teardown id scopes. [#1951](https://github.com/tryzealot/zealot/pull/1951) [#1951](https://github.com/tryzealot/zealot/pull/1951)
+- `Web` Fixed throw required agreement missing or expired error. [#1946](https://github.com/tryzealot/zealot/pull/1946)
+- `Web` Fixed user's active and archived apps. [#1955](https://github.com/tryzealot/zealot/pull/1955)
+- `Web` Fixes app and debug file permissions. [#1956](https://github.com/tryzealot/zealot/pull/1956)
+
+#### Changed
+
+- `Web`: Hide file checksum filed. [#1947](https://github.com/tryzealot/zealot/pull/1947)
+
 ## 6.0.2 (2025-06-03)
 
 Full [commit changes][6.0.2].
