@@ -249,9 +249,9 @@ These are the all roles in Zealot and the actions each can take:
 Add permissions management for individual applications since [#1496](https://github.com/tryzealot/zealot/pull/1496).
 These are the all roles within an App and the actions each can take:
 
-Roles | Create App | See all Apps | Add Collaborator | Manage App | Upload App
-------|------------|--------------|------------|------------------|-----------
-Guest | ✕ | ✕ | ✕ | ✕ | ✕
-Member | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕
-Developer | ✓ | ✓ Only if you belong | ✕ | ✓ | ✓
-Administrator | ✓ | ✓ | ✓ | ✓ | ✓
+Roles | Create App | See all Apps | Add Collaborator | Manage App | Upload App | Archive/Unarchive App
+------|------------|--------------|------------|------------------|-----------|-----------
+Guest | ✕ | ✕ | ✕ | ✕ | ✕ | x
+Member | ✕ | ✓ Only if you belong | ✕ | ✕ | ✕ | x
+Developer | ✓ | ✓ Only if you belong | ✕ | ✓ | ✓ | ✓
+Administrator | ✓ | ✓ | ✓ | ✓ | ✓ | ✓
