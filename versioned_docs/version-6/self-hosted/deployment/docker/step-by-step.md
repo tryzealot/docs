@@ -8,7 +8,7 @@ This is a handy guide to deploying with Docker, as well as a breakdown of the [o
 
 ## Versions
 
-- Stable version - 6.0.0/latest - `ghcr.io/tryzealot/zealot:latest`
+- Stable version - 6.0.3/latest - `ghcr.io/tryzealot/zealot:latest`
 - Nightly version - develop - `ghcr.io/tryzealot/zealot:nightly` - Based on branch `develop` builds per commit.
 
 ## Registry

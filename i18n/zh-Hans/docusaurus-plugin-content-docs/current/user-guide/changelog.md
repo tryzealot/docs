@@ -8,6 +8,10 @@
 
 :::
 
+## 6.0.3 (2025-06-14)
+
+详细[代码变更记录][6.0.3]。
+
 #### 修复
 
 - `Web` 修复 [**安全漏洞**]: 应用构建 ID 和解包 ID 作用域安全问题 [#1951](https://github.com/tryzealot/zealot/pull/1951) [#1951](https://github.com/tryzealot/zealot/pull/1951)
@@ -792,7 +796,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.2...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.3...HEAD
+[6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
