@@ -1,5 +1,20 @@
 # Changelog
 
+## 6.0.3 (2025-06-14)
+
+Full [commit changes][6.0.3].
+
+#### Fixed
+
+- `Web` Fixed **security issue**: app's build id and teardown id scopes. [#1951](https://github.com/tryzealot/zealot/pull/1951) [#1951](https://github.com/tryzealot/zealot/pull/1951)
+- `Web` Fixed throw required agreement missing or expired error. [#1946](https://github.com/tryzealot/zealot/pull/1946)
+- `Web` Fixed user's active and archived apps. [#1955](https://github.com/tryzealot/zealot/pull/1955)
+- `Web` Fixes app and debug file permissions. [#1956](https://github.com/tryzealot/zealot/pull/1956)
+
+#### Changed
+
+- `Web`: Hide file checksum filed. [#1947](https://github.com/tryzealot/zealot/pull/1947)
+
 ## 6.0.2 (2025-06-03)
 
 Full [commit changes][6.0.2].
@@ -719,7 +734,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.2...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.3...HEAD
+[6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
 [6.0.0]: https://github.com/tryzealot/zealot/compare/5.3.7...6.0.0
