@@ -8,6 +8,18 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+#### Added
+
+- `Web` Added quick links to app details on application channel details page
+- `Web` Added message notifications for application type and application channel CRUD operations
+- `Web` Added supplementary reasons for file permission exceptions on system information page
+
+#### Fixed
+
+- `Web` Fixed inability to create application channels
+- `Web` Fixed guest mode inability to view application unpacking details
+- `Docker` Ignore special exceptions when checking SMTP authentication during startup
+
 ## 6.0.3 (2025-06-14)
 
 Full [commit changes][6.0.3].
