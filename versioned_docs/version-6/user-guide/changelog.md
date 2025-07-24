@@ -1,5 +1,21 @@
 # Changelog
 
+## 6.0.4 (2025-07-24)
+
+Full [commit changes][6.0.4].
+
+#### Added
+
+- `Web` Added quick links to app details on application channel details page
+- `Web` Added message notifications for application type and application channel CRUD operations
+- `Web` Added supplementary reasons for file permission exceptions on system information page
+
+#### Fixed
+
+- `Web` Fixed inability to create application channels
+- `Web` Fixed guest mode inability to view application unpacking details
+- `Docker` Ignore special exceptions when checking SMTP authentication during startup
+
 ## 6.0.3 (2025-06-14)
 
 Full [commit changes][6.0.3].
@@ -720,7 +736,22 @@ Full [commit changes][4.0.0.beta2].
 
 #### Fixed
 
-- `Web` provides an error prompt instead of an error message when uploading an application that is not a valid ipa or apk.
+- `Web` provides an error prompt instead of an## 6.0.4 (2025-07-24)
+
+Full [commit changes][6.0.4].
+
+#### Added
+
+- `Web` Added quick links to app details on application channel details page
+- `Web` Added message notifications for application type and application channel CRUD operations
+- `Web` Added supplementary reasons for file permission exceptions on system information page
+
+#### Fixed
+
+- `Web` Fixed inability to create application channels
+- `Web` Fixed guest mode inability to view application unpacking details
+- `Docker` Ignore special exceptions when checking SMTP authentication during startup
+ error message when uploading an application that is not a valid ipa or apk.
 - `API` fixes the issue where the latest version list of an application cannot be returned due to the non-existence of the queried version number in the database.
 - `API` only requires token verification for interfaces that perform write operations (previously most interfaces required it).
 
@@ -734,7 +765,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.3...HEAD
+[Unreleased]: : https://github.com/tryzealot/zealot/compare/6.0.4...HEAD
+[6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1

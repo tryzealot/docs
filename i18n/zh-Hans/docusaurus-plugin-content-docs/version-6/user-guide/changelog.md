@@ -1,5 +1,21 @@
 # 变更日志
 
+## 6.0.4 (2025-07-24)
+
+详细[代码变更记录][6.0.4]。
+
+#### 新增
+
+- `Web` 应用渠道详情新增应用详情的快速链接
+- `Web` 对于应用类型和应用渠道 CRUD 新增消息提醒
+- `Web` 系统信息页面对于文件权限有异常的补充原因
+
+#### 修复
+
+- `Web` 修复无法创建应用渠道
+- `Web` 修复游客模式无法查看应用解包详情
+- `Docker` 忽略启动检测 SMTP 认证的特别异常
+
 ## 6.0.3 (2025-06-14)
 
 详细[代码变更记录][6.0.3]。
@@ -781,7 +797,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.3...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.0.4...HEAD
+[6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1

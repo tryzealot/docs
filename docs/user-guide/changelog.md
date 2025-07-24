@@ -8,6 +8,10 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+## 6.0.4 (2025-07-24)
+
+Full [commit changes][6.0.4].
+
 #### Added
 
 - `Web` Added quick links to app details on application channel details page
@@ -754,7 +758,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.0.3...HEAD
+[Unreleased]: : https://github.com/tryzealot/zealot/compare/6.0.4...HEAD
+[6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
 [6.0.1]: https://github.com/tryzealot/zealot/compare/6.0.0...6.0.1
