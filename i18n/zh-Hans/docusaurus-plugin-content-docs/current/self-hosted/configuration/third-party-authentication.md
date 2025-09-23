@@ -64,6 +64,21 @@ GITLAB_APP_ID=
 GITLAB_SECRET=
 ```
 
+## Gitea
+
+1. 注册 Gitlab [官方](http://gitea.com)账户或自部署 Gitea 服务
+1. 在用户设置（Settings）-> 应用（Applications）创建一个新 OAuth2 应用
+1. 回调地址（Redirect URI） 配置为  `https://zealot.example.com/users/auth/gitea/callback` (域名根据实际情况修改）
+1. 添加用户字段信息授权（scope）：`read_user`，默认 zealot 仅用此授权
+
+```bash
+GITEA_ENABLED=true
+GITEA_SITE=https://gitea.com
+GITEA_SCOPE=user
+GITEA_APP_ID=
+GITEA_SECRET=
+```
+
 ## Google
 
 1. 注册 Google 账号
