@@ -98,6 +98,7 @@ job "zealot" {
 
         ZEALOT_GUEST_MODE = false
         ZEALOT_REGISTER_ENABLED = true
+        ZEALOT_LOGIN_ENABLED = true
         EOF
       }
 

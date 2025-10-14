@@ -118,7 +118,7 @@ ACTION_MAILER_DEFAULT_TO=noreply-to@zealot.com
 
 ### 开启用户注册
 
-关闭注册之后，管理员可以通过管理面板的用户管理手动添加用户。
+启用或关闭内置认证系统的用户注册功能。关闭后仅管理员可以创建新用户
 
 ```bash
 # 开启注册
@@ -126,6 +126,24 @@ ZEALOT_REGISTER_ENABLED=true
 
 # 关闭注册
 ZEALOT_REGISTER_ENABLED=false
+```
+
+### 开启系统内置用户登录认证
+
+:::info
+
+自 6.1.0 版本开始支持。
+
+:::
+
+启用或关闭内置认证系统的用户登录功能。关闭后仅可使用第三方认证方式登录。
+
+```bash
+# 开启登录
+ZEALOT_LOGIN_ENABLED=true
+
+# 关闭登录
+ZEALOT_LOGIN_ENABLED=false
 ```
 
 ### 开启游客模式

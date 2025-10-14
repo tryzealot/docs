@@ -62,6 +62,7 @@ data:
   ZEALOT_DOMAIN: zealot.example.com
   DEFAULT_LOCALE: en
   ZEALOT_REGISTER_ENABLED: "true"
+  ZEALOT_LOGIN_ENABLED: "true"
 ```
 
 ### 30-zealot-storage.yml

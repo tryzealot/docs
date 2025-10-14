@@ -7,6 +7,7 @@ Zealot 支持使用已经支持的第三方服务授权登录，当前可以通�
 飞书 | `feishu`
 Github | `github`
 Gitlab | `gitlab`
+Gitea  | `gitea`
 Google | `google_oauth2`
 LDAP | `ldap`
 OpenID Connect | `openid_connect`
@@ -66,7 +67,7 @@ GITLAB_SECRET=
 
 ## Gitea
 
-1. 注册 Gitlab [官方](http://gitea.com)账户或自部署 Gitea 服务
+1. 注册 Gitea [官方](http://gitea.com)账户或自部署 Gitea 服务
 1. 在用户设置（Settings）-> 应用（Applications）创建一个新 OAuth2 应用
 1. 回调地址（Redirect URI） 配置为  `https://zealot.example.com/users/auth/gitea/callback` (域名根据实际情况修改）
 1. 添加用户字段信息授权（scope）：`read_user`，默认 zealot 仅用此授权

@@ -1,5 +1,27 @@
 # Changelog
 
+## 6.1.0 (2025-10-14)
+
+Full [commit changes][6.1.0].
+
+#### Added
+
+- `Web` Added Gitea third-party auth provider. [#2052](https://github.com/tryzealot/zealot/pull/2052)
+- `Web` Added file premission error message if not health.
+- `Web` Added notification during operate channel and scheme.
+- `Web` Added button "back to app detail" in channel page.
+- `Web` Added new setting user login switch to control enable or disable built-in authentication system. [#2009](https://github.com/tryzealot/zealot/pull/2009)
+
+#### Fixed
+
+- `Web` Fixed no permission view teardown detail on guest mode.
+- `Web` Added missing Github login locale.
+- `Web` Fixed can not create new channel in app detail page.
+- `Web` Fixed remember me style in user login page.
+- `Web` Fixed sidebar can not to toggle.
+- `Web` Ignore verify smtp with singal exception.
+- `Web/API` Fixed can not find releases by given majar version.
+
 ## 6.0.4 (2025-07-24)
 
 Full [commit changes][6.0.4].
@@ -765,7 +787,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: : https://github.com/tryzealot/zealot/compare/6.0.4...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.1.0...HEAD
+[6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
