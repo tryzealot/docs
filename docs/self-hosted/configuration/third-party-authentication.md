@@ -7,6 +7,7 @@ Service | provider
 Feishu | `feishu`
 Github | `github`
 Gitlab | `gitlab`
+Gitea  | `gitea`
 Google | `google_oauth2`
 LDAP | `ldap`
 OpenID Connect | `openid_connect`

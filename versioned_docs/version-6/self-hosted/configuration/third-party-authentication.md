@@ -7,6 +7,7 @@ Service | provider
 Feishu | `feishu`
 Github | `github`
 Gitlab | `gitlab`
+Gitea  | `gitea`
 Google | `google_oauth2`
 LDAP | `ldap`
 OpenID Connect | `openid_connect`
@@ -53,6 +54,21 @@ GITLAB_SITE=https://gitlab.com/api/v4
 GITLAB_SCOPE=read_user
 GITLAB_APP_ID=
 GITLAB_SECRET=
+```
+
+## Gitea
+
+1. Register a [Gitea](http://gitea.com) account or use self-host service
+1. Create an OAuth2 Application in Settings -> Application page.
+1. Configure `Redirect URI` such like `https://zealot.example.com/users/auth/gitea/callback` (replace the domain in your case)
+1. Check scope: `user`，By default zealot only uses this scope.
+
+```bash
+GITEA_ENABLED=true
+GITEA_SITE=https://gitea.com
+GITEA_SCOPE=user
+GITEA_APP_ID=
+GITEA_SECRET=
 ```
 
 ## Google

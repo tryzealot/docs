@@ -7,6 +7,7 @@ Zealot 支持使用已经支持的第三方服务授权登录，当前可以通�
 飞书 | `feishu`
 Github | `github`
 Gitlab | `gitlab`
+Gitea  | `gitea`
 Google | `google_oauth2`
 LDAP | `ldap`
 OpenID Connect | `openid_connect`
