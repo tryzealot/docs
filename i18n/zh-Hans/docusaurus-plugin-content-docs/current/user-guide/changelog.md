@@ -8,6 +8,28 @@
 
 :::
 
+## 6.1.0 (2025-10-14)
+
+详细[代码变更记录][6.1.0]。
+
+#### 新增
+
+- `Web` 增加 Gitea 第三方认证提供商支持 [#2052](https://github.com/tryzealot/zealot/pull/2052)
+- `Web` 增加文件权限错误提示信息（如果健康检查失败）
+- `Web` 在操作渠道和方案时增加通知功能
+- `Web` 在渠道页面增加“返回应用详情”按钮
+- `Web` 增加新的用户登录开关设置，用于控制是否启用内置认证系统 [#2009](https://github.com/tryzealot/zealot/pull/2009)
+
+#### 修复
+
+- `Web` 修复访客模式下无权限查看拆解详情的问题
+- `Web` 增加缺失的 Github 登录本地化内容
+- `Web` 修复无法在应用详情页面创建新渠道的问题
+- `Web` 修复用户登录页面“记住我”样式问题
+- `Web` 修复侧边栏无法切换的问题
+- `Web` 忽略单一异常情况下的 SMTP 验证
+- `Web/API` 修复无法通过指定的主版本号找到发布版本问题
+
 ## 6.0.4 (2025-07-24)
 
 详细[代码变更记录][6.0.4]。
@@ -812,7 +834,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.0.4...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.1.0...HEAD
+[6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
 [6.0.2]: https://github.com/tryzealot/zealot/compare/6.0.1...6.0.2
