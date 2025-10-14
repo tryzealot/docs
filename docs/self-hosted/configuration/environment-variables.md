@@ -134,6 +134,24 @@ ZEALOT_REGISTER_ENABLED=true
 ZEALOT_REGISTER_ENABLED=false
 ```
 
+### Enable built-in user auth
+
+:::info
+
+Since 6.1.0.
+
+:::
+
+Enable or disable user login via the built-in authentication system. If disabled, only third-party authentication methods are available.
+
+```bash
+# Open built-in authentication system
+ZEALOT_LOGIN_ENABLED=true
+
+# Close built-in authentication system
+ZEALOT_LOGIN_ENABLED=false
+```
+
 ### Enable guest mode
 
 Enable the visitor mode to allow the application to view, download and install,
