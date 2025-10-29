@@ -37,11 +37,15 @@ const config = {
   url: 'https://zealot.ews.im',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/zealot.png',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans'],
+  },
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    }
   },
 
   organizationName: 'tryzealot',
