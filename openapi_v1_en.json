@@ -2538,7 +2538,7 @@
         "properties": {
           "icon": {
             "type": "string",
-            "example": "fas fa-flag"
+            "example": "fa-solid fa-flag"
           },
           "name": {
             "type": "string",
