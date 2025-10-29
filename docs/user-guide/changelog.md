@@ -8,6 +8,22 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+#### Added
+
+- `Web` Added background job use system/user locale settings (fallback is en).
+- `Web` Added mini analytics dashboard in mobile device.
+
+#### Fixed
+
+- `Web` Improve minor locales.
+
+#### Changed
+
+- `Web` Icon pack fontawesome upgrade to 7.0.
+- `Development` Ruby upgrade to 3.4.
+- `Development` Frontend package manager use pnpm instead of yarn.
+- `Development` Frontend UI framework adminlte upgrade to 4.0.0-rc4.
+
 ## 6.1.0 (2025-10-14)
 
 Full [commit changes][6.1.0].
