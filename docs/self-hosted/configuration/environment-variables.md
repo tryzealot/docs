@@ -152,6 +152,24 @@ ZEALOT_LOGIN_ENABLED=true
 ZEALOT_LOGIN_ENABLED=false
 ```
 
+### Enabld passwordless login
+
+:::info
+
+Since 6.2.0.
+
+:::
+
+Enable or disable passwordless login via email links.
+
+```bash
+# Default is disabled
+ZEALOT_PASSWORDLESS_LOGIN_ENABLED=true
+
+# Emaill link token expires time in miniutes
+ZEALOT_PASSWORDLESS_TOKEN_EXPIRY_MINUTES=20
+```
+
 ### Enable guest mode
 
 Enable the visitor mode to allow the application to view, download and install,
