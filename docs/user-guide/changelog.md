@@ -10,12 +10,22 @@ The following list of changes is the list that has not yet been released, code c
 
 #### Added
 
-- `Web` Added background job use system/user locale settings (fallback is en).
-- `Web` Added mini analytics dashboard in mobile device.
+- `Web` Added brand-new notification system and confirmation dialog styles [#2110](https://github.com/tryzealot/zealot/pull/2110) [#2116](https://github.com/tryzealot/zealot/pull/2116)
+- `Web` Added passwordless login authentication [#2118](https://github.com/tryzealot/zealot/pull/2118)
+- `Web` Added friendly prompt when lacking storage space to upload an app (replaces error page)
+- `Web` Background tasks use system/user language settings (fallback to English)
+- `Web` Added mini analytics dashboard on mobile
+- `API` Full health check now includes background task service
 
 #### Fixed
 
-- `Web` Improve minor locales.
+- `Web` Optimized localization for some minor languages
+- `Web` Fixed associated apps remaining after deleting a user
+- `Web` Fixed version links on right side of app detail not navigating
+- `Web` Fixed incorrect API paths in documentation
+- `Web` Fixed occasional failures during system backup
+- `Web` Unified page styles and fixed dark mode adaptations
+- `Web` Optimized issues in Chinese and English language packs
 
 #### Changed
 
