@@ -2,7 +2,24 @@
 
 [Discord](https://support.discord.com/hc/zh-tw/articles/228383668) 支持 Slack 兼容的网络钩子因此其结构体通常支持文本和 block 富文本两种方式，可通过如下配置实现：
 
-## Text 文本格式
+## 全新格式
+
+:::tip
+
+新格式还在整理中，可以参考[非官方文档](https://birdie0.github.io/discord-webhooks-guide)
+
+:::
+
+## 废弃格式
+
+:::caution
+
+这部分官方已经不再支持，**请勿使用**
+
+:::
+
+
+### Text 文本格式
 
 ```ruby
 {
@@ -10,7 +27,7 @@
 }
 ```
 
-## Block 富文本格式
+### Block 富文本格式
 
 一个简单的支持 markdown 的 block
 

@@ -3,7 +3,24 @@
 [Discord](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) should use Slack-Compatible Webhook whose constructs
 typically support both text and block rich text, and can be configured as follows:
 
-## Text format
+## New
+
+:::tip
+
+Working in process, i dont know when this version is out. follow the un-offical [document](https://birdie0.github.io/discord-webhooks-guide).
+
+:::
+
+## Legacy
+
+:::caution
+
+This section was dropped by offical. **DO NOT USE**
+
+:::
+
+
+### Text format
 
 ```ruby
 {
@@ -11,7 +28,7 @@ typically support both text and block rich text, and can be configured as follow
 }
 ```
 
-## Block rich text format
+### Block rich text format
 
 A simple block with markdown support
 
