@@ -146,6 +146,24 @@ ZEALOT_LOGIN_ENABLED=true
 ZEALOT_LOGIN_ENABLED=false
 ```
 
+### 开启免密登录
+
+:::info
+
+自 6.2.0 版本开始支持。
+
+:::
+
+启用或关闭内置认证系统的无密码登录功能。通过邮件发送链接在有效期内进行可以登录。
+
+```bash
+# 默认是关闭的
+ZEALOT_PASSWORDLESS_LOGIN_ENABLED=true
+
+# 邮件登录链接到有效期（分钟单位）
+ZEALOT_PASSWORDLESS_TOKEN_EXPIRY_MINUTES=20
+```
+
 ### 开启游客模式
 
 开启游客模式后允许应用的查看、下载和安装，建议公司内部对权限依赖不高的状况使用，具体权限对比可以[看这里查看详情](/docs/user-guide/administrator/permissions)
