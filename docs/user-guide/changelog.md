@@ -8,6 +8,12 @@ The following list of changes is the list that has not yet been released, code c
 
 :::
 
+No commit
+
+## 6.2.0 (2025-12-18)
+
+Full [commit changes][6.2.0].
+
 #### Added
 
 - `Web` Added brand-new notification system and confirmation dialog styles [#2110](https://github.com/tryzealot/zealot/pull/2110) [#2116](https://github.com/tryzealot/zealot/pull/2116)
@@ -19,6 +25,7 @@ The following list of changes is the list that has not yet been released, code c
 
 #### Fixed
 
+- `Web` Fixed force redirect to login after passed app build auth [#2134](https://github.com/tryzealot/zealot/issues/2134) Thanks to [elysian-gc](https://github.com/elysian-gc)
 - `Web` Optimized localization for some minor languages
 - `Web` Fixed associated apps remaining after deleting a user
 - `Web` Fixed version links on right side of app detail not navigating
@@ -806,7 +813,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.1.0...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.2.0...HEAD
+[6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3

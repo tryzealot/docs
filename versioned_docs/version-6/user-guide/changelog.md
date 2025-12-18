@@ -1,5 +1,36 @@
 # Changelog
 
+## 6.2.0 (2025-12-18)
+
+Full [commit changes][6.2.0].
+
+#### Added
+
+- `Web` Added brand-new notification system and confirmation dialog styles [#2110](https://github.com/tryzealot/zealot/pull/2110) [#2116](https://github.com/tryzealot/zealot/pull/2116)
+- `Web` Added passwordless login authentication [#2118](https://github.com/tryzealot/zealot/pull/2118)
+- `Web` Added friendly prompt when lacking storage space to upload an app (replaces error page)
+- `Web` Background tasks use system/user language settings (fallback to English)
+- `Web` Added mini analytics dashboard on mobile
+- `API` Full health check now includes background task service
+
+#### Fixed
+
+- `Web` Fixed force redirect to login after passed app build auth [#2134](https://github.com/tryzealot/zealot/issues/2134) Thanks to [elysian-gc](https://github.com/elysian-gc)
+- `Web` Optimized localization for some minor languages
+- `Web` Fixed associated apps remaining after deleting a user
+- `Web` Fixed version links on right side of app detail not navigating
+- `Web` Fixed incorrect API paths in documentation
+- `Web` Fixed occasional failures during system backup
+- `Web` Unified page styles and fixed dark mode adaptations
+- `Web` Optimized issues in Chinese and English language packs
+
+#### Changed
+
+- `Web` Icon pack fontawesome upgrade to 7.0.
+- `Development` Ruby upgrade to 3.4.
+- `Development` Frontend package manager use pnpm instead of yarn.
+- `Development` Frontend UI framework adminlte upgrade to 4.0.0-rc4.
+
 ## 6.1.0 (2025-10-14)
 
 Full [commit changes][6.1.0].
@@ -787,7 +818,7 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.1.0...HEAD
+[6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3

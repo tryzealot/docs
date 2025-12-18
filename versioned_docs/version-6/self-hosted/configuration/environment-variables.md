@@ -124,7 +124,7 @@ If your Gmail account has 2-factor authentication enabled, then you will need to
 
 ### Enable new user registration
 
-Enable or disable user registration via the built-in authentication system. If disabled, only administrators can create new users.
+After closing the registration, the administrator can add users manually through the user management in the administration panel.
 
 ```bash
 # Open registration
@@ -150,6 +150,24 @@ ZEALOT_LOGIN_ENABLED=true
 
 # Close built-in authentication system
 ZEALOT_LOGIN_ENABLED=false
+```
+
+### Enabld passwordless login
+
+:::info
+
+Since 6.2.0.
+
+:::
+
+Enable or disable passwordless login via email links.
+
+```bash
+# Default is disabled
+ZEALOT_PASSWORDLESS_LOGIN_ENABLED=true
+
+# Emaill link token expires time in miniutes
+ZEALOT_PASSWORDLESS_TOKEN_EXPIRY_MINUTES=20
 ```
 
 ### Enable guest mode

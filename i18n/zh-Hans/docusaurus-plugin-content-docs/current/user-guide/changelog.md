@@ -4,9 +4,15 @@
 
 :::tip
 
-如下罗列的变更是还未发布的列表，代码变更历史：[未发布]
+这里罗列的变更是还未发布的列表，代码变更历史：[未发布]
 
 :::
+
+暂无
+
+## 6.2.0 (2025-12-18)
+
+详细[代码变更记录][6.2.0]。
 
 #### 新增
 
@@ -19,6 +25,7 @@
 
 #### 修复
 
+- `Web` 修复输入应用访问密码后跳转登录页面的问题 [#2134](https://github.com/tryzealot/zealot/issues/2134) 感谢 [elysian-gc](https://github.com/elysian-gc)
 - `Web` 优化部分小语种的本地化
 - `Web` 修复删除用户后保留关联的应用
 - `Web` 修复应用详情点击右侧版本没有跳转
@@ -1549,7 +1556,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.1.0...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.2.0...HEAD
+[6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
 [6.0.3]: https://github.com/tryzealot/zealot/compare/6.0.2...6.0.3
