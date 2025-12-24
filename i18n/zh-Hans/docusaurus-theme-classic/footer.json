@@ -22,5 +22,17 @@
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/tryzealot/zealot"
+  },
+  "link.title.Legal": {
+    "message": "法律信息",
+    "description": "The title of the footer links column with title=Legal in the footer"
+  },
+  "link.item.label.Terms of Service": {
+    "message": "服务条款",
+    "description": "The label of footer link with label=Terms of Service linking to /terms"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "隐私政策",
+    "description": "The label of footer link with label=Privacy Policy linking to /privacy"
   }
 }

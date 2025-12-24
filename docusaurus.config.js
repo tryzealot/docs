@@ -192,6 +192,19 @@ const config = {
               },
             ],
           },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms of Service',
+                href: '/terms',
+              },
+              {
+                label: 'Privacy Policy',
+                href: '/privacy',
+              },
+            ],
+          },
         ],
         copyright: `Copyright © 2018 - ${new Date().getFullYear()} Zealot.`,
       },
