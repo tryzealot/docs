@@ -203,6 +203,10 @@ const config = {
                 label: 'Privacy Policy',
                 href: '/privacy',
               },
+              {
+                label: 'EULA',
+                href: '/eula',
+              },
             ],
           },
         ],
