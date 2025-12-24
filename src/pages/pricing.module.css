@@ -1,0 +1,199 @@
+/* Pricing page styles for Docusaurus theme support */
+.main {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: var(--ifm-background-surface-color, #fff);
+  border: 2px solid var(--ifm-toc-border-color, #e5e7eb);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 580px;
+  max-width: 700px;
+  flex: 1 1 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: box-shadow .2s, border-color .2s;
+  outline: none;
+}
+
+.cardHighlight {
+  border-color: var(--ifm-color-primary, #ffb300);
+  box-shadow: 0 4px 24px 0 rgba(255,179,0,0.10);
+}
+
+[data-theme='dark'] .cardHighlight {
+  border-color: var(--ifm-color-primary, #ffb300);
+  box-shadow: 0 4px 24px 0 rgba(13, 15, 54, 0.18);
+}
+
+.mostPopular {
+  position: absolute;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ff9800 0%, #ff4081 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 1rem;
+  padding: 0.2rem 1.1rem;
+  z-index: 2;
+  letter-spacing: 0.01em;
+}
+
+[data-theme='dark'] .mostPopular {
+  background: linear-gradient(90deg, #ffb300 0%, #ff4081 100%);
+  color: #232334;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color, #222);
+}
+
+[data-theme='dark'] .name {
+  color: var(--ifm-color-primary-light);
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--ifm-heading-color, #222);
+}
+
+[data-theme='dark'] .price {
+  color: var(--ifm-color-primary-darker);
+}
+
+.priceSuffix {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-600, #888);
+  margin-left: 0.2rem;
+  font-weight: 400;
+}
+.save {
+  background: #e6f9ed;
+  color: #1dbf73;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.7rem;
+  padding: 0.1rem 0.8rem;
+  margin-bottom: 0.5rem;
+}
+[data-theme='dark'] .save {
+  background: #1a3a2a;
+  color: #6cffb3;
+}
+.trial {
+  color: var(--ifm-color-emphasis-600, #888);
+  font-size: 1.1rem;
+  margin-bottom: 1.7rem;
+}
+.button {
+  width: 100%;
+  background: var(--ifm-background-color, #fff);
+  color: var(--ifm-heading-color, #222);
+  border: 2px solid var(--ifm-toc-border-color, #e5e7eb);
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background .2s, border-color .2s, color .2s;
+}
+
+[data-theme='dark'] .button {
+  background: var(--ifm-background-surface-color, #232334);
+  color: var(--ifm-color-primary-light);
+  border: 2px solid var(--ifm-toc-border-color, #444654);
+}
+
+.button:hover {
+  background: var(--ifm-color-primary, #ffb300);
+  color: #fff;
+  border-color: var(--ifm-color-primary, #ffb300);
+}
+[data-theme='dark'] .button:hover {
+  background: #ffb300;
+  color: #232334;
+  border-color: #ffb300;
+}
+.buttonIcon {
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+.features {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+.card:hover,
+.enterpriseCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(1, 1, 100, 0.18), 0 4px 24px 0 rgba(27, 28, 95, 0.1);
+  z-index: 2;
+}
+
+[data-theme='dark'] .card:hover,
+[data-theme='dark'] .enterpriseCard:hover {
+  border-color: var(--ifm-color-primary-darkest);
+  box-shadow: 0 0 0 3px rgba(4, 5, 107, 0.28), 0 4px 24px 0 rgba(2, 6, 20, 0.18);
+}
+
+/* Enterprise section layout */
+.enterpriseRow {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.enterpriseCard {
+  width: 100%;
+  background: var(--ifm-background-surface-color, #181828);
+  border: 2px solid var(--ifm-toc-border-color, #232334);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .enterpriseRow {
+    max-width: 100%;
+  }
+  .enterpriseCard {
+    max-width: 100%;
+  }
+}

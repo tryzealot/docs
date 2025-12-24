@@ -446,5 +446,89 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(opens in new tab)",
     "description": "The ARIA label for the external link icon"
+  },
+  "pricing.plan.free": {
+    "message": "免费版"
+  },
+  "pricing.plan.free.subtitle": {
+    "message": "社区版（开源）"
+  },
+  "pricing.plan.free.unlimited_users": {
+    "message": "无限用户"
+  },
+  "pricing.plan.free.unlimited_apps_and_team_members": {
+    "message": "无限应用和团队成员"
+  },
+  "pricing.plan.free.unlimited_app_version_uploads": {
+    "message": "无限应用版本上传"
+  },
+  "pricing.plan.free.unlimited_app_installations": {
+    "message": "无限应用安装"
+  },
+  "pricing.plan.free.self_hosted_no_storage_limits": {
+    "message": "自托管，无存储限制"
+  },
+  "pricing.plan.free.community_support": {
+    "message": "社区支持"
+  },
+  "pricing.plan.free.open_source_license": {
+    "message": "开源许可证"
+  },
+  "pricing.plan.free.button": {
+    "message": "开始使用"
+  },
+  "pricing.plan.pro": {
+    "message": "专业版"
+  },
+  "pricing.plan.pro.subtitle": {
+    "message": "专业版"
+  },
+  "pricing.plan.pro.trial": {
+    "message": "14 天免费试用"
+  },
+  "pricing.plan.pro.save": {
+    "message": "节省 40%"
+  },
+  "pricing.plan.pro.all_community_edition_features": {
+    "message": "所有社区版功能"
+  },
+  "pricing.plan.pro.unlimited_organizations": {
+    "message": "无限组织"
+  },
+  "pricing.plan.pro.detailed_session_logs_and_overviews": {
+    "message": "详细的会话日志和概览"
+  },
+  "pricing.plan.pro.missing_email_notifications": {
+    "message": "缺失的电子邮件通知"
+  },
+  "pricing.plan.pro.more_storage_options": {
+    "message": "更多存储选项"
+  },
+  "pricing.plan.pro.custom_branding": {
+    "message": "自定义品牌"
+  },
+  "pricing.plan.pro.priority_support": {
+    "message": "优先支持"
+  },
+  "pricing.plan.pro.button": {
+    "message": "立即购买"
+  },
+  "pricing.enterprise.title": {
+    "message": "企业版"
+  },
+  "pricing.enterprise.desc": {
+    "message": "需要定制解决方案或服务级别协议？联系我们，为您的公司或团队提供量身定制的报价。"
+  },
+  "pricing.enterprise.button": {
+    "message": "联系我们"
+  },
+  "pricing.plan.free.price": {
+    "message": "¥0"
+  },
+  "pricing.plan.pro.price": {
+    "message": "¥3499 / 年"
+  },
+  "pricing.plan.pro.payment_integration_coming_soon": {
+    "message": "支付集成即将推出！"
   }
 }
