@@ -1,22 +1,24 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === "development";
 
-const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
+const isDeployPreview =
+  !!process.env.NETLIFY && process.env.CONTEXT === "deploy-preview";
 
 // Netlify branch deploy like "docusaurus-v2"
-const isBranchDeploy = !!process.env.NETLIFY && process.env.CONTEXT === 'branch-deploy';
+const isBranchDeploy =
+  !!process.env.NETLIFY && process.env.CONTEXT === "branch-deploy";
 
 /** @type {Array<string>} */
-const versions = require('./versions.json');
+const versions = require("./versions.json");
 
 /** @param {string} version */
 function isPrerelease(version) {
   return (
-    version.includes('alpha') ||
-    version.includes('beta') ||
-    version.includes('rc')
+    version.includes("alpha") ||
+    version.includes("beta") ||
+    version.includes("rc")
   );
 }
 
@@ -27,41 +29,45 @@ function getLastVersion() {
 
 // This probably only makes sense for the alpha/beta/rc phase, temporary
 function getNextVersionName() {
-  return 'Next';
+  return "Next";
 }
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Zealot',
-  tagline: 'Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.',
-  url: 'https://zealot.ews.im',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  favicon: 'img/zealot.png',
+  title: "Zealot",
+  tagline:
+    "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
+  url: "https://zealot.ews.im",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  favicon: "img/zealot.png",
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    defaultLocale: "en",
+    locales: ["en", "zh-Hans"],
   },
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',
-    }
+      onBrokenMarkdownLinks: "warn",
+    },
   },
 
-  organizationName: 'tryzealot',
-  projectName: 'docs',
+  organizationName: "tryzealot",
+  projectName: "docs",
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/tryzealot/docs/tree/main/',
-          lastVersion: isDev || isDeployPreview || isBranchDeploy ? 'current' : getLastVersion(),
+          editUrl: "https://github.com/tryzealot/docs/tree/main/",
+          lastVersion:
+            isDev || isDeployPreview || isBranchDeploy
+              ? "current"
+              : getLastVersion(),
           versions: {
             current: {
               label: `${getNextVersionName()} 🚧`,
@@ -69,33 +75,33 @@ const config = {
           },
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: "weekly",
           priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
+          ignorePatterns: ["/tags/**"],
+          filename: "sitemap.xml",
         },
       }),
     ],
 
     [
-      'redocusaurus',
+      "redocusaurus",
       /** @type {import('redocusaurus').PresetOptions} */
       {
         specs: [
           {
-            spec: 'openapi_v1_en.json',
-            route: '/api/v1/en',
+            spec: "openapi_v1_en.json",
+            route: "/api/v1/en",
           },
           {
-            spec: 'openapi_v1_zh-Hans.json',
-            route: 'api/v1/zh-Hans',
+            spec: "openapi_v1_zh-Hans.json",
+            route: "api/v1/zh-Hans",
           },
         ],
         theme: {
-          primaryColor: '#1890ff',
+          primaryColor: "#1890ff",
         },
       },
     ],
@@ -105,112 +111,112 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Zealot',
+        title: "Zealot",
         logo: {
-          alt: 'Zealot Logo',
-          src: 'img/zealot.png',
-          srcDark: 'img/zealot-dark.png',
+          alt: "Zealot Logo",
+          src: "img/zealot.png",
+          srcDark: "img/zealot-dark.png",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'self-hosted/index',
-            label: 'Self Hosted',
-            position: 'left',
+            type: "doc",
+            docId: "self-hosted/index",
+            label: "Self Hosted",
+            position: "left",
           },
           {
-            type: 'doc',
-            docId: 'developer-guide/index',
-            position: 'left',
-            label: 'Developer Guide',
+            type: "doc",
+            docId: "developer-guide/index",
+            position: "left",
+            label: "Developer Guide",
           },
           {
-            type: 'doc',
-            docId: 'user-guide/index',
-            position: 'left',
-            label: 'User Guide',
+            type: "doc",
+            docId: "user-guide/index",
+            position: "left",
+            label: "User Guide",
           },
           {
-            type: 'doc',
-            docId: 'user-guide/changelog',
-            position: 'left',
-            label: 'Changelog',
+            type: "doc",
+            docId: "user-guide/changelog",
+            position: "left",
+            label: "Changelog",
           },
           {
             type: "doc",
             docId: "developer-guide/api",
-            position: 'left',
+            position: "left",
             label: "API",
           },
           {
             href: "/donate",
-            position: 'right',
+            position: "right",
             label: "Donate",
           },
           {
-            type: 'docsVersionDropdown',
-            position: 'right',
+            type: "docsVersionDropdown",
+            position: "right",
             dropdownActiveClassDisabled: true,
             dropdownItemsAfter: [
               {
-                type: 'html',
+                type: "html",
                 value: '<hr class="dropdown-separator">',
               },
               {
-                href: 'https://tryzealot.github.io/docs-legacy',
-                label: 'Legacy docs',
-              }
+                href: "https://tryzealot.github.io/docs-legacy",
+                label: "Legacy docs",
+              },
             ],
           },
           {
-            type: 'localeDropdown',
-            position: 'right',
-          }
+            type: "localeDropdown",
+            position: "right",
+          },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Telegram',
-                href: 'https://t.me/+csa3Y2KOx44wMGRl',
+                label: "Telegram",
+                href: "https://t.me/+csa3Y2KOx44wMGRl",
               },
               {
-                label: 'Github Discussions',
-                href: 'https://github.com/tryzealot/zealot/discussions',
+                label: "Github Discussions",
+                href: "https://github.com/tryzealot/zealot/discussions",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'Demo',
-                href: 'https://tryzealot.ews.im',
+                label: "Demo",
+                href: "https://tryzealot.ews.im",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/tryzealot/zealot',
+                label: "GitHub",
+                href: "https://github.com/tryzealot/zealot",
               },
             ],
           },
           {
-            title: 'Legal',
+            title: "Legal",
             items: [
               {
-                label: 'Terms of Service',
-                href: '/terms',
+                label: "Terms of Service",
+                href: "/terms",
               },
               {
-                label: 'Privacy Policy',
-                href: '/privacy',
+                label: "Privacy Policy",
+                href: "/privacy",
               },
               {
-                label: 'EULA',
-                href: '/eula',
+                label: "EULA",
+                href: "/eula",
               },
             ],
           },
@@ -218,23 +224,31 @@ const config = {
         copyright: `Copyright © 2018 - ${new Date().getFullYear()} Zealot.`,
       },
       prism: {
-        additionalLanguages: ['kotlin', 'swift', 'groovy', 'ruby', 'nginx', 'toml', 'hcl'],
+        additionalLanguages: [
+          "kotlin",
+          "swift",
+          "groovy",
+          "ruby",
+          "nginx",
+          "toml",
+          "hcl",
+        ],
         magicComments: [
           {
-            className: 'theme-code-block-highlighted-line',
-            line: 'highlight-next-line',
+            className: "theme-code-block-highlighted-line",
+            line: "highlight-next-line",
             block: {
-              start: 'highlight-start',
-              end: 'highlight-end'
+              start: "highlight-start",
+              end: "highlight-end",
             },
           },
           {
-            className: 'code-block-error-line',
-            line: 'This will error',
+            className: "code-block-error-line",
+            line: "This will error",
           },
         ],
-        theme: require('prism-react-renderer').themes.github,
-        darkTheme: require('prism-react-renderer').themes.duotoneDark,
+        theme: require("prism-react-renderer").themes.github,
+        darkTheme: require("prism-react-renderer").themes.duotoneDark,
       },
       // announcementBar: {
       //   id: 'announcementBar-2',
@@ -246,12 +260,19 @@ const config = {
     }),
 
   plugins: [
+    ["./src/plugins/tailwind-config.js", {}],
+    [
+      "docusaurus2-dotenv",
+      {
+        systemvars: true,
+      },
+    ],
     [
       "@gracefullight/docusaurus-plugin-microsoft-clarity",
       {
-        projectId: "mgce1iwvr4"
-      }
-    ]
+        projectId: "mgce1iwvr4",
+      },
+    ],
   ],
   future: {
     v4: {
