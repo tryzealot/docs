@@ -10,9 +10,6 @@ export function Pricing({ country }) {
   console.log("Rendering Pricing component", country);
   const [paddle, setPaddle] = useState(undefined);
   const { prices, loading } = usePaddlePrices(paddle, country);
-  const { i18n } = useDocusaurusContext();
-
-  console.log("i18n locale:", i18n.currentLocale);
 
   useEffect(() => {
     if (process.env.PADDLE_CLIENT_TOKEN && process.env.PADDLE_ENV) {
