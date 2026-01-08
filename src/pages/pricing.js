@@ -1,210 +1,120 @@
 import Layout from "@theme/Layout";
 import { translate } from "@docusaurus/Translate";
-import styles from "./pricing.module.css";
-import { Pricing } from "@site/src/components/Pricing";
-import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import { useEffect, useState, useMemo } from "react";
+import { usePaddle, usePaddlePrices } from "@site/src/hooks/usePaddlePrices";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { PricingTier, EnterpriseTier } from "@site/src/constants/pricing-tier";
 
-const plans = [
-  {
-    name: translate({ id: "pricing.plan.free", message: "Free" }),
-    icon: "🚀",
-    subtitle: translate({
-      id: "pricing.plan.free.subtitle",
-      message: "Community Edition (Open Source)",
-    }),
-    price: translate({ id: "pricing.plan.free.price", message: "$0" }),
-    features: [
-      translate({
-        id: "pricing.plan.free.unlimited_users",
-        message: "Unlimited users",
-      }),
-      translate({
-        id: "pricing.plan.free.unlimited_apps_and_team_members",
-        message: "Unlimited apps and team members",
-      }),
-      translate({
-        id: "pricing.plan.free.unlimited_app_version_uploads",
-        message: "Unlimited app version uploads",
-      }),
-      translate({
-        id: "pricing.plan.free.unlimited_app_installations",
-        message: "Unlimited app installations",
-      }),
-      translate({
-        id: "pricing.plan.free.self_hosted_no_storage_limits",
-        message: "Self-hosted, no storage limits",
-      }),
-      translate({
-        id: "pricing.plan.free.community_support",
-        message: "Community support",
-      }),
-      translate({
-        id: "pricing.plan.free.open_source_license",
-        message: "Open source license",
-      }),
-    ],
-    button: {
-      text: translate({
-        id: "pricing.plan.free.button",
-        message: "Get Started",
-      }),
-      id: "github-btn",
-      href: "https://github.com/tryzealot/zealot",
-      type: "link",
-    },
-    highlight: false,
-  },
-  {
-    name: translate({ id: "pricing.plan.pro", message: "Pro" }),
-    icon: "⭐",
-    subtitle: translate({
-      id: "pricing.plan.pro.subtitle",
-      message: "Professional Edition",
-    }),
-    price: translate({ id: "pricing.plan.pro.price", message: "$499 / year" }),
-    priceSuffix: "",
-    trial: translate({
-      id: "pricing.plan.pro.trial",
-      message: "with a 14 days trial",
-    }),
-    save: translate({ id: "pricing.plan.pro.save", message: "Save 40%" }),
-    features: [
-      translate({
-        id: "pricing.plan.pro.all_community_edition_features",
-        message: "All Community Edition features",
-      }),
-      translate({
-        id: "pricing.plan.pro.unlimited_organizations",
-        message: "Unlimited organizations",
-      }),
-      translate({
-        id: "pricing.plan.pro.detailed_session_logs_and_overviews",
-        message: "Detailed session logs and overviews",
-      }),
-      translate({
-        id: "pricing.plan.pro.missing_email_notifications",
-        message: "Missing email notifications",
-      }),
-      translate({
-        id: "pricing.plan.pro.more_storage_options",
-        message: "More storage options",
-      }),
-      translate({
-        id: "pricing.plan.pro.custom_branding",
-        message: "Custom branding",
-      }),
-      translate({
-        id: "pricing.plan.pro.priority_support",
-        message: "Priority support",
-      }),
-    ],
-    button: {
-      text: translate({ id: "pricing.plan.pro.button", message: "Buy Now" }),
-      id: "paddle-buy-btn",
-      type: "paddle",
-    },
-    highlight: true,
-  },
-];
-
-const enterprise = {
-  title: translate({ id: "pricing.enterprise.title", message: "Enterprise" }),
-  description: translate({
-    id: "pricing.enterprise.desc",
-    message:
-      "Need a custom solution or service level agreement? Get in touch for a tailored offer for your company or team.",
-  }),
-  button: {
-    text: translate({
-      id: "pricing.enterprise.button",
-      message: "Get in touch",
-    }),
-    href: "mailto:zealot@ews.im",
-  },
-};
-
-function PricingCard({ plan }) {
+function PricingCard({ tier, paddlePrice, loading, paddle }) {
   return (
     <div
-      className={clsx(styles.card, plan.highlight && styles.cardHighlight)}
+      className={`w-full flex flex-col items-center min-h-full p-10 rounded-2xl border-2 border-gray-300 bg-white p-10 transition-all duration-200 dark:border-gray-600 dark:bg-gray-900 ${
+        tier.highlight
+          ? "border-yellow-500 shadow-lg shadow-yellow-500/10 dark:shadow-gray-900/20"
+          : ""
+      } hover:border-yellow-500 hover:shadow-[0_0_0_3px_rgba(1,1,100,0.18),0_4px_24px_0_rgba(27,28,95,0.1)] dark:hover:border-yellow-400 dark:hover:shadow-[0_0_0_3px_rgba(4,5,107,0.28),0_4px_24px_0_rgba(2,6,20,0.18)]`}
       tabIndex={0}
       role="region"
-      aria-label={plan.name + " plan"}
+      aria-label={tier.name + " plan"}
     >
-      {plan.mostPopular && (
-        <div className={styles.mostPopular}>Most Popular</div>
+      {tier.mostPopular && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 transform rounded-full bg-gradient-to-r from-orange-400 to-pink-500 px-4 py-1 text-sm font-semibold text-white dark:from-yellow-400 dark:to-pink-500 dark:text-gray-900">
+          Most Popular
+        </div>
       )}
-      <div className={styles.icon}>{plan.icon}</div>
-      <div className={styles.name}>{plan.name}</div>
-      <div className={styles.priceRow}>
-        <span className={styles.price}>{plan.price}</span>
-        {plan.priceSuffix && (
-          <span className={styles.priceSuffix}>{plan.priceSuffix}</span>
+      <div className="mb-3 mt-2 text-4xl">{tier.icon}</div>
+      <div className="text-xl font-medium text-gray-900 dark:text-yellow-300">
+        {tier.name}
+      </div>
+      <div className="mb-2 flex items-baseline gap-1">
+        {loading ? (
+          <div className="h-12 w-32 animate-pulse rounded bg-gray-200 dark:bg-gray-700" />
+        ) : (
+          <>
+            <span className="text-4xl font-bold text-gray-900 dark:text-yellow-200">
+              {paddlePrice || tier.price}
+            </span>
+            {tier.priceSuffix && (
+              <span className="text-lg text-gray-600 dark:text-gray-400">
+                {tier.priceSuffix}
+              </span>
+            )}
+          </>
         )}
       </div>
-      {plan.save && <div className={styles.save}>{plan.save}</div>}
-      <div className={styles.trial}>{plan.trial}</div>
-      <div className={styles.features}>
-        <ul
-          style={{
-            color: "var(--ifm-color-emphasis-700, #444)",
-            textAlign: "left",
-            margin: "1.2rem 0 1.7rem 0",
-            fontSize: "1.05rem",
-            lineHeight: 1.7,
-            width: "100%",
-            paddingLeft: "1.2em",
-          }}
-        >
-          {plan.features.map((f) => (
+      {tier.save && (
+        <div className="mb-2 rounded-lg bg-green-100 px-3 py-1 text-base font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
+          {tier.save}
+        </div>
+      )}
+      <div className="mb-7 text-lg text-gray-600 dark:text-gray-400">
+        {tier.trial}
+      </div>
+      <div className="flex flex-1 flex-col justify-end w-full">
+        <ul className="mb-7 ml-3 list-disc space-y-1 text-left text-lg leading-relaxed text-gray-700 dark:text-gray-400">
+          {tier.features.map((f) => (
             <li key={f}>{f}</li>
           ))}
         </ul>
       </div>
-      <button
-        id={plan.button.id}
-        className={styles.button}
-        onClick={() => {
-          // Paddle integration placeholder
-          // if type is link, redirect to href
-          if (plan.button.type === "link") {
-            window.location.href = plan.button.href;
-            return;
-          }
-          plan.button.id !== "github-btn" &&
+      <Link
+        id={tier.button.id}
+        className="hover:cursor-pointer w-full rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-lg font-medium text-gray-900 transition-all duration-200 hover:no-underline hover:border-yellow-500 hover:bg-yellow-500 hover:text-white dark:border-gray-600 dark:bg-gray-800 dark:text-yellow-300 dark:hover:border-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
+        to={
+          tier.button.type === "link"
+            ? tier.button.href
+            : `/checkout?id=${tier.priceId}`
+        }
+      >
+        {tier.button.text}
+      </Link>
+      {/* {tier.button.type === "link" ? (
+        <Link
+          id={tier.button.id}
+          className="hover:cursor-pointer w-full rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-lg font-medium text-gray-900 transition-all duration-200 hover:border-yellow-500 hover:bg-yellow-500 hover:text-white dark:border-gray-600 dark:bg-gray-800 dark:text-yellow-300 dark:hover:border-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
+          to={tier.button.href}
+        >
+          {tier.button.text}
+        </Link>
+      ) : (
+        
+        <button
+          id={tier.button.id}
+          className="hover:cursor-pointer w-full rounded-lg border-2 border-gray-300 bg-white px-6 py-3 text-lg font-medium text-gray-900 transition-all duration-200 hover:border-yellow-500 hover:bg-yellow-500 hover:text-white dark:border-gray-600 dark:bg-gray-800 dark:text-yellow-300 dark:hover:border-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
+          onClick={() => {
+            if (tier.button.type === "paddle" && paddle) {
+              paddle.Checkout.open({
+                items: [{ priceId: tier.priceId, quantity: 1 }],
+              });
+              return;
+            }
             alert(
               translate({
-                id: "pricing.plan.pro.payment_integration_coming_soon",
+                id: "pricing.tier.pro.payment_integration_coming_soon",
                 message: "Payment integration coming soon!",
               })
             );
-        }}
-      >
-        {plan.button.text}
-      </button>
+          }}
+        >
+          {tier.button.text}
+        </button>
+      )} */}
     </div>
   );
 }
 
 function EnterpriseCard({ enterprise }) {
   return (
-    <div className={styles.enterpriseCard}>
-      <div className={styles.icon}>🏢</div>
-      <div className={styles.name}>{enterprise.title}</div>
-      <div
-        style={{
-          color: "var(--ifm-color-emphasis-700, #444)",
-          fontSize: "1.05rem",
-          margin: "1.2rem 0 1.7rem 0",
-          textAlign: "center",
-        }}
-      >
+    <div className="w-full rounded-2xl border-2 border-gray-700 bg-gray-800 p-10 flex flex-col items-center transition-all duration-200 hover:border-yellow-500 hover:shadow-[0_0_0_3px_rgba(4,5,107,0.28),0_4px_24px_0_rgba(2,6,20,0.18)] dark:border-gray-700 dark:bg-gray-900 dark:hover:border-yellow-400">
+      <div className="mb-3 text-4xl">🏢</div>
+      <div className="text-xl font-medium text-white">{enterprise.title}</div>
+      <div className="mb-7 mt-5 text-center text-lg leading-relaxed text-gray-300">
         {enterprise.description}
       </div>
       <button
-        className={styles.button}
+        className="w-full rounded-lg border-2 border-gray-600 bg-gray-700 px-6 py-3 text-lg font-medium text-white transition-all duration-200 hover:border-yellow-500 hover:bg-yellow-500 hover:text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-yellow-300 dark:hover:border-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
         onClick={() => {
-          // Open mailto link
           window.location.href = enterprise.button.href;
         }}
       >
@@ -215,17 +125,51 @@ function EnterpriseCard({ enterprise }) {
 }
 
 export default function PricingPage() {
+  const [country, setCountry] = useState("US");
+
+  // Create items array for Paddle from plans - memoized to prevent infinite requests
+  const items = useMemo(
+    () =>
+      PricingTier.filter((tier) => tier.priceId).map((tier) => ({
+        priceId: tier.priceId,
+        quantity: 1,
+      })),
+    []
+  );
+
+  const { paddle } = usePaddle();
+  const { prices, loading } = usePaddlePrices(paddle, country, items);
+  const { i18n } = useDocusaurusContext();
+
   return (
     <Layout title="Pricing" description="Zealot pricing plans">
-      <main className={styles.main}>
-        <Pricing country="US" />
-        <div className={styles.grid}>
-          {plans.map((plan) => (
-            <PricingCard key={plan.name} plan={plan} />
-          ))}
+      <main className="flex flex-col items-center px-4 py-8 gap-10">
+        {/* Tiers container aligned with enterprise card width */}
+        <div className="w-full max-w-6xl mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-8">
+            {PricingTier.map((tier) => {
+              const paddlePrice = prices[tier.priceId]
+                ? prices[tier.priceId].replace(/\.00$/, "")
+                : null;
+              return (
+                <div
+                  className="flex flex-col min-h-80 w-full md:max-w-md lg:flex-1"
+                  key={tier.name}
+                >
+                  <PricingCard
+                    tier={tier}
+                    paddlePrice={paddlePrice}
+                    loading={loading}
+                    paddle={paddle}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className={styles.enterpriseRow}>
-          <EnterpriseCard enterprise={enterprise} />
+        {/* Enterprise card wrapped in same width container */}
+        <div className="w-full max-w-6xl mx-auto px-4">
+          <EnterpriseCard enterprise={EnterpriseTier} />
         </div>
       </main>
     </Layout>
