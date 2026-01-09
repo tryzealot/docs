@@ -432,12 +432,10 @@
     "description": "Security feature description"
   },
   "homepage.seo.title": {
-    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
-    "description": "The homepage SEO title"
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务"
   },
   "homepage.seo.description": {
-    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
-    "description": "The homepage SEO description"
+    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务"
   },
   "theme.tags.tagsPageTitle": {
     "message": "标签",
@@ -449,9 +447,6 @@
   },
   "pricing.plan.free": {
     "message": "免费版"
-  },
-  "pricing.plan.free.subtitle": {
-    "message": "社区版（开源）"
   },
   "pricing.plan.free.unlimited_users": {
     "message": "无限用户"
@@ -478,9 +473,6 @@
     "message": "开始使用"
   },
   "pricing.plan.pro": {
-    "message": "专业版"
-  },
-  "pricing.plan.pro.subtitle": {
     "message": "专业版"
   },
   "pricing.plan.pro.trial": {
@@ -522,8 +514,17 @@
   "pricing.enterprise.button": {
     "message": "联系我们"
   },
+  "pricing.plan.pro.frequency": {
+    "message": "年"
+  },
+  "pricing.seo.title": {
+    "message": "价格"
+  },
+  "pricing.seo.description": {
+    "message": "适用于私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务的实惠价格计划。"
+  },
   "pricing.plan.free.price": {
-    "message": "¥0"
+    "message": "免费"
   },
   "pricing.plan.pro.price": {
     "message": "¥3499 / 年"

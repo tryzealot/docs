@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { initializePaddle } from "@paddle/paddle-js";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function getPriceAmounts(prices) {
   if (!prices?.data?.details?.lineItems) {
@@ -12,35 +13,48 @@ function getPriceAmounts(prices) {
   }, {});
 }
 
-export function usePaddle(options) {
+export function usePaddleClient(options) {
   const [paddle, setPaddle] = useState(undefined);
 
   useEffect(() => {
-    if (process.env.PADDLE_CLIENT_TOKEN && process.env.PADDLE_ENV) {
-      const a = {
-        token: process.env.PADDLE_CLIENT_TOKEN,
-        environment: process.env.PADDLE_ENV,
+    const token = process.env.PADDLE_CLIENT_TOKEN;
+    const env = process.env.PADDLE_ENV;
+    if (token && process.env.PADDLE_ENV) {
+      const defaults = {
+        token: token,
+        environment: env,
         ...options,
       };
 
-      console.log("Initializing Paddle with options:", a);
-      initializePaddle(a).then((paddle) => {
+      initializePaddle(defaults).then((paddle) => {
         if (paddle) {
           setPaddle(paddle);
         }
       });
     }
-  }, []);
+  }, [process.env.PADDLE_CLIENT_TOKEN, process.env.PADDLE_ENV]);
 
   return { paddle };
 }
 
-export function usePaddlePrices(paddle, country, items) {
+export function usePaddlePrices(paddle, items) {
   const [prices, setPrices] = useState({});
   const [loading, setLoading] = useState(false);
+  const [country, setCountry] = useState("US");
+  const { i18n } = useDocusaurusContext();
 
   useEffect(() => {
-    // Don't fetch if paddle is not ready or no items
+    // Map Docusaurus locale to country code for Paddle
+    const localeToCountry = {
+      en: "US",
+      "zh-Hans": "CN",
+      ja: "JP",
+    };
+    const country = localeToCountry[i18n.currentLocale] || "US";
+    setCountry(country);
+  }, [i18n.currentLocale]);
+
+  useEffect(() => {
     if (!paddle || !items || items.length === 0) {
       setLoading(false);
       return;
@@ -48,16 +62,14 @@ export function usePaddlePrices(paddle, country, items) {
 
     // Build the request payload
     const paddlePricePreviewRequest = {
-      items: items,
-      ...(country &&
-        country !== "OTHERS" && { address: { countryCode: country } }),
+      items,
+      country,
     };
 
     setLoading(true);
 
-    // Make the request
     paddle
-      ?.PricePreview(paddlePricePreviewRequest)
+      .PricePreview(paddlePricePreviewRequest)
       .then((pricesResponse) => {
         const amounts = getPriceAmounts(pricesResponse);
         setPrices(amounts);

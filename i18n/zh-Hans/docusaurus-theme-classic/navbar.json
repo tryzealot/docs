@@ -19,10 +19,6 @@
     "message": "Zealot Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Contributing": {
-    "message": "贡献者指南",
-    "description": "Navbar item with label Contributing"
-  },
   "item.label.API": {
     "message": "API",
     "description": "Navbar item with label API"

@@ -26,8 +26,32 @@ export function Pricing({ country }) {
   }, []);
 
   return (
-    <div className="mx-auto max-w-7xl relative px-[32px] flex flex-col items-center justify-between">
-      <PriceCards loading={loading} priceMap={prices} />
-    </div>
+    <main className="flex flex-col items-center px-4 py-8 gap-10">
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap justify-center gap-8">
+          {PricingTier.map((tier) => {
+            const paddlePrice = prices[tier.priceId]
+              ? prices[tier.priceId].replace(/\.00$/, "")
+              : null;
+            return (
+              <div
+                className="flex flex-col min-h-80 w-full md:max-w-md lg:flex-1"
+                key={tier.name}
+              >
+                <PricingCard
+                  tier={tier}
+                  paddlePrice={paddlePrice}
+                  loading={loading}
+                  paddle={paddle}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="w-full max-w-6xl mx-auto px-4">
+        <EnterpriseCard enterprise={EnterpriseTier} />
+      </div>
+    </main>
   );
 }

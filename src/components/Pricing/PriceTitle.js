@@ -1,10 +1,16 @@
-// import { Tier } from "@site/src/constants/pricing-tier";
 import { cn } from "@site/src/lib/utils";
 
 export function PriceTitle({ tier }) {
   const { name, featured, icon } = tier;
   return (
-    <div
+    <div className="text-4xl mb-3 mt-2 font-medium item- text-gray-900 dark:text-yellow-300">
+      {tier.icon} {tier.name}
+    </div>
+  );
+}
+
+{
+  /* <div
       className={cn("flex justify-between items-center px-8 pt-8", {
         "featured-price-title": featured,
       })}
@@ -28,6 +34,5 @@ export function PriceTitle({ tier }) {
           Most popular
         </div>
       )}
-    </div>
-  );
+    </div> */
 }
