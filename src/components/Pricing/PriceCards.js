@@ -1,35 +1,60 @@
+import { useMemo } from "react";
+import {
+  usePaddleClient,
+  usePaddlePrices,
+} from "@site/src/hooks/usePaddlePrices";
 import { PricingTier } from "@site/src/constants/pricing-tier";
 import { PriceTitle } from "@site/src/components/Pricing/PriceTitle";
 import { PriceAmount } from "@site/src/components/Pricing/PriceAmount";
-import { cn } from "@site/src/lib/utils";
+import { FeaturesList } from "@site/src/components/Pricing/FeaturesList";
+import { PricingButton } from "@site/src/components/Pricing/PriceButton";
 
-export function PriceCards({ loading, priceMap }) {
+export function PriceCard({ tier, paddlePrice, loading }) {
   return (
-    <div className="isolate mx-auto grid grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      {PricingTier.map((tier) => (
-        <div
-          key={tier.id}
-          className={cn(
-            "rounded-lg bg-background/70 backdrop-blur-[6px] overflow-hidden"
-          )}
-        >
-          <div className="flex gap-5 flex-col rounded-lg rounded-b-none pricing-card-border">
-            {/* {tier.featured && <FeaturedCardGradient />} */}
-            <PriceTitle tier={tier} />
-            <PriceAmount loading={loading} tier={tier} priceMap={priceMap} />
-            {/* <div className={"px-8"}>
-              <Separator className={"bg-border"} />
-            </div> */}
-            <div className={"px-8 text-[16px]"}>{tier.description}</div>
-          </div>
-          <div className={"px-8 mt-8"}>
-            {/* <Button className={"w-full"} variant={"secondary"} asChild={true}>
-              <Link href={`/checkout/${tier.priceId}`}>Get started</Link>
-            </Button> */}
-          </div>
-          {/* <FeaturesList tier={tier} /> */}
-        </div>
-      ))}
+    <div
+      className={`w-100 max-w-100 flex flex-col items-center min-h-full rounded-2xl border-2 border-gray-300 bg-white p-10 transition-all duration-200 dark:border-gray-600 dark:bg-gray-900 ${
+        tier.highlight
+          ? "border-yellow-500 shadow-lg shadow-yellow-500/10 dark:shadow-gray-900/20"
+          : ""
+      } hover:border-yellow-500 hover:shadow-[0_0_0_3px_rgba(1,1,100,0.18),0_4px_24px_0_rgba(27,28,95,0.1)] dark:hover:border-yellow-400 dark:hover:shadow-[0_0_0_3px_rgba(4,5,107,0.28),0_4px_24px_0_rgba(2,6,20,0.18)]`}
+    >
+      <PriceTitle tier={tier} />
+      <PriceAmount loading={loading} tier={tier} paddlePrice={paddlePrice} />
+      <FeaturesList features={tier.features} />
+      <PricingButton tier={tier} />
+    </div>
+  );
+}
+
+export function PriceCards() {
+  const items = useMemo(
+    () =>
+      PricingTier.filter((tier) => tier.priceId).map((tier) => ({
+        priceId: tier.priceId,
+        quantity: 1,
+      })),
+    []
+  );
+
+  const { paddle } = usePaddleClient();
+  const { prices, loading } = usePaddlePrices(paddle, items);
+
+  return (
+    <div className="flex flex-row justify-between gap-8">
+      {PricingTier.map((tier) => {
+        const paddlePrice = prices[tier.priceId]
+          ? prices[tier.priceId].replace(/\.00$/, "")
+          : null;
+        return (
+          <PriceCard
+            key={tier.key}
+            tier={tier}
+            paddlePrice={paddlePrice}
+            loading={loading}
+            paddle={paddle}
+          />
+        );
+      })}
     </div>
   );
 }

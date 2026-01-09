@@ -1,25 +1,11 @@
 import { translate } from "@docusaurus/Translate";
 
-// export interface Tier {
-//   name: string;
-//   id: 'starter' | 'pro' | 'advanced';
-//   icon: string;
-//   description: string;
-//   features: string[];
-//   featured: boolean;
-//   priceId: Record<string, string>;
-// }
-
 export const PricingTier = [
   {
-    name: translate({ id: "pricing.plan.free", message: "Free" }),
+    key: "free",
+    name: translate({ id: "pricing.plan.free", message: "Open Source" }),
     icon: "🚀",
-    subtitle: translate({
-      id: "pricing.plan.free.subtitle",
-      message: "Community Edition (Open Source)",
-    }),
-    price: translate({ id: "pricing.plan.free.price", message: "$0" }),
-    priceId: "pri_01kecm0y2j5c0e3hak064t62mx",
+    price: translate({ id: "pricing.plan.free.price", message: "Free" }),
     features: [
       translate({
         id: "pricing.plan.free.unlimited_users",
@@ -62,20 +48,19 @@ export const PricingTier = [
     highlight: false,
   },
   {
+    key: "pro",
     name: translate({ id: "pricing.plan.pro", message: "Pro" }),
     icon: "⭐",
-    subtitle: translate({
-      id: "pricing.plan.pro.subtitle",
-      message: "Professional Edition",
+    priceId: "pri_01kecep9wgsx1v52eam2gdnnxy",
+    frequency: translate({
+      id: "pricing.plan.pro.frequency",
+      message: "yearly",
     }),
-    price: translate({ id: "pricing.plan.pro.price", message: "$499 / year" }),
-    priceId: "pri_01kecev08pfk50j8k9p0bs7ag8",
-    priceSuffix: "",
     trial: translate({
       id: "pricing.plan.pro.trial",
       message: "with a 14 days trial",
     }),
-    save: translate({ id: "pricing.plan.pro.save", message: "Save 40%" }),
+    save: translate({ id: "pricing.plan.pro.save", message: "Save 43%" }),
     features: [
       translate({
         id: "pricing.plan.pro.all_community_edition_features",
