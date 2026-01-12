@@ -7,16 +7,6 @@ import { useHistory } from "@docusaurus/router";
 import { usePaddleClient } from "@site/src/hooks/usePaddlePrices";
 import { useGateway } from "@site/src/hooks/useGateway";
 
-export default function CheckoutPage() {
-  return (
-    <Layout title="Checkout">
-      <BrowserOnly fallback={<div>Loading checkout...</div>}>
-        {() => <CheckoutClient />}
-      </BrowserOnly>
-    </Layout>
-  );
-}
-// 客户端渲染的主体组件，避免 SSR 触发 window 报错
 function CheckoutClient() {
   const { i18n } = useDocusaurusContext();
   const history = useHistory();
@@ -97,7 +87,7 @@ function CheckoutClient() {
   return (
     <main className="flex flex-col items-center px-4 py-8 gap-10">
       <div className="checkout-container"></div>
-      {(query.isLoading || !query.data) && <div>Loading your orders...</div>}
+      {(query.isLoading || !query.data) && <div>Preparing checkout ...</div>}
       {query.isError && <div>Error loading your orders.</div>}
 
       {query.data && query.data.orders.length > 0 && (
@@ -114,5 +104,15 @@ function CheckoutClient() {
         </>
       )}
     </main>
+  );
+}
+
+export default function CheckoutPage() {
+  return (
+    <Layout title="Checkout">
+      <BrowserOnly fallback={<div>Loading checkout...</div>}>
+        {() => <CheckoutClient />}
+      </BrowserOnly>
+    </Layout>
   );
 }
