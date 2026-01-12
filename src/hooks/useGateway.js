@@ -6,6 +6,10 @@ export function useGateway() {
 
   useEffect(() => {
     const baseURL = process.env.ZEALOT_GATEWAY_URL;
+    if (!baseURL) {
+      console.warn("ZEALOT_GATEWAY_URL is not defined");
+      return;
+    }
 
     if (baseURL) {
       try {
