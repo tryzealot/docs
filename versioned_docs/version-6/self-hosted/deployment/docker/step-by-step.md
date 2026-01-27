@@ -157,7 +157,7 @@ x-defaults: &defaults
     - zealot-backup:/app/public/backup
     - ./log:/app/log                        # Optional: persisting log files.
   healthcheck:
-    test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/health || exit 1"]
+    test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost/api/health || exit 1"]
 
 services:
   postgres:
