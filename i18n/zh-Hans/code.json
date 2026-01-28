@@ -530,5 +530,35 @@
   },
   "pricing.plan.pro.payment_integration_coming_soon": {
     "message": "支付集成即将推出！"
+  },
+  "donate.title": {
+    "message": "支持我们"
+  },
+  "donate.description": {
+    "message": "Zealot 是一个开源项目，致力于为移动应用开发者提供一个简单易用的内部分发平台。如果 Zealot 帮助了您的工作，欢迎通过以下方式支持项目的持续维护和开发。"
+  },
+  "donate.channels": {
+    "message": "捐赠渠道"
+  },
+  "donate.githubSponsor": {
+    "message": "GitHub 赞助"
+  },
+  "donate.buyMeACoffee": {
+    "message": "请我喝咖啡"
+  },
+  "donate.afdian": {
+    "message": "爱发电"
+  },
+  "donate.wechatAlipay": {
+    "message": "微信 / 支付宝"
+  },
+  "donate.wechat": {
+    "message": "微信"
+  },
+  "donate.alipay": {
+    "message": "支付宝"
+  },
+  "donate.thankYou": {
+    "message": "感谢您选择 Zealot 作为您的应用分发解决方案。"
   }
 }

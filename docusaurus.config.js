@@ -143,6 +143,11 @@ const config = {
             label: "API",
           },
           {
+            href: "/donate",
+            position: 'right',
+            label: "Donate",
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
