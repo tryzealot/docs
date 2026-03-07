@@ -37,6 +37,36 @@ class Gateway {
       throw error;
     }
   }
+
+  async generateLicense(data) {
+    if (!data) {
+      throw new Error("License data is required");
+    }
+
+    const url = `${this.baseURL}/payments/license`;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(
+          `Failed to generate license: ${response.status} ${response.statusText} - ${errorText}`
+        );
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error("Failed to generate license:", error);
+      throw error;
+    }
+  }
 }
 
 export function initGateway(baseURL) {
