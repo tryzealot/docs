@@ -1,11 +1,12 @@
 import { Skeleton } from "@site/src/components/ui/Skeleton";
 
 export function PriceAmount({ loading, paddlePrice, tier }) {
+  console.log("PriceAmount", { loading, paddlePrice, tier });
   return (
     <>
       <div className="mb-2 flex items-baseline gap-1">
         {loading ? (
-          <Skeleton className="h-24 w-full" />
+          <Skeleton className="h-10 w-50" />
         ) : (
           <span className="text-4xl font-bold text-gray-900 dark:text-yellow-200">
             {paddlePrice || tier.price}{" "}
