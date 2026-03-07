@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { initializePaddle } from "@paddle/paddle-js";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { getCountryCodeFromLocale } from "@site/src/lib/utils";
 
 function getPriceAmounts(prices) {
   if (!prices?.data?.details?.lineItems) {
@@ -44,14 +45,7 @@ export function usePaddlePrices(paddle, items) {
   const { i18n } = useDocusaurusContext();
 
   useEffect(() => {
-    // Map Docusaurus locale to country code for Paddle
-    const localeToCountry = {
-      en: "US",
-      "zh-Hans": "CN",
-      ja: "JP",
-    };
-    const country = localeToCountry[i18n.currentLocale] || "US";
-    setCountry(country);
+    setCountry(getCountryCodeFromLocale(i18n.currentLocale));
   }, [i18n.currentLocale]);
 
   useEffect(() => {

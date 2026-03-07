@@ -1,7 +1,6 @@
 import { Skeleton } from "@site/src/components/ui/Skeleton";
 
 export function PriceAmount({ loading, paddlePrice, tier }) {
-  console.log("PriceAmount", { loading, paddlePrice, tier });
   return (
     <>
       <div className="mb-2 flex items-baseline gap-1">
