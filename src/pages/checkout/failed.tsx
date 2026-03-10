@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { useHistory } from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { PrimaryButton, OutlineButton } from '@site/src/components/ui/Button';
 
 interface ErrorInfo {
   errorCode?: string;
@@ -33,37 +34,37 @@ function FailedClient(): JSX.Element {
   return (
     <main className="flex flex-col items-center px-4 py-8 gap-6">
       <div className="text-6xl mb-4">❌</div>
-      <h1 className="text-3xl font-bold text-red-600">Payment Failed</h1>
-      <p className="text-gray-600 dark:text-gray-400">
+      <h1 className="text-3xl font-bold text-[var(--color-error)]">Payment Failed</h1>
+      <p className="text-[var(--semantic-text-muted)]">
         We&apos;re sorry, but your payment could not be processed.
       </p>
 
       {errorInfo?.errorMessage && (
-        <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
-          <p className="text-sm text-red-700 dark:text-red-300">
+        <div className="mt-4 p-4 bg-[var(--semantic-error-bg)] rounded-lg border border-[var(--color-error)]">
+          <p className="text-sm text-[var(--color-error)]">
             Error: {errorInfo.errorMessage}
           </p>
         </div>
       )}
 
       <div className="flex gap-4 mt-8">
-        <button
+        <OutlineButton
           onClick={() => history.goBack()}
-          className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          fullWidth={false}
         >
           Try Again
-        </button>
-        <button
+        </OutlineButton>
+        <PrimaryButton
           onClick={() => window.location.href = `${basePath}/pricing`}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          fullWidth={false}
         >
           Return to Pricing
-        </button>
+        </PrimaryButton>
       </div>
 
-      <div className="mt-8 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg max-w-md">
-        <h2 className="text-lg font-semibold mb-2">Need Help?</h2>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+      <div className="mt-8 p-6 bg-[var(--color-base-200)] rounded-lg max-w-md">
+        <h2 className="text-lg font-semibold mb-2 text-[var(--color-base-content)]">Need Help?</h2>
+        <p className="text-sm text-[var(--semantic-text-muted)]">
           If you continue to experience issues, please contact our support team
           with details about your purchase attempt.
         </p>

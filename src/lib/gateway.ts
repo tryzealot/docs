@@ -1,4 +1,4 @@
-import type { GatewayClient, OrdersResponse, LicenseRequest, LicenseResponse } from "../types";
+import type { GatewayClient, OrdersResponse, LicenseRequest, LicenseResponse } from "@site/src/types";
 
 class Gateway implements GatewayClient {
   private baseURL: string;

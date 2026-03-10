@@ -8,7 +8,7 @@ import { PriceTitle } from "@site/src/components/Pricing/PriceTitle";
 import { PriceAmount } from "@site/src/components/Pricing/PriceAmount";
 import { FeaturesList } from "@site/src/components/Pricing/FeaturesList";
 import { PricingButton } from "@site/src/components/Pricing/PriceButton";
-import type { PaddleInstance, PricingTierItem, PaddleCheckoutItem } from "../../types";
+import type { PaddleInstance, PricingTierItem, PaddleCheckoutItem } from "@site/src/types";
 
 interface PricingCardProps {
   tier: PricingTierItem;

@@ -1,4 +1,4 @@
-import type { Region } from "../types";
+import type { Region } from "@site/src/types";
 
 export const Regions: Region[] = [
   { locale: "en", value: "US", label: "United States" },
