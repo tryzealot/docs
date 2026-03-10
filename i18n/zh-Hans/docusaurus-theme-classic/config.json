@@ -1,0 +1,10 @@
+{
+  "theme.announcementBar.content": {
+    "message": "Nous cherchons à réorganiser notre documentation, veuillez remplir <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"#\">ce sondage</a>",
+    "description": "The content of the announcement bar"
+  },
+  "theme.announcementBar.closeButton": {
+    "message": "关闭",
+    "description": "The announcement bar close button aria label"
+  }
+}

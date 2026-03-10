@@ -1,5 +1,5 @@
 import { Skeleton } from "@site/src/components/ui/Skeleton";
-import type { PricingTierItem } from "../../types";
+import type { PricingTierItem } from "@site/src/types";
 
 interface PriceAmountProps {
   loading: boolean;
@@ -14,18 +14,18 @@ export function PriceAmount({ loading, paddlePrice, tier }: PriceAmountProps): J
         {loading ? (
           <Skeleton className="h-10 w-50" />
         ) : (
-          <span className="text-4xl font-bold text-gray-900 dark:text-yellow-200">
+          <span className="text-4xl font-bold text-[var(--color-primary)]">
             {paddlePrice || tier.price}{" "}
             {paddlePrice && tier.frequency && ` / ${tier.frequency}`}
           </span>
         )}
       </div>
       {tier.save && (
-        <div className="mb-2 rounded-lg bg-green-100 px-3 py-1 text-base font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400">
+        <div className="mb-2 rounded-lg bg-[var(--semantic-success-bg)] px-3 py-1 text-base font-medium text-[var(--color-success)]">
           {tier.save}
         </div>
       )}
-      <div className="mb-7 text-lg text-gray-600 dark:text-gray-400">
+      <div className="mb-7 text-lg text-[var(--semantic-text-muted)]">
         {tier.trial}
       </div>
     </>

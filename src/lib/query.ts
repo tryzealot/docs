@@ -1,6 +1,6 @@
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
-import { encrypt } from "./crypto";
-import type { GatewayClient, OrdersResponse } from "../types";
+import { encrypt } from "@site/src/lib/crypto";
+import type { GatewayClient, OrdersResponse } from "@site/src/types";
 
 const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
 if (!secretKey) {

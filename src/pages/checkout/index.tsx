@@ -143,7 +143,7 @@ function CheckoutClient(): JSX.Element {
       paddle.Checkout.open(options);
       paddle.Spinner.show();
     }
-  }, [query.data, paddle, priceId, quantity, discountCode, submittedEmail, countryCode]);
+  }, [query.data, paddle, priceId, quantity, discountCode, submittedEmail, countryCode, history, basePath]);
 
   return (
     <main className="flex flex-col items-center px-4 py-8 gap-10">
@@ -151,13 +151,13 @@ function CheckoutClient(): JSX.Element {
 
       {!hasSubmitted ? (
         <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4 w-full max-w-md">
-          <h1 className="text-2xl font-bold">Enter your email to continue</h1>
+          <h1 className="text-2xl font-bold text-[var(--color-base-content)]">Enter your email to continue</h1>
           <input
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             placeholder="your@email.com"
-            className="w-full px-5 py-3 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[--ifm-color-primary] dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-[--ifm-color-primary] transition-colors"
+            className="w-full px-5 py-3 text-lg border-2 border-[var(--color-base-300)] rounded-lg focus:outline-none focus:border-[var(--color-primary)] bg-[var(--color-base-100)] text-[var(--color-base-content)] placeholder:text-[var(--semantic-text-muted)] transition-colors"
             required
           />
           <PrimaryButton type="submit">Continue</PrimaryButton>
@@ -165,20 +165,20 @@ function CheckoutClient(): JSX.Element {
       ) : (
         <>
           {query.isError ? (
-            <div className="px-6 py-4 bg-red-50 border-2 border-red-200 rounded-lg dark:bg-red-900/20 dark:border-red-800">
-              <p className="text-lg font-medium text-red-700 dark:text-red-400">Error loading your orders.</p>
+            <div className="px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
+              <p className="text-lg font-medium text-[var(--color-error)]">Error loading your orders.</p>
             </div>
           ) : (query.isLoading || !query.data) && (
             <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-[--ifm-color-primary] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[--ifm-color-primary]">Preparing checkout...</p>
+              <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-xl font-medium text-[var(--color-primary)]">Preparing checkout...</p>
             </div>
           )}
 
           {query.data && query.data.orders?.length > 0 && (
             <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-[--ifm-color-primary] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[--ifm-color-primary]">Redirecting to your orders...</p>
+              <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-xl font-medium text-[var(--color-primary)]">Redirecting to your orders...</p>
             </div>
           )}
         </>

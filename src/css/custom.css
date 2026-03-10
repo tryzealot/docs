@@ -11,57 +11,198 @@
 
 @custom-variant dark (&:is([data-theme="dark"] *));
 
-/* You can override the default Infima variables here. */
-/* :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(88, 96, 112, 0.45);
-} */
+/* Design System - Inspired by DaisyUI */
+/* Light Theme (Default) */
 :root {
-  --ifm-color-primary: #4a5387;
-  --ifm-color-primary-dark: #434b79;
-  --ifm-color-primary-darker: #3f4773;
-  --ifm-color-primary-darkest: #343a5e;
-  --ifm-color-primary-light: #515b94;
-  --ifm-color-primary-lighter: #555f9b;
-  --ifm-color-primary-lightest: #656fab;
+  /* Primary - Blue */
+  --color-primary: #4b6bfb;
+  --color-primary-content: #ffffff;
+  
+  /* Secondary - Gray Blue */
+  --color-secondary: #7b92b2;
+  --color-secondary-content: #ffffff;
+  
+  /* Accent - Teal Green */
+  --color-accent: #67cba0;
+  --color-accent-content: #ffffff;
+  
+  /* Neutral - Dark */
+  --color-neutral: #181a2a;
+  --color-neutral-content: #ffffff;
+  
+  /* Base Colors - Light Theme */
+  --color-base-100: #ffffff;
+  --color-base-200: #f2f5f9;
+  --color-base-300: #e3e8f0;
+  --color-base-content: #181a2a;
+  
+  /* Functional Colors */
+  --color-info: #3abff8;
+  --color-info-content: #ffffff;
+  --color-success: #36d399;
+  --color-success-content: #ffffff;
+  --color-warning: #fbbd23;
+  --color-warning-content: #000000;
+  --color-error: #f87272;
+  --color-error-content: #ffffff;
 
+  /* Docusaurus Integration - Map to DaisyUI colors */
+  --ifm-color-primary: var(--color-primary);
+  --ifm-color-primary-dark: #3d5ce6;
+  --ifm-color-primary-darker: #2f4dd1;
+  --ifm-color-primary-darkest: #1f3ab0;
+  --ifm-color-primary-light: #5c7efc;
+  --ifm-color-primary-lighter: #7a9afd;
+  --ifm-color-primary-lightest: #a8bcfe;
+
+  --ifm-background-color: var(--color-base-100);
+  --ifm-background-surface-color: var(--color-base-200);
+  --ifm-font-color-base: var(--color-base-content);
+  
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(88, 96, 112, 0.45);
+  --docusaurus-highlighted-code-line-bg: rgba(88, 96, 112, 0.15);
+  
+  /* Custom semantic colors for components */
+  --semantic-background: var(--color-base-100);
+  --semantic-background-secondary: var(--color-base-200);
+  --semantic-border: var(--color-base-300);
+  --semantic-text: var(--color-base-content);
+  --semantic-text-muted: rgba(24, 26, 42, 0.6);
+  --semantic-primary: var(--color-primary);
+  --semantic-primary-text: var(--color-primary-content);
+  --semantic-success: var(--color-success);
+  --semantic-success-bg: rgba(54, 211, 153, 0.15);
+  --semantic-error: var(--color-error);
+  --semantic-error-bg: rgba(248, 114, 114, 0.15);
+  --semantic-warning: var(--color-warning);
+  --semantic-warning-bg: rgba(251, 189, 35, 0.15);
+  --semantic-info: var(--color-info);
+  --semantic-info-bg: rgba(58, 191, 248, 0.15);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-/* [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-} */
-
+/* Dark Theme */
 [data-theme="dark"] {
-  --ifm-color-primary: #a3ade7;
-  --ifm-color-primary-dark: #8491df;
-  --ifm-color-primary-darker: #7483db;
-  --ifm-color-primary-darkest: #6b7bd8;
-  --ifm-color-primary-light: #c2c9ef;
-  --ifm-color-primary-lighter: #d2d7f3;
-  --ifm-color-primary-lightest: #ffffff;
+  /* Primary - Blue (same as light for consistency) */
+  --color-primary: #4b6bfb;
+  --color-primary-content: #ffffff;
+  
+  /* Secondary - Gray Blue */
+  --color-secondary: #7b92b2;
+  --color-secondary-content: #ffffff;
+  
+  /* Accent - Teal Green */
+  --color-accent: #67cba0;
+  --color-accent-content: #ffffff;
+  
+  /* Neutral */
+  --color-neutral: #181a2a;
+  --color-neutral-content: #ffffff;
+  
+  /* Base Colors - Dark Theme */
+  --color-base-100: #181a2a;
+  --color-base-200: #232635;
+  --color-base-300: #2f3245;
+  --color-base-content: #f2f5f9;
+  
+  /* Functional Colors (same as light) */
+  --color-info: #3abff8;
+  --color-info-content: #181a2a;
+  --color-success: #36d399;
+  --color-success-content: #181a2a;
+  --color-warning: #fbbd23;
+  --color-warning-content: #181a2a;
+  --color-error: #f87272;
+  --color-error-content: #181a2a;
+
+  /* Docusaurus Integration */
+  --ifm-color-primary: #5c7efc;
+  --ifm-color-primary-dark: #4b6bfb;
+  --ifm-color-primary-darker: #3d5ce6;
+  --ifm-color-primary-darkest: #2f4dd1;
+  --ifm-color-primary-light: #7a9afd;
+  --ifm-color-primary-lighter: #a8bcfe;
+  --ifm-color-primary-lightest: #c8d6fe;
+
+  --ifm-background-color: var(--color-base-100);
+  --ifm-background-surface-color: var(--color-base-200);
+  --ifm-font-color-base: var(--color-base-content);
+  
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Custom semantic colors for dark mode */
+  --semantic-background: var(--color-base-100);
+  --semantic-background-secondary: var(--color-base-200);
+  --semantic-border: var(--color-base-300);
+  --semantic-text: var(--color-base-content);
+  --semantic-text-muted: rgba(242, 245, 249, 0.6);
+  --semantic-primary: var(--color-primary);
+  --semantic-primary-text: var(--color-primary-content);
+  --semantic-success: var(--color-success);
+  --semantic-success-bg: rgba(54, 211, 153, 0.2);
+  --semantic-error: var(--color-error);
+  --semantic-error-bg: rgba(248, 114, 114, 0.2);
+  --semantic-warning: var(--color-warning);
+  --semantic-warning-bg: rgba(251, 189, 35, 0.2);
+  --semantic-info: var(--color-info);
+  --semantic-info-bg: rgba(58, 191, 248, 0.2);
 }
 
+/* Utility Classes for Design System Colors */
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-content { background-color: var(--color-primary-content); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-accent { background-color: var(--color-accent); }
+.bg-neutral { background-color: var(--color-neutral); }
+.bg-base-100 { background-color: var(--color-base-100); }
+.bg-base-200 { background-color: var(--color-base-200); }
+.bg-base-300 { background-color: var(--color-base-300); }
+.bg-info { background-color: var(--color-info); }
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-error { background-color: var(--color-error); }
+
+.text-primary { color: var(--color-primary); }
+.text-primary-content { color: var(--color-primary-content); }
+.text-secondary { color: var(--color-secondary); }
+.text-secondary-content { color: var(--color-secondary-content); }
+.text-accent { color: var(--color-accent); }
+.text-accent-content { color: var(--color-accent-content); }
+.text-neutral { color: var(--color-neutral); }
+.text-neutral-content { color: var(--color-neutral-content); }
+.text-base-100 { color: var(--color-base-100); }
+.text-base-200 { color: var(--color-base-200); }
+.text-base-300 { color: var(--color-base-300); }
+.text-base-content { color: var(--color-base-content); }
+.text-info { color: var(--color-info); }
+.text-info-content { color: var(--color-info-content); }
+.text-success { color: var(--color-success); }
+.text-success-content { color: var(--color-success-content); }
+.text-warning { color: var(--color-warning); }
+.text-warning-content { color: var(--color-warning-content); }
+.text-error { color: var(--color-error); }
+.text-error-content { color: var(--color-error-content); }
+
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-accent { border-color: var(--color-accent); }
+.border-neutral { border-color: var(--color-neutral); }
+.border-base-100 { border-color: var(--color-base-100); }
+.border-base-200 { border-color: var(--color-base-200); }
+.border-base-300 { border-color: var(--color-base-300); }
+.border-base-content { border-color: var(--color-base-content); }
+.border-info { border-color: var(--color-info); }
+.border-success { border-color: var(--color-success); }
+.border-warning { border-color: var(--color-warning); }
+.border-error { border-color: var(--color-error); }
+
+/* Semantic utility classes */
+.bg-semantic { background-color: var(--semantic-background); }
+.bg-semantic-secondary { background-color: var(--semantic-background-secondary); }
+.border-semantic { border-color: var(--semantic-border); }
+.text-semantic { color: var(--semantic-text); }
+.text-semantic-muted { color: var(--semantic-text-muted); }
+
+/* Component specific styles */
 .dropdown-separator {
   margin: 0.3rem 0;
-}
-
-#announcementBar-2 {
-  background-color: #1fa588;
 }

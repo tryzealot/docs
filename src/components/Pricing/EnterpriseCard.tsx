@@ -1,4 +1,4 @@
-import type { EnterpriseTierItem } from "../../types";
+import type { EnterpriseTierItem } from "@site/src/types";
 
 interface EnterpriseCardProps {
   enterprise: EnterpriseTierItem;
@@ -6,14 +6,14 @@ interface EnterpriseCardProps {
 
 export function EnterpriseCard({ enterprise }: EnterpriseCardProps): JSX.Element {
   return (
-    <div className="max-w-4xl rounded-2xl border-2 border-gray-700 bg-gray-800 p-10 flex flex-col items-center transition-all duration-200 hover:border-yellow-500 hover:shadow-[0_0_0_3px_rgba(4,5,107,0.28),0_4px_24px_0_rgba(2,6,20,0.18)] dark:border-gray-700 dark:bg-gray-900 dark:hover:border-yellow-400">
+    <div className="max-w-4xl rounded-2xl border-2 border-[var(--color-base-300)] bg-[var(--color-base-200)] p-10 flex flex-col items-center transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-[0_0_0_3px_rgba(75,107,251,0.15),0_4px_24px_0_rgba(75,107,251,0.1)] dark:border-[var(--color-base-300)] dark:bg-[var(--color-base-200)] dark:hover:border-[var(--color-primary)] dark:hover:shadow-[0_0_0_3px_rgba(75,107,251,0.25),0_4px_24px_0_rgba(0,0,0,0.3)]">
       <div className="mb-3 text-4xl">🏢</div>
-      <div className="text-xl font-medium text-white">{enterprise.title}</div>
-      <div className="mb-7 mt-5 text-center text-lg leading-relaxed text-gray-300">
+      <div className="text-xl font-medium text-[var(--color-base-content)]">{enterprise.title}</div>
+      <div className="mb-7 mt-5 text-center text-lg leading-relaxed text-[var(--semantic-text-muted)]">
         {enterprise.description}
       </div>
       <button
-        className="w-full rounded-lg border-2 border-gray-600 bg-gray-700 px-6 py-3 text-lg font-medium text-white transition-all duration-200 hover:border-yellow-500 hover:bg-yellow-500 hover:text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-yellow-300 dark:hover:border-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-gray-900"
+        className="hover:cursor-pointer w-full rounded-lg border-2 border-transparent bg-[var(--color-primary)] px-6 py-3 text-lg font-semibold text-[var(--color-primary-content)] transition-all duration-200 hover:opacity-90 hover:shadow-xl active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2 dark:focus:ring-offset-[var(--color-base-100)] shadow-lg"
         onClick={() => {
           window.location.href = enterprise.button.href;
         }}

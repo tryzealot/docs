@@ -1,5 +1,5 @@
 import { translate, type TranslateResult } from "@docusaurus/Translate";
-import type { PricingTierItem, EnterpriseTierItem } from "../types";
+import type { PricingTierItem, EnterpriseTierItem } from "@site/src/types";
 
 export const PricingTier: PricingTierItem[] = [
   {

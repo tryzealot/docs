@@ -71,13 +71,13 @@ function OrdersClient(): JSX.Element {
     <main className="flex flex-col items-center px-4 py-8 gap-10 min-h-screen">
       {!hasSubmitted ? (
         <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4 w-full max-w-md">
-          <h1 className="text-2xl font-bold">Enter your email to view orders</h1>
+          <h1 className="text-2xl font-bold text-[var(--ifm-font-color-base)]">Enter your email to view orders</h1>
           <input
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             placeholder="your@email.com"
-            className="w-full px-5 py-3 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[--ifm-color-primary] dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-[--ifm-color-primary] transition-colors"
+            className="w-full px-5 py-3 text-lg border-2 border-[var(--ifm-color-gray-300)] rounded-lg focus:outline-none focus:border-[var(--ifm-color-primary)] bg-[var(--ifm-background-color)] text-[var(--ifm-font-color-base)] placeholder:text-[var(--ifm-color-gray-600)] transition-colors"
             required
           />
           <PrimaryButton type="submit">View Orders</PrimaryButton>
@@ -89,8 +89,8 @@ function OrdersClient(): JSX.Element {
         <>
           {query.isError ? (
             <div className="flex flex-col items-center gap-4 w-full max-w-md">
-              <div className="px-6 py-4 bg-red-50 border-2 border-red-200 rounded-lg dark:bg-red-900/20 dark:border-red-800 w-full">
-                <p className="text-lg font-medium text-red-700 dark:text-red-400">Error loading your orders.</p>
+              <div className="px-6 py-4 bg-[rgba(var(--ifm-color-danger-rgb),0.15)] border-2 border-[var(--ifm-color-danger)] rounded-lg w-full">
+                <p className="text-lg font-medium text-[var(--ifm-color-danger)]">Error loading your orders.</p>
               </div>
               <SecondaryButton onClick={() => setHasSubmitted(false)}>
                 Try Again
@@ -98,20 +98,20 @@ function OrdersClient(): JSX.Element {
             </div>
           ) : (query.isLoading || !query.data) && (
             <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-[--ifm-color-primary] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[--ifm-color-primary]">Loading your orders...</p>
+              <div className="w-12 h-12 border-4 border-[var(--ifm-color-primary)] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-xl font-medium text-[var(--ifm-color-primary)]">Loading your orders...</p>
             </div>
           )}
 
           {query.data && (
             <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
               <div className="flex items-center justify-between w-full">
-                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Your Orders</h2>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{submittedEmail}</span>
+                <h2 className="text-3xl font-bold text-[var(--ifm-font-color-base)]">Your Orders</h2>
+                <span className="text-sm text-[var(--ifm-color-gray-600)]">{submittedEmail}</span>
               </div>
               {fromCheckout && query.data.orders && query.data.orders.length > 0 && (
-                <div className="w-full px-6 py-2 bg-blue-50 border-2 border-blue-200 rounded-lg dark:bg-blue-900/20 dark:border-blue-800">
-                  <p className="p-0 m-0 text-lg font-medium text-blue-700 dark:text-blue-400">
+                <div className="w-full px-6 py-2 border-info border-2 border-[var(--ifm-color-info)] rounded-lg">
+                  <p className="p-0 m-0 text-lg font-medium text-[var(--ifm-color-info)]">
                     You already have an order associated with this email.
                   </p>
                 </div>
@@ -119,11 +119,11 @@ function OrdersClient(): JSX.Element {
 
               {query.data.orders?.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 w-full">
-                  <div className="px-6 py-8 bg-gray-50 border-2 border-gray-200 rounded-lg dark:bg-gray-800/50 dark:border-gray-700 w-full text-center">
-                    <p className="text-lg text-gray-600 dark:text-gray-400">No orders found for this email.</p>
+                  <div className="px-6 py-8 bg-[var(--ifm-background-surface-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-lg w-full text-center">
+                    <p className="text-lg text-[var(--ifm-color-gray-600)]">No orders found for this email.</p>
                   </div>
                   <div className="flex items-center gap-4 w-full">
-                    <SecondaryButton onClick={() => setHasSubmitted(false)} flex-1>
+                    <SecondaryButton onClick={() => setHasSubmitted(false)} className="flex-1">
                       Search Another Email
                     </SecondaryButton>
                     <PrimaryButton onClick={handleBack} className="flex-1">
@@ -136,33 +136,33 @@ function OrdersClient(): JSX.Element {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                     {/* Customer Info */}
                     {query.data.customer && (
-                      <div className="px-6 py-5 bg-white border-2 border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Customer</h3>
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Customer</h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</span>
-                          <span className="text-sm font-semibold text-gray-900 dark:text-white">{query.data.customer.email}</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Email</span>
+                          <span className="text-sm font-semibold text-[var(--ifm-font-color-base)]">{query.data.customer.email}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Customer ID</span>
-                          <span className="text-sm font-mono text-gray-600 dark:text-gray-300">{query.data.customer.id}</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Customer ID</span>
+                          <span className="text-sm font-mono text-[var(--ifm-color-gray-600)]">{query.data.customer.id}</span>
                         </div>
                       </div>
                     )}
 
                     {/* License Info */}
                     {query.data.license && (
-                      <div className="px-6 py-5 bg-white border-2 border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">License</h3>
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">License</h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">License Key</span>
-                          <span className="text-sm font-mono font-semibold text-[--ifm-color-primary]">{query.data.license.key}</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">License Key</span>
+                          <span className="text-sm font-mono font-semibold text-[var(--ifm-color-primary)]">{query.data.license.key}</span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Status</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Status</span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             query.data.license.active
-                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                              : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400'
+                              ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
+                              : 'bg-[rgba(var(--ifm-color-danger-rgb),0.15)] text-[var(--ifm-color-danger)]'
                           }`}>
                             {query.data.license.active ? 'Active' : 'Inactive'}
                           </span>
@@ -174,49 +174,49 @@ function OrdersClient(): JSX.Element {
                     {query.data.orders.map((order: Order) => (
                       <div
                         key={order.id}
-                        className="px-6 py-5 bg-white border-2 border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow dark:bg-gray-800 dark:border-gray-700"
+                        className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm hover:shadow-md transition-shadow dark:bg-[var(--ifm-background-surface-color)]"
                       >
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Order</h3>
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Order</h3>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
                             Order ID
                           </span>
-                          <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                          <span className="text-sm font-semibold text-[var(--ifm-font-color-base)]">
                             {order.id}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
                             Amount
                           </span>
-                          <span className="text-lg font-bold text-[--ifm-color-primary]">
+                          <span className="text-lg font-bold text-[var(--ifm-color-primary)]">
                             {(order.totalAmount).toFixed(2)} {order.currency}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
                             Created
                           </span>
-                          <span className="text-sm text-gray-900 dark:text-white">
+                          <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(order.createdAt).toLocaleDateString()}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
                             Paid At
                           </span>
-                          <span className="text-sm text-gray-900 dark:text-white">
+                          <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {order.paidAt ? new Date(order.paidAt).toLocaleDateString() : '-'}
                           </span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
                             Status
                           </span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             order.status === 'completed'
-                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                              : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400'
+                              ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
+                              : 'bg-[rgba(var(--ifm-color-warning-rgb),0.15)] text-[var(--ifm-color-warning)]'
                           }`}>
                             {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                           </span>
@@ -227,33 +227,33 @@ function OrdersClient(): JSX.Element {
 
                     {/* Subscription Info */}
                     {query.data.subscription && (
-                      <div className="px-6 py-5 bg-white border-2 border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Subscription</h3>
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Subscription</h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Status</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Status</span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             query.data.subscription.status === 'active'
-                              ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                              : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-400'
+                              ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
+                              : 'bg-[var(--ifm-color-gray-300)] text-[var(--ifm-color-gray-600)]'
                           }`}>
                             {query.data.subscription.status.charAt(0).toUpperCase() + query.data.subscription.status.slice(1)}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Active At</span>
-                          <span className="text-sm text-gray-900 dark:text-white">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Active At</span>
+                          <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(query.data.subscription.currentPeriodStart).toLocaleDateString()}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-gray-500 dark:text-gray-400">Expires At</span>
-                          <span className="text-sm text-gray-900 dark:text-white">
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Expires At</span>
+                          <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(query.data.subscription.currentPeriodEnd).toLocaleDateString()}
                           </span>
                         </div>
                         {query.data.subscription.cancelAtPeriodEnd && (
-                          <div className="mt-3 px-3 py-2 bg-yellow-50 border border-yellow-200 rounded-lg dark:bg-yellow-900/20 dark:border-yellow-800">
-                            <p className="text-sm text-yellow-700 dark:text-yellow-400">Will cancel at period end</p>
+                          <div className="mt-3 px-3 py-2 bg-[rgba(var(--ifm-color-warning-rgb),0.15)] border border-[var(--ifm-color-warning)] rounded-lg">
+                            <p className="text-sm text-[var(--ifm-color-warning)]">Will cancel at period end</p>
                           </div>
                         )}
                       </div>
@@ -264,7 +264,7 @@ function OrdersClient(): JSX.Element {
                     <SecondaryButton
                       onClick={() => query.refetch()}
                       disabled={query.isFetching}
-                      className="flex-1 dark:border-0"
+                      className="flex-1"
                     >
                       {query.isFetching ? 'Refreshing...' : 'Refresh'}
                     </SecondaryButton>

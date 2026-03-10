@@ -7,7 +7,7 @@ import type {
   PaddleInstance,
   PaddlePricePreviewResponse,
   PaddleCheckoutItem,
-} from "../types";
+} from "@site/src/types";
 
 function getPriceAmounts(prices: PaddlePricePreviewResponse): Record<string, string> {
   if (!prices?.data?.details?.lineItems) {

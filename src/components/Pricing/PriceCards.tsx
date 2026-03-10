@@ -8,7 +8,7 @@ import { PriceTitle } from "@site/src/components/Pricing/PriceTitle";
 import { PriceAmount } from "@site/src/components/Pricing/PriceAmount";
 import { FeaturesList } from "@site/src/components/Pricing/FeaturesList";
 import { PricingButton } from "@site/src/components/Pricing/PriceButton";
-import type { PricingTierItem, PaddleInstance } from "../../types";
+import type { PricingTierItem, PaddleInstance } from "@site/src/types";
 
 interface PriceCardProps {
   tier: PricingTierItem;
@@ -20,11 +20,11 @@ interface PriceCardProps {
 function PriceCard({ tier, paddlePrice, loading }: PriceCardProps): JSX.Element {
   return (
     <div
-      className={`w-100 max-w-100 flex flex-col items-center min-h-full rounded-2xl border-2 border-gray-300 bg-white p-10 transition-all duration-200 dark:border-gray-600 dark:bg-gray-900 ${
+      className={`w-100 max-w-100 flex flex-col items-center min-h-full rounded-2xl border-2 border-[var(--color-base-300)] bg-[var(--color-base-100)] p-10 transition-all duration-200 hover:border-[var(--color-primary)] hover:shadow-[0_0_0_3px_rgba(75,107,251,0.15),0_4px_24px_0_rgba(75,107,251,0.1)] dark:border-[var(--color-base-300)] dark:bg-[var(--color-base-200)] dark:hover:border-[var(--color-primary)] dark:hover:shadow-[0_0_0_3px_rgba(75,107,251,0.25),0_4px_24px_0_rgba(0,0,0,0.3)] ${
         tier.highlight
-          ? "border-yellow-500 shadow-lg shadow-yellow-500/10 dark:shadow-gray-900/20"
+          ? "border-[var(--color-accent)] shadow-lg shadow-[var(--color-accent)]/10 dark:shadow-[var(--color-accent)]/20"
           : ""
-      } hover:border-yellow-500 hover:shadow-[0_0_0_3px_rgba(1,1,100,0.18),0_4px_24px_0_rgba(27,28,95,0.1)] dark:hover:border-yellow-400 dark:hover:shadow-[0_0_0_3px_rgba(4,5,107,0.28),0_4px_24px_0_rgba(2,6,20,0.18)]`}
+      }`}
     >
       <PriceTitle tier={tier} />
       <PriceAmount loading={loading} tier={tier} paddlePrice={paddlePrice} />
