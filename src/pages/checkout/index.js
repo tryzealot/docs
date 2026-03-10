@@ -2,11 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { useQuery } from "@tanstack/react-query";
 import { useHistory } from "@docusaurus/router";
 import { usePaddleClient } from "@site/src/hooks/usePaddlePrices";
 import { useGateway } from "@site/src/hooks/useGateway";
 import { getCountryCodeFromLocale } from "@site/src/lib/utils";
+import { useCustomerOrders } from "@site/src/lib/query";
 
 function CheckoutClient() {
   const { i18n } = useDocusaurusContext();
@@ -96,15 +96,7 @@ const checkoutOptions = {
   const { paddle } = usePaddleClient(checkoutOptions);
   const { gateway } = useGateway();
 
-  const getCustomerOrders = async () => {
-    return gateway.orders(submittedEmail);
-  };
-
-  const query = useQuery({
-    queryKey: ["customerOrders", submittedEmail],
-    queryFn: getCustomerOrders,
-    enabled: !!submittedEmail && !!gateway && hasSubmitted,
-  });
+  const query = useCustomerOrders(gateway, submittedEmail, hasSubmitted);
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
@@ -121,8 +113,9 @@ const checkoutOptions = {
       paddle?.Initialized &&
       priceId
     ) {
+      const name = submittedEmail.split('@')[0];
       const options = {
-        customer: { email: submittedEmail, address: { countryCode } },
+        customer: { email: submittedEmail, name, address: { countryCode } },
         discountCode,
         items: [
           {
@@ -146,40 +139,70 @@ const checkoutOptions = {
       <div className="checkout-container"></div>
 
       {!hasSubmitted ? (
-        <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4">
+        <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4 w-full max-w-md">
           <h1 className="text-2xl font-bold">Enter your email to continue</h1>
           <input
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             placeholder="your@email.com"
-            className="px-4 py-2 border border-gray-300 rounded-lg dark:border-gray-600 dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="w-full px-5 py-3 text-lg border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[--ifm-color-primary] dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:focus:border-[--ifm-color-primary] transition-colors"
             required
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="hover:cursor-pointer w-full px-6 py-3 text-lg font-semibold text-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-0.5 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-[--ifm-color-primary] focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+            style={{
+              background: `linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%)`
+            }}
           >
             Continue
           </button>
         </form>
       ) : (
         <>
-          {(query.isLoading || !query.data) && <div>Preparing checkout ...</div>}
-          {query.isError && <div>Error loading your orders.</div>}
+          {query.isError ? (
+            <div className="px-6 py-4 bg-red-50 border-2 border-red-200 rounded-lg dark:bg-red-900/20 dark:border-red-800">
+              <p className="text-lg font-medium text-red-700 dark:text-red-400">Error loading your orders.</p>
+            </div>
+          ) : (query.isLoading || !query.data) && (
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-12 h-12 border-4 border-[--ifm-color-primary] border-t-transparent rounded-full animate-spin"></div>
+              <p className="text-xl font-medium text-[--ifm-color-primary]">Preparing checkout...</p>
+            </div>
+          )}
 
-          {query.data && query.data.orders.length > 0 && (
-            <>
-              <h1>Your Orders</h1>
-              <ul>
-                {query.data.orders.map((order) => (
-                  <li key={order.id}>
-                    Order ID: {order.id}, Amount: {order.amount}, Status:{" "}
-                    {order.status}
-                  </li>
-                ))}
-              </ul>
-            </>
+          {query.data && query.data.orders?.length > 0 && (
+            <div className="flex flex-col items-center gap-6 w-full max-w-md">
+              <div className="w-full px-6 py-6 bg-green-50 border-2 border-green-200 rounded-xl dark:bg-green-900/20 dark:border-green-800">
+                <div className="flex items-center gap-3 mb-3">
+                  <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <h3 className="text-lg font-bold text-green-800 dark:text-green-400">Existing Orders Found</h3>
+                </div>
+                <p className="text-sm text-green-700 dark:text-green-300 mb-4">
+                  You have {query.data.orders.length} order(s) associated with this email. View your complete order history, license details, and subscription information.
+                </p>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => history.push(`${basePath}/orders`)}
+                    className="hover:cursor-pointer flex-1 px-4 py-2 text-sm font-semibold text-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                    style={{
+                      background: `linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%)`
+                    }}
+                  >
+                    View My Orders
+                  </button>
+                  <button
+                    onClick={() => history.push(`${basePath}/pricing`)}
+                    className="hover:cursor-pointer px-4 py-2 text-sm font-semibold text-green-700 bg-white border border-green-300 rounded-lg hover:bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-700 dark:hover:bg-gray-700"
+                  >
+                    Back
+                  </button>
+                </div>
+              </div>
+            </div>
           )}
         </>
       )}
