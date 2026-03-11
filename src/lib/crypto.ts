@@ -2,9 +2,13 @@
  * Encryption utility functions - using AES-GCM algorithm
  */
 
-const salt = process.env.ZEALOT_ENCRYPTION_SALT;
-if (!salt) {
-  throw new Error("ZEALOT_ENCRYPTION_SALT is not defined");
+const salt = process.env.ZEALOT_ENCRYPTION_SALT || 'default-salt-for-ssr-build';
+
+function getSalt(): string {
+  if (typeof window !== 'undefined' && salt === 'default-salt-for-ssr-build') {
+    throw new Error("ZEALOT_ENCRYPTION_SALT is not defined");
+  }
+  return salt;
 }
 
 /**
@@ -28,7 +32,7 @@ async function generateKey(keyString: string): Promise<CryptoKey> {
   return crypto.subtle.deriveKey(
     {
       name: 'PBKDF2',
-      salt: encoder.encode(salt),
+      salt: encoder.encode(getSalt()),
       iterations: 100000,
       hash: 'SHA-256',
     },

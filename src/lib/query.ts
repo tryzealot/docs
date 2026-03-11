@@ -2,9 +2,13 @@ import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { encrypt } from "@site/src/lib/crypto";
 import type { GatewayClient, OrdersResponse } from "@site/src/types";
 
-const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
-if (!secretKey) {
-  throw new Error("ZEALOT_ENCRYPTION_KEY is not defined");
+const secretKey = process.env.ZEALOT_ENCRYPTION_KEY || 'default-key-for-ssr-build';
+
+function getSecretKey(): string {
+  if (typeof window !== 'undefined' && secretKey === 'default-key-for-ssr-build') {
+    throw new Error("ZEALOT_ENCRYPTION_KEY is not defined");
+  }
+  return secretKey;
 }
 
 /**
@@ -26,7 +30,7 @@ export const useCustomerOrders = (
         throw new Error("Gateway is not initialized");
       }
       // Encrypt email
-      const encryptedEmail = await encrypt(email, secretKey);
+      const encryptedEmail = await encrypt(email, getSecretKey());
       return gateway.orders(encryptedEmail);
     },
     enabled: !!email && !!gateway && enabled,
