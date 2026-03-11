@@ -278,14 +278,6 @@
     "message": "折叠侧边栏分类 '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
   },
-  "theme.unlistedContent.title": {
-    "message": "未列出页",
-    "description": "The unlisted content banner title"
-  },
-  "theme.unlistedContent.message": {
-    "message": "此页面未列出。搜索引擎不会对其索引，只有拥有直接链接的用户才能访问。",
-    "description": "The unlisted content banner message"
-  },
   "theme.blog.author.pageTitle": {
     "message": "{authorName} - {nPosts}",
     "description": "The title of the page for a blog author"
@@ -326,27 +318,6 @@
     "message": "折叠下拉菜单",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   },
-  "Easy to Use": {
-    "message": "轻松使用"
-  },
-  "Focus on What Matters": {
-    "message": "专注于重要的事情"
-  },
-  "Open Source 100%": {
-    "message": "100% 开源项目"
-  },
-  "Zealot was designed from the ground up to be easily installed and running quickly.": {
-    "message": "Zealot 提供简单便捷的部署方式实现一键安装和运行。"
-  },
-  "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps.": {
-    "message": "Zealot 使得开发者可以关注于应用开发本身，我们来处理持续交付和测试的工作，立即上传应用吧。"
-  },
-  "Zealot is an open source project, Everyone could easy self hosted on own servers.": {
-    "message": "Zealot 是一个开源项目，每个人都可以私有化部署在自己的服务器。"
-  },
-  "Getting started": {
-    "message": "快速上手"
-  },
   "homepage.header.title": {
     "message": "Zealot",
     "description": "The main title for homepage"
@@ -354,10 +325,6 @@
   "homepage.header.subtitle": {
     "message": "开源自部署持续集成一切跟应用有关事情，接入任意 CI 系统一切自动化处理，企业多年实战经验，独立部署提供企业打包分发流程、上传应用全套流程方案",
     "description": "The subtitle description for homepage"
-  },
-  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
-    "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务",
-    "description": "The homepage title message"
   },
   "homepage.button.getStarted": {
     "message": "快速开始",
@@ -385,51 +352,51 @@
   },
   "homepage.feature.deployment.title": {
     "message": "快捷部署",
-    "description": "Easy deployment feature title"
+    "description": "Easy Deployment feature title"
   },
   "homepage.feature.deployment.description": {
     "message": "支持 Docker、Kubernetes、Nomad 及云平台服务快速部署属于您的私有化应用分发平台。",
-    "description": "Easy deployment feature description"
+    "description": "Easy Deployment feature description"
   },
   "homepage.feature.multiPlatform.title": {
     "message": "多平台应用托管",
-    "description": "Multi-platform feature title"
+    "description": "Multi-Platform feature title"
   },
   "homepage.feature.multiPlatform.description": {
     "message": "支持 Android、iOS、macOS、Windows 和 Linux 应用，一个平台满足所有需求。",
-    "description": "Multi-platform feature description"
+    "description": "Multi-Platform feature description"
   },
   "homepage.feature.cicd.title": {
     "message": "CI/CD 持续集成",
-    "description": "CI/CD integration feature title"
+    "description": "CI/CD Integration feature title"
   },
   "homepage.feature.cicd.description": {
     "message": "无缝集成您现有的 CI/CD 流水线，实现应用自动化分发。",
-    "description": "CI/CD integration feature description"
+    "description": "CI/CD Integration feature description"
   },
   "homepage.feature.teamManagement.title": {
     "message": "团队管理",
-    "description": "Team management feature title"
+    "description": "Team Management feature title"
   },
   "homepage.feature.teamManagement.description": {
     "message": "管理团队成员并控制访问权限。通过频道组织应用，有效管理用户角色。",
-    "description": "Team management feature description"
+    "description": "Team Management feature description"
   },
   "homepage.feature.developerFriendly.title": {
     "message": "开发者友好",
-    "description": "Developer friendly feature title"
+    "description": "Developer Friendly feature title"
   },
   "homepage.feature.developerFriendly.description": {
     "message": "提供丰富的 SDK 和 RESTful API，支持多种编程语言和平台的无缝集成。",
-    "description": "Developer friendly feature description"
+    "description": "Developer Friendly feature description"
   },
   "homepage.feature.security.title": {
     "message": "安全私有",
-    "description": "Security feature title"
+    "description": "Secure & Private feature title"
   },
   "homepage.feature.security.description": {
     "message": "企业级安全和隐私控制，确保您的应用和数据安全。",
-    "description": "Security feature description"
+    "description": "Secure & Private feature description"
   },
   "homepage.seo.title": {
     "message": "私有化部署 Android、iOS、macOS、Windows 和 Linux 应用托管服务"
@@ -526,12 +493,6 @@
   "pricing.plan.free.price": {
     "message": "免费"
   },
-  "pricing.plan.pro.price": {
-    "message": "¥3499 / 年"
-  },
-  "pricing.plan.pro.payment_integration_coming_soon": {
-    "message": "支付集成即将推出！"
-  },
   "donate.title": {
     "message": "支持我们"
   },
@@ -561,5 +522,209 @@
   },
   "donate.thankYou": {
     "message": "感谢您选择 Zealot 作为您的应用分发解决方案。"
+  },
+  "checkout.title": {
+    "message": "结账"
+  },
+  "checkout.loading": {
+    "message": "正在加载结账页面..."
+  },
+  "checkout.email.title": {
+    "message": "请输入您的邮箱继续"
+  },
+  "checkout.email.placeholder": {
+    "message": "your@email.com"
+  },
+  "checkout.email.continue": {
+    "message": "继续"
+  },
+  "checkout.error.loadingOrders": {
+    "message": "加载订单时出错。"
+  },
+  "checkout.loading.preparing": {
+    "message": "正在准备结账..."
+  },
+  "checkout.loading.redirecting": {
+    "message": "正在跳转到您的订单..."
+  },
+  "checkout.success.title": {
+    "message": "支付成功"
+  },
+  "checkout.success.loading": {
+    "message": "加载中..."
+  },
+  "checkout.success.processing": {
+    "message": "正在处理您的支付..."
+  },
+  "checkout.success.processingDesc": {
+    "message": "请稍候，我们正在生成您的许可证。"
+  },
+  "checkout.success.failed.title": {
+    "message": "许可证生成失败"
+  },
+  "checkout.success.failed.desc": {
+    "message": "您的支付已成功，但我们在生成许可证时遇到问题。请联系客服并提供您的交易 ID。"
+  },
+  "checkout.success.failed.tryAgain": {
+    "message": "重试"
+  },
+  "checkout.success.successTitle": {
+    "message": "支付成功！"
+  },
+  "checkout.success.successDesc": {
+    "message": "感谢您的购买。您的订单已成功处理。"
+  },
+  "checkout.success.license.title": {
+    "message": "您的许可证"
+  },
+  "checkout.success.license.key": {
+    "message": "许可证密钥"
+  },
+  "checkout.success.license.copy": {
+    "message": "复制"
+  },
+  "checkout.success.license.copied": {
+    "message": "已复制！"
+  },
+  "checkout.success.license.saveReminder": {
+    "message": "请妥善保存您的许可证密钥。"
+  },
+  "checkout.success.order.id": {
+    "message": "订单号："
+  },
+  "checkout.success.order.email": {
+    "message": "邮箱："
+  },
+  "checkout.success.order.plan": {
+    "message": "套餐："
+  },
+  "checkout.success.order.type": {
+    "message": "类型："
+  },
+  "checkout.success.order.expires": {
+    "message": "到期时间："
+  },
+  "checkout.success.returnHome": {
+    "message": "返回首页"
+  },
+  "checkout.success.noTransaction": {
+    "message": "未找到交易信息"
+  },
+  "checkout.success.transactionId": {
+    "message": "交易 ID"
+  },
+  "orders.title": {
+    "message": "我的订单"
+  },
+  "orders.loading": {
+    "message": "加载中..."
+  },
+  "orders.email.title": {
+    "message": "请输入您的邮箱查看订单"
+  },
+  "orders.email.placeholder": {
+    "message": "your@email.com"
+  },
+  "orders.email.viewOrders": {
+    "message": "查看订单"
+  },
+  "orders.backToPricing": {
+    "message": "返回价格页"
+  },
+  "orders.error.loading": {
+    "message": "加载订单时出错。"
+  },
+  "orders.error.tryAgain": {
+    "message": "重试"
+  },
+  "orders.loading.text": {
+    "message": "正在加载您的订单..."
+  },
+  "orders.sessionError.invalid": {
+    "message": "会话数据无效。请输入您的邮箱查看订单。"
+  },
+  "orders.sessionError.config": {
+    "message": "会话配置错误。请输入您的邮箱查看订单。"
+  },
+  "orders.yourOrders.title": {
+    "message": "您的订单"
+  },
+  "orders.existingOrder.warning": {
+    "message": "此邮箱已有关联订单。"
+  },
+  "orders.noOrders": {
+    "message": "未找到此邮箱的订单。"
+  },
+  "orders.searchAnother": {
+    "message": "搜索其他邮箱"
+  },
+  "orders.customer.title": {
+    "message": "客户信息"
+  },
+  "orders.customer.email": {
+    "message": "邮箱"
+  },
+  "orders.customer.id": {
+    "message": "客户 ID"
+  },
+  "orders.license.title": {
+    "message": "许可证"
+  },
+  "orders.license.key": {
+    "message": "许可证密钥"
+  },
+  "orders.license.status": {
+    "message": "状态"
+  },
+  "orders.license.status.active": {
+    "message": "有效"
+  },
+  "orders.license.status.inactive": {
+    "message": "无效"
+  },
+  "orders.order.title": {
+    "message": "订单"
+  },
+  "orders.order.id": {
+    "message": "订单号"
+  },
+  "orders.order.amount": {
+    "message": "金额"
+  },
+  "orders.order.created": {
+    "message": "创建时间"
+  },
+  "orders.order.paidAt": {
+    "message": "支付时间"
+  },
+  "orders.order.status": {
+    "message": "状态"
+  },
+  "orders.order.status.completed": {
+    "message": "已完成"
+  },
+  "orders.order.status.pending": {
+    "message": "待处理"
+  },
+  "orders.subscription.title": {
+    "message": "订阅"
+  },
+  "orders.subscription.status": {
+    "message": "状态"
+  },
+  "orders.subscription.activeAt": {
+    "message": "生效时间"
+  },
+  "orders.subscription.expiresAt": {
+    "message": "到期时间"
+  },
+  "orders.subscription.cancelWarning": {
+    "message": "将在周期结束时取消"
+  },
+  "orders.refresh": {
+    "message": "刷新"
+  },
+  "orders.refreshing": {
+    "message": "刷新中..."
   }
 }

@@ -6,8 +6,9 @@ import { useHistory } from "@docusaurus/router";
 import { useGateway } from "@site/src/hooks/useGateway";
 import { useCustomerOrders } from "@site/src/lib/query";
 import { decrypt } from "@site/src/lib/crypto";
-import { PrimaryButton, SecondaryButton } from "@site/src/components/ui/Button";
-import type { Order, License, Subscription, Customer } from "@site/src/types";
+import { OutlineButton, PrimaryButton, SecondaryButton } from "@site/src/components/ui/Button";
+import Translate, { translate } from "@docusaurus/Translate";
+import type { Order } from "@site/src/types";
 
 function OrdersClient(): JSX.Element {
   const { i18n } = useDocusaurusContext();
@@ -17,6 +18,7 @@ function OrdersClient(): JSX.Element {
   const [submittedEmail, setSubmittedEmail] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [fromCheckout, setFromCheckout] = useState(false);
+  const [sessionError, setSessionError] = useState<string | null>(null);
 
   // 从 sessionStorage 读取预填充的 email（从 checkout 页面跳转过来）
   useEffect(() => {
@@ -33,19 +35,14 @@ function OrdersClient(): JSX.Element {
             sessionStorage.removeItem("ordersEmail");
           })
           .catch(() => {
-            // 解密失败，可能是未加密的旧数据
-            setUserEmail(storedEmail);
-            setSubmittedEmail(storedEmail);
-            setHasSubmitted(true);
-            setFromCheckout(true);
+            // 解密失败，清除数据并显示错误提示
             sessionStorage.removeItem("ordersEmail");
+            setSessionError(translate({ id: "orders.sessionError.invalid", message: "Session data is invalid. Please enter your email to view orders." }));
           });
       } else {
-        setUserEmail(storedEmail);
-        setSubmittedEmail(storedEmail);
-        setHasSubmitted(true);
-        setFromCheckout(true);
+        // 没有加密密钥，无法解密，清除数据
         sessionStorage.removeItem("ordersEmail");
+        setSessionError(translate({ id: "orders.sessionError.config", message: "Session configuration error. Please enter your email to view orders." }));
       }
     }
   }, []);
@@ -71,48 +68,63 @@ function OrdersClient(): JSX.Element {
     <main className="flex flex-col items-center px-4 py-8 gap-10 min-h-screen">
       {!hasSubmitted ? (
         <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4 w-full max-w-md">
-          <h1 className="text-2xl font-bold text-[var(--ifm-font-color-base)]">Enter your email to view orders</h1>
+          <h1 className="text-2xl font-bold text-[var(--ifm-font-color-base)]">
+            <Translate id="orders.email.title">Enter your email to view orders</Translate>
+          </h1>
+          {sessionError && (
+            <div className="w-full px-4 py-3 bg-[rgba(var(--ifm-color-warning-rgb),0.15)] border border-[var(--ifm-color-warning)] rounded-lg">
+              <p className="text-sm text-[var(--ifm-color-warning)]">{sessionError}</p>
+            </div>
+          )}
           <input
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
-            placeholder="your@email.com"
+            placeholder={translate({ id: "orders.email.placeholder", message: "your@email.com" })}
             className="w-full px-5 py-3 text-lg border-2 border-[var(--ifm-color-gray-300)] rounded-lg focus:outline-none focus:border-[var(--ifm-color-primary)] bg-[var(--ifm-background-color)] text-[var(--ifm-font-color-base)] placeholder:text-[var(--ifm-color-gray-600)] transition-colors"
             required
           />
-          <PrimaryButton type="submit">View Orders</PrimaryButton>
-          <SecondaryButton type="button" onClick={handleBack}>
-            Back to Pricing
-          </SecondaryButton>
+          <PrimaryButton type="submit">
+            <Translate id="orders.email.viewOrders">View Orders</Translate>
+          </PrimaryButton>
+          <OutlineButton type="button" onClick={handleBack}>
+            <Translate id="orders.backToPricing">Back to Pricing</Translate>
+          </OutlineButton>
         </form>
       ) : (
         <>
           {query.isError ? (
             <div className="flex flex-col items-center gap-4 w-full max-w-md">
               <div className="px-6 py-4 bg-[rgba(var(--ifm-color-danger-rgb),0.15)] border-2 border-[var(--ifm-color-danger)] rounded-lg w-full">
-                <p className="text-lg font-medium text-[var(--ifm-color-danger)]">Error loading your orders.</p>
+                <p className="text-lg font-medium text-[var(--ifm-color-danger)]">
+                  <Translate id="orders.error.loading">Error loading your orders.</Translate>
+                </p>
               </div>
               <SecondaryButton onClick={() => setHasSubmitted(false)}>
-                Try Again
+                <Translate id="orders.error.tryAgain">Try Again</Translate>
               </SecondaryButton>
             </div>
           ) : (query.isLoading || !query.data) && (
             <div className="flex flex-col items-center gap-4">
               <div className="w-12 h-12 border-4 border-[var(--ifm-color-primary)] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[var(--ifm-color-primary)]">Loading your orders...</p>
+              <p className="text-xl font-medium text-[var(--ifm-color-primary)]">
+                <Translate id="orders.loading.text">Loading your orders...</Translate>
+              </p>
             </div>
           )}
 
           {query.data && (
             <div className="flex flex-col items-center gap-6 w-full max-w-4xl">
               <div className="flex items-center justify-between w-full">
-                <h2 className="text-3xl font-bold text-[var(--ifm-font-color-base)]">Your Orders</h2>
+                <h2 className="text-3xl font-bold text-[var(--ifm-font-color-base)]">
+                  <Translate id="orders.yourOrders.title">Your Orders</Translate>
+                </h2>
                 <span className="text-sm text-[var(--ifm-color-gray-600)]">{submittedEmail}</span>
               </div>
               {fromCheckout && query.data.orders && query.data.orders.length > 0 && (
                 <div className="w-full px-6 py-2 border-info border-2 border-[var(--ifm-color-info)] rounded-lg">
                   <p className="p-0 m-0 text-lg font-medium text-[var(--ifm-color-info)]">
-                    You already have an order associated with this email.
+                    <Translate id="orders.existingOrder.warning">You already have an order associated with this email.</Translate>
                   </p>
                 </div>
               )}
@@ -120,15 +132,17 @@ function OrdersClient(): JSX.Element {
               {query.data.orders?.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 w-full">
                   <div className="px-6 py-8 bg-[var(--ifm-background-surface-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-lg w-full text-center">
-                    <p className="text-lg text-[var(--ifm-color-gray-600)]">No orders found for this email.</p>
+                    <p className="text-lg text-[var(--ifm-color-gray-600)]">
+                      <Translate id="orders.noOrders">No orders found for this email.</Translate>
+                    </p>
                   </div>
                   <div className="flex items-center gap-4 w-full">
+                    <OutlineButton onClick={handleBack} className="flex-1">
+                      <Translate id="orders.backToPricing">Back to Pricing</Translate>
+                    </OutlineButton>
                     <SecondaryButton onClick={() => setHasSubmitted(false)} className="flex-1">
-                      Search Another Email
+                      <Translate id="orders.searchAnother">Search Another Email</Translate>
                     </SecondaryButton>
-                    <PrimaryButton onClick={handleBack} className="flex-1">
-                      Back to Pricing
-                    </PrimaryButton>
                   </div>
                 </div>
               ) : (
@@ -137,13 +151,19 @@ function OrdersClient(): JSX.Element {
                     {/* Customer Info */}
                     {query.data.customer && (
                       <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
-                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Customer</h3>
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
+                          <Translate id="orders.customer.title">Customer</Translate>
+                        </h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Email</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.customer.email">Email</Translate>
+                          </span>
                           <span className="text-sm font-semibold text-[var(--ifm-font-color-base)]">{query.data.customer.email}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Customer ID</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.customer.id">Customer ID</Translate>
+                          </span>
                           <span className="text-sm font-mono text-[var(--ifm-color-gray-600)]">{query.data.customer.id}</span>
                         </div>
                       </div>
@@ -152,19 +172,27 @@ function OrdersClient(): JSX.Element {
                     {/* License Info */}
                     {query.data.license && (
                       <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
-                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">License</h3>
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
+                          <Translate id="orders.license.title">License</Translate>
+                        </h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">License Key</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.license.key">License Key</Translate>
+                          </span>
                           <span className="text-sm font-mono font-semibold text-[var(--ifm-color-primary)]">{query.data.license.key}</span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Status</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.license.status">Status</Translate>
+                          </span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             query.data.license.active
                               ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
                               : 'bg-[rgba(var(--ifm-color-danger-rgb),0.15)] text-[var(--ifm-color-danger)]'
                           }`}>
-                            {query.data.license.active ? 'Active' : 'Inactive'}
+                            {query.data.license.active
+                              ? translate({ id: "orders.license.status.active", message: "Active" })
+                              : translate({ id: "orders.license.status.inactive", message: "Inactive" })}
                           </span>
                         </div>
                       </div>
@@ -176,10 +204,12 @@ function OrdersClient(): JSX.Element {
                         key={order.id}
                         className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm hover:shadow-md transition-shadow dark:bg-[var(--ifm-background-surface-color)]"
                       >
-                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Order</h3>
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
+                          <Translate id="orders.order.title">Order</Translate>
+                        </h3>
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
-                            Order ID
+                            <Translate id="orders.order.id">Order ID</Translate>
                           </span>
                           <span className="text-sm font-semibold text-[var(--ifm-font-color-base)]">
                             {order.id}
@@ -187,7 +217,7 @@ function OrdersClient(): JSX.Element {
                         </div>
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
-                            Amount
+                            <Translate id="orders.order.amount">Amount</Translate>
                           </span>
                           <span className="text-lg font-bold text-[var(--ifm-color-primary)]">
                             {(order.totalAmount).toFixed(2)} {order.currency}
@@ -195,7 +225,7 @@ function OrdersClient(): JSX.Element {
                         </div>
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
-                            Created
+                            <Translate id="orders.order.created">Created</Translate>
                           </span>
                           <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(order.createdAt).toLocaleDateString()}
@@ -203,7 +233,7 @@ function OrdersClient(): JSX.Element {
                         </div>
                         <div className="flex items-center justify-between mb-3">
                           <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
-                            Paid At
+                            <Translate id="orders.order.paidAt">Paid At</Translate>
                           </span>
                           <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {order.paidAt ? new Date(order.paidAt).toLocaleDateString() : '-'}
@@ -211,14 +241,16 @@ function OrdersClient(): JSX.Element {
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
-                            Status
+                            <Translate id="orders.order.status">Status</Translate>
                           </span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             order.status === 'completed'
                               ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
                               : 'bg-[rgba(var(--ifm-color-warning-rgb),0.15)] text-[var(--ifm-color-warning)]'
                           }`}>
-                            {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                            {order.status === 'completed'
+                              ? translate({ id: "orders.order.status.completed", message: "Completed" })
+                              : translate({ id: "orders.order.status.pending", message: "Pending" })}
                           </span>
                         </div>
                       </div>
@@ -228,9 +260,13 @@ function OrdersClient(): JSX.Element {
                     {/* Subscription Info */}
                     {query.data.subscription && (
                       <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
-                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">Subscription</h3>
+                        <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
+                          <Translate id="orders.subscription.title">Subscription</Translate>
+                        </h3>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Status</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.subscription.status">Status</Translate>
+                          </span>
                           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                             query.data.subscription.status === 'active'
                               ? 'bg-[rgba(var(--ifm-color-success-rgb),0.15)] text-[var(--ifm-color-success)]'
@@ -240,20 +276,26 @@ function OrdersClient(): JSX.Element {
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Active At</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.subscription.activeAt">Active At</Translate>
+                          </span>
                           <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(query.data.subscription.currentPeriodStart).toLocaleDateString()}
                           </span>
                         </div>
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">Expires At</span>
+                          <span className="text-sm font-medium text-[var(--ifm-color-gray-600)]">
+                            <Translate id="orders.subscription.expiresAt">Expires At</Translate>
+                          </span>
                           <span className="text-sm text-[var(--ifm-font-color-base)]">
                             {new Date(query.data.subscription.currentPeriodEnd).toLocaleDateString()}
                           </span>
                         </div>
                         {query.data.subscription.cancelAtPeriodEnd && (
                           <div className="mt-3 px-3 py-2 bg-[rgba(var(--ifm-color-warning-rgb),0.15)] border border-[var(--ifm-color-warning)] rounded-lg">
-                            <p className="text-sm text-[var(--ifm-color-warning)]">Will cancel at period end</p>
+                            <p className="text-sm text-[var(--ifm-color-warning)]">
+                              <Translate id="orders.subscription.cancelWarning">Will cancel at period end</Translate>
+                            </p>
                           </div>
                         )}
                       </div>
@@ -261,18 +303,20 @@ function OrdersClient(): JSX.Element {
                   </div>
 
                   <div className="flex items-center gap-4 w-full">
-                    <SecondaryButton
+                    <OutlineButton
                       onClick={() => query.refetch()}
                       disabled={query.isFetching}
                       className="flex-1"
                     >
-                      {query.isFetching ? 'Refreshing...' : 'Refresh'}
-                    </SecondaryButton>
+                      {query.isFetching
+                        ? translate({ id: "orders.refreshing", message: "Refreshing..." })
+                        : translate({ id: "orders.refresh", message: "Refresh" })}
+                    </OutlineButton>
                     <PrimaryButton
                       onClick={() => setHasSubmitted(false)}
                       className="flex-1"
                     >
-                      Search Another Email
+                      <Translate id="orders.searchAnother">Search Another Email</Translate>
                     </PrimaryButton>
                   </div>
                 </>
@@ -287,8 +331,8 @@ function OrdersClient(): JSX.Element {
 
 export default function OrdersPage(): JSX.Element {
   return (
-    <Layout title="My Orders">
-      <BrowserOnly fallback={<div>Loading...</div>}>
+    <Layout title={translate({ id: "orders.title", message: "My Orders" })}>
+      <BrowserOnly fallback={<div>{translate({ id: "orders.loading", message: "Loading..." })}</div>}>
         {() => <OrdersClient />}
       </BrowserOnly>
     </Layout>

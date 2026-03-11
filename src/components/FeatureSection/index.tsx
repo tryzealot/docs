@@ -2,104 +2,118 @@ import React from 'react';
 import Translate from '@docusaurus/Translate';
 import styles from './styles.module.css';
 
-interface FeatureConfig {
-  icon: string;
-  titleId: string;
-  titleDefault: string;
-  descriptionId: string;
-  descriptionDefault: string;
-}
-
-const FEATURES_CONFIG: FeatureConfig[] = [
-  {
-    icon: '🚀',
-    titleId: 'homepage.feature.deployment.title',
-    titleDefault: 'Easy Deployment',
-    descriptionId: 'homepage.feature.deployment.description',
-    descriptionDefault: 'Deploy with Docker in minutes. Self-hosted solution with complete control over your data.',
-  },
-  {
-    icon: '📱',
-    titleId: 'homepage.feature.multiPlatform.title',
-    titleDefault: 'Multi-Platform',
-    descriptionId: 'homepage.feature.multiPlatform.description',
-    descriptionDefault: 'Support for Android, iOS, macOS, Windows, and Linux apps. One solution for all platforms.',
-  },
-  {
-    icon: '🔄',
-    titleId: 'homepage.feature.cicd.title',
-    titleDefault: 'CI/CD Integration',
-    descriptionId: 'homepage.feature.cicd.description',
-    descriptionDefault: 'Seamlessly integrate with your existing CI/CD pipeline for automated app distribution.',
-  },
-  {
-    icon: '👥',
-    titleId: 'homepage.feature.teamManagement.title',
-    titleDefault: 'Team Management',
-    descriptionId: 'homepage.feature.teamManagement.description',
-    descriptionDefault: 'Manage team members and control access permissions. Organize apps by channels and manage user roles effectively.',
-  },
-  {
-    icon: '⚡',
-    titleId: 'homepage.feature.developerFriendly.title',
-    titleDefault: 'Developer Friendly',
-    descriptionId: 'homepage.feature.developerFriendly.description',
-    descriptionDefault: 'Rich SDKs and RESTful APIs for seamless integration. Support for multiple programming languages and platforms.',
-  },
-  {
-    icon: '🔒',
-    titleId: 'homepage.feature.security.title',
-    titleDefault: 'Secure & Private',
-    descriptionId: 'homepage.feature.security.description',
-    descriptionDefault: 'Keep your apps and data secure with enterprise-grade security and privacy controls.',
-  },
-];
-
-interface FeatureProps {
-  icon: string;
-  titleId: string;
-  titleDefault: string;
-  descriptionId: string;
-  descriptionDefault: string;
-}
-
-function Feature({ icon, titleId, titleDefault, descriptionId, descriptionDefault }: FeatureProps): JSX.Element {
-  return (
-    <div className={styles.feature}>
-      <div className={styles.featureIcon}>{icon}</div>
-      <h3>
-        <Translate
-          id={titleId}
-          description={`${titleDefault} feature title`}>
-          {titleDefault}
-        </Translate>
-      </h3>
-      <p>
-        <Translate
-          id={descriptionId}
-          description={`${titleDefault} feature description`}>
-          {descriptionDefault}
-        </Translate>
-      </p>
-    </div>
-  );
-}
-
 export default function FeatureSection(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className={styles.featuresGrid}>
-          {FEATURES_CONFIG.map((feature, index) => (
-            <Feature
-              key={index}
-              icon={feature.icon}
-              titleId={feature.titleId}
-              titleDefault={feature.titleDefault}
-              descriptionId={feature.descriptionId}
-              descriptionDefault={feature.descriptionDefault}
-            />
-          ))}
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>🚀</div>
+            <h3>
+              <Translate
+                id="homepage.feature.deployment.title"
+                description="Easy Deployment feature title">
+                Easy Deployment
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.deployment.description"
+                description="Easy Deployment feature description">
+                Deploy with Docker in minutes. Self-hosted solution with complete control over your data.
+              </Translate>
+            </p>
+          </div>
+
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>📱</div>
+            <h3>
+              <Translate
+                id="homepage.feature.multiPlatform.title"
+                description="Multi-Platform feature title">
+                Multi-Platform
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.multiPlatform.description"
+                description="Multi-Platform feature description">
+                Support for Android, iOS, macOS, Windows, and Linux apps. One solution for all platforms.
+              </Translate>
+            </p>
+          </div>
+
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>🔄</div>
+            <h3>
+              <Translate
+                id="homepage.feature.cicd.title"
+                description="CI/CD Integration feature title">
+                CI/CD Integration
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.cicd.description"
+                description="CI/CD Integration feature description">
+                Seamlessly integrate with your existing CI/CD pipeline for automated app distribution.
+              </Translate>
+            </p>
+          </div>
+
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>👥</div>
+            <h3>
+              <Translate
+                id="homepage.feature.teamManagement.title"
+                description="Team Management feature title">
+                Team Management
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.teamManagement.description"
+                description="Team Management feature description">
+                Manage team members and control access permissions. Organize apps by channels and manage user roles effectively.
+              </Translate>
+            </p>
+          </div>
+
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>⚡</div>
+            <h3>
+              <Translate
+                id="homepage.feature.developerFriendly.title"
+                description="Developer Friendly feature title">
+                Developer Friendly
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.developerFriendly.description"
+                description="Developer Friendly feature description">
+                Rich SDKs and RESTful APIs for seamless integration. Support for multiple programming languages and platforms.
+              </Translate>
+            </p>
+          </div>
+
+          <div className={styles.feature}>
+            <div className={styles.featureIcon}>🔒</div>
+            <h3>
+              <Translate
+                id="homepage.feature.security.title"
+                description="Secure & Private feature title">
+                Secure & Private
+              </Translate>
+            </h3>
+            <p>
+              <Translate
+                id="homepage.feature.security.description"
+                description="Secure & Private feature description">
+                Keep your apps and data secure with enterprise-grade security and privacy controls.
+              </Translate>
+            </p>
+          </div>
         </div>
       </div>
     </section>
