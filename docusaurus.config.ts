@@ -16,7 +16,7 @@ const isBranchDeploy =
 const versions = require("./versions.json");
 
 /** @param {string} version */
-function isPrerelease(version) {
+function isPrerelease(version: string) {
   return (
     version.includes("alpha") ||
     version.includes("beta") ||
@@ -193,12 +193,11 @@ const config: Config = {
               },
               {
                 label: "Changelog",
-                href: "docs/user-guide/changelog",
+                to: "/docs/user-guide/changelog",
               },
               {
-                type: "doc",
                 label: "API",
-                href: "docs/developer-guide/api",
+                to: "/docs/developer-guide/api",
               },
             ],
           },
@@ -207,15 +206,15 @@ const config: Config = {
             items: [
               {
                 label: "Terms of Service",
-                href: "/terms",
+                to: "/terms",
               },
               {
                 label: "Privacy Policy",
-                href: "/privacy",
+                to: "/privacy",
               },
               {
                 label: "EULA",
-                href: "/eula",
+                to: "/eula",
               },
             ],
           },
@@ -249,13 +248,13 @@ const config: Config = {
         theme: require("prism-react-renderer").themes.github,
         darkTheme: require("prism-react-renderer").themes.duotoneDark,
       },
-      announcementBar: {
-        id: 'announcementBar',
-        backgroundColor: 'var(--ifm-color-primary)',
-        textColor: 'var(--ifm-heading-color)',
-        content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a> and vote on <a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/zealot">ProductHunt</a>`,
-        isCloseable: true
-      },
+      // announcementBar: {
+      //   id: 'supportUS',
+      //   backgroundColor: 'var(--ifm-color-primary)',
+      //   textColor: 'var(--ifm-heading-color)',
+      //   content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a> and vote on <a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/zealot">ProductHunt</a>`,
+      //   isCloseable: true
+      // },
     }),
 
   plugins: [

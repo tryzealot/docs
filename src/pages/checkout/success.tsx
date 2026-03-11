@@ -3,6 +3,7 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useEffect, useState } from "react";
 import { useGateway } from "@site/src/hooks/useGateway";
 import { PrimaryButton } from "@site/src/components/ui/Button";
+import Translate, { translate } from "@docusaurus/Translate";
 import type { LicenseResponse, TransactionData } from "@site/src/types";
 
 function SuccessClient(): JSX.Element {
@@ -29,7 +30,7 @@ function SuccessClient(): JSX.Element {
       const transactionData: TransactionData = JSON.parse(storedData);
       setTransactionInfo(transactionData);
     } else {
-      setError("No transaction information found");
+      setError(translate({ id: "checkout.success.noTransaction", message: "No transaction information found" }));
       setIsLoading(false);
     }
   }, []);
@@ -68,72 +69,100 @@ function SuccessClient(): JSX.Element {
       {isLoading ? (
         <>
           <div className="text-6xl mb-4">⏳</div>
-          <h1 className="text-3xl font-bold text-[var(--color-base-content)]">Processing your payment...</h1>
+          <h1 className="text-3xl font-bold text-[var(--color-base-content)]">
+            <Translate id="checkout.success.processing">Processing your payment...</Translate>
+          </h1>
           <p className="text-[var(--semantic-text-muted)]">
-            Please wait while we generate your license.
+            <Translate id="checkout.success.processingDesc">Please wait while we generate your license.</Translate>
           </p>
         </>
       ) : error ? (
         <>
           <div className="text-6xl mb-4">⚠️</div>
-          <h1 className="text-3xl font-bold text-[var(--color-warning)]">License Generation Failed</h1>
+          <h1 className="text-3xl font-bold text-[var(--color-warning)]">
+            <Translate id="checkout.success.failed.title">License Generation Failed</Translate>
+          </h1>
           <p className="text-[var(--semantic-text-muted)]">{error}</p>
           <p className="text-[var(--semantic-text-muted)] mt-2">
-            Your payment was successful, but we encountered an issue generating your license.
-            Please contact support with your transaction ID.
+            <Translate id="checkout.success.failed.desc">
+              Your payment was successful, but we encountered an issue generating your license.
+              Please contact support with your transaction ID.
+            </Translate>
           </p>
           {transactionInfo?.transactionId && (
             <div className="mt-4 p-4 bg-[var(--color-base-200)] rounded-lg">
-              <p className="text-xs text-[var(--semantic-text-muted)] mb-1">Transaction ID</p>
+              <p className="text-xs text-[var(--semantic-text-muted)] mb-1">
+                <Translate id="checkout.success.transactionId">Transaction ID</Translate>
+              </p>
               <code className="text-sm text-[var(--color-base-content)]">{transactionInfo.transactionId}</code>
             </div>
           )}
           <PrimaryButton onClick={() => window.location.reload()}>
-            Try Again
+            <Translate id="checkout.success.failed.tryAgain">Try Again</Translate>
           </PrimaryButton>
         </>
       ) : (
         <>
           <div className="text-6xl mb-4">✅</div>
-          <h1 className="text-3xl font-bold text-[var(--color-base-content)]">Payment Successful!</h1>
+          <h1 className="text-3xl font-bold text-[var(--color-base-content)]">
+            <Translate id="checkout.success.successTitle">Payment Successful!</Translate>
+          </h1>
           <p className="text-[var(--semantic-text-muted)]">
-            Thank you for your purchase. Your order has been processed successfully.
+            <Translate id="checkout.success.successDesc">
+              Thank you for your purchase. Your order has been processed successfully.
+            </Translate>
           </p>
 
           {license && (
             <div className="mt-8 p-6 bg-[var(--color-base-200)] rounded-lg w-full max-w-2xl">
-              <h2 className="text-xl font-semibold mb-4 text-[var(--color-base-content)]">Your License</h2>
+              <h2 className="text-xl font-semibold mb-4 text-[var(--color-base-content)]">
+                <Translate id="checkout.success.license.title">Your License</Translate>
+              </h2>
 
               <div className="bg-[var(--color-base-100)] p-4 rounded-lg mb-4 relative border border-[var(--color-base-300)]">
-                <p className="text-xs text-[var(--semantic-text-muted)] mb-1">License Key</p>
+                <p className="text-xs text-[var(--semantic-text-muted)] mb-1">
+                  <Translate id="checkout.success.license.key">License Key</Translate>
+                </p>
                 <code className="text-sm break-all pr-20 text-[var(--color-base-content)]">{license.license?.key}</code>
                 <button
                   onClick={() => license.license?.key && copyToClipboard(license.license.key)}
                   className="absolute top-3 right-3 px-3 py-1 text-xs bg-[var(--color-primary)] text-[var(--color-primary-content)] rounded hover:opacity-90 transition-opacity"
                 >
-                  {copied ? "Copied!" : "Copy"}
+                  {copied
+                    ? translate({ id: "checkout.success.license.copied", message: "Copied!" })
+                    : translate({ id: "checkout.success.license.copy", message: "Copy" })}
                 </button>
               </div>
 
               <div className="space-y-3 mb-4">
                 <div className="flex justify-between">
-                  <span className="text-sm text-[var(--semantic-text-muted)]">Order ID:</span>
+                  <span className="text-sm text-[var(--semantic-text-muted)]">
+                    <Translate id="checkout.success.order.id">Order ID:</Translate>
+                  </span>
                   <span className="text-sm text-[var(--color-base-content)]">{license.purchase?.id}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-[var(--semantic-text-muted)]">Email:</span>
+                  <span className="text-sm text-[var(--semantic-text-muted)]">
+                    <Translate id="checkout.success.order.email">Email:</Translate>
+                  </span>
                   <span className="text-sm text-[var(--color-base-content)]">{license.customer?.email}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-[var(--semantic-text-muted)]">Plan:</span>
+                  <span className="text-sm text-[var(--semantic-text-muted)]">
+                    <Translate id="checkout.success.order.plan">Plan:</Translate>
+                  </span>
                   <span className="text-sm text-[var(--color-base-content)]">{license.purchase?.planType}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-[var(--semantic-text-muted)]">Type:</span>
+                  <span className="text-sm text-[var(--semantic-text-muted)]">
+                    <Translate id="checkout.success.order.type">Type:</Translate>
+                  </span>
                   <span className="text-sm text-[var(--color-base-content)]">{license.purchase?.productType}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-[var(--semantic-text-muted)]">Expires:</span>
+                  <span className="text-sm text-[var(--semantic-text-muted)]">
+                    <Translate id="checkout.success.order.expires">Expires:</Translate>
+                  </span>
                   <span className="text-sm text-[var(--color-base-content)]">
                     {license.license?.expiredAt ? new Date(license.license.expiredAt).toLocaleDateString() : '-'}
                   </span>
@@ -141,13 +170,15 @@ function SuccessClient(): JSX.Element {
               </div>
 
               <p className="text-sm text-[var(--semantic-text-muted)]">
-                Please save your license key in a safe place.
+                <Translate id="checkout.success.license.saveReminder">
+                  Please save your license key in a safe place.
+                </Translate>
               </p>
             </div>
           )}
 
           <PrimaryButton onClick={() => window.location.href = "/"}>
-            Return Home
+            <Translate id="checkout.success.returnHome">Return Home</Translate>
           </PrimaryButton>
         </>
       )}
@@ -157,8 +188,8 @@ function SuccessClient(): JSX.Element {
 
 export default function CheckoutSuccessPage(): JSX.Element {
   return (
-    <Layout title="Checkout Success">
-      <BrowserOnly fallback={<div>Loading...</div>}>
+    <Layout title={translate({ id: "checkout.success.title", message: "Checkout Success" })}>
+      <BrowserOnly fallback={<div>{translate({ id: "checkout.success.loading", message: "Loading..." })}</div>}>
         {() => <SuccessClient />}
       </BrowserOnly>
     </Layout>
