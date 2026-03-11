@@ -178,26 +178,27 @@ const config: Config = {
                 label: "Github Discussions",
                 href: "https://github.com/tryzealot/zealot/discussions",
               },
+              {
+                label: "GitHub",
+                href: "https://github.com/tryzealot/zealot",
+              },
             ],
           },
           {
-            title: "More",
+            title: "Product",
             items: [
               {
                 label: "Demo",
                 href: "https://tryzealot.ews.im",
               },
               {
-                label: "GitHub",
-                href: "https://github.com/tryzealot/zealot",
-              },
-              {
                 label: "Changelog",
-                href: "user-guide/changelog",
+                href: "docs/user-guide/changelog",
               },
               {
+                type: "doc",
                 label: "API",
-                href: "developer-guide/api",
+                href: "docs/developer-guide/api",
               },
             ],
           },
