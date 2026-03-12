@@ -88,12 +88,6 @@ function OrdersClient(): ReactNode {
     }
   }, [query.data, submittedEmail, fromCheckout]);
 
-  useEffect(() => {
-    if (userEmail !== "" && !hasSubmitted) return;
-
-    window.history.replaceState({}, "", window.location.pathname);
-  }, [userEmail, hasSubmitted]);
-
   const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userEmail.trim()) {
@@ -457,7 +451,10 @@ function OrdersClient(): ReactNode {
                           })}
                     </OutlineButton>
                     <PrimaryButton
-                      onClick={() => setHasSubmitted(false)}
+                      onClick={() => {
+                        setUserEmail("");
+                        setHasSubmitted(false);
+                      }}
                       className="flex-1"
                     >
                       <Translate id="orders.searchAnother">
