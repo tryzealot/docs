@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory } from "@docusaurus/router";
 import { useGateway } from "@site/src/hooks/useGateway";
 import { useCustomerOrders } from "@site/src/lib/query";
-import { decrypt } from "@site/src/lib/crypto";
+import { decrypt, encrypt } from "@site/src/lib/crypto";
 import {
   OutlineButton,
   PrimaryButton,
@@ -68,6 +68,20 @@ function OrdersClient(): JSX.Element {
 
   const { gateway } = useGateway();
   const query = useCustomerOrders(gateway, submittedEmail, hasSubmitted);
+
+  // 当成功获取到订单数据后，更新 URL 添加 email 参数
+  useEffect(() => {
+    if (query.data && query.data.orders.length > 0 && submittedEmail && !fromCheckout) {
+      const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
+      if (secretKey) {
+        encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
+          const newUrl = `${window.location.pathname}?email=${encodeURIComponent(encryptedEmail)}`;
+          window.history.replaceState({}, "", newUrl);
+        });
+      }
+      // 没有 secretKey 时不更新 URL，避免明文暴露 email
+    }
+  }, [query.data, submittedEmail, fromCheckout]);
 
   const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
