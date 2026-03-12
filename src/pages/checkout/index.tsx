@@ -109,12 +109,10 @@ function CheckoutClient(): JSX.Element {
       const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
       if (secretKey) {
         encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
-          sessionStorage.setItem("ordersEmail", encryptedEmail);
-          history.push(`${basePath}/orders`);
+          history.push(`${basePath}/orders?email=${encodeURIComponent(encryptedEmail)}`);
         });
       } else {
-        sessionStorage.setItem("ordersEmail", submittedEmail);
-        history.push(`${basePath}/orders`);
+        history.push(`${basePath}/orders?email=${encodeURIComponent(submittedEmail)}`);
       }
       return;
     }

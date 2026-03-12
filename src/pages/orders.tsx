@@ -18,45 +18,46 @@ function OrdersClient(): JSX.Element {
   const { i18n } = useDocusaurusContext();
   const history = useHistory();
 
+  const urlParams = typeof window !== "undefined"
+    ? new URLSearchParams(window.location.search)
+    : null;
+
   const [userEmail, setUserEmail] = useState("");
   const [submittedEmail, setSubmittedEmail] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [fromCheckout, setFromCheckout] = useState(false);
-  const [sessionError, setSessionError] = useState<string | null>(null);
+  const [queryError, setQueryError] = useState<string | null>(null);
 
-  // 从 sessionStorage 读取预填充的 email（从 checkout 页面跳转过来）
+  // 从 URL query 参数读取预填充的 email（从 checkout 页面跳转过来）
   useEffect(() => {
-    const storedEmail = sessionStorage.getItem("ordersEmail");
-    if (storedEmail) {
+    const emailParam = urlParams?.get("email");
+    if (emailParam) {
       const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
       if (secretKey) {
-        decrypt(storedEmail, secretKey)
+        decrypt(emailParam, secretKey)
           .then((decryptedEmail) => {
             setUserEmail(decryptedEmail);
             setSubmittedEmail(decryptedEmail);
             setHasSubmitted(true);
             setFromCheckout(true);
-            sessionStorage.removeItem("ordersEmail");
           })
           .catch(() => {
-            // 解密失败，清除数据并显示错误提示
-            sessionStorage.removeItem("ordersEmail");
-            setSessionError(
+            // 解密失败，显示错误提示
+            setQueryError(
               translate({
-                id: "orders.sessionError.invalid",
+                id: "orders.queryError.invalid",
                 message:
-                  "Session data is invalid. Please enter your email to view orders.",
+                  "Invalid email parameter. Please enter your email to view orders.",
               }),
             );
           });
       } else {
-        // 没有加密密钥，无法解密，清除数据
-        sessionStorage.removeItem("ordersEmail");
-        setSessionError(
+        // 没有加密密钥，无法解密
+        setQueryError(
           translate({
-            id: "orders.sessionError.config",
+            id: "orders.queryError.config",
             message:
-              "Session configuration error. Please enter your email to view orders.",
+              "Configuration error. Please enter your email to view orders.",
           }),
         );
       }
@@ -92,10 +93,10 @@ function OrdersClient(): JSX.Element {
               Enter your email to view orders
             </Translate>
           </h1>
-          {sessionError && (
+          {queryError && (
             <div className="w-full px-4 py-3 bg-[rgba(var(--ifm-color-warning-rgb),0.15)] border border-[var(--ifm-color-warning)] rounded-lg">
               <p className="text-sm text-[var(--ifm-color-warning)]">
-                {sessionError}
+                {queryError}
               </p>
             </div>
           )}
