@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import { useState, useEffect } from "react";
 import Layout from "@theme/Layout";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory } from "@docusaurus/router";
 import { useGateway } from "@site/src/hooks/useGateway";
@@ -14,13 +14,14 @@ import {
 import Translate, { translate } from "@docusaurus/Translate";
 import type { Order } from "@site/src/types";
 
-function OrdersClient(): JSX.Element {
+function OrdersClient(): ReactNode {
   const { i18n } = useDocusaurusContext();
   const history = useHistory();
 
-  const urlParams = typeof window !== "undefined"
-    ? new URLSearchParams(window.location.search)
-    : null;
+  const urlParams =
+    typeof window !== "undefined"
+      ? new URLSearchParams(window.location.search)
+      : null;
 
   const [userEmail, setUserEmail] = useState("");
   const [submittedEmail, setSubmittedEmail] = useState("");
@@ -71,7 +72,12 @@ function OrdersClient(): JSX.Element {
 
   // 当成功获取到订单数据后，更新 URL 添加 email 参数
   useEffect(() => {
-    if (query.data && query.data.orders.length > 0 && submittedEmail && !fromCheckout) {
+    if (
+      query.data &&
+      query.data.orders.length > 0 &&
+      submittedEmail &&
+      !fromCheckout
+    ) {
       const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
       if (secretKey) {
         encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
@@ -464,18 +470,10 @@ function OrdersClient(): JSX.Element {
   );
 }
 
-export default function OrdersPage(): JSX.Element {
+export default function OrdersPage(): ReactNode {
   return (
     <Layout title={translate({ id: "orders.title", message: "My Orders" })}>
-      <BrowserOnly
-        fallback={
-          <div>
-            {translate({ id: "orders.loading", message: "Loading..." })}
-          </div>
-        }
-      >
-        {() => <OrdersClient />}
-      </BrowserOnly>
+      <OrdersClient />
     </Layout>
   );
 }

@@ -1,11 +1,11 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 import Layout from '@theme/Layout';
 import { translate } from '@docusaurus/Translate';
 import { EnterpriseTier } from '@site/src/constants/pricing-tier';
 import { EnterpriseCard } from '@site/src/components/Pricing/EnterpriseCard';
 import { PriceCards } from '@site/src/components/Pricing/PriceCards';
 
-export default function PricingPage(): JSX.Element {
+export default function PricingPage(): ReactNode {
   return (
     <Layout
       title={translate({

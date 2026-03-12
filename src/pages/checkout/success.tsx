@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Layout from "@theme/Layout";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { useEffect, useState } from "react";
@@ -6,7 +7,7 @@ import { PrimaryButton } from "@site/src/components/ui/Button";
 import Translate, { translate } from "@docusaurus/Translate";
 import type { LicenseResponse, TransactionData } from "@site/src/types";
 
-function SuccessClient(): JSX.Element {
+function SuccessClient(): ReactNode {
   const { gateway } = useGateway();
   const [isLoading, setIsLoading] = useState(true);
   const [license, setLicense] = useState<LicenseResponse | null>(null);
@@ -186,7 +187,7 @@ function SuccessClient(): JSX.Element {
   );
 }
 
-export default function CheckoutSuccessPage(): JSX.Element {
+export default function CheckoutSuccessPage(): ReactNode {
   return (
     <Layout title={translate({ id: "checkout.success.title", message: "Checkout Success" })}>
       <BrowserOnly fallback={<div>{translate({ id: "checkout.success.loading", message: "Loading..." })}</div>}>

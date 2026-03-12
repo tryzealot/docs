@@ -1,6 +1,6 @@
+import type { ReactNode } from "react";
 import { useEffect, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
@@ -16,7 +16,7 @@ import type {
   PaddleCheckoutOpenOptions,
 } from "@site/src/types";
 
-function CheckoutClient(): JSX.Element {
+function CheckoutClient(): ReactNode {
   const { i18n } = useDocusaurusContext();
   const history = useHistory();
 
@@ -25,7 +25,7 @@ function CheckoutClient(): JSX.Element {
       typeof window !== "undefined"
         ? new URLSearchParams(window.location.search)
         : null,
-    []
+    [],
   );
 
   const priceId = urlParams?.get("id");
@@ -61,7 +61,10 @@ function CheckoutClient(): JSX.Element {
             priceId: data.data.items?.[0]?.price_id || "",
             amount: data.data.totals?.total,
           };
-          sessionStorage.setItem("paddleTransaction", JSON.stringify(transactionData));
+          sessionStorage.setItem(
+            "paddleTransaction",
+            JSON.stringify(transactionData),
+          );
           history.push(`${basePath}/checkout/success`);
           break;
 
@@ -109,10 +112,14 @@ function CheckoutClient(): JSX.Element {
       const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
       if (secretKey) {
         encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
-          history.push(`${basePath}/orders?email=${encodeURIComponent(encryptedEmail)}`);
+          history.push(
+            `${basePath}/orders?email=${encodeURIComponent(encryptedEmail)}`,
+          );
         });
       } else {
-        history.push(`${basePath}/orders?email=${encodeURIComponent(submittedEmail)}`);
+        history.push(
+          `${basePath}/orders?email=${encodeURIComponent(submittedEmail)}`,
+        );
       }
       return;
     }
@@ -142,22 +149,40 @@ function CheckoutClient(): JSX.Element {
       paddle.Checkout.open(options);
       paddle.Spinner.show();
     }
-  }, [query.data, paddle, priceId, quantity, discountCode, submittedEmail, countryCode, history, basePath]);
+  }, [
+    query.data,
+    paddle,
+    priceId,
+    quantity,
+    discountCode,
+    submittedEmail,
+    countryCode,
+    history,
+    basePath,
+  ]);
 
   return (
     <main className="flex flex-col items-center px-4 py-8 gap-10">
       <div className="checkout-container"></div>
 
       {!hasSubmitted ? (
-        <form onSubmit={handleEmailSubmit} className="flex flex-col items-center gap-4 w-full max-w-md">
+        <form
+          onSubmit={handleEmailSubmit}
+          className="flex flex-col items-center gap-4 w-full max-w-md"
+        >
           <h1 className="text-2xl font-bold text-[var(--color-base-content)]">
-            <Translate id="checkout.email.title">Enter your email to continue</Translate>
+            <Translate id="checkout.email.title">
+              Enter your email to continue
+            </Translate>
           </h1>
           <input
             type="email"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
-            placeholder={translate({ id: "checkout.email.placeholder", message: "your@email.com" })}
+            placeholder={translate({
+              id: "checkout.email.placeholder",
+              message: "your@email.com",
+            })}
             className="w-full px-5 py-3 text-lg border-2 border-[var(--color-base-300)] rounded-lg focus:outline-none focus:border-[var(--color-primary)] bg-[var(--color-base-100)] text-[var(--color-base-content)] placeholder:text-[var(--semantic-text-muted)] transition-colors"
             required
           />
@@ -170,23 +195,31 @@ function CheckoutClient(): JSX.Element {
           {query.isError ? (
             <div className="px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
               <p className="text-lg font-medium text-[var(--color-error)]">
-                <Translate id="checkout.error.loadingOrders">Error loading your orders.</Translate>
+                <Translate id="checkout.error.loadingOrders">
+                  Error loading your orders.
+                </Translate>
               </p>
             </div>
-          ) : (query.isLoading || !query.data) && (
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[var(--color-primary)]">
-                <Translate id="checkout.loading.preparing">Preparing checkout...</Translate>
-              </p>
-            </div>
+          ) : (
+            (query.isLoading || !query.data) && (
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
+                <p className="text-xl font-medium text-[var(--color-primary)]">
+                  <Translate id="checkout.loading.preparing">
+                    Preparing checkout...
+                  </Translate>
+                </p>
+              </div>
+            )
           )}
 
           {query.data && query.data.orders?.length > 0 && (
             <div className="flex flex-col items-center gap-4">
               <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
               <p className="text-xl font-medium text-[var(--color-primary)]">
-                <Translate id="checkout.loading.redirecting">Redirecting to your orders...</Translate>
+                <Translate id="checkout.loading.redirecting">
+                  Redirecting to your orders...
+                </Translate>
               </p>
             </div>
           )}
@@ -196,12 +229,10 @@ function CheckoutClient(): JSX.Element {
   );
 }
 
-export default function CheckoutPage(): JSX.Element {
+export default function CheckoutPage(): ReactNode {
   return (
     <Layout title={translate({ id: "checkout.title", message: "Checkout" })}>
-      <BrowserOnly fallback={<div>{translate({ id: "checkout.loading", message: "Loading checkout..." })}</div>}>
-        {() => <CheckoutClient />}
-      </BrowserOnly>
+      <CheckoutClient />
     </Layout>
   );
 }
