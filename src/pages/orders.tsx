@@ -85,9 +85,14 @@ function OrdersClient(): ReactNode {
           window.history.replaceState({}, "", newUrl);
         });
       }
-      // 没有 secretKey 时不更新 URL，避免明文暴露 email
     }
   }, [query.data, submittedEmail, fromCheckout]);
+
+  useEffect(() => {
+    if (userEmail !== "" && !hasSubmitted) return;
+
+    window.history.replaceState({}, "", window.location.pathname);
+  }, [userEmail, hasSubmitted]);
 
   const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -220,7 +225,7 @@ function OrdersClient(): ReactNode {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                     {/* Customer Info */}
                     {query.data.customer && (
-                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)] dark:border-[var(--ifm-color-gray-700)]">
                         <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
                           <Translate id="orders.customer.title">
                             Customer
@@ -251,7 +256,7 @@ function OrdersClient(): ReactNode {
 
                     {/* License Info */}
                     {query.data.license && (
-                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)] dark:border-[var(--ifm-color-gray-700)]">
                         <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
                           <Translate id="orders.license.title">
                             License
@@ -298,7 +303,7 @@ function OrdersClient(): ReactNode {
                     {query.data.orders.map((order: Order) => (
                       <div
                         key={order.id}
-                        className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm hover:shadow-md transition-shadow dark:bg-[var(--ifm-background-surface-color)]"
+                        className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm hover:shadow-md transition-shadow dark:bg-[var(--ifm-background-surface-color)] dark:border-[var(--ifm-color-gray-700)]"
                       >
                         <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
                           <Translate id="orders.order.title">Order</Translate>
@@ -373,7 +378,7 @@ function OrdersClient(): ReactNode {
 
                     {/* Subscription Info */}
                     {query.data.subscription && (
-                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]">
+                      <div className="px-6 py-5 bg-[var(--ifm-background-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-xl shadow-sm dark:bg-[var(--ifm-background-surface-color)]  dark:border-[var(--ifm-color-gray-700)]">
                         <h3 className="text-lg font-bold text-[var(--ifm-font-color-base)] mb-4">
                           <Translate id="orders.subscription.title">
                             Subscription
