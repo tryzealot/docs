@@ -193,12 +193,20 @@ function CheckoutClient(): ReactNode {
       ) : (
         <>
           {query.isError ? (
-            <div className="px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
+            <div className="flex flex-col items-center gap-4 px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
               <p className="text-lg font-medium text-[var(--color-error)]">
                 <Translate id="checkout.error.loadingOrders">
-                  Error loading your orders.
+                  Error loading your checkout.
                 </Translate>
               </p>
+              <PrimaryButton
+                onClick={() => {
+                  setHasSubmitted(false);
+                  setSubmittedEmail("");
+                }}
+              >
+                <Translate id="checkout.error.goBack">Go Back</Translate>
+              </PrimaryButton>
             </div>
           ) : (
             (query.isLoading || !query.data) && (
