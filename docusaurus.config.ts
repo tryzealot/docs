@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -34,7 +34,6 @@ function getNextVersionName() {
   return "Next";
 }
 
-/** @type {import('@docusaurus/types').Config} */
 const config: Config = {
   title: "Zealot",
   tagline:
@@ -111,7 +110,7 @@ const config: Config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
+    {
       navbar: {
         title: "Zealot",
         logo: {
@@ -255,7 +254,7 @@ const config: Config = {
       //   content: `⭐️ If you like Zealot, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/tryzealot/zealot">GitHub</a> and vote on <a target="_blank" rel="noopener noreferrer" href="https://www.producthunt.com/products/zealot">ProductHunt</a>`,
       //   isCloseable: true
       // },
-    }),
+    },
 
   plugins: [
     ["./src/plugins/tailwind-config.ts", {}],
@@ -282,4 +281,4 @@ const config: Config = {
   },
 };
 
-module.exports = config;
+export default config;
