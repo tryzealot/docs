@@ -8,7 +8,11 @@ import { PriceTitle } from "@site/src/components/Pricing/PriceTitle";
 import { PriceAmount } from "@site/src/components/Pricing/PriceAmount";
 import { FeaturesList } from "@site/src/components/Pricing/FeaturesList";
 import { PricingButton } from "@site/src/components/Pricing/PriceButton";
-import type { PaddleInstance, PricingTierItem, PaddleCheckoutItem } from "@site/src/types";
+import type {
+  PaddleInstance,
+  PricingTierItem,
+  PaddleCheckoutItem,
+} from "@site/src/types";
 
 interface PricingCardProps {
   tier: PricingTierItem;
@@ -17,7 +21,11 @@ interface PricingCardProps {
   paddle?: PaddleInstance;
 }
 
-function PricingCard({ tier, paddlePrice, loading }: PricingCardProps): JSX.Element {
+function PricingCard({
+  tier,
+  paddlePrice,
+  loading,
+}: PricingCardProps): JSX.Element {
   return (
     <div
       className={`flex flex-col min-h-80 w-full md:max-w-md lg:flex-1 rounded-2xl border-2 border-gray-300 bg-white p-10 transition-all duration-200 dark:border-gray-600 dark:bg-gray-900 ${
@@ -39,7 +47,6 @@ interface PricingProps {
 }
 
 export function Pricing({ country }: PricingProps): JSX.Element {
-  console.log("Rendering Pricing component", country);
   const [paddle, setPaddle] = useState<PaddleInstance | undefined>(undefined);
   const { prices, loading } = usePaddlePrices(paddle, country || []);
 
@@ -51,7 +58,6 @@ export function Pricing({ country }: PricingProps): JSX.Element {
       }).then((paddle) => {
         if (paddle) {
           setPaddle(paddle as unknown as PaddleInstance);
-          console.log("Paddle initialized");
         }
       });
     }
@@ -62,9 +68,10 @@ export function Pricing({ country }: PricingProps): JSX.Element {
       <div className="w-full max-w-6xl mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-8">
           {PricingTier.map((tier) => {
-            const paddlePrice = tier.priceId && prices[tier.priceId]
-              ? prices[tier.priceId].replace(/\.00$/, "")
-              : null;
+            const paddlePrice =
+              tier.priceId && prices[tier.priceId]
+                ? prices[tier.priceId].replace(/\.00$/, "")
+                : null;
             return (
               <div
                 className="flex flex-col min-h-80 w-full md:max-w-md lg:flex-1"
