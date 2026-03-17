@@ -177,7 +177,7 @@ function SuccessClient(): ReactNode {
                     </Translate>
                   </span>
                   <span className="text-sm text-[var(--color-base-content)]">
-                    {license.purchase?.id}
+                    {license.order?.id}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -192,22 +192,24 @@ function SuccessClient(): ReactNode {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-[var(--semantic-text-muted)]">
-                    <Translate id="checkout.success.order.plan">
-                      Plan:
+                    <Translate id="checkout.success.order.amount">
+                      Amount:
                     </Translate>
                   </span>
                   <span className="text-sm text-[var(--color-base-content)]">
-                    {license.purchase?.planType}
+                    {license.order
+                      ? `$${(license.order.totalAmount / 100).toFixed(2)} ${license.order.currency}`
+                      : "-"}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-sm text-[var(--semantic-text-muted)]">
-                    <Translate id="checkout.success.order.type">
-                      Type:
+                    <Translate id="checkout.success.order.status">
+                      Status:
                     </Translate>
                   </span>
                   <span className="text-sm text-[var(--color-base-content)]">
-                    {license.purchase?.productType}
+                    {license.license?.active ? "Active" : "Inactive"}
                   </span>
                 </div>
                 <div className="flex justify-between">

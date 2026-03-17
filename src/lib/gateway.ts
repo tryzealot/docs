@@ -25,14 +25,12 @@ class Gateway implements GatewayClient {
       });
 
       if (!response.ok) {
-        if (response.status === 404) {
-          return { orders: [] };
-        }
-
         const errorText = await response.text();
-        throw new Error(
+        const error = new Error(
           `Gateway API request failed: ${response.status} ${response.statusText} - ${errorText}`
         );
+        (error as any).status = response.status;
+        throw error;
       }
 
       return await response.json() as OrdersResponse;
