@@ -154,7 +154,7 @@ function OrdersClient(): ReactNode {
             </div>
           ) : (
             (query.isLoading || !query.data) && (
-              <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-4 animate-pulse">
                 <div className="w-12 h-12 border-4 border-[var(--ifm-color-primary)] border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-xl font-medium text-[var(--ifm-color-primary)]">
                   <Translate id="orders.loading.text">
