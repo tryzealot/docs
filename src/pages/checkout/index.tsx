@@ -16,6 +16,11 @@ import type {
   PaddleCheckoutOpenOptions,
 } from "@site/src/types";
 
+// 判断错误是否是 404
+function isNotFoundError(error: Error | null): boolean {
+  return (error as any)?.status === 404;
+}
+
 function CheckoutClient(): ReactNode {
   const { i18n } = useDocusaurusContext();
   const history = useHistory();
@@ -79,7 +84,7 @@ function CheckoutClient(): ReactNode {
           break;
 
         case "checkout.closed":
-          console.log("Checkout closed");
+          console.log("Checkout closed or cancelled", data);
           history.push(`${basePath}/pricing`);
           break;
 
@@ -123,13 +128,14 @@ function CheckoutClient(): ReactNode {
       }
       return;
     }
+    console.log("Error", query.error);
 
-    if (
-      query.data &&
-      query.data.orders.length === 0 &&
-      paddle?.Initialized &&
-      priceId
-    ) {
+    // 没有订单或 404 错误时，允许继续结账；其他错误不打开 checkout
+    const shouldOpenCheckout =
+      (query.data && query.data.orders.length === 0) ||
+      (query.isError && isNotFoundError(query.error));
+
+    if (shouldOpenCheckout && paddle?.Initialized && priceId) {
       const name = submittedEmail.split("@")[0] || "";
       const options: PaddleCheckoutOpenOptions = {
         customer: { email: submittedEmail, name, address: { countryCode } },
@@ -151,6 +157,7 @@ function CheckoutClient(): ReactNode {
     }
   }, [
     query.data,
+    query.isError,
     paddle,
     priceId,
     quantity,
@@ -192,7 +199,7 @@ function CheckoutClient(): ReactNode {
         </form>
       ) : (
         <>
-          {query.isError ? (
+          {query.isError && !isNotFoundError(query.error) ? (
             <div className="flex flex-col items-center gap-4 px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
               <p className="text-lg font-medium text-[var(--color-error)]">
                 <Translate id="checkout.error.loadingOrders">
@@ -209,7 +216,9 @@ function CheckoutClient(): ReactNode {
               </PrimaryButton>
             </div>
           ) : (
-            (query.isLoading || !query.data) && (
+            (query.isLoading ||
+              !query.data ||
+              (query.isError && isNotFoundError(query.error))) && (
               <div className="flex flex-col items-center gap-4">
                 <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-xl font-medium text-[var(--color-primary)]">

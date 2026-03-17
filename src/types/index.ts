@@ -49,22 +49,38 @@ export interface LicenseRequest {
 }
 
 export interface LicenseData {
+  id: number;
   key: string;
   expiredAt: string;
+  active: boolean;
 }
 
-export interface PurchaseData {
+export interface OrderData {
   id: string;
-  planType: string;
-  productType: string;
+  totalAmount: number;
+  currency: string;
+  status: string;
+}
+
+export interface SubscriptionData {
+  id: string;
+  status: string;
+  currentPeriodEnd: string;
+}
+
+export interface LicenseCustomer {
+  id: string;
+  email: string;
+  paddleCustomerId: string;
 }
 
 export interface LicenseResponse {
   success: boolean;
   message?: string;
   license?: LicenseData;
-  purchase?: PurchaseData;
-  customer?: Customer;
+  order?: OrderData;
+  subscription?: SubscriptionData;
+  customer?: LicenseCustomer;
 }
 
 // ===== Paddle 相关类型 =====

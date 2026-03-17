@@ -34,5 +34,12 @@ export const useCustomerOrders = (
       return gateway.orders(encryptedEmail);
     },
     enabled: !!email && !!gateway && enabled,
+    retry: (failureCount, error) => {
+      // 404 错误不重试，其他错误重试 2 次
+      if ((error as any)?.status === 404) {
+        return false;
+      }
+      return failureCount < 2;
+    },
   });
 };
