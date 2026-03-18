@@ -205,7 +205,11 @@ function OrdersClient(): ReactNode {
                       </Translate>
                     </OutlineButton>
                     <SecondaryButton
-                      onClick={() => setHasSubmitted(false)}
+                      onClick={() => {
+                        setUserEmail("");
+                        setHasSubmitted(false);
+                        window.history.replaceState({}, "", window.location.pathname);
+                      }}
                       className="flex-1"
                     >
                       <Translate id="orders.searchAnother">
@@ -454,6 +458,7 @@ function OrdersClient(): ReactNode {
                       onClick={() => {
                         setUserEmail("");
                         setHasSubmitted(false);
+                        window.history.replaceState({}, "", window.location.pathname);
                       }}
                       className="flex-1"
                     >
