@@ -1,6 +1,11 @@
-import type { GatewayClient, OrdersResponse, LicenseRequest, LicenseResponse } from "@site/src/types";
+import type {
+  GatewayClient,
+  OrdersResponse,
+  LicenseRequest,
+  LicenseResponse,
+} from "@site/src/types";
 
-class Gateway implements GatewayClient {
+export default class Gateway implements GatewayClient {
   private baseURL: string;
 
   constructor(baseURL: string) {
@@ -16,28 +21,14 @@ class Gateway implements GatewayClient {
     }
 
     const url = `${this.baseURL}/payments/orders?email=${encodeURIComponent(
-      email
+      email,
     )}`;
 
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-      });
+    const response = await fetch(url, {
+      method: "GET",
+    });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        const error = new Error(
-          `Gateway API request failed: ${response.status} ${response.statusText} - ${errorText}`
-        );
-        (error as any).status = response.status;
-        throw error;
-      }
-
-      return await response.json() as OrdersResponse;
-    } catch (error) {
-      console.error("Failed to fetch orders from gateway:", error);
-      throw error;
-    }
+    return this.handleResponse<OrdersResponse>(response);
   }
 
   async generateLicense(data: LicenseRequest): Promise<LicenseResponse> {
@@ -47,32 +38,31 @@ class Gateway implements GatewayClient {
 
     const url = `${this.baseURL}/payments/license`;
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(
-          `Failed to generate license: ${response.status} ${response.statusText} - ${errorText}`
-        );
-      }
+    return this.handleResponse<LicenseResponse>(response);
+  }
 
-      return await response.json() as LicenseResponse;
-    } catch (error) {
-      console.error("Failed to generate license:", error);
+  async handleResponse<T>(response: Response): Promise<T> {
+    const body = await response.json();
+    console.log("Gateway response:", body);
+    if (!response.ok) {
+      const error = new Error(body.message || `Request failed with status ${response.status}`);
+      (error as any).status = response.status;
+      (error as any).data = body;
       throw error;
     }
+
+    return body;
   }
 }
 
 export function initGateway(baseURL: string): GatewayClient {
   return new Gateway(baseURL);
 }
-
-export default Gateway;

@@ -140,18 +140,54 @@ function OrdersClient(): ReactNode {
       ) : (
         <>
           {query.isError ? (
-            <div className="flex flex-col items-center gap-4 w-full max-w-md">
-              <div className="px-6 py-4 bg-[rgba(var(--ifm-color-danger-rgb),0.15)] border-2 border-[var(--ifm-color-danger)] rounded-lg w-full">
-                <p className="text-lg font-medium text-[var(--ifm-color-danger)]">
-                  <Translate id="orders.error.loading">
-                    Error loading your orders.
-                  </Translate>
-                </p>
+            (query.error as any)?.status === 404 ||
+            (query.error as Error)?.message?.includes("404") ? (
+              <div className="flex flex-col items-center gap-4 w-full">
+                <div className="px-6 py-8 bg-[var(--ifm-background-surface-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-lg w-full text-center">
+                  <p className="m-0 text-lg text-[var(--ifm-color-gray-600)]">
+                    <Translate id="orders.noOrders">
+                      No orders found for this email.
+                    </Translate>
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 w-full">
+                  <OutlineButton onClick={handleBack} className="flex-1">
+                    <Translate id="orders.backToPricing">
+                      Back to Pricing
+                    </Translate>
+                  </OutlineButton>
+                  <SecondaryButton
+                    onClick={() => {
+                      setUserEmail("");
+                      setHasSubmitted(false);
+                      window.history.replaceState(
+                        {},
+                        "",
+                        window.location.pathname,
+                      );
+                    }}
+                    className="flex-1"
+                  >
+                    <Translate id="orders.searchAnother">
+                      Search Another Email
+                    </Translate>
+                  </SecondaryButton>
+                </div>
               </div>
-              <SecondaryButton onClick={() => setHasSubmitted(false)}>
-                <Translate id="orders.error.tryAgain">Try Again</Translate>
-              </SecondaryButton>
-            </div>
+            ) : (
+              <div className="flex flex-col items-center gap-4 w-full max-w-md">
+                <div className="px-6 py-4 bg-[rgba(var(--ifm-color-danger-rgb),0.15)] border-2 border-[var(--ifm-color-danger)] rounded-lg w-full">
+                  <p className="m-0 text-lg font-medium text-[var(--ifm-color-danger)]">
+                    <Translate id="orders.error.loading">
+                      Error loading your orders.
+                    </Translate>
+                  </p>
+                </div>
+                <SecondaryButton onClick={() => setHasSubmitted(false)}>
+                  <Translate id="orders.error.tryAgain">Try Again</Translate>
+                </SecondaryButton>
+              </div>
+            )
           ) : (
             (query.isLoading || !query.data) && (
               <div className="flex flex-col items-center gap-4 animate-pulse">
@@ -192,7 +228,7 @@ function OrdersClient(): ReactNode {
               {query.data.orders?.length === 0 ? (
                 <div className="flex flex-col items-center gap-4 w-full">
                   <div className="px-6 py-8 bg-[var(--ifm-background-surface-color)] border-2 border-[var(--ifm-color-gray-300)] rounded-lg w-full text-center">
-                    <p className="text-lg text-[var(--ifm-color-gray-600)]">
+                    <p className="m-0 text-lg text-[var(--ifm-color-gray-600)]">
                       <Translate id="orders.noOrders">
                         No orders found for this email.
                       </Translate>
@@ -208,7 +244,11 @@ function OrdersClient(): ReactNode {
                       onClick={() => {
                         setUserEmail("");
                         setHasSubmitted(false);
-                        window.history.replaceState({}, "", window.location.pathname);
+                        window.history.replaceState(
+                          {},
+                          "",
+                          window.location.pathname,
+                        );
                       }}
                       className="flex-1"
                     >
@@ -458,7 +498,11 @@ function OrdersClient(): ReactNode {
                       onClick={() => {
                         setUserEmail("");
                         setHasSubmitted(false);
-                        window.history.replaceState({}, "", window.location.pathname);
+                        window.history.replaceState(
+                          {},
+                          "",
+                          window.location.pathname,
+                        );
                       }}
                       className="flex-1"
                     >
