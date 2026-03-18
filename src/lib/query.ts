@@ -2,10 +2,11 @@ import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { encrypt } from "@site/src/lib/crypto";
 import type { GatewayClient, OrdersResponse } from "@site/src/types";
 
-const secretKey = process.env.ZEALOT_ENCRYPTION_KEY || 'default-key-for-ssr-build';
+const secretKey =
+  process.env.ZEALOT_ENCRYPTION_KEY || "default-key-for-ssr-build";
 
 function getSecretKey(): string {
-  if (typeof window !== 'undefined' && secretKey === 'default-key-for-ssr-build') {
+  if (secretKey === "default-key-for-ssr-build") {
     throw new Error("ZEALOT_ENCRYPTION_KEY is not defined");
   }
   return secretKey;
@@ -21,7 +22,7 @@ function getSecretKey(): string {
 export const useCustomerOrders = (
   gateway: GatewayClient | undefined,
   email: string,
-  enabled = false
+  enabled = false,
 ): UseQueryResult<OrdersResponse, Error> => {
   return useQuery({
     queryKey: ["customerOrders", email],
