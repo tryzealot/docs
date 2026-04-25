@@ -1,5 +1,15 @@
 # 变更日志
 
+## 6.2.1 (2026-04-25)
+
+**注意**：所有用户必须立即升级到 `6.2.1` 或更高版本。之前的版本存在高危 GraphQL 安全问题，影响认证与 Pundit 授权，包括未携带 Bearer Token 也可执行查询、`User` 敏感字段泄露，以及缺失资源授权检查。
+
+详细[代码变更记录][6.2.1]。
+
+#### 修复
+
+- `API` 修复高危 GraphQL 认证与 Pundit 授权漏洞。现在 GraphQL 查询必须携带有效的 Bearer 认证，`User` 的敏感字段不再暴露给未授权用户，同时对查询资源强制执行授权校验。
+
 ## 6.2.0 (2025-12-18)
 
 详细[代码变更记录][6.2.0]。
@@ -850,6 +860,7 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
+[6.2.1]: https://github.com/tryzealot/zealot/compare/6.2.0...6.2.1
 [6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
