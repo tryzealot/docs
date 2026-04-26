@@ -1,5 +1,19 @@
 # Changelog
 
+:::danger
+
+All users must upgrade to `6.2.1` or later immediately. Previous versions contain high-severity GraphQL security issues affecting authentication and Pundit authorization, including unauthenticated query execution, sensitive `User` fields exposure, and missing resource authorization checks.
+
+:::
+
+## 6.2.1 (2026-04-25)
+
+Full [commit changes][6.2.1].
+
+#### Fixed
+
+- `API` Fixed high-severity GraphQL authentication and Pundit authorization vulnerabilities. GraphQL queries now require valid Bearer authentication, sensitive `User` fields are no longer exposed to unauthorized users, and authorization checks are enforced for queried resources.
+
 ## 6.2.0 (2025-12-18)
 
 Full [commit changes][6.2.0].
@@ -818,6 +832,7 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
+[6.2.1]: https://github.com/tryzealot/zealot/compare/6.2.0...6.2.1
 [6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
 [6.0.4]: https://github.com/tryzealot/zealot/compare/6.0.3...6.0.4
