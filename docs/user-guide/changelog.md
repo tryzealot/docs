@@ -1,5 +1,11 @@
 # Changelog
 
+:::danger
+
+All users must upgrade to `6.2.1` or later immediately. Previous versions contain high-severity GraphQL security issues affecting authentication and Pundit authorization, including unauthenticated query execution, sensitive `User` fields exposure, and missing resource authorization checks.
+
+:::
+
 ## Unreleased
 
 :::tip
@@ -11,8 +17,6 @@ The following list of changes is the list that has not yet been released, code c
 No commit
 
 ## 6.2.1 (2026-04-25)
-
-**NOTICE**: All users must upgrade to `6.2.1` or later immediately. Previous versions contain high-severity GraphQL security issues affecting authentication and Pundit authorization, including unauthenticated query execution, sensitive `User` fields exposure, and missing resource authorization checks.
 
 Full [commit changes][6.2.1].
 
