@@ -1,34 +1,33 @@
-module.exports = [
+import type { SidebarItemConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebars: SidebarItemConfig[] = [
   {
     label: "Getting Started",
     type: "doc",
-    id: 'developer-guide/index',
+    id: "developer-guide/index",
   },
   {
     collapsible: false,
     label: "SDKs",
     type: "category",
     link: {
-      type: 'generated-index',
+      type: "generated-index",
     },
-    items: [
-      "developer-guide/sdk/ios",
-      "developer-guide/sdk/android"
-    ],
+    items: ["developer-guide/sdk/ios", "developer-guide/sdk/android"],
   },
   {
     collapsible: false,
     label: "fastlane plugins",
     type: "category",
     link: {
-      type: 'doc',
-      id: 'developer-guide/fastlane',
+      type: "doc",
+      id: "developer-guide/fastlane",
     },
     items: [
       "developer-guide/fastlane/zealot",
       "developer-guide/fastlane/zealot_version_check",
       "developer-guide/fastlane/zealot_debug_file",
-      "developer-guide/fastlane/zealot_sync_devices"
+      "developer-guide/fastlane/zealot_sync_devices",
     ],
   },
   {
@@ -50,7 +49,7 @@ module.exports = [
         label: "Local Development",
         type: "category",
         link: {
-          type: 'generated-index',
+          type: "generated-index",
         },
         items: [
           "developer-guide/local-development/devcontainer",
@@ -58,5 +57,7 @@ module.exports = [
         ],
       },
     ],
-  }
+  },
 ];
+
+export default sidebars;

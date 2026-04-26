@@ -1,0 +1,46 @@
+import { useQuery, type UseQueryResult } from "@tanstack/react-query";
+import { encrypt } from "@site/src/lib/crypto";
+import type { GatewayClient, OrdersResponse } from "@site/src/types";
+
+const secretKey =
+  process.env.ZEALOT_ENCRYPTION_KEY || "default-key-for-ssr-build";
+
+function getSecretKey(): string {
+  if (secretKey === "default-key-for-ssr-build") {
+    throw new Error("ZEALOT_ENCRYPTION_KEY is not defined");
+  }
+  return secretKey;
+}
+
+/**
+ * Get customer orders
+ * @param gateway - Gateway instance
+ * @param email - Customer email
+ * @param enabled - Whether to enable query
+ * @returns React Query result
+ */
+export const useCustomerOrders = (
+  gateway: GatewayClient | undefined,
+  email: string,
+  enabled = false,
+): UseQueryResult<OrdersResponse, Error> => {
+  return useQuery({
+    queryKey: ["customerOrders", email],
+    queryFn: async () => {
+      if (!gateway) {
+        throw new Error("Gateway is not initialized");
+      }
+      // Encrypt email
+      const encryptedEmail = await encrypt(email, getSecretKey());
+      return gateway.orders(encryptedEmail);
+    },
+    enabled: !!email && !!gateway && enabled,
+    retry: (failureCount, error) => {
+      // 404 错误不重试，其他错误重试 2 次
+      if ((error as any)?.status === 404) {
+        return false;
+      }
+      return failureCount < 2;
+    },
+  });
+};
