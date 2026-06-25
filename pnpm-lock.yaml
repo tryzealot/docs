@@ -43,8 +43,8 @@ importers:
         specifier: ^7.18.6
         version: 7.18.6
       '@crowdin/cli':
-        specifier: ^4.14.0
-        version: 4.14.0
+        specifier: ^4.14.1
+        version: 4.14.1
       '@docusaurus/module-type-aliases':
         specifier: ^3.9.2
         version: 3.9.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -709,8 +709,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@crowdin/cli@4.14.0':
-    resolution: {integrity: sha512-sN3puFcyPWbG9kffuOBqkrcNv/retP6ai12DcY6Qz934JUVaz4xQOipz6XsxKYCctgJQRkyGDDSgwh+vYD897A==}
+  '@crowdin/cli@4.14.1':
+    resolution: {integrity: sha512-kPhXW4Cw8feITgN1ymH9UPScKoFj5IwIL3PbKSeF/UhQW9jjVsjlGVO5WM0QYy5kZYJWQ+4e81ciXFr5vyflqQ==}
     hasBin: true
 
   '@csstools/cascade-layer-name-parser@2.0.5':
@@ -4926,8 +4926,8 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  tar@7.5.9:
-    resolution: {integrity: sha512-BTLcK0xsDh2+PUe9F6c2TlRp4zOOBMTkoQHQIWSIzI0R7KG46uEwq4OPk2W7bZcprBMsuaeFsqwYr7pjh6CuHg==}
+  tar@7.5.11:
+    resolution: {integrity: sha512-ChjMH33/KetonMTAtpYdgUFr0tbz69Fp2v7zWxQfYZX4g5ZN2nOBXm1R2xyA+lMIKrLKIoKAwFj93jE/avX9cQ==}
     engines: {node: '>=18'}
 
   terser-webpack-plugin@5.3.14:
@@ -5318,8 +5318,8 @@ packages:
     resolution: {integrity: sha512-7dSzzRQ++CKnNI/krKnYRV7JKKPUXMEh61soaHKg9mrWEhzFWhFnxPxGl+69cD1Ou63C13NUPCnmIcrvqCuM6w==}
     engines: {node: '>=12'}
 
-  yauzl@3.2.0:
-    resolution: {integrity: sha512-Ow9nuGZE+qp1u4JIPvg+uCiUr7xGQWdff7JQSk5VGYTAZMDe2q8lxJ10ygv10qmSj031Ty/6FNJpLO4o1Sgc+w==}
+  yauzl@3.2.1:
+    resolution: {integrity: sha512-k1isifdbpNSFEHFJ1ZY4YDewv0IH9FR61lDetaRMD3j2ae3bIXGV+7c+LHCqtQGofSd8PIyV4X6+dHMAnSr60A==}
     engines: {node: '>=12'}
 
   yocto-queue@1.2.1:
@@ -6195,13 +6195,13 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@crowdin/cli@4.14.0':
+  '@crowdin/cli@4.14.1':
     dependencies:
       command-exists-promise: 2.0.2
       node-fetch: 2.7.0
       shelljs: 0.10.0
-      tar: 7.5.9
-      yauzl: 3.2.0
+      tar: 7.5.11
+      yauzl: 3.2.1
     transitivePeerDependencies:
       - encoding
 
@@ -7802,7 +7802,7 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.2.14
+      '@types/react': 19.1.12
 
   '@types/react@19.1.12':
     dependencies:
@@ -11799,7 +11799,7 @@ snapshots:
 
   tapable@2.2.1: {}
 
-  tar@7.5.9:
+  tar@7.5.11:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
@@ -12231,7 +12231,7 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 21.1.1
 
-  yauzl@3.2.0:
+  yauzl@3.2.1:
     dependencies:
       buffer-crc32: 0.2.13
       pend: 1.2.0
