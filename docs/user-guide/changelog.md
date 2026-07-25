@@ -16,6 +16,14 @@ The following list of changes is the list that has not yet been released, code c
 
 No commit
 
+## 6.2.2 (2026-07-25)
+
+Full [commit changes][6.2.2].
+
+#### Fixed
+
+- `Docker` Fixed Graphql file autoloader Zeitwerk cause exception.
+
 ## 6.2.1 (2026-04-25)
 
 Full [commit changes][6.2.1].
@@ -827,7 +835,8 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
-[Unreleased]: https://github.com/tryzealot/zealot/compare/6.2.1...HEAD
+[Unreleased]: https://github.com/tryzealot/zealot/compare/6.2.2...HEAD
+[6.2.2]: https://github.com/tryzealot/zealot/compare/6.2.1...6.2.2
 [6.2.1]: https://github.com/tryzealot/zealot/compare/6.2.0...6.2.1
 [6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0

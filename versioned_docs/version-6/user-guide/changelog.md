@@ -6,6 +6,14 @@ All users must upgrade to `6.2.1` or later immediately. Previous versions contai
 
 :::
 
+## 6.2.2 (2026-07-25)
+
+Full [commit changes][6.2.2].
+
+#### Fixed
+
+- `Docker` Fixed Graphql file autoloader Zeitwerk cause exception.
+
 ## 6.2.1 (2026-04-25)
 
 Full [commit changes][6.2.1].
@@ -832,6 +840,7 @@ For many years, it was developed and operated internally within the company and 
 It used to undertake many functions, but now it has been separated to focus on providing
 application hosting and distribution services
 
+[6.2.2]: https://github.com/tryzealot/zealot/compare/6.2.1...6.2.2
 [6.2.1]: https://github.com/tryzealot/zealot/compare/6.2.0...6.2.1
 [6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
