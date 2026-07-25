@@ -16,6 +16,14 @@
 
 暂无
 
+## 6.2.2 (2026-07-25)
+
+详细[代码变更记录][6.2.2]。
+
+#### 修复
+
+- `Docker` Graphql 自定义文件和类名不匹配造成 Rails 自动加载异常。
+
 ## 6.2.1 (2026-04-25)
 
 详细[代码变更记录][6.2.1]。
@@ -1570,7 +1578,8 @@
 
 之前多年一直是公司内部开发和运营并没有开源，曾经承担过很多的功能到现在脱离出来专注提供应用托管和分发的服务。
 
-[未发布]: https://github.com/tryzealot/zealot/compare/6.2.1...HEAD
+[未发布]: https://github.com/tryzealot/zealot/compare/6.2.2...HEAD
+[6.2.2]: https://github.com/tryzealot/zealot/compare/6.2.1...6.2.2
 [6.2.1]: https://github.com/tryzealot/zealot/compare/6.2.0...6.2.1
 [6.2.0]: https://github.com/tryzealot/zealot/compare/6.1.0...6.2.0
 [6.1.0]: https://github.com/tryzealot/zealot/compare/6.0.4...6.1.0
