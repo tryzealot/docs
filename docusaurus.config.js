@@ -257,7 +257,7 @@ const config = {
     v4: {
       removeLegacyPostBuildHeadAttribute: true,
     },
-    experimental_faster: {
+    faster: {
       ssgWorkerThreads: true,
     },
   },
