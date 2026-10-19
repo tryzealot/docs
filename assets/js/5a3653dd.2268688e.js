@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkzealot_new_docs=self.webpackChunkzealot_new_docs||[]).push([[6832],{3939:e=>{e.exports=JSON.parse('{"title":"Apps","slug":"/category/apps","permalink":"/docs/category/apps","navigation":{"previous":{"title":"Dashboard","permalink":"/docs/user-guide/dashboard"},"next":{"title":"Create an App","permalink":"/docs/user-guide/apps/create"}}}')}}]);
