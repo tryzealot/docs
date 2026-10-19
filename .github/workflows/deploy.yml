@@ -20,6 +20,11 @@ jobs:
         run: pnpm install
 
       - name: Build website
+        env:
+          ENVIRONMENT: production
+          ZEALOT_GATEWAY_URL: ${{ secrets.ZEALOT_GATEWAY_URL }}
+          ZEALOT_ENCRYPTION_KEY: ${{ secrets.ZEALOT_ENCRYPTION_KEY }}
+          ZEALOT_ENCRYPTION_SALT: ${{ secrets.ZEALOT_ENCRYPTION_SALT }}
         run: pnpm build
 
       - name: Update CNAME
