@@ -36,8 +36,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       redocusaurus:
-        specifier: ^2.5.0
-        version: 2.5.0(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(@docusaurus/utils@3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(mobx@6.13.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(supports-color@8.1.1)(webpack@5.99.8)
+        specifier: ^2.5.2
+        version: 2.5.2(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(@docusaurus/utils@3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(mobx@6.13.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(supports-color@8.1.1)(webpack@5.99.8)
     devDependencies:
       '@babel/helper-explode-assignable-expression':
         specifier: ^7.18.6
@@ -2394,8 +2394,8 @@ packages:
     peerDependencies:
       '@docusaurus/utils': ^3.6.0
 
-  docusaurus-theme-redoc@2.5.0:
-    resolution: {integrity: sha512-ykLmnnvE20Im3eABlIpUnXnT2gSHVAjgyy2fU2G8yecu7zqIE+G/SiBpBg/hrWMUycL31a8VSG7Ehkf3pg1u+A==}
+  docusaurus-theme-redoc@2.5.1:
+    resolution: {integrity: sha512-BGbDv748peVQwttDQbhGCnA5eXtcBa76WP+nmc7Vz0bwEJv5Dh9et/WHJBRlFu97ScMS38+WpBnexCvYv3HYww==}
     engines: {node: '>=18'}
     peerDependencies:
       '@docusaurus/theme-common': ^3.6.0
@@ -3292,6 +3292,9 @@ packages:
 
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+
+  lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -4470,8 +4473,8 @@ packages:
       react-dom: ^16.8.4 || ^17.0.0 || ^18.0.0 || ^19.0.0
       styled-components: ^4.1.1 || ^5.1.1 || ^6.0.5
 
-  redocusaurus@2.5.0:
-    resolution: {integrity: sha512-QWJX2hgnEfSDb7fZzS4iZe6aqdAvm/XLCsNv6RkgDw6Pl/lsTZKipP2n1r5QS1CC5hY8eAwsjVXeF7B03vkz2g==}
+  redocusaurus@2.5.2:
+    resolution: {integrity: sha512-81xELtq+yRW1p+407yroPRvmIDjK5QNldYi5hRAJC1vVPKWm6lzBQ9HihE+51520MuAbZWmNNVa1ml5DhlDd1A==}
     engines: {node: '>=14'}
     peerDependencies:
       '@docusaurus/theme-common': ^3.6.0
@@ -8699,12 +8702,12 @@ snapshots:
       - styled-components
       - supports-color
 
-  docusaurus-theme-redoc@2.5.0(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(webpack@5.99.8):
+  docusaurus-theme-redoc@2.5.1(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(webpack@5.99.8):
     dependencies:
       '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)
       '@redocly/openapi-core': 1.16.0(supports-color@8.1.1)
       clsx: 1.2.1
-      lodash: 4.17.21
+      lodash: 4.18.1
       mobx: 6.13.7
       postcss: 8.5.4
       postcss-prefix-selector: 1.16.1(postcss@8.5.4)
@@ -9672,6 +9675,8 @@ snapshots:
   lodash.uniq@4.5.0: {}
 
   lodash@4.17.21: {}
+
+  lodash@4.18.1: {}
 
   longest-streak@3.1.0: {}
 
@@ -11213,12 +11218,12 @@ snapshots:
       - react-native
       - supports-color
 
-  redocusaurus@2.5.0(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(@docusaurus/utils@3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(mobx@6.13.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(supports-color@8.1.1)(webpack@5.99.8):
+  redocusaurus@2.5.2(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(@docusaurus/utils@3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(mobx@6.13.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(supports-color@8.1.1)(webpack@5.99.8):
     dependencies:
       '@docusaurus/theme-common': 3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)
       '@docusaurus/utils': 3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)
       docusaurus-plugin-redoc: 2.5.0(@docusaurus/utils@3.10.2(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(mobx@6.13.7)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.18(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(supports-color@8.1.1)
-      docusaurus-theme-redoc: 2.5.0(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(webpack@5.99.8)
+      docusaurus-theme-redoc: 2.5.1(@docusaurus/theme-common@3.10.2(@docusaurus/plugin-content-docs@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@19.0.0))(acorn@8.14.1)(csso@5.0.5)(debug@4.4.1(supports-color@8.1.1))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(typescript@5.8.2))(acorn@8.14.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1))(core-js@3.42.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(supports-color@8.1.1)(webpack@5.99.8)
     transitivePeerDependencies:
       - core-js
       - encoding
