@@ -5,6 +5,18 @@ import type {
   LicenseResponse,
 } from "@site/src/types";
 
+export class GatewayError extends Error {
+  readonly status: number;
+  readonly data: unknown;
+
+  constructor(message: string, status: number, data: unknown) {
+    super(message);
+    this.name = "GatewayError";
+    this.status = status;
+    this.data = data;
+  }
+}
+
 export default class Gateway implements GatewayClient {
   private baseURL: string;
 
@@ -15,14 +27,19 @@ export default class Gateway implements GatewayClient {
     this.baseURL = baseURL.replace(/\/$/, "");
   }
 
-  async orders(email: string): Promise<OrdersResponse> {
-    if (!email) {
-      throw new Error("Email is required");
+  async orders(encryptedEmail: string, token: string): Promise<OrdersResponse> {
+    if (!encryptedEmail) {
+      throw new Error("Encrypted email is required");
+    }
+    if (!token) {
+      throw new Error("Delivery token is required");
     }
 
-    const url = `${this.baseURL}/payments/orders?email=${encodeURIComponent(
-      email,
-    )}`;
+    const params = new URLSearchParams({
+      email: encryptedEmail,
+      token,
+    });
+    const url = `${this.baseURL}/payments/orders?${params.toString()}`;
 
     const response = await fetch(url, {
       method: "GET",
@@ -70,10 +87,7 @@ export default class Gateway implements GatewayClient {
         : `Request failed with status ${response.status}`;
 
     if (!response.ok) {
-      const error = new Error(message);
-      (error as any).status = response.status;
-      (error as any).data = body;
-      throw error;
+      throw new GatewayError(message, response.status, body);
     }
 
     return (body ?? {}) as T;

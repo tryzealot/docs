@@ -1,29 +1,16 @@
 import type { ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { useHistory } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
 import { usePaddleClient } from "@site/src/hooks/usePaddlePrices";
-import { useGateway } from "@site/src/hooks/useGateway";
-import { useCustomerOrders } from "@site/src/lib/query";
-import { encrypt } from "@site/src/lib/crypto";
 import { PrimaryButton } from "@site/src/components/ui/Button";
 import type {
   PaddleCheckoutOptions,
   PaddleEvent,
   PaddleCheckoutOpenOptions,
 } from "@site/src/types";
-
-// 「没有找到订单」不一定以 404 返回：网关/代理可能给出 400、500，或带
-// "No customers found..." 文案的非 JSON 响应。这些都等价于没有订单，应继续结账。
-function isNoOrdersError(error: Error | null): boolean {
-  if (!error) return false;
-  if ((error as any)?.status === 404) return true;
-  return /no (customer|order)s? found|order not found|\bnot found\b/i.test(
-    error.message || "",
-  );
-}
 
 function CheckoutClient(): ReactNode {
   const { i18n } = useDocusaurusContext();
@@ -44,6 +31,7 @@ function CheckoutClient(): ReactNode {
   const [userEmail, setUserEmail] = useState("");
   const [submittedEmail, setSubmittedEmail] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const checkoutOpenedRef = useRef(false);
 
   const basePath = i18n.currentLocale !== "en" ? `/${i18n.currentLocale}` : "";
   const successUrl =
@@ -64,7 +52,7 @@ function CheckoutClient(): ReactNode {
     },
     eventCallback: (data: PaddleEvent) => {
       switch (data.name) {
-        case "checkout.completed":
+        case "checkout.completed": {
           const transactionData = {
             transactionId: data.data.transaction_id || "",
             checkoutId: data.data.id,
@@ -78,8 +66,9 @@ function CheckoutClient(): ReactNode {
           );
           history.push(`${basePath}/checkout/success`);
           break;
+        }
 
-        case "checkout.payment.failed":
+        case "checkout.payment.failed": {
           console.error("Payment failed:", data);
           const errorData = {
             errorCode: data.data?.error?.code || "unknown",
@@ -89,6 +78,7 @@ function CheckoutClient(): ReactNode {
           sessionStorage.setItem("paddleError", JSON.stringify(errorData));
           history.push(`${basePath}/checkout/failed`);
           break;
+        }
 
         case "checkout.closed":
           history.push(`${basePath}/pricing`);
@@ -104,71 +94,46 @@ function CheckoutClient(): ReactNode {
   };
 
   const { paddle } = usePaddleClient(checkoutOptions);
-  const { gateway } = useGateway();
-
-  const query = useCustomerOrders(gateway, submittedEmail, hasSubmitted);
 
   const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userEmail.trim()) {
+      checkoutOpenedRef.current = false;
       setSubmittedEmail(userEmail.trim());
       setHasSubmitted(true);
     }
   };
 
   useEffect(() => {
-    // 如果用户已有订单，跳转到 orders 页面
-    if (query.data && query.data.orders?.length > 0) {
-      const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
-      if (secretKey) {
-        encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
-          history.push(
-            `${basePath}/orders?email=${encodeURIComponent(encryptedEmail)}`,
-          );
-        });
-      } else {
-        history.push(
-          `${basePath}/orders?email=${encodeURIComponent(submittedEmail)}`,
-        );
-      }
+    if (
+      !hasSubmitted ||
+      !submittedEmail ||
+      !paddle?.Initialized ||
+      !priceId ||
+      checkoutOpenedRef.current
+    ) {
       return;
     }
 
-    // 没有订单或 404 错误时，允许继续结账；其他错误不打开 checkout
-    const shouldOpenCheckout =
-      (query.data && query.data.orders?.length === 0) ||
-      (query.isError && isNoOrdersError(query.error));
-
-    if (shouldOpenCheckout && paddle?.Initialized && priceId) {
-      const name = submittedEmail.split("@")[0] || "";
-      const options: PaddleCheckoutOpenOptions = {
-        customer: { email: submittedEmail, name },
-        discountCode: discountCode || undefined,
-        items: [
-          {
-            priceId,
-            quantity,
-          },
-        ],
-        customData: {
-          customerEmail: submittedEmail,
-          priceId: priceId,
+    checkoutOpenedRef.current = true;
+    const name = submittedEmail.split("@")[0] || "";
+    const options: PaddleCheckoutOpenOptions = {
+      customer: { email: submittedEmail, name },
+      discountCode: discountCode || undefined,
+      items: [
+        {
+          priceId,
+          quantity,
         },
-      };
-      paddle.Checkout.open(options);
-      paddle.Spinner.show();
-    }
-  }, [
-    query.data,
-    query.isError,
-    paddle,
-    priceId,
-    quantity,
-    discountCode,
-    submittedEmail,
-    history,
-    basePath,
-  ]);
+      ],
+      customData: {
+        customerEmail: submittedEmail,
+        priceId: priceId,
+      },
+    };
+    paddle.Checkout.open(options);
+    paddle.Spinner.show();
+  }, [hasSubmitted, submittedEmail, paddle, priceId, quantity, discountCode]);
 
   return (
     <main className="flex flex-col items-center px-4 py-8 gap-10">
@@ -199,50 +164,26 @@ function CheckoutClient(): ReactNode {
             <Translate id="checkout.email.continue">Continue</Translate>
           </PrimaryButton>
         </form>
+      ) : !priceId ? (
+        <div className="flex flex-col items-center gap-4 px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
+          <p className="text-lg font-medium text-[var(--color-error)]">
+            <Translate id="checkout.error.invalidCheckout">
+              Error loading your checkout.
+            </Translate>
+          </p>
+          <PrimaryButton onClick={() => history.push(`${basePath}/pricing`)}>
+            <Translate id="checkout.error.goBack">Go Back</Translate>
+          </PrimaryButton>
+        </div>
       ) : (
-        <>
-          {query.isError && !isNoOrdersError(query.error) ? (
-            <div className="flex flex-col items-center gap-4 px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
-              <p className="text-lg font-medium text-[var(--color-error)]">
-                <Translate id="checkout.error.loadingOrders">
-                  Error loading your checkout.
-                </Translate>
-              </p>
-              <PrimaryButton
-                onClick={() => {
-                  setHasSubmitted(false);
-                  setSubmittedEmail("");
-                }}
-              >
-                <Translate id="checkout.error.goBack">Go Back</Translate>
-              </PrimaryButton>
-            </div>
-          ) : (
-            (query.isLoading ||
-              !query.data ||
-              (query.isError && isNoOrdersError(query.error))) && (
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-xl font-medium text-[var(--color-primary)]">
-                  <Translate id="checkout.loading.preparing">
-                    Preparing checkout...
-                  </Translate>
-                </p>
-              </div>
-            )
-          )}
-
-          {query.data && query.data.orders?.length > 0 && (
-            <div className="flex flex-col items-center gap-4">
-              <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
-              <p className="text-xl font-medium text-[var(--color-primary)]">
-                <Translate id="checkout.loading.redirecting">
-                  Redirecting to your orders...
-                </Translate>
-              </p>
-            </div>
-          )}
-        </>
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-xl font-medium text-[var(--color-primary)]">
+            <Translate id="checkout.loading.preparing">
+              Preparing checkout...
+            </Translate>
+          </p>
+        </div>
       )}
     </main>
   );
