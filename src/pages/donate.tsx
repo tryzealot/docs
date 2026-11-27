@@ -23,7 +23,7 @@ export default function DonatePage(): ReactNode {
         message: "Support Zealot",
       })}
     >
-      <main>
+      <main style={{ maxWidth: 980, margin: "0 auto", padding: "2rem 1rem" }}>
         <h1>
           <Translate id="donate.title">Support Zealot</Translate>
         </h1>
