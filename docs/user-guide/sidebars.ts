@@ -1,20 +1,22 @@
-module.exports = [
+import type { SidebarItemConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebars: SidebarItemConfig[] = [
   {
     label: "Getting Started",
     type: "doc",
-    id: 'user-guide/index',
+    id: "user-guide/index",
   },
   {
     label: "Dashboard",
     type: "doc",
-    id: 'user-guide/dashboard',
+    id: "user-guide/dashboard",
   },
   {
     collapsible: true,
     label: "Apps",
     type: "category",
     link: {
-      type: 'generated-index',
+      type: "generated-index",
     },
     items: [
       "user-guide/apps/create",
@@ -29,7 +31,7 @@ module.exports = [
     label: "Debug Files",
     type: "category",
     link: {
-      type: 'generated-index',
+      type: "generated-index",
     },
     items: [
       "user-guide/debug-files/index",
@@ -43,7 +45,7 @@ module.exports = [
     type: "category",
     link: {
       type: "doc",
-      id: 'user-guide/webhooks',
+      id: "user-guide/webhooks",
     },
     items: [
       "user-guide/webhooks/slack",
@@ -59,19 +61,16 @@ module.exports = [
     label: "Toolkits",
     type: "category",
     link: {
-      type: 'generated-index',
+      type: "generated-index",
     },
-    items: [
-      "user-guide/toolkits/teardown",
-      "user-guide/toolkits/fetch-udid",
-    ],
+    items: ["user-guide/toolkits/teardown", "user-guide/toolkits/fetch-udid"],
   },
   {
     collapsible: false,
     label: "Administrator",
     type: "category",
     link: {
-      type: 'generated-index',
+      type: "generated-index",
     },
     items: [
       "user-guide/administrator/users",
@@ -84,7 +83,7 @@ module.exports = [
         label: "Monitoring",
         type: "category",
         link: {
-          type: 'generated-index',
+          type: "generated-index",
         },
         items: [
           "user-guide/administrator/monitoring/system-info",
@@ -104,3 +103,5 @@ module.exports = [
   "user-guide/qa",
   "user-guide/credits",
 ];
+
+export default sidebars;

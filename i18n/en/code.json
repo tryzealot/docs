@@ -7,31 +7,6 @@
     "message": "Continuous everything. Automate the lifecycle of your apps. Connect your CI to build in the cloud, test on thousands of real devices, distribute to beta testers and app stores. All in one place.",
     "description": "The subtitle description for homepage"
   },
-  "Getting started": {
-    "message": "Getting started"
-  },
-  "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.": {
-    "message": "Self-hosted Beta App Distribution for Android, iOS, macOS, Windows and Linux apps.",
-    "description": "The homepage title message"
-  },
-  "Easy to Use": {
-    "message": "Easy to Use"
-  },
-  "Zealot was designed from the ground up to be easily installed and running quickly.": {
-    "message": "Zealot was designed from the ground up to be easily installed and running quickly."
-  },
-  "Focus on What Matters": {
-    "message": "Focus on What Matters"
-  },
-  "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps.": {
-    "message": "Zealot lets you focus on your app, and we'll do the chores. Go ahead and upload your apps."
-  },
-  "Open Source 100%": {
-    "message": "Open Source 100%"
-  },
-  "Zealot is an open source project, Everyone could easy self hosted on own servers.": {
-    "message": "Zealot is an open source project, Everyone could easy self hosted on own servers."
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -311,14 +286,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "theme.unlistedContent.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
-  },
-  "theme.unlistedContent.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
-  },
   "theme.docs.DocCard.categoryDescription.plurals": {
     "message": "{count} items",
     "description": "The default description for a category card in the generated index about how many items this category includes"
@@ -446,5 +413,277 @@
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
     "message": "Collapse the dropdown",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "checkout.title": {
+    "message": "Checkout",
+    "description": "Checkout page title"
+  },
+  "checkout.loading": {
+    "message": "Loading checkout...",
+    "description": "Checkout page loading text"
+  },
+  "checkout.email.title": {
+    "message": "Enter your email to continue",
+    "description": "Checkout email form title"
+  },
+  "checkout.email.placeholder": {
+    "message": "your@email.com",
+    "description": "Checkout email input placeholder"
+  },
+  "checkout.email.continue": {
+    "message": "Continue",
+    "description": "Checkout continue button"
+  },
+  "checkout.error.loadingOrders": {
+    "message": "Error loading your orders.",
+    "description": "Error message when loading orders fails"
+  },
+  "checkout.loading.preparing": {
+    "message": "Preparing checkout...",
+    "description": "Loading text while preparing checkout"
+  },
+  "checkout.loading.redirecting": {
+    "message": "Redirecting to your orders...",
+    "description": "Loading text while redirecting to orders"
+  },
+  "checkout.success.title": {
+    "message": "Checkout Success",
+    "description": "Checkout success page title"
+  },
+  "checkout.success.loading": {
+    "message": "Loading...",
+    "description": "Checkout success page loading text"
+  },
+  "checkout.success.processing": {
+    "message": "Processing your payment...",
+    "description": "Title while processing payment"
+  },
+  "checkout.success.processingDesc": {
+    "message": "Please wait while we generate your license.",
+    "description": "Description while processing payment"
+  },
+  "checkout.success.failed.title": {
+    "message": "License Generation Failed",
+    "description": "Title when license generation fails"
+  },
+  "checkout.success.failed.desc": {
+    "message": "Your payment was successful, but we encountered an issue generating your license. Please contact support with your transaction ID.",
+    "description": "Description when license generation fails"
+  },
+  "checkout.success.failed.tryAgain": {
+    "message": "Try Again",
+    "description": "Try again button"
+  },
+  "checkout.success.successTitle": {
+    "message": "Payment Successful!",
+    "description": "Title when payment is successful"
+  },
+  "checkout.success.successDesc": {
+    "message": "Thank you for your purchase. Your order has been processed successfully.",
+    "description": "Description when payment is successful"
+  },
+  "checkout.success.license.title": {
+    "message": "Your License",
+    "description": "License section title"
+  },
+  "checkout.success.license.key": {
+    "message": "License Key",
+    "description": "License key label"
+  },
+  "checkout.success.license.copy": {
+    "message": "Copy",
+    "description": "Copy button"
+  },
+  "checkout.success.license.copied": {
+    "message": "Copied!",
+    "description": "Copied confirmation"
+  },
+  "checkout.success.license.saveReminder": {
+    "message": "Please save your license key in a safe place.",
+    "description": "Reminder to save license key"
+  },
+  "checkout.success.order.id": {
+    "message": "Order ID:",
+    "description": "Order ID label"
+  },
+  "checkout.success.order.email": {
+    "message": "Email:",
+    "description": "Email label"
+  },
+  "checkout.success.order.plan": {
+    "message": "Plan:",
+    "description": "Plan label"
+  },
+  "checkout.success.order.type": {
+    "message": "Type:",
+    "description": "Type label"
+  },
+  "checkout.success.order.expires": {
+    "message": "Expires:",
+    "description": "Expires label"
+  },
+  "checkout.success.returnHome": {
+    "message": "Return Home",
+    "description": "Return home button"
+  },
+  "checkout.success.noTransaction": {
+    "message": "No transaction information found",
+    "description": "Error when no transaction info found"
+  },
+  "checkout.success.transactionId": {
+    "message": "Transaction ID",
+    "description": "Transaction ID label"
+  },
+  "orders.title": {
+    "message": "My Orders",
+    "description": "Orders page title"
+  },
+  "orders.loading": {
+    "message": "Loading...",
+    "description": "Orders page loading text"
+  },
+  "orders.email.title": {
+    "message": "Enter your email to view orders",
+    "description": "Orders email form title"
+  },
+  "orders.email.placeholder": {
+    "message": "your@email.com",
+    "description": "Orders email input placeholder"
+  },
+  "orders.email.viewOrders": {
+    "message": "View Orders",
+    "description": "View orders button"
+  },
+  "orders.backToPricing": {
+    "message": "Back to Pricing",
+    "description": "Back to pricing button"
+  },
+  "orders.error.loading": {
+    "message": "Error loading your orders.",
+    "description": "Error message when loading orders fails"
+  },
+  "orders.error.tryAgain": {
+    "message": "Try Again",
+    "description": "Try again button"
+  },
+  "orders.loading.text": {
+    "message": "Loading your orders...",
+    "description": "Loading orders text"
+  },
+  "orders.sessionError.invalid": {
+    "message": "Session data is invalid. Please enter your email to view orders.",
+    "description": "Session data invalid error"
+  },
+  "orders.sessionError.config": {
+    "message": "Session configuration error. Please enter your email to view orders.",
+    "description": "Session configuration error"
+  },
+  "orders.yourOrders.title": {
+    "message": "Your Orders",
+    "description": "Your orders section title"
+  },
+  "orders.existingOrder.warning": {
+    "message": "You already have an order associated with this email.",
+    "description": "Warning when user has existing order"
+  },
+  "orders.noOrders": {
+    "message": "No orders found for this email.",
+    "description": "Message when no orders found"
+  },
+  "orders.searchAnother": {
+    "message": "Search Another Email",
+    "description": "Search another email button"
+  },
+  "orders.customer.title": {
+    "message": "Customer",
+    "description": "Customer section title"
+  },
+  "orders.customer.email": {
+    "message": "Email",
+    "description": "Customer email label"
+  },
+  "orders.customer.id": {
+    "message": "Customer ID",
+    "description": "Customer ID label"
+  },
+  "orders.license.title": {
+    "message": "License",
+    "description": "License section title"
+  },
+  "orders.license.key": {
+    "message": "License Key",
+    "description": "License key label"
+  },
+  "orders.license.status": {
+    "message": "Status",
+    "description": "License status label"
+  },
+  "orders.license.status.active": {
+    "message": "Active",
+    "description": "Active status"
+  },
+  "orders.license.status.inactive": {
+    "message": "Inactive",
+    "description": "Inactive status"
+  },
+  "orders.order.title": {
+    "message": "Order",
+    "description": "Order section title"
+  },
+  "orders.order.id": {
+    "message": "Order ID",
+    "description": "Order ID label"
+  },
+  "orders.order.amount": {
+    "message": "Amount",
+    "description": "Order amount label"
+  },
+  "orders.order.created": {
+    "message": "Created",
+    "description": "Order created date label"
+  },
+  "orders.order.paidAt": {
+    "message": "Paid At",
+    "description": "Order paid date label"
+  },
+  "orders.order.status": {
+    "message": "Status",
+    "description": "Order status label"
+  },
+  "orders.order.status.completed": {
+    "message": "Completed",
+    "description": "Completed status"
+  },
+  "orders.order.status.pending": {
+    "message": "Pending",
+    "description": "Pending status"
+  },
+  "orders.subscription.title": {
+    "message": "Subscription",
+    "description": "Subscription section title"
+  },
+  "orders.subscription.status": {
+    "message": "Status",
+    "description": "Subscription status label"
+  },
+  "orders.subscription.activeAt": {
+    "message": "Active At",
+    "description": "Subscription active date label"
+  },
+  "orders.subscription.expiresAt": {
+    "message": "Expires At",
+    "description": "Subscription expires date label"
+  },
+  "orders.subscription.cancelWarning": {
+    "message": "Will cancel at period end",
+    "description": "Cancel at period end warning"
+  },
+  "orders.refresh": {
+    "message": "Refresh",
+    "description": "Refresh button"
+  },
+  "orders.refreshing": {
+    "message": "Refreshing...",
+    "description": "Refreshing button text"
   }
 }
