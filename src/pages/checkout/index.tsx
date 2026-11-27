@@ -15,9 +15,14 @@ import type {
   PaddleCheckoutOpenOptions,
 } from "@site/src/types";
 
-// 判断错误是否是 404
-function isNotFoundError(error: Error | null): boolean {
-  return (error as any)?.status === 404;
+// 「没有找到订单」不一定以 404 返回：网关/代理可能给出 400、500，或带
+// "No customers found..." 文案的非 JSON 响应。这些都等价于没有订单，应继续结账。
+function isNoOrdersError(error: Error | null): boolean {
+  if (!error) return false;
+  if ((error as any)?.status === 404) return true;
+  return /no (customer|order)s? found|order not found|\bnot found\b/i.test(
+    error.message || "",
+  );
 }
 
 function CheckoutClient(): ReactNode {
@@ -113,7 +118,7 @@ function CheckoutClient(): ReactNode {
 
   useEffect(() => {
     // 如果用户已有订单，跳转到 orders 页面
-    if (query.data && query.data.orders.length > 0) {
+    if (query.data && query.data.orders?.length > 0) {
       const secretKey = process.env.ZEALOT_ENCRYPTION_KEY;
       if (secretKey) {
         encrypt(submittedEmail, secretKey).then((encryptedEmail) => {
@@ -131,8 +136,8 @@ function CheckoutClient(): ReactNode {
 
     // 没有订单或 404 错误时，允许继续结账；其他错误不打开 checkout
     const shouldOpenCheckout =
-      (query.data && query.data.orders.length === 0) ||
-      (query.isError && isNotFoundError(query.error));
+      (query.data && query.data.orders?.length === 0) ||
+      (query.isError && isNoOrdersError(query.error));
 
     if (shouldOpenCheckout && paddle?.Initialized && priceId) {
       const name = submittedEmail.split("@")[0] || "";
@@ -196,7 +201,7 @@ function CheckoutClient(): ReactNode {
         </form>
       ) : (
         <>
-          {query.isError && !isNotFoundError(query.error) ? (
+          {query.isError && !isNoOrdersError(query.error) ? (
             <div className="flex flex-col items-center gap-4 px-6 py-4 bg-[var(--semantic-error-bg)] border-2 border-[var(--color-error)] rounded-lg">
               <p className="text-lg font-medium text-[var(--color-error)]">
                 <Translate id="checkout.error.loadingOrders">
@@ -215,7 +220,7 @@ function CheckoutClient(): ReactNode {
           ) : (
             (query.isLoading ||
               !query.data ||
-              (query.isError && isNotFoundError(query.error))) && (
+              (query.isError && isNoOrdersError(query.error))) && (
               <div className="flex flex-col items-center gap-4">
                 <div className="w-12 h-12 border-4 border-[var(--color-primary)] border-t-transparent rounded-full animate-spin"></div>
                 <p className="text-xl font-medium text-[var(--color-primary)]">
