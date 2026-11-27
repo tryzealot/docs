@@ -51,7 +51,6 @@ export default class Gateway implements GatewayClient {
 
   async handleResponse<T>(response: Response): Promise<T> {
     const body = await response.json();
-    console.log("Gateway response:", body);
     if (!response.ok) {
       const error = new Error(body.message || `Request failed with status ${response.status}`);
       (error as any).status = response.status;

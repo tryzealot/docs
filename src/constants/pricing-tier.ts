@@ -52,6 +52,8 @@ export const PricingTier: PricingTierItem[] = [
     key: "pro",
     name: translate({ id: "pricing.plan.pro", message: "Pro" }) as string,
     icon: "⭐",
+    // Discounted annual Pro price used by the checkout button. The undiscounted
+    // price is the reference for the "Save 43%" label on the pricing page.
     priceId: "pri_01kecep9wgsx1v52eam2gdnnxy",
     frequency: translate({
       id: "pricing.plan.pro.frequency",

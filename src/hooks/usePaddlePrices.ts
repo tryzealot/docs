@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { initializePaddle } from "@paddle/paddle-js";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { getCountryCodeFromLocale } from "@site/src/lib/utils";
@@ -24,24 +24,39 @@ export function usePaddleClient(
   options: PaddleCheckoutOptions
 ): { paddle: PaddleInstance | undefined } {
   const [paddle, setPaddle] = useState<PaddleInstance | undefined>(undefined);
+  // Callers create the options object inline, so keeping it in a ref avoids
+  // re-initialising Paddle on every render.
+  const optionsRef = useRef(options);
+  optionsRef.current = options;
 
   useEffect(() => {
     const token = process.env.PADDLE_CLIENT_TOKEN;
-    const env = process.env.PADDLE_ENV;
-    if (token && env) {
-      const defaults = {
-        token: token,
-        environment: env,
-        ...options,
-      };
+    const environment = process.env.PADDLE_ENV as
+      | "sandbox"
+      | "production"
+      | undefined;
 
-      initializePaddle(defaults).then((paddle) => {
-        if (paddle) {
-          setPaddle(paddle as unknown as PaddleInstance);
-        }
-      });
+    if (!token || !environment) {
+      console.warn(
+        "Paddle is not configured: PADDLE_CLIENT_TOKEN and PADDLE_ENV are required",
+      );
+      return;
     }
-  }, [options]);
+
+    initializePaddle({
+      token,
+      environment,
+      ...optionsRef.current,
+    })
+      .then((instance) => {
+        if (instance) {
+          setPaddle(instance as unknown as PaddleInstance);
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to initialize Paddle:", error);
+      });
+  }, []);
 
   return { paddle };
 }

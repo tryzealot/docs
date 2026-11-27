@@ -6,7 +6,6 @@ import { useHistory } from "@docusaurus/router";
 import Translate, { translate } from "@docusaurus/Translate";
 import { usePaddleClient } from "@site/src/hooks/usePaddlePrices";
 import { useGateway } from "@site/src/hooks/useGateway";
-import { getCountryCodeFromLocale } from "@site/src/lib/utils";
 import { useCustomerOrders } from "@site/src/lib/query";
 import { encrypt } from "@site/src/lib/crypto";
 import { PrimaryButton } from "@site/src/components/ui/Button";
@@ -42,7 +41,10 @@ function CheckoutClient(): ReactNode {
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const basePath = i18n.currentLocale !== "en" ? `/${i18n.currentLocale}` : "";
-  const countryCode = getCountryCodeFromLocale(i18n.currentLocale);
+  const successUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}${basePath}/checkout/success`
+      : `${basePath}/checkout/success`;
 
   const checkoutOptions: PaddleCheckoutOptions = {
     checkout: {
@@ -52,13 +54,12 @@ function CheckoutClient(): ReactNode {
         theme: "dark",
         allowLogout: false,
         showAddTaxId: false,
-        successUrl: `${basePath}/checkout/success`,
+        successUrl,
       },
     },
     eventCallback: (data: PaddleEvent) => {
       switch (data.name) {
         case "checkout.completed":
-          console.log("Payment completed:", data);
           const transactionData = {
             transactionId: data.data.transaction_id || "",
             checkoutId: data.data.id,
@@ -78,22 +79,21 @@ function CheckoutClient(): ReactNode {
           const errorData = {
             errorCode: data.data?.error?.code || "unknown",
             errorMessage: data.data?.error?.message || "Payment failed",
+            priceId: data.data?.items?.[0]?.price_id,
           };
           sessionStorage.setItem("paddleError", JSON.stringify(errorData));
           history.push(`${basePath}/checkout/failed`);
           break;
 
         case "checkout.closed":
-          console.log("Checkout closed or cancelled", data);
           history.push(`${basePath}/pricing`);
           break;
 
         case "checkout.customer.updated":
-          console.log("Customer updated:", data);
           break;
 
         default:
-          console.log("Unknown event:", data.name);
+          break;
       }
     },
   };
@@ -128,7 +128,6 @@ function CheckoutClient(): ReactNode {
       }
       return;
     }
-    console.log("Error", query.error);
 
     // 没有订单或 404 错误时，允许继续结账；其他错误不打开 checkout
     const shouldOpenCheckout =
@@ -138,7 +137,7 @@ function CheckoutClient(): ReactNode {
     if (shouldOpenCheckout && paddle?.Initialized && priceId) {
       const name = submittedEmail.split("@")[0] || "";
       const options: PaddleCheckoutOpenOptions = {
-        customer: { email: submittedEmail, name, address: { countryCode } },
+        customer: { email: submittedEmail, name },
         discountCode: discountCode || undefined,
         items: [
           {
@@ -151,7 +150,6 @@ function CheckoutClient(): ReactNode {
           priceId: priceId,
         },
       };
-      console.log("Opening Paddle checkout with options:", options);
       paddle.Checkout.open(options);
       paddle.Spinner.show();
     }
@@ -163,7 +161,6 @@ function CheckoutClient(): ReactNode {
     quantity,
     discountCode,
     submittedEmail,
-    countryCode,
     history,
     basePath,
   ]);

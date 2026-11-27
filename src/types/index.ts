@@ -137,7 +137,7 @@ export interface PaddleCheckoutOpenOptions {
   customer: {
     email: string;
     name: string;
-    address: {
+    address?: {
       countryCode: string;
     };
   };
@@ -186,6 +186,7 @@ export interface TransactionData {
 export interface ErrorData {
   errorCode: string;
   errorMessage: string;
+  priceId?: string;
 }
 
 // ===== Pricing 相关类型 =====
