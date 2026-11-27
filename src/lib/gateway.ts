@@ -50,15 +50,33 @@ export default class Gateway implements GatewayClient {
   }
 
   async handleResponse<T>(response: Response): Promise<T> {
-    const body = await response.json();
+    // Read the body as text first: a 404 from a proxy can be plain text, and
+    // response.json() would throw a SyntaxError that loses the HTTP status.
+    const text = await response.text();
+    let body: unknown;
+    if (text) {
+      try {
+        body = JSON.parse(text);
+      } catch {
+        body = { message: text };
+      }
+    }
+
+    const payload =
+      body && typeof body === "object" ? (body as Record<string, unknown>) : {};
+    const message =
+      typeof payload.message === "string" && payload.message
+        ? payload.message
+        : `Request failed with status ${response.status}`;
+
     if (!response.ok) {
-      const error = new Error(body.message || `Request failed with status ${response.status}`);
+      const error = new Error(message);
       (error as any).status = response.status;
       (error as any).data = body;
       throw error;
     }
 
-    return body;
+    return (body ?? {}) as T;
   }
 }
 

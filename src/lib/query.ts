@@ -32,7 +32,10 @@ export const useCustomerOrders = (
       }
       // Encrypt email
       const encryptedEmail = await encrypt(email, getSecretKey());
-      return gateway.orders(encryptedEmail);
+      const result = await gateway.orders(encryptedEmail);
+      // The gateway can answer with a bare message payload when it finds no
+      // customer. Normalise it so callers never have to guard `orders.length`.
+      return { ...result, orders: result?.orders ?? [] };
     },
     enabled: !!email && !!gateway && enabled,
     retry: (failureCount, error) => {
