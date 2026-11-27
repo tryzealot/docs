@@ -538,14 +538,14 @@
   "checkout.email.continue": {
     "message": "继续"
   },
-  "checkout.error.loadingOrders": {
-    "message": "加载订单时出错。"
+  "checkout.error.invalidCheckout": {
+    "message": "加载结账页面时出错。"
+  },
+  "checkout.error.goBack": {
+    "message": "返回"
   },
   "checkout.loading.preparing": {
     "message": "正在准备结账..."
-  },
-  "checkout.loading.redirecting": {
-    "message": "正在跳转到您的订单..."
   },
   "checkout.success.title": {
     "message": "支付成功"
@@ -613,118 +613,130 @@
   "checkout.success.transactionId": {
     "message": "交易 ID"
   },
-  "orders.title": {
-    "message": "我的订单"
+  "claim.title": {
+    "message": "领取您的许可证"
   },
-  "orders.loading": {
+  "claim.loading": {
     "message": "加载中..."
   },
-  "orders.email.title": {
-    "message": "请输入您的邮箱查看订单"
+  "claim.loading.text": {
+    "message": "正在获取您的许可证..."
   },
-  "orders.email.placeholder": {
-    "message": "your@email.com"
-  },
-  "orders.email.viewOrders": {
-    "message": "查看订单"
-  },
-  "orders.backToPricing": {
+  "claim.backToPricing": {
     "message": "返回价格页"
   },
-  "orders.error.loading": {
-    "message": "加载订单时出错。"
+  "claim.returnHome": {
+    "message": "返回首页"
   },
-  "orders.error.tryAgain": {
+  "claim.error.missingToken.title": {
+    "message": "缺少交付凭证"
+  },
+  "claim.error.missingToken.desc": {
+    "message": "当前链接缺少交付凭证（Delivery Token）。请直接点击付款确认邮件中的链接打开此页面。"
+  },
+  "claim.error.invalidToken.title": {
+    "message": "交付链接无效"
+  },
+  "claim.error.invalidToken.desc": {
+    "message": "当前交付链接格式无效或已损坏。请检查付款确认邮件中的原始链接。"
+  },
+  "claim.error.forbidden.title": {
+    "message": "交付链接无效或已过期"
+  },
+  "claim.error.forbidden.desc": {
+    "message": "当前交付链接无效、已过期或与当前环境不匹配。交付链接的有效期为 30 天。"
+  },
+  "claim.error.notFound.title": {
+    "message": "未找到许可证"
+  },
+  "claim.error.notFound.desc": {
+    "message": "未找到与此交付链接关联的许可证信息。"
+  },
+  "claim.error.generic.title": {
+    "message": "无法获取许可证"
+  },
+  "claim.error.generic.desc": {
+    "message": "加载许可证时发生错误，请稍后重试。"
+  },
+  "claim.error.tryAgain": {
     "message": "重试"
   },
-  "orders.loading.text": {
-    "message": "正在加载您的订单..."
+  "claim.license.heading": {
+    "message": "您的许可证"
   },
-  "orders.sessionError.invalid": {
-    "message": "会话数据无效。请输入您的邮箱查看订单。"
+  "claim.license.tokenLabel": {
+    "message": "License Token"
   },
-  "orders.sessionError.config": {
-    "message": "会话配置错误。请输入您的邮箱查看订单。"
-  },
-  "orders.yourOrders.title": {
-    "message": "您的订单"
-  },
-  "orders.existingOrder.warning": {
-    "message": "此邮箱已有关联订单。"
-  },
-  "orders.noOrders": {
-    "message": "未找到此邮箱的订单。"
-  },
-  "orders.searchAnother": {
-    "message": "搜索其他邮箱"
-  },
-  "orders.customer.title": {
-    "message": "客户信息"
-  },
-  "orders.customer.email": {
-    "message": "邮箱"
-  },
-  "orders.customer.id": {
-    "message": "客户 ID"
-  },
-  "orders.license.title": {
-    "message": "许可证"
-  },
-  "orders.license.key": {
-    "message": "许可证密钥"
-  },
-  "orders.license.status": {
-    "message": "状态"
-  },
-  "orders.license.status.active": {
+  "claim.license.status.active": {
     "message": "有效"
   },
-  "orders.license.status.inactive": {
+  "claim.license.status.inactive": {
     "message": "无效"
   },
-  "orders.order.title": {
+  "claim.license.copy": {
+    "message": "复制"
+  },
+  "claim.license.copied": {
+    "message": "已复制！"
+  },
+  "claim.license.saveReminder": {
+    "message": "请妥善保管您的 License Token。"
+  },
+  "claim.customer.title": {
+    "message": "客户信息"
+  },
+  "claim.customer.email": {
+    "message": "邮箱"
+  },
+  "claim.customer.id": {
+    "message": "客户 ID"
+  },
+  "claim.order.title": {
     "message": "订单"
   },
-  "orders.order.id": {
+  "claim.order.id": {
     "message": "订单号"
   },
-  "orders.order.amount": {
+  "claim.order.amount": {
     "message": "金额"
   },
-  "orders.order.created": {
+  "claim.order.created": {
     "message": "创建时间"
   },
-  "orders.order.paidAt": {
+  "claim.order.paidAt": {
     "message": "支付时间"
   },
-  "orders.order.status": {
+  "claim.order.status": {
     "message": "状态"
   },
-  "orders.order.status.completed": {
+  "claim.order.status.completed": {
     "message": "已完成"
   },
-  "orders.order.status.pending": {
+  "claim.order.status.pending": {
     "message": "待处理"
   },
-  "orders.subscription.title": {
+  "claim.order.status.failed": {
+    "message": "失败"
+  },
+  "claim.subscription.title": {
     "message": "订阅"
   },
-  "orders.subscription.status": {
+  "claim.subscription.status": {
     "message": "状态"
   },
-  "orders.subscription.activeAt": {
+  "claim.subscription.activeAt": {
     "message": "生效时间"
   },
-  "orders.subscription.expiresAt": {
+  "claim.subscription.expiresAt": {
     "message": "到期时间"
   },
-  "orders.subscription.cancelWarning": {
+  "claim.subscription.cancelWarning": {
     "message": "将在周期结束时取消"
   },
-  "orders.refresh": {
+  "claim.refresh": {
     "message": "刷新"
   },
-  "orders.refreshing": {
+  "claim.refreshing": {
     "message": "刷新中..."
   }
 }

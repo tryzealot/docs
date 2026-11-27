@@ -1,6 +1,6 @@
 // ===== Gateway 相关类型 =====
 export interface GatewayClient {
-  orders: (encryptedEmail: string) => Promise<OrdersResponse>;
+  orders: (encryptedEmail: string, token: string) => Promise<OrdersResponse>;
   generateLicense: (data: LicenseRequest) => Promise<LicenseResponse>;
 }
 

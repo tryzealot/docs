@@ -434,17 +434,17 @@
     "message": "Continue",
     "description": "Checkout continue button"
   },
-  "checkout.error.loadingOrders": {
-    "message": "Error loading your orders.",
-    "description": "Error message when loading orders fails"
+  "checkout.error.invalidCheckout": {
+    "message": "Error loading your checkout.",
+    "description": "Error message when checkout parameters are missing or invalid"
+  },
+  "checkout.error.goBack": {
+    "message": "Go Back",
+    "description": "Go back button on checkout error"
   },
   "checkout.loading.preparing": {
     "message": "Preparing checkout...",
     "description": "Loading text while preparing checkout"
-  },
-  "checkout.loading.redirecting": {
-    "message": "Redirecting to your orders...",
-    "description": "Loading text while redirecting to orders"
   },
   "checkout.success.title": {
     "message": "Checkout Success",
@@ -534,155 +534,171 @@
     "message": "Transaction ID",
     "description": "Transaction ID label"
   },
-  "orders.title": {
-    "message": "My Orders",
-    "description": "Orders page title"
+  "claim.title": {
+    "message": "Claim Your License",
+    "description": "Claim page title"
   },
-  "orders.loading": {
+  "claim.loading": {
     "message": "Loading...",
-    "description": "Orders page loading text"
+    "description": "Claim page fallback loading text"
   },
-  "orders.email.title": {
-    "message": "Enter your email to view orders",
-    "description": "Orders email form title"
+  "claim.loading.text": {
+    "message": "Retrieving your license...",
+    "description": "Claim page loading text"
   },
-  "orders.email.placeholder": {
-    "message": "your@email.com",
-    "description": "Orders email input placeholder"
-  },
-  "orders.email.viewOrders": {
-    "message": "View Orders",
-    "description": "View orders button"
-  },
-  "orders.backToPricing": {
+  "claim.backToPricing": {
     "message": "Back to Pricing",
     "description": "Back to pricing button"
   },
-  "orders.error.loading": {
-    "message": "Error loading your orders.",
-    "description": "Error message when loading orders fails"
+  "claim.returnHome": {
+    "message": "Return Home",
+    "description": "Return home button"
   },
-  "orders.error.tryAgain": {
+  "claim.error.missingToken.title": {
+    "message": "Missing Delivery Token",
+    "description": "Error title when token query param is missing"
+  },
+  "claim.error.missingToken.desc": {
+    "message": "This link does not contain a delivery token. Please open the claim link directly from your purchase confirmation email.",
+    "description": "Error description when token query param is missing"
+  },
+  "claim.error.invalidToken.title": {
+    "message": "Invalid Delivery Link",
+    "description": "Error title when token is malformed"
+  },
+  "claim.error.invalidToken.desc": {
+    "message": "This delivery link is invalid or malformed. Please check the link in your purchase confirmation email.",
+    "description": "Error description when token is malformed"
+  },
+  "claim.error.forbidden.title": {
+    "message": "Invalid or Expired Delivery Link",
+    "description": "Error title when gateway rejects token with 403"
+  },
+  "claim.error.forbidden.desc": {
+    "message": "This delivery link is invalid, expired, or does not match this environment. Delivery links are valid for 30 days.",
+    "description": "Error description when gateway rejects token with 403"
+  },
+  "claim.error.notFound.title": {
+    "message": "License Not Found",
+    "description": "Error title when no license is found"
+  },
+  "claim.error.notFound.desc": {
+    "message": "We could not find a license associated with this delivery link.",
+    "description": "Error description when no license is found"
+  },
+  "claim.error.generic.title": {
+    "message": "Unable to Retrieve License",
+    "description": "Generic error title on claim page"
+  },
+  "claim.error.generic.desc": {
+    "message": "Something went wrong while loading your license. Please try again.",
+    "description": "Generic error description on claim page"
+  },
+  "claim.error.tryAgain": {
     "message": "Try Again",
     "description": "Try again button"
   },
-  "orders.loading.text": {
-    "message": "Loading your orders...",
-    "description": "Loading orders text"
+  "claim.license.heading": {
+    "message": "Your License",
+    "description": "Claim license section heading"
   },
-  "orders.sessionError.invalid": {
-    "message": "Session data is invalid. Please enter your email to view orders.",
-    "description": "Session data invalid error"
+  "claim.license.tokenLabel": {
+    "message": "License Token",
+    "description": "License token label"
   },
-  "orders.sessionError.config": {
-    "message": "Session configuration error. Please enter your email to view orders.",
-    "description": "Session configuration error"
+  "claim.license.status.active": {
+    "message": "Active",
+    "description": "Active license status"
   },
-  "orders.yourOrders.title": {
-    "message": "Your Orders",
-    "description": "Your orders section title"
+  "claim.license.status.inactive": {
+    "message": "Inactive",
+    "description": "Inactive license status"
   },
-  "orders.existingOrder.warning": {
-    "message": "You already have an order associated with this email.",
-    "description": "Warning when user has existing order"
+  "claim.license.copy": {
+    "message": "Copy",
+    "description": "Copy license token button"
   },
-  "orders.noOrders": {
-    "message": "No orders found for this email.",
-    "description": "Message when no orders found"
+  "claim.license.copied": {
+    "message": "Copied!",
+    "description": "Copied license token feedback"
   },
-  "orders.searchAnother": {
-    "message": "Search Another Email",
-    "description": "Search another email button"
+  "claim.license.saveReminder": {
+    "message": "Please save your license token in a safe place.",
+    "description": "Reminder to save license token"
   },
-  "orders.customer.title": {
+  "claim.customer.title": {
     "message": "Customer",
     "description": "Customer section title"
   },
-  "orders.customer.email": {
+  "claim.customer.email": {
     "message": "Email",
     "description": "Customer email label"
   },
-  "orders.customer.id": {
+  "claim.customer.id": {
     "message": "Customer ID",
     "description": "Customer ID label"
   },
-  "orders.license.title": {
-    "message": "License",
-    "description": "License section title"
-  },
-  "orders.license.key": {
-    "message": "License Key",
-    "description": "License key label"
-  },
-  "orders.license.status": {
-    "message": "Status",
-    "description": "License status label"
-  },
-  "orders.license.status.active": {
-    "message": "Active",
-    "description": "Active status"
-  },
-  "orders.license.status.inactive": {
-    "message": "Inactive",
-    "description": "Inactive status"
-  },
-  "orders.order.title": {
+  "claim.order.title": {
     "message": "Order",
     "description": "Order section title"
   },
-  "orders.order.id": {
+  "claim.order.id": {
     "message": "Order ID",
     "description": "Order ID label"
   },
-  "orders.order.amount": {
+  "claim.order.amount": {
     "message": "Amount",
     "description": "Order amount label"
   },
-  "orders.order.created": {
+  "claim.order.created": {
     "message": "Created",
     "description": "Order created date label"
   },
-  "orders.order.paidAt": {
+  "claim.order.paidAt": {
     "message": "Paid At",
     "description": "Order paid date label"
   },
-  "orders.order.status": {
+  "claim.order.status": {
     "message": "Status",
     "description": "Order status label"
   },
-  "orders.order.status.completed": {
+  "claim.order.status.completed": {
     "message": "Completed",
-    "description": "Completed status"
+    "description": "Completed order status"
   },
-  "orders.order.status.pending": {
+  "claim.order.status.pending": {
     "message": "Pending",
-    "description": "Pending status"
+    "description": "Pending order status"
   },
-  "orders.subscription.title": {
+  "claim.order.status.failed": {
+    "message": "Failed",
+    "description": "Failed order status"
+  },
+  "claim.subscription.title": {
     "message": "Subscription",
     "description": "Subscription section title"
   },
-  "orders.subscription.status": {
+  "claim.subscription.status": {
     "message": "Status",
     "description": "Subscription status label"
   },
-  "orders.subscription.activeAt": {
+  "claim.subscription.activeAt": {
     "message": "Active At",
     "description": "Subscription active date label"
   },
-  "orders.subscription.expiresAt": {
+  "claim.subscription.expiresAt": {
     "message": "Expires At",
     "description": "Subscription expires date label"
   },
-  "orders.subscription.cancelWarning": {
+  "claim.subscription.cancelWarning": {
     "message": "Will cancel at period end",
     "description": "Cancel at period end warning"
   },
-  "orders.refresh": {
+  "claim.refresh": {
     "message": "Refresh",
     "description": "Refresh button"
   },
-  "orders.refreshing": {
+  "claim.refreshing": {
     "message": "Refreshing...",
     "description": "Refreshing button text"
   }
