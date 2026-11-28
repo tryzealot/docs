@@ -99,7 +99,7 @@ function resolveQueryErrorState(error: Error | null): {
       ),
       description: (
         <Translate id="claim.error.notFound.desc">
-          We could not find a license associated with this delivery link.
+          We could not find a license for this email address.
         </Translate>
       ),
       tone: "neutral",
@@ -304,7 +304,7 @@ function ClaimClient(): ReactNode {
         }
         description={
           <Translate id="claim.error.notFound.desc">
-            We could not find a license associated with this delivery link.
+            We could not find a license for this email address.
           </Translate>
         }
         tone="neutral"

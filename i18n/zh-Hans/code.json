@@ -650,7 +650,7 @@
     "message": "未找到许可证"
   },
   "claim.error.notFound.desc": {
-    "message": "未找到与此交付链接关联的许可证信息。"
+    "message": "未找到与该邮箱关联的许可证信息。"
   },
   "claim.error.generic.title": {
     "message": "无法获取许可证"

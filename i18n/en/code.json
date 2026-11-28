@@ -583,7 +583,7 @@
     "description": "Error title when no license is found"
   },
   "claim.error.notFound.desc": {
-    "message": "We could not find a license associated with this delivery link.",
+    "message": "We could not find a license for this email address.",
     "description": "Error description when no license is found"
   },
   "claim.error.generic.title": {
