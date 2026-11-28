@@ -454,6 +454,9 @@
   "pricing.plan.pro.unlimited_organizations": {
     "message": "无限组织"
   },
+  "pricing.plan.pro.faster_package_analysis": {
+    "message": "更快的安装包解析"
+  },
   "pricing.plan.pro.detailed_session_logs_and_overviews": {
     "message": "详细的会话日志和概览"
   },

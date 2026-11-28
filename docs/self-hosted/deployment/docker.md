@@ -23,6 +23,12 @@ and you still need to worry how to launch and make it as a daemon to run in the 
 - Docker 20.10.0+
 - Docker Compose 1.28.0+
 
+:::note Zealot Pro platform requirements
+
+Zealot Pro ships a precompiled native package parser and only supports **Linux** (`x86_64` and `aarch64`, both `glibc` and `musl`, including the official Docker images). There is no fallback to the pure-Ruby parser on unsupported platforms — running Zealot Pro natively on macOS or Windows fails at boot with `AppInfo::UnsupportedPlatformError`.
+
+:::
+
 ## Install on Docker
 
 In the principle of one-click installation, but reality is often harsh,

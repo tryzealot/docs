@@ -74,6 +74,10 @@ export const PricingTier: PricingTierItem[] = [
         message: "Unlimited organizations",
       }) as string,
       translate({
+        id: "pricing.plan.pro.faster_package_analysis",
+        message: "Faster app package analysis",
+      }) as string,
+      translate({
         id: "pricing.plan.pro.detailed_session_logs_and_overviews",
         message: "Detailed session logs and overviews",
       }) as string,

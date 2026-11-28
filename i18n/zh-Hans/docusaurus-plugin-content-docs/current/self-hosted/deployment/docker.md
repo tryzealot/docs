@@ -8,6 +8,12 @@ sidebar_label: "Docker"
 > 鉴于 iOS 使用下载服务依赖开启 SSL/TLS 证书，建议使用经过授权的证书服务，比如 [Let's Encrypt](https://letsencrypt.org/)，
 > 如果使用自签名证书需要每个 iOS 设备在下载安装应用前[必须安装自签名证书](https://support.apple.com/zh-cn/HT204477)才行。
 
+:::note Zealot Pro 平台要求
+
+Zealot Pro 内置预编译的原生安装包解析器，仅支持 **Linux**（`x86_64` 与 `aarch64`，涵盖 `glibc` 与 `musl`，官方 Docker 镜像均在支持范围内）。在不支持的平台上不会回退到纯 Ruby 解析器，直接在 macOS 或 Windows 上运行 Zealot Pro 会在启动时抛出 `AppInfo::UnsupportedPlatformError`。
+
+:::
+
 ## 一键安装脚本
 
 > 对于一键安装部署脚本感兴趣的可以查看 [Docker 手把手部署文档](/docs/self-hosted/deployment/docker/step-by-step)。

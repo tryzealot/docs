@@ -701,5 +701,9 @@
   "claim.refreshing": {
     "message": "Refreshing...",
     "description": "Refreshing button text"
+  },
+  "pricing.plan.pro.faster_package_analysis": {
+    "message": "Faster app package analysis",
+    "description": "Pro plan feature for faster app package analysis"
   }
 }
